@@ -1,0 +1,350 @@
+/* Initial body */
+body {
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/* Initial menu */
+.menu {
+  background: #202024 url('/public/assets/images/black-thread.png') repeat left top;
+  left: -150px;  /* start off behind the scenes */
+  height: 100%;
+  position: fixed;
+  width: 150px;
+}
+
+.navImg{
+  width:40px;
+  display:block;
+  margin:0 auto; 
+}
+
+.icon-menu {
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  padding: 15px 0 15px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width:0;
+  float: left;
+}
+
+.iconMenuImg{
+  width:30px;
+}
+
+.menu ul {
+  border-top: 1px solid #636366;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  border-bottom: 1px solid #636366;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 40px;
+  padding: 3px;
+  text-align:center;
+}
+
+.menu a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.icon-close {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.icon-menu i {
+  margin-right: 5px;
+}
+
+
+/*Banner*/
+.banner {position: relative;color: #fff;}
+.banner p{margin:0; }
+.banner img.img-responsive{width: 100%;height:337px;}
+.banner .welcome-message{position: absolute;left: 0;right:0;bottom:0;top:0;text-align: center;}
+.banner .welcome-message .wrap-info{display: table;height: 100%;width: 100%;}
+.banner .welcome-message .wrap-info .information{display: inline;vertical-align: middle;}
+/*Banner*/
+
+/*Toggle Banner*/
+.smallBannerBgImg{
+  width: 100%;
+  height: 81px;
+}
+
+.bigBannerLinkWrapper, .smallBannerLinkWrapper{
+  display: inline-block; width: 100%; height: 100%;
+}
+
+.js-removebanner {
+    color: #FFF;
+    width: 15%;
+    float: right;
+    padding-top: 24px;
+    font-size: 19px;
+}
+
+a.js-removebanner{
+   border: 0px;
+   outline: 0;
+}
+
+.bigBannerLinkWrapper a, .smallBannerLinkWrapper a{
+  color: #FFF;
+}
+
+.smallBannerLinkWrapper{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  top: 0px;
+  right: 0px;
+}
+
+.smallbanner .tagline {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 0px;
+    bottom: 0px;
+    margin-top: 8px;
+}
+
+.smallbanner{
+  width: 100%;
+  color:#FFF;
+  position: relative;
+}
+
+.js-showbanner{
+  width: 15%;
+  float: right;
+  padding-top: 19px;
+  font-size: 19px;
+}
+
+a.js-showbanner{
+   border: 0px;
+   outline: 0;
+}
+
+
+/*Toggle Banner*/
+
+/* Basic styling */
+/*.userlogo {
+    width: 10%;
+    margin: -70px 0px 0px;
+}*/
+img.img-circle {
+  display: block;
+  width: 10%;
+  height: 10%;
+  overflow: hidden;
+  border: 9px solid rgba(0, 0, 0, 0.05);
+  margin: 0 44%;
+}
+
+.tagline {
+    font-weight: bold;
+    margin-bottom: 9px;
+    font-size: 29px;   
+    margin-top: 70px;
+}
+.taglineinfo{
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 21px;    
+}
+.taglinelocation{
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom:0px;  
+}
+
+.taglinelocation span{
+    text-decoration: underline dotted;
+}
+
+/* Live clock start*/
+
+.section {
+    background-color: #000;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+ }
+
+.container{
+    margin: 0px auto !important;
+    text-align: center;
+    color: #FFF;
+    padding-top: 20px;
+ }
+
+ #schedulePanelBgImg{
+    height: 179px;
+    width: 1600px;
+    background: url('/public/assets/images/schedulePanel.jpg');
+ }
+
+.center-info-left {
+  text-align: right;
+}
+.center-info-clock {
+  /*text-align: center;*/
+  padding-left: 4%;
+}
+.center-info-right {
+  text-align: left;
+}
+.sessionStatus, .sessionStatusNext {
+    color: #58FA58;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.sessionStatusNext{
+    color: #FFF;
+}
+.sessionInfo{
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+.sessionTime {
+    font-size: 15px;
+    font-weight: bold;
+}
+.color-accent-clock {
+  color: #58FA58
+}
+
+.center-info-clock .fa-4x {
+    font-size: 7em;
+}
+
+.agenda-text{
+  font-weight: bold;
+    margin: 18px 0;
+    text-transform: uppercase;
+    letter-spacing:3px;
+    font-size: 19px;
+}
+
+.inner_face{
+ width:93% !important;
+ }
+
+ @media only screen and (max-width:640px){
+  .section {
+    margin: 20px 0 2px 0;
+    /*background-color: #A9BCF5;*/
+  }
+  .banner img.img-responsive {
+    width: 100%;
+    height: 282px;
+  }
+
+  .js-removebanner{
+    padding-top: 6px;
+  }
+
+  .center-info-clock, .center-info-left, .center-info-right {
+    text-align: center;
+  }
+}
+
+ .outer_face{
+  margin-top:12px;
+ }
+
+ .inner_face{
+  left:2% !important;
+ }
+
+ 
+
+/*Live Clock end*/
+
+ @media only screen and (max-width:480px){
+  .icon-menu {
+    padding: 0px 0px 15px 0px;
+  }
+   
+ .banner img.img-responsive {
+    width: 100%;
+    height: 283px;
+ }
+  img.img-circle {
+    display: block;
+    width: 40%;
+    overflow: hidden;
+    border: 9px solid rgba(0, 0, 0, 0.05);
+    margin: 12px 30% 2px;
+  }
+
+  .tagline {
+    margin-top: 14px;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .smallbanner .tagline {
+      top: 23px;
+  }
+  .taglineinfo {
+    font-weight: bold;
+    margin-bottom: 11px;
+    font-size: 14px;
+  }
+  .taglinelocation {
+    font-weight: normal;
+    font-size: 12px;
+    padding-bottom: 10px;
+  }
+  .section {
+      margin: -1px 0px 2px;
+  }
+  .container{
+    position: absolute;
+    padding-top: 24px;
+  }
+
+  #schedulePanelBgImg {
+    height: 352px;
+    width: 1600px;
+    background: transparent url("/public/assets/images/schedulePanel.jpg") repeat scroll 0% 0%;
+  }
+  .center-info-clock {
+    /*text-align: center;*/
+    padding-left: 39%;
+  }
+}
+
+@media only screen and (max-width:1024px){
+   .banner img.img-responsive {
+      width: 100%;
+      height: 280px;
+   }
+
+   .smallBannerBgImg {
+    width: 100%;
+    height: 117px;
+  }
+  .container{
+    position: absolute;
+  }
+}
