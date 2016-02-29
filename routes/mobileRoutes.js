@@ -17,4 +17,10 @@ module.exports = function(app, passport) {
         });
     });
 
+    app.get('/m/sessiondetail', auth.isLoggedIn, function(req, res) {
+        res.locals.pageTitle = "Session Details";
+        res.render('mobile/sessiondetail.ejs', {
+            layout: 'layouts/scheduleDetail'
+        });
+    });
 }
