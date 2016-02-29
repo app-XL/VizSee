@@ -18,5 +18,10 @@ module.exports = function(app, passport) {
     app.get('/scheduler', auth.isLoggedIn, function(req, res) {
         res.locals.pageTitle = "Scheduler";
         res.render('misc/scheduler.ejs', {});
+
+    // route to profile
+    app.get('/profile', auth.isLoggedIn, function(req, res) {
+        res.locals.pageTitle = "profile";
+        res.render('misc/profile.ejs', {});
     });
 }

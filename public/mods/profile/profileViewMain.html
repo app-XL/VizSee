@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="/public/assets/styles/profile-pic.css" />
+<script type="text/ng-template" id="templateId">
+    <div class="row" ng-controller="profileControllerMain">
+      <div><h1>Select Profile Photo</h1></div>
+      <hr style="height:1px;border:blue;background-color:#999999">
+      <div>
+        <div style="margin-left:2cm" ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea">
+        <img-crop  image="picFile  | ngfDataUrl"                 
+          result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+        </img-crop>
+      </div>   
+      <br> 
+      <button class="btn btn-info" style="margin-left:8.5cm" ngf-select ng-model="picFile" accept="image/*">Select a photo from your computer</button>
+      <br>
+      <hr style="height:1px;border:blue;background-color:#999999">         
+      <button class="btn btn-primary" ng-click="send(croppedDataUrl) && closeAll()" >Set as profile photo</button>
+      <button class="btn btn-danger" ng-click="cancel()" >Cancel</button>
+    </div>          
+</script>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12 lead">
+                Edit Employee profile
+                <hr>
+              </div>
+            </div>
+            <div class="row" ng-controller="profileControllerMain">
+              <div class="col-md-4 text-center">                  
+                <img ng-src="{{cropdataurl}}" class="img-rectangle avatar avatar-original "
+                 style="background-size:cover;"/>
+                <div ng-controller="MainCtrl">
+                    <button class="btn btn-link btn-file" ng-click="clickToOpen()">Change your picture</button>
+                </div>
+              </div>
+
+              <div class="col-md-8">                
+                                     
+                <div class="form-group">
+                  <label for="first">First name</label>
+                  <input type="text" class="form-control" id="first" name="first"  
+                  ng-model="user.name.first">
+                </div>
+                <div class="form-group">
+                  <label for="middle">Middle name</label>
+                  <input type="text" class="form-control" id="middle" name="middle"
+                  ng-model="user.name.middle">
+                </div>
+                <div class="form-group">
+                  <label for="last">Last name</label>
+                  <input type="text" class="form-control" id="last" name="last"  
+                  ng-model="user.name.last">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" id="email" name="email"  
+                  ng-model="user.email">
+                </div>
+                <div class="form-group">
+                  <label for="designation">Designation</label>
+                  <input type="text" class="form-control" id="designation" name="designation"  
+                  ng-model="user.designation">
+                </div>
+                <button class="btn btn-primary pull-right" ng-click="upload(cropdataurl)"><i class="glyphicon glyphicon-floppy-disk"></i> Save</button>          
+                        
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+
+
+

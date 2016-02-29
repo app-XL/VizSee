@@ -18,6 +18,7 @@ var bodyParser   = require('body-parser');
 var colors				= require('colors'); 
 var constants			= require('./scripts/constants');
 var config        = require(constants.paths.config + '/config');
+var multer = require('multer');
 
 // configuration ===============================================================
 require('./scripts/database'); // load database management scripts
@@ -46,6 +47,18 @@ require('./scripts/session')(app);
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
+
+// multer for storing the images locally
+app.use(multer({
+ // dest: './uploads/',
+  dest: './profile/avatar/',
+ rename:function(fieldname,filename){
+    return fieldname + '_' + filename + '_' + Date.now();
+  },
+  onFileUploadComplete: function(file) {
+  console.log(file.fieldname + ' uploaded to the ' + file.path);
+}
+}));
 
 // routes ======================================================================
 require('./routes/main')(app, passport);

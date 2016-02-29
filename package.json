@@ -39,6 +39,7 @@
     "convict": "1.0.2",
     "nodemailer": "2.2.0",
     "email-templates": "2.1.0",
-    "swig": "1.4.2"
+    "swig": "1.4.2",
+    "multer": "^0.1.8"
   }
 }

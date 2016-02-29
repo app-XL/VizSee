@@ -12,6 +12,9 @@ var visit 						= require(constants.paths.controllers + '/api/visits');
 var visitSchedule 		= require(constants.paths.controllers + '/api/visitSchedules');
 var feedbackDef 			= require(constants.paths.controllers + '/api/feedbackDefs');
 
+var csclocations 					= require(constants.paths.controllers + '/api/csclocations');
+var fileupload						= require(constants.paths.controllers + '/api/fileupload');
+ 
 /*
  * Routes that can be accessed by any one
  */
@@ -27,6 +30,12 @@ router.post('/api/v1/secure/admin/users/', users.create);
 router.put('/api/v1/secure/admin/users/:id', users.updateById);
 router.delete('/api/v1/secure/admin/users/:id', users.deleteById);
 router.get('/api/v1/admin/users/:email', users.getByEmail);
+
+router.get('/api/v1/users', users.getAll);
+router.post('/api/v1/users/', users.create);
+
+//Route for file upload
+router.post('/api/v1/upload/',fileupload.create);
 
 // List of service routes for KeyNotes
 router.get('/api/v1/secure/keynotes', keynotes.getAll);

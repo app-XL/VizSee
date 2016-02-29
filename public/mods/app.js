@@ -11,6 +11,8 @@ angular.module('baseApp', ['keynotes', 'clients', 'userDirective', 'scheduler'])
 	});
 })
 
+angular.module('baseApp', ['keynotes', 'clients', 'userDirective','profile'])
+
 .config(['growlProvider', function(growlProvider) {
 	growlProvider.globalReversedOrder(true);
 	growlProvider.globalTimeToLive({success: 1000, error: 2000, warning: 3000, info: 4000});
