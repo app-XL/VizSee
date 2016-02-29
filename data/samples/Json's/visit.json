@@ -1,0 +1,382 @@
+[
+
+	{
+		"_id"						: "visit001",
+	
+		"title"					: "Zurich Business Visit",
+		"client" 					: 
+			{ 
+				"$ref"			: "client",
+				"$id"				: "client001",
+				"db"				: "mStack"
+			},
+			
+		"agenda"				: "Big Data Analytics",
+		"agm"					: 
+			{ 
+				"$ref"			: "user",
+				"$id"				: "user001",
+				"db"				: "mStack"
+			},
+			
+		"anchor"				: 
+			{
+				"$ref"			: "user",
+				"$id"				: "user002",
+				"db"				: "mStack"
+			},
+			
+		"schedule"			: 
+			[
+				{	
+					"startDate"		: ISODate("2016-02-26T02:46:37.467Z") ,
+					"endDate"			: ISODate("2016-02-26T09:46:37.467Z") ,
+					"location"			: "Hyderabad"
+				}
+			],
+			
+		"visitors"				: 
+			[
+				{
+					"visitor"			: 
+					{
+						"$ref"			: "user",
+						"$id"				: "user003",
+						"db"				: "mStack"
+					},
+					"influence"		: "others"
+				},
+				
+				{
+					"visitor"			: 
+					{
+						"$ref"			: "user",
+						"$id"				: "user005",
+						"db"				: "mStack"
+					},
+					"influence"		: "Decision Maker"
+				}
+			],
+			
+		"interest"				: 
+			{
+				"businessType"			: "new",	
+				"visitType"				: "operational",		
+				"objective"				: "To Know the Progress of CSC into Big Data Analytics "
+			},
+			
+		"status"					:  "confrimed",
+		"createBy"			: 
+			{
+				"$ref"			: "user",
+				"$id"				: "user004",
+				"db"				: "mStack"
+			}
+		
+	},
+	
+	
+	
+	
+	
+	
+	
+	{
+	"_id"						: "visit002",
+
+	"title"					: "Telenor Business Visit",
+	"client" 					: 
+		{ 
+			"$ref"			: "client",
+			"$id"				: "client002",
+			"db"				: "mStack"
+		},
+		
+	"agenda"				: "Migrating to DevOps",
+	"agm"					: 
+		{ 
+			"$ref"			: "user",
+			"$id"				: "user005",
+			"db"				: "mStack"
+		},
+		
+	"anchor"				: 
+		{
+			"$ref"			: "user",
+			"$id"				: "user006",
+			"db"				: "mStack"
+		},
+		
+	"schedule"			: 
+		[
+			{	
+				"startDate"		: ISODate("2016-02-22T04:46:37.467Z") ,
+				"endDate"			: ISODate("2016-02-28T05:46:37.467Z") ,
+				"location"			: "Bangalore"
+			}
+		],
+		
+	"visitors"				: 
+		[
+			{
+				"visitor"			: 
+				{
+					"$ref"			: "user",
+					"$id"				: "user007",
+					"db"				: "mStack"
+				},
+				"influence"		: "others"
+			}
+		],
+		
+	"interest"				: 
+		{
+			"businessType"			: "new",	
+			"visitType"				: "operational",		
+			"objective"				: "To Know the Progress of CSC into DevOps "
+		},
+		
+	"status"					:  "tentative",
+	"createBy"			: 
+		{
+			"$ref"			: "user",
+			"$id"				: "user008",
+			"db"				: "mStack"
+		}
+	
+},
+
+
+
+
+
+
+	
+	{
+	"_id"						: "visit003",
+
+	"title"					: "Motorola Visit",
+	"client" 					: 
+		{ 
+			"$ref"			: "client",
+			"$id"				: "client003",
+			"db"				: "mStack"
+		},
+		
+	"agenda"				: "Techology transformation",
+	"agm"					: 
+		{ 
+			"$ref"			: "user",
+			"$id"				: "user009",
+			"db"				: "mStack"
+		},
+		
+	"anchor"				: 
+		{
+			"$ref"			: "user",
+			"$id"				: "user010",
+			"db"				: "mStack"
+		},
+		
+	"schedule"			: 
+		[
+			{	
+				"startDate"		: ISODate("2016-02-26T06:46:37.467Z") ,
+				"endDate"			: ISODate("2016-02-28T07:46:37.467Z") ,
+				"location"			: "Chennai"
+			}
+		],
+		
+	"visitors"				: 
+		[
+			{
+				"visitor"			: 
+				{
+					"$ref"			: "user",
+					"$id"				: "user011",
+					"db"				: "mStack"
+				},
+				"influence"		: "Decision Maker"
+			}
+		],
+		
+	"interest"				: 
+		{
+			"businessType"			: "repeat",	
+			"visitType"				: "stratagic",		
+			"objective"				: "To Know the Progress of CSC into DevOps "
+		},
+		
+	"status"					:  "closed",
+	"createBy"			: 
+		{
+			"$ref"			: "user",
+			"$id"				: "user012",
+			"db"				: "mStack"
+		}
+	
+},
+	
+	
+	
+	
+	
+	
+
+
+	
+	{
+	"_id"						: "visit004",
+
+	"title"					: "Vodafone Visit",
+	"client" 					: 
+		{ 
+			"$ref"			: "client",
+			"$id"				: "client004",
+			"db"				: "mStack"
+		},
+		
+	"agenda"				: "Partnership",
+	"agm"					: 
+		{ 
+			"$ref"			: "user",
+			"$id"				: "user013",
+			"db"				: "mStack"
+		},
+		
+	"anchor"				: 
+		{
+			"$ref"			: "user",
+			"$id"				: "user014",
+			"db"				: "mStack"
+		},
+		
+	"schedule"			: 
+		[
+			{	
+				"startDate"		: ISODate("2016-02-14T06:46:37.467Z") ,
+				"endDate"			: ISODate("2016-02-24T07:46:37.467Z") ,
+				"location"			: "Noida"
+			},
+			
+			{	
+				"startDate"		: ISODate("2016-02-25T06:46:37.467Z") ,
+				"endDate"			: ISODate("2016-02-29T07:46:37.467Z") ,
+				"location"			: "Bnagalore"
+			}
+		],
+		
+	"visitors"				: 
+		[
+			{
+				"visitor"			: 
+				{
+					"$ref"			: "user",
+					"$id"				: "user015",
+					"db"				: "mStack"
+				},
+				"influence"		: "End User"
+			}
+		],
+		
+	"interest"				: 
+		{
+			"businessType"			: "repeat",	
+			"visitType"				: "operational",		
+			"objective"				: "Partnership "
+		},
+		
+	"status"					:  "closed",
+	"createBy"			: 
+		{
+			"$ref"			: "user",
+			"$id"				: "user016",
+			"db"				: "mStack"
+		}
+	
+},
+	
+	
+	
+	
+	
+	
+	
+	{
+	"_id"						: "visit005",
+
+	"title"					: "AOLVisit",
+	"client" 					: 
+		{ 
+			"$ref"			: "client",
+			"$id"				: "client005",
+			"db"				: "mStack"
+		},
+		
+	"agenda"				: "New Client",
+	"agm"					: 
+		{ 
+			"$ref"			: "user",
+			"$id"				: "user0017",
+			"db"				: "mStack"
+		},
+		
+	"anchor"				: 
+		{
+			"$ref"			: "user",
+			"$id"				: "user018",
+			"db"				: "mStack"
+		},
+		
+	"schedule"			: 
+		[
+			{	
+				"startDate"		: ISODate("2016-03-16T06:46:37.467Z") ,
+				"endDate"			: ISODate("2016-03-18T07:46:37.467Z") ,
+				"location"			: "Mumbai"
+			},
+			
+			{	
+				"startDate"		: ISODate("2016-03-19T06:46:37.467Z") ,
+				"endDate"			: ISODate("2016-03-22T07:46:37.467Z") ,
+				"location"			: "Hyderbad"
+			},
+			
+			{	
+				"startDate"		: ISODate("2016-03-23T06:46:37.467Z") ,
+				"endDate"			: ISODate("2016-03-26T07:46:37.467Z") ,
+				"location"			: "Noida"
+			}
+		],
+		
+	"visitors"				: 
+		[
+			{
+				"visitor"			: 
+				{
+					"$ref"			: "user",
+					"$id"				: "user019",
+					"db"				: "mStack"
+				},
+				"influence"		: "End User"
+			}
+		],
+		
+	"interest"				: 
+		{
+			"businessType"			: "new",	
+			"visitType"				: "stratagic",		
+			"objective"				: "To develop a web service "
+		},
+		
+	"status"					:  "confrimed",
+	"createBy"			: 
+		{
+			"$ref"			: "user",
+			"$id"				: "user020",
+			"db"				: "mStack"
+		}
+	
+}
+
+]
