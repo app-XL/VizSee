@@ -1,0 +1,402 @@
+[
+
+	{
+			"_id"								: "VisitSchedule001",
+			
+			"client" 							: 
+				{
+					"$ref"			: "client",
+					"$id"				: "client001",
+					"db"				: "cViz-Test"
+				},
+			"visit"								: 
+				{
+						"$ref"			: "visit",
+						"$id"				: "visit001",
+						"db"				: "cViz-Test"
+				},
+				
+			"scheduleDate"				: ISODate("2016-02-26T04:46:37.467Z") ,
+			"session"							: 
+				[
+					{
+						"startTime"					: ISODate("2016-02-26T04:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-26T05:46:37.467Z") ,
+						"title"							: "Introduction",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user001",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user002",
+							"db"				: "cViz-Test"
+						}
+					},
+					
+					{
+						"startTime"					: ISODate("2016-02-26T06:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-26T08:46:37.467Z") ,
+						"title"							: "Description",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user005",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user006",
+							"db"				: "cViz-Test"
+						}
+					}
+					
+				],
+			"invitees"						: 
+				[
+					{ 
+						"$ref"			: "user",
+						"$id"				: "user003",
+						"db"				: "cViz-Test"
+					},
+					
+					{ 
+						"$ref"			: "user",
+						"$id"				: "user004",
+						"db"				: "cViz-Test"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	{
+			"_id"								: "VisitSchedule002",
+			
+			"client" 							: 
+				{
+					"$ref"			: "client",
+					"$id"				: "client002",
+					"db"				: "cViz-Test"
+				},
+			"visit"								: 
+				{
+						"$ref"			: "visit",
+						"$id"				: "visit002",
+						"db"				: "cViz-Test"
+				},
+				
+			"scheduleDate"				: ISODate("2016-02-22T04:46:37.467Z") ,
+			"session"							: 
+				[
+					{
+						"startTime"					: ISODate("2016-02-23T02:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-23T04:46:37.467Z") ,
+						"title"							: "Introduction",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user007",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user008",
+							"db"				: "cViz-Test"
+						}
+					},
+					
+					{
+						"startTime"					: ISODate("2016-02-25T04:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-25T04:46:37.467Z") ,
+						"title"							: "Description",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user009",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user010",
+							"db"				: "cViz-Test"
+						}
+					},
+					
+					{
+						"startTime"					: ISODate("2016-02-26T01:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-26T03:46:37.467Z") ,
+						"title"							: "summary",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user011",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user012",
+							"db"				: "cViz-Test"
+						}
+					}
+				],
+				
+			"invitees"						: 
+				[
+					{ 
+						"$ref"			: "user",
+						"$id"				: "user013",
+						"db"				: "cViz-Test"
+					},
+					
+					{ 
+						"$ref"			: "user",
+						"$id"				: "user014",
+						"db"				: "cViz-Test"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		{
+			"_id"								: "VisitSchedule003",
+			
+			"client" 							: 
+				{
+					"$ref"			: "client",
+					"$id"				: "client003",
+					"db"				: "cViz-Test"
+				},
+			"visit"								: 
+				{
+						"$ref"			: "visit",
+						"$id"				: "visit003",
+						"db"				: "cViz-Test"
+				},
+				
+			"scheduleDate"				: ISODate("2016-02-26T04:46:37.467Z") ,
+			"session"							: 
+				[	
+					{
+						"startTime"					: ISODate("2016-02-26T10:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-26T12:46:37.467Z") ,
+						"title"							: "Introduction",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user015",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user016",
+							"db"				: "cViz-Test"
+						}
+					},
+					
+					{
+						"startTime"					: ISODate("2016-02-27T10:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-27T12:46:37.467Z") ,
+						"title"							: "Business Meetings",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user017",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user018",
+							"db"				: "cViz-Test"
+						}
+					},
+					
+					{
+						"startTime"					: ISODate("2016-02-28T10:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-28T12:46:37.467Z") ,
+						"title"							: "Summary",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user019",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user020",
+							"db"				: "cViz-Test"
+						}
+					}
+				],
+				
+			"invitees"						: 
+				[
+					{ 
+						"$ref"			: "user",
+						"$id"				: "user001",
+						"db"				: "cViz-Test"
+					},
+					
+					{ 
+						"$ref"			: "user",
+						"$id"				: "user002",
+						"db"				: "cViz-Test"
+					},
+					
+					{ 
+						"$ref"			: "user",
+						"$id"				: "user003",
+						"db"				: "cViz-Test"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		{
+			"_id"								: "VisitSchedule004",
+			
+			"client" 							: 
+				{
+					"$ref"			: "client",
+					"$id"				: "client004",
+					"db"				: "cViz-Test"
+				},
+			"visit"								: 
+				{
+						"$ref"			: "visit",
+						"$id"				: "visit004",
+						"db"				: "cViz-Test"
+				},
+				
+			"scheduleDate"				: ISODate("2016-02-14T12:46:37.467Z") ,
+			"session"							: 
+				[
+					{
+						"startTime"					: ISODate("2016-02-14T12:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-14T02:46:37.467Z") ,
+						"title"							: "Introduction",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user004",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user005",
+							"db"				: "cViz-Test"
+						}
+					},
+					
+					{
+						"startTime"					: ISODate("2016-02-16T12:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-16T02:46:37.467Z") ,
+						"title"							: "Campus Visit",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user006",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user007",
+							"db"				: "cViz-Test"
+						}
+					},
+					
+					{
+						"startTime"					: ISODate("2016-02-18T12:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-18T02:46:37.467Z") ,
+						"title"							: "Business Meet",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user008",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user009",
+							"db"				: "cViz-Test"
+						}
+					},
+					
+					{
+						"startTime"					: ISODate("2016-02-22T12:46:37.467Z") ,
+						"endTime"					: ISODate("2016-02-22T02:46:37.467Z") ,
+						"title"							: "Summary",
+						"speaker"					: 
+							{ 
+								"$ref"			: "user",
+								"$id"				: "user010",
+								"db"				: "cViz-Test"
+							},
+						"supporter"			: 
+						{
+							"$ref"			: "user",
+							"$id"				: "user011",
+							"db"				: "cViz-Test"
+						}
+					}
+				],
+				
+			"invitees"						: 
+				[
+					{ 
+						"$ref"			: "user",
+						"$id"				: "user005",
+						"db"				: "cViz-Test"
+					},
+					
+					{ 
+						"$ref"			: "user",
+						"$id"				: "user007",
+						"db"				: "cViz-Test"
+					}
+				]
+	}
+	
+	
+	
+	
+	
+	
+]

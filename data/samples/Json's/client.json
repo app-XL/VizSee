@@ -1,0 +1,60 @@
+[
+	{
+		"_id"					: "client001",
+		
+		"name"				: "Zurich",
+		"vertical"			: "Finance",
+		"profile"			: "Zurich is a leading multi-line insurance provider with a global network of subsidiaries and offices.  With about 55,000 employees, they deliver a wide range of general insurance and life insurance products and services for individuals, small businesses, and mid-sized and large companies, including multinational corporations, in more than 170 countries."
+
+	},
+	
+	
+	
+	{
+		"_id"					: "client002",
+		
+		"name"				: "Telenor",
+		"vertical"			: "Telecommunications",
+		"profile"			: "Telenor Group is a Norwegian multinational telecommunications company headquartered at Fornebu in Bærum, close to Oslo. It is one of the world's largest mobile telecommunications companies with operations in Scandinavia, Eastern Europe and Asia. "
+
+	},
+	
+	
+	
+	
+		
+	
+	{
+		"_id"					: "client003",
+		
+		"name"				: "Motorola",
+		"vertical"			: "Telecommunications",
+		"profile"			: "Motorola, Inc. was an American multinational telecommunications company based in Schaumburg, Illinois, United States. After having lost $4.3 billion from 2007 to 2009, the company was divided into two independent public companies, Motorola Mobility and Motorola Solutions on January 4, 2011"
+
+	},
+	
+	
+	
+	
+		{
+		"_id"					: "client004",
+		
+		"name"				: "Vodafone",
+		"vertical"			: "Telecommunications",
+		"profile"			: "Vodafone Group plc is a British multinational telecommunications company headquartered in London and with its registered office in Newbury, Berkshire. It is the world's second largest mobile telecommunications company measured by both subscribers and 2013 revenues (behind China Mobile), and had 434 million subscribers as of 31 March 2014."
+
+	},
+	
+	
+	
+		{
+		"_id"					: "client005",
+		
+		"name"				: "AOL ",
+		"vertical"			: "Media",
+		"profile"			: "AOL Inc. (previously known as America Online, written as AOL and styled as Aol.) is an American global mass media corporation based in New Jersey that develops, grows, and invests in brands and web sites such as The Huffington Post, TechCrunch and Engadget.."
+
+	}
+	
+	
+]

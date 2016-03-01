@@ -1,0 +1,896 @@
+[
+
+	{
+				"_id"				: "user001",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Shiva",
+					"middle"	:  "Kumar",
+					"last"		:  "Goud",
+					"suffix"		:  ""
+				},
+			"email"				: "sgoud@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\shiva1.jpg",
+			"summary"		: "Software Engineer",
+			"jobTitle"			: "Sr. Principal",
+			"organization"	: "CSC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=652752",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "864 643-0563",
+						"type"			: "mobile"
+					}
+				]
+	},
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{
+				"_id"				: "user002",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Suman",
+					"middle"	:  "Kumar",
+					"last"		:  "Pediripati",
+					"suffix"		:  ""
+				},
+			"email"				: "spediripatti@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\spediripatti1.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Chief Executive Officer",
+			"organization"	: "CSC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/sumangoud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=635979",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9167629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+
+	
+	
+	
+	
+	
+	
+	
+	{
+				"_id"				: "user003",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Santhosh",
+					"middle"	:  "Kumar",
+					"last"		:  "Pediri",
+					"suffix"		:  ""
+				},
+			"email"				: "spediri@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\spediri.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Chief Executive Officer",
+			"organization"	: "CSC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/sumanperiri15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=667979",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9354629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+		
+		
+		
+	{
+				"_id"				: "user004",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Bharath",
+					"middle"	:  "Kumar",
+					"last"		:  "Pedda",
+					"suffix"		:  ""
+				},
+			"email"				: "bpaddha@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\bpedda1.jpg",
+			"summary"		: " Network Engineer",
+			"jobTitle"			: "Associate Professional",
+			"organization"	: "CSC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/bpedda15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=635239",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "8867629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user005",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Bhagyeshwari",
+					"middle"	:  "Reddy",
+					"last"		:  "Kurapati",
+					"suffix"		:  ""
+				},
+			"email"				: "kbhagya@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\kbhgya1.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Senior Executive",
+			"organization"	: "CSC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/kbhgya115?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=635699",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "5783629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user006",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Aman",
+					"middle"	:  "Kumar",
+					"last"		:  "Aifidom",
+					"suffix"		:  ""
+				},
+			"email"				: "usdusfdyuf@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\dgdsfsdfsf.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Junior Executive Officer",
+			"organization"	: "CSC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/sgoud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=636779",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9162849823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user007",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Rajesh",
+					"middle"	:  "Kumar",
+					"last"		:  "Gundala",
+					"suffix"		:  ""
+				},
+			"email"				: "rgundala@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\rgundala.jpg",
+			"summary"		: "Network Engineer",
+			"jobTitle"			: "Proffesional",
+			"organization"	: "CSC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/rajeshgoud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=632379",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "8121629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user008",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Ashok",
+					"middle"	:  "Kumar",
+					"last"		:  "Yapa",
+					"suffix"		:  ""
+				},
+			"email"				: "ayapa@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\spediripatti1.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Director CIO",
+			"organization"	: "CSC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/sashokoud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=115979",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9700629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user009",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Sigamani",
+					"middle"	:  "Kumar",
+					"last"		:  "Fsfoijds",
+					"suffix"		:  ""
+				},
+			"email"				: "sdiufsiufis@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\sosjfoisjfoi1.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Chief Technology Officer",
+			"organization"	: "CSC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/ssdgusgfd15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=637879",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9167673723",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user010",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Devender",
+					"middle"	:  "Kumar",
+					"last"		:  "Kamutam",
+					"suffix"		:  ""
+				},
+			"email"				: "dkammutami@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\spediripatti1.jpg",
+			"summary"		: " President",
+			"jobTitle"			: "Chairman",
+			"organization"	: "CSC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/ssaydfyadud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=638879",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9768624223",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		{
+				"_id"				: "user011",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Shiva",
+					"middle"	:  "Kumar",
+					"last"		:  "Goud",
+					"suffix"		:  ""
+				},
+			"email"				: "sgoud@motorola.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\shiva1.jpg",
+			"summary"		: "Software Engineer",
+			"jobTitle"			: "Sr. Principal",
+			"organization"	: "Motorola",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://linkedin/myperks/aboutuser/view?user.id=652752",
+						"network"		: "linkedin"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "864 643-0563",
+						"type"			: "mobile"
+					}
+				]
+	},
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{
+				"_id"				: "user012",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Suman",
+					"middle"	:  "Kumar",
+					"last"		:  "Pediripati",
+					"suffix"		:  ""
+				},
+			"email"				: "spediripatti@Vodafone.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\spediripatti1.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Chief Executive Officer",
+			"organization"	: "Vodafone",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/sumangoud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://plus.google/profile/myperks/aboutuser/view?user.id=635979",
+						"network"		: "google"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9167629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+
+	
+	
+	
+	
+	
+	
+	
+	{
+				"_id"				: "user013",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Santhosh",
+					"middle"	:  "Kumar",
+					"last"		:  "Pediri",
+					"suffix"		:  ""
+				},
+			"email"				: "spediri@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\spediri.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Chief Executive Officer",
+			"organization"	: "CSC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/sumanperiri15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://plus.google/profile/myperks/aboutuser/view?user.id=667979",
+						"network"		: "Google"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9354629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+		
+		
+		
+	{
+				"_id"				: "user014",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Bharath",
+					"middle"	:  "Kumar",
+					"last"		:  "Pedda",
+					"suffix"		:  ""
+				},
+			"email"				: "bpaddha@hdfc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\bpedda1.jpg",
+			"summary"		: " Network Engineer",
+			"jobTitle"			: "Associate Professional",
+			"organization"	: "HDFC",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/bpedda15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=635239",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "8867629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user015",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Bhagyeshwari",
+					"middle"	:  "Reddy",
+					"last"		:  "Kurapati",
+					"suffix"		:  ""
+				},
+			"email"				: "kbhagya@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\kbhgya1.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Senior Executive",
+			"organization"	: "Royal Scotland Bank",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/kbhgya115?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=635699",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "5783629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user016",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Aman",
+					"middle"	:  "Kumar",
+					"last"		:  "Aifidom",
+					"suffix"		:  ""
+				},
+			"email"				: "usdusfdyuf@swiss.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\dgdsfsdfsf.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Junior Executive Officer",
+			"organization"	: "swissbank",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/sgoud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=636779",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9162849823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user017",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Rajesh",
+					"middle"	:  "Kumar",
+					"last"		:  "Gundala",
+					"suffix"		:  ""
+				},
+			"email"				: "rgundala@walmart.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\rgundala.jpg",
+			"summary"		: "Network Engineer",
+			"jobTitle"			: "Proffesional",
+			"organization"	: "Walmart",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/rajeshgoud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=632379",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "8121629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user018",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Ashok",
+					"middle"	:  "Kumar",
+					"last"		:  "Yapa",
+					"suffix"		:  ""
+				},
+			"email"				: "ayapa@toyato.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\spediripatti1.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Director CIO",
+			"organization"	: "Toyata",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/sashokoud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=115979",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9700629823",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user019",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Sigamani",
+					"middle"	:  "Kumar",
+					"last"		:  "Fsfoijds",
+					"suffix"		:  ""
+				},
+			"email"				: "sdiufsiufis@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\sosjfoisjfoi1.jpg",
+			"summary"		: " HR",
+			"jobTitle"			: "Chief Technology Officer",
+			"organization"	: "Telenor",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/ssdgusgfd15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=637879",
+						"network"		: "CSC My Perks"
+					}
+				],
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9167673723",
+						"type"			: "mobile"
+					}
+				]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	{
+				"_id"				: "user020",
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Devender",
+					"middle"	:  "Kumar",
+					"last"		:  "Kamutam",
+					"suffix"		:  ""
+				},
+			"email"				: "dkammutami@csc.com",
+			"avatar"			: "\\cViz\\public\\assets\\profilePics\\spediripatti1.jpg",
+			"summary"		: " President",
+			"jobTitle"			: "Chairman",
+			"organization"	: "Zurich",	
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/ssaydfyadud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=638879",
+						"network"		: "CSC My Perks"
+					}
+				],
+				
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9768624223",
+						"type"			: "mobile"
+					}
+				]
+	}
+	
+	
+	
+	
+	
+]
