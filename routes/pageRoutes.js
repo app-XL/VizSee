@@ -22,6 +22,6 @@ module.exports = function(app, passport) {
     // route to profile
     app.get('/profile', auth.isLoggedIn, function(req, res) {
         res.locals.pageTitle = "profile";
-        res.render('misc/profile.ejs', {});
+        res.render('profile.ejs', {user : req.user});
     });
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('profile')
-  .config(['$routeProvider', function ($routeProvider) {
+  .config(['$routeProvider', function ($routeProvider,req, res) {
     $routeProvider
       
       .when('/p/', {

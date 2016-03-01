@@ -48,7 +48,7 @@ module.exports = function(app, passport) {
 	//ToDo:: Tighten security for public assets
 	app.use('/public', express.static('public')); // folder to render public assets. Can be improved for security tightening
 	app.use('/app', express.static('public/app'));
-
+	app.use('/profile', express.static('profile'));//folder to render user profile assets.
 	// If no route is matched by now, it must be a 404
 	app.use(function(req, res, next) {
 	  var err = new Error('Not Found');

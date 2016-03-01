@@ -67,7 +67,7 @@ function create(userParam) {
     // validation
     model.findOne(
         { email: userParam.email },
-        { handle: userParam.handle },
+
         function (err, user) {
             if (err) deferred.reject(err);
 

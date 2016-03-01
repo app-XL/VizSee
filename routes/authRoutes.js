@@ -18,8 +18,8 @@ module.exports = function(app, passport) {
     });
 
     // Profile SECTION =========================
-    app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
+    app.get('/profileold', isLoggedIn, function(req, res) {
+        res.render('profileold.ejs', {
             user : req.user
         });
     });

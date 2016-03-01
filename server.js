@@ -53,7 +53,7 @@ app.use(multer({
  // dest: './uploads/',
   dest: './profile/avatar/',
  rename:function(fieldname,filename){
-    return fieldname + '_' + filename + '_' + Date.now();
+    return Date.now() + '.jpg';
   },
   onFileUploadComplete: function(file) {
   console.log(file.fieldname + ' uploaded to the ' + file.path);

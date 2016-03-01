@@ -71,13 +71,15 @@
         <div class="container" style="width:300px;!important;">
 
             <div class="pull-left">
-              <img class="avatar" height="80" width="80" src="/public/assets/images/avatar.jpg" />
+              <img class="avatar" height="80" width="80" src="/<%= locals.user.avatar %>" />
             </div>
             <div class="pull-right">
             <br>
               <div class="text-highlight"><%= locals.user.name.first %> <%= locals.user.name.last %></div>
               <div class="text-xsmall">Last Login: <%= locals.user.stats.dateLastLogin %></div>
               <div class="link"><a href="/profile">Profile</a></div>
+
+              <div class="link"><a href="profileold">Profile</a></div>
             </div>
 
           <!-- profile bottom area
