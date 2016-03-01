@@ -1,44 +1,79 @@
 [
 
 	{
+<<<<<<< HEAD
 		"_id"						: ObjectId("A01234567892345678900001"),
 
 		"title"					: "Zurich Business Visit",
 		"client" 					:
 			{
+=======
+		"_id"						: "visit001",
+	
+		"title"					: "Zurich Business Visit",
+		"client" 					: 
+			{ 
+>>>>>>> Issue No 12 Profile module modified
 				"$ref"			: "client",
 				"$id"				: "client001",
 				"db"				: "cViz-Test"
 			},
+<<<<<<< HEAD
 
 		"agenda"				: "Big Data Analytics",
 		"agm"					:
 			{
+=======
+			
+		"agenda"				: "Big Data Analytics",
+		"agm"					: 
+			{ 
+>>>>>>> Issue No 12 Profile module modified
 				"$ref"			: "user",
 				"$id"				: "user001",
 				"db"				: "cViz-Test"
 			},
+<<<<<<< HEAD
 
 		"anchor"				:
+=======
+			
+		"anchor"				: 
+>>>>>>> Issue No 12 Profile module modified
 			{
 				"$ref"			: "user",
 				"$id"				: "user002",
 				"db"				: "cViz-Test"
 			},
+<<<<<<< HEAD
 
 		"schedule"			:
 			[
 				{
+=======
+			
+		"schedule"			: 
+			[
+				{	
+>>>>>>> Issue No 12 Profile module modified
 					"startDate"		: ISODate("2016-02-26T02:46:37.467Z") ,
 					"endDate"			: ISODate("2016-02-26T09:46:37.467Z") ,
 					"location"			: "Hyderabad"
 				}
 			],
+<<<<<<< HEAD
 
 		"visitors"				:
 			[
 				{
 					"visitor"			:
+=======
+			
+		"visitors"				: 
+			[
+				{
+					"visitor"			: 
+>>>>>>> Issue No 12 Profile module modified
 					{
 						"$ref"			: "user",
 						"$id"				: "user003",
@@ -46,9 +81,15 @@
 					},
 					"influence"		: "others"
 				},
+<<<<<<< HEAD
 
 				{
 					"visitor"			:
+=======
+				
+				{
+					"visitor"			: 
+>>>>>>> Issue No 12 Profile module modified
 					{
 						"$ref"			: "user",
 						"$id"				: "user005",
@@ -57,6 +98,7 @@
 					"influence"		: "Decision Maker"
 				}
 			],
+<<<<<<< HEAD
 
 		"interest"				:
 			{
@@ -67,11 +109,24 @@
 
 		"status"					:  "confrimed",
 		"createBy"			:
+=======
+			
+		"interest"				: 
+			{
+				"businessType"			: "new",	
+				"visitType"				: "operational",		
+				"objective"				: "To Know the Progress of CSC into Big Data Analytics "
+			},
+			
+		"status"					:  "confrimed",
+		"createBy"			: 
+>>>>>>> Issue No 12 Profile module modified
 			{
 				"$ref"			: "user",
 				"$id"				: "user004",
 				"db"				: "cViz-Test"
 			}
+<<<<<<< HEAD
 
 	},
 
@@ -87,39 +142,83 @@
 	"title"					: "Telenor Business Visit",
 	"client" 					:
 		{
+=======
+		
+	},
+	
+	
+	
+	
+	
+	
+	
+	{
+	"_id"						: "visit002",
+
+	"title"					: "Telenor Business Visit",
+	"client" 					: 
+		{ 
+>>>>>>> Issue No 12 Profile module modified
 			"$ref"			: "client",
 			"$id"				: "client002",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"agenda"				: "Migrating to DevOps",
 	"agm"					:
 		{
+=======
+		
+	"agenda"				: "Migrating to DevOps",
+	"agm"					: 
+		{ 
+>>>>>>> Issue No 12 Profile module modified
 			"$ref"			: "user",
 			"$id"				: "user005",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"anchor"				:
+=======
+		
+	"anchor"				: 
+>>>>>>> Issue No 12 Profile module modified
 		{
 			"$ref"			: "user",
 			"$id"				: "user006",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"schedule"			:
 		[
 			{
+=======
+		
+	"schedule"			: 
+		[
+			{	
+>>>>>>> Issue No 12 Profile module modified
 				"startDate"		: ISODate("2016-02-22T04:46:37.467Z") ,
 				"endDate"			: ISODate("2016-02-28T05:46:37.467Z") ,
 				"location"			: "Bangalore"
 			}
 		],
+<<<<<<< HEAD
 
 	"visitors"				:
 		[
 			{
 				"visitor"			:
+=======
+		
+	"visitors"				: 
+		[
+			{
+				"visitor"			: 
+>>>>>>> Issue No 12 Profile module modified
 				{
 					"$ref"			: "user",
 					"$id"				: "user007",
@@ -128,6 +227,7 @@
 				"influence"		: "others"
 			}
 		],
+<<<<<<< HEAD
 
 	"interest"				:
 		{
@@ -138,12 +238,28 @@
 
 	"status"					:  "tentative",
 	"createBy"			:
+=======
+		
+	"interest"				: 
+		{
+			"businessType"			: "new",	
+			"visitType"				: "operational",		
+			"objective"				: "To Know the Progress of CSC into DevOps "
+		},
+		
+	"status"					:  "tentative",
+	"createBy"			: 
+>>>>>>> Issue No 12 Profile module modified
 		{
 			"$ref"			: "user",
 			"$id"				: "user008",
 			"db"				: "cViz-Test"
 		}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> Issue No 12 Profile module modified
 },
 
 
@@ -151,6 +267,7 @@
 
 
 
+<<<<<<< HEAD
 
 	{
 	"_id"						: ObjectId("A01234567892345678900003"),
@@ -158,39 +275,75 @@
 	"title"					: "Motorola Visit",
 	"client" 					:
 		{
+=======
+	
+	{
+	"_id"						: "visit003",
+
+	"title"					: "Motorola Visit",
+	"client" 					: 
+		{ 
+>>>>>>> Issue No 12 Profile module modified
 			"$ref"			: "client",
 			"$id"				: "client003",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"agenda"				: "Techology transformation",
 	"agm"					:
 		{
+=======
+		
+	"agenda"				: "Techology transformation",
+	"agm"					: 
+		{ 
+>>>>>>> Issue No 12 Profile module modified
 			"$ref"			: "user",
 			"$id"				: "user009",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"anchor"				:
+=======
+		
+	"anchor"				: 
+>>>>>>> Issue No 12 Profile module modified
 		{
 			"$ref"			: "user",
 			"$id"				: "user010",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"schedule"			:
 		[
 			{
+=======
+		
+	"schedule"			: 
+		[
+			{	
+>>>>>>> Issue No 12 Profile module modified
 				"startDate"		: ISODate("2016-02-26T06:46:37.467Z") ,
 				"endDate"			: ISODate("2016-02-28T07:46:37.467Z") ,
 				"location"			: "Chennai"
 			}
 		],
+<<<<<<< HEAD
 
 	"visitors"				:
 		[
 			{
 				"visitor"			:
+=======
+		
+	"visitors"				: 
+		[
+			{
+				"visitor"			: 
+>>>>>>> Issue No 12 Profile module modified
 				{
 					"$ref"			: "user",
 					"$id"				: "user011",
@@ -199,6 +352,7 @@
 				"influence"		: "Decision Maker"
 			}
 		],
+<<<<<<< HEAD
 
 	"interest"				:
 		{
@@ -209,11 +363,24 @@
 
 	"status"					:  "closed",
 	"createBy"			:
+=======
+		
+	"interest"				: 
+		{
+			"businessType"			: "repeat",	
+			"visitType"				: "stratagic",		
+			"objective"				: "To Know the Progress of CSC into DevOps "
+		},
+		
+	"status"					:  "closed",
+	"createBy"			: 
+>>>>>>> Issue No 12 Profile module modified
 		{
 			"$ref"			: "user",
 			"$id"				: "user012",
 			"db"				: "cViz-Test"
 		}
+<<<<<<< HEAD
 
 },
 
@@ -231,45 +398,96 @@
 	"title"					: "Vodafone Visit",
 	"client" 					:
 		{
+=======
+	
+},
+	
+	
+	
+	
+	
+	
+
+
+	
+	{
+	"_id"						: "visit004",
+
+	"title"					: "Vodafone Visit",
+	"client" 					: 
+		{ 
+>>>>>>> Issue No 12 Profile module modified
 			"$ref"			: "client",
 			"$id"				: "client004",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"agenda"				: "Partnership",
 	"agm"					:
 		{
+=======
+		
+	"agenda"				: "Partnership",
+	"agm"					: 
+		{ 
+>>>>>>> Issue No 12 Profile module modified
 			"$ref"			: "user",
 			"$id"				: "user013",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"anchor"				:
+=======
+		
+	"anchor"				: 
+>>>>>>> Issue No 12 Profile module modified
 		{
 			"$ref"			: "user",
 			"$id"				: "user014",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"schedule"			:
 		[
 			{
+=======
+		
+	"schedule"			: 
+		[
+			{	
+>>>>>>> Issue No 12 Profile module modified
 				"startDate"		: ISODate("2016-02-14T06:46:37.467Z") ,
 				"endDate"			: ISODate("2016-02-24T07:46:37.467Z") ,
 				"location"			: "Noida"
 			},
+<<<<<<< HEAD
 
 			{
+=======
+			
+			{	
+>>>>>>> Issue No 12 Profile module modified
 				"startDate"		: ISODate("2016-02-25T06:46:37.467Z") ,
 				"endDate"			: ISODate("2016-02-29T07:46:37.467Z") ,
 				"location"			: "Bnagalore"
 			}
 		],
+<<<<<<< HEAD
 
 	"visitors"				:
 		[
 			{
 				"visitor"			:
+=======
+		
+	"visitors"				: 
+		[
+			{
+				"visitor"			: 
+>>>>>>> Issue No 12 Profile module modified
 				{
 					"$ref"			: "user",
 					"$id"				: "user015",
@@ -278,6 +496,7 @@
 				"influence"		: "End User"
 			}
 		],
+<<<<<<< HEAD
 
 	"interest"				:
 		{
@@ -288,11 +507,24 @@
 
 	"status"					:  "closed",
 	"createBy"			:
+=======
+		
+	"interest"				: 
+		{
+			"businessType"			: "repeat",	
+			"visitType"				: "operational",		
+			"objective"				: "Partnership "
+		},
+		
+	"status"					:  "closed",
+	"createBy"			: 
+>>>>>>> Issue No 12 Profile module modified
 		{
 			"$ref"			: "user",
 			"$id"				: "user016",
 			"db"				: "cViz-Test"
 		}
+<<<<<<< HEAD
 
 },
 
@@ -308,51 +540,105 @@
 	"title"					: "AOLVisit",
 	"client" 					:
 		{
+=======
+	
+},
+	
+	
+	
+	
+	
+	
+	
+	{
+	"_id"						: "visit005",
+
+	"title"					: "AOLVisit",
+	"client" 					: 
+		{ 
+>>>>>>> Issue No 12 Profile module modified
 			"$ref"			: "client",
 			"$id"				: "client005",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"agenda"				: "New Client",
 	"agm"					:
 		{
+=======
+		
+	"agenda"				: "New Client",
+	"agm"					: 
+		{ 
+>>>>>>> Issue No 12 Profile module modified
 			"$ref"			: "user",
 			"$id"				: "user0017",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"anchor"				:
+=======
+		
+	"anchor"				: 
+>>>>>>> Issue No 12 Profile module modified
 		{
 			"$ref"			: "user",
 			"$id"				: "user018",
 			"db"				: "cViz-Test"
 		},
+<<<<<<< HEAD
 
 	"schedule"			:
 		[
 			{
+=======
+		
+	"schedule"			: 
+		[
+			{	
+>>>>>>> Issue No 12 Profile module modified
 				"startDate"		: ISODate("2016-03-16T06:46:37.467Z") ,
 				"endDate"			: ISODate("2016-03-18T07:46:37.467Z") ,
 				"location"			: "Mumbai"
 			},
+<<<<<<< HEAD
 
 			{
+=======
+			
+			{	
+>>>>>>> Issue No 12 Profile module modified
 				"startDate"		: ISODate("2016-03-19T06:46:37.467Z") ,
 				"endDate"			: ISODate("2016-03-22T07:46:37.467Z") ,
 				"location"			: "Hyderbad"
 			},
+<<<<<<< HEAD
 
 			{
+=======
+			
+			{	
+>>>>>>> Issue No 12 Profile module modified
 				"startDate"		: ISODate("2016-03-23T06:46:37.467Z") ,
 				"endDate"			: ISODate("2016-03-26T07:46:37.467Z") ,
 				"location"			: "Noida"
 			}
 		],
+<<<<<<< HEAD
 
 	"visitors"				:
 		[
 			{
 				"visitor"			:
+=======
+		
+	"visitors"				: 
+		[
+			{
+				"visitor"			: 
+>>>>>>> Issue No 12 Profile module modified
 				{
 					"$ref"			: "user",
 					"$id"				: "user019",
@@ -361,6 +647,7 @@
 				"influence"		: "End User"
 			}
 		],
+<<<<<<< HEAD
 
 	"interest"				:
 		{
@@ -371,12 +658,31 @@
 
 	"status"					:  "confrimed",
 	"createBy"			:
+=======
+		
+	"interest"				: 
+		{
+			"businessType"			: "new",	
+			"visitType"				: "stratagic",		
+			"objective"				: "To develop a web service "
+		},
+		
+	"status"					:  "confrimed",
+	"createBy"			: 
+>>>>>>> Issue No 12 Profile module modified
 		{
 			"$ref"			: "user",
 			"$id"				: "user020",
 			"db"				: "cViz-Test"
 		}
+<<<<<<< HEAD
 
 }
 
 ]
+=======
+	
+}
+
+]
+>>>>>>> Issue No 12 Profile module modified
