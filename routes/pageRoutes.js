@@ -1,6 +1,7 @@
 var auth = require('./auth.js');
 
-module.exports = function(app, passport) {
+module.exports = function(app, passport) 
+{
 
     // route to keynotes
     app.get('/keynotes', auth.isLoggedIn, function(req, res) {
@@ -18,6 +19,7 @@ module.exports = function(app, passport) {
     app.get('/scheduler', auth.isLoggedIn, function(req, res) {
         res.locals.pageTitle = "Scheduler";
         res.render('misc/scheduler.ejs', {});
+    });
 
     // route to profile
     app.get('/profile', auth.isLoggedIn, function(req, res) {

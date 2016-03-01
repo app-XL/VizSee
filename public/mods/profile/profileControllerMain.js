@@ -19,9 +19,10 @@ profileApp.service('multipartForm', ['$http', function($http){
 
 profileApp.controller('profileControllerMain', ['$scope', '$http', '$routeParams', '$location', 'growl', '$rootScope', 'Upload', '$timeout','ngDialog',
 	function($scope, $http, $routeParams, $location, growl, $rootScope, Upload, $timeout, ngDialog,req) {	
-	  	//acts as get data by id
+	  	
+      //acts as get user profile by id
   		var refresh = function(id) {
-  	  id="56d4349456dc4ddc32dac0f9";
+  	  id=$rootScope.user._id;
   		$http.get('/api/v1/users/'+id).success(function(response) {
   		$scope.user = response;  
       $scope.email = $scope.user.email;
@@ -55,13 +56,11 @@ profileApp.controller('profileControllerMain', ['$scope', '$http', '$routeParams
                  console.log(response1);
                 });
            });
-        
-        //$scope.profile.avatar=data;
-        //console.log($scope.profile.avatar);
    		};
 
+      //edit the profile picture of user by taking dataurl and user id.
    		$scope.editpicture = function (dataUrl,id) {
-   			id="56d4349456dc4ddc32dac0f9"
+   			  id=$rootScope.user._id;
         	console.log('edit picture function');
         	Upload.upload({
             	url: '/api/v1/upload/',
@@ -80,11 +79,12 @@ profileApp.controller('profileControllerMain', ['$scope', '$http', '$routeParams
                  window.location.reload();
                 });
            });
-           ngDialog.closeAll();        
+          ngDialog.closeAll();        
    		};	
       
+      //edit the profile data user by taking user id.
       $scope.editprofile = function (id) {
-        id="56d4349456dc4ddc32dac0f9"
+          id=$rootScope.user._id;
           console.log('edit profile function');
           console.log($scope.user);
           $http.put('/api/v1/users/'+ id, $scope.user).success(function(response) {
@@ -92,14 +92,6 @@ profileApp.controller('profileControllerMain', ['$scope', '$http', '$routeParams
                  window.location.reload();
           });
       };  
-      
-    	//sending the croppeddatauri from ngDialog to profilehtml page
-    	$scope.send = function (dataUrl) {     
-      	  	console.log('send function')      
-       	 	$rootScope.cropdataurl = dataUrl;
-       		console.log($rootScope.cropdataurl); 
-      		ngDialog.closeAll();       
-    	};
 
     	$scope.cancel = function () {       
        		ngDialog.closeAll();
