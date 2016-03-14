@@ -1,0 +1,123 @@
+<link rel="stylesheet" href="/public/assets/styles/profile-pic.css" />
+
+<!--<input type="text" name="user" id="user" placeholder="User"  
+ ng-model="input" ng-blur="getUser()" 
+ ng-change="userEmail=input;userId=input; " />
+-->
+
+<ANY ng-switch="showFlag">
+  <ANY ng-switch-when="user">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+
+             <div class="row">
+
+                <div class="col-md-4 text-center">
+
+                  <img ng-src="{{userModel.avatar}}" class="img-rectangle avatar-original pic"
+                  style="background-size:cover;"/>
+                  <div>
+                    <md-button class="md-primary md-raised" 
+                    ng-click="showButton(userModel,$event)" flex="100" flex-gt-md="auto">
+                    change picture
+                  </md-button>
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <form name="profileForm">
+
+                  <md-input-container class="md-block">
+                  <label>First Name</label>
+                  <input md-maxlength="30" minlength="5" required name="first" 
+                  ng-model="userModel.name.first">
+                  <div ng-messages="profileForm.first.$error" ng-show="profileForm.first.$touched || !profileForm.first.$pristine">
+                   <div class="messagenotify">
+                    <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                    <div ng-message="md-maxlength">The first name has to be less than 30 characters long.</div>
+                    <div ng-message="minlength">the first name should contain minimum 5characters</div></div></div>
+                  </md-input-container>
+
+                  <md-input-container class="md-block">
+                  <label>Middle Name</label>
+                  <input md-maxlength="30" minlength="5" required name="middle" 
+                  ng-model="userModel.name.middle">
+                  <div ng-messages="profileForm.middle.$error" ng-show="profileForm.middle.$touched || !profileForm.middle.$pristine">
+                   <div class="messagenotify">
+                    <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                    <div ng-message="md-maxlength">The middle name has to be less than 30 characters long.</div>
+                    <div ng-message="minlength">the middle name should contain minimum 5characters</div></div></div>
+                  </md-input-container>  
+
+                  <md-input-container class="md-block">
+                  <label>Last Name</label>
+                  <input md-maxlength="30" minlength="5" required name="last" 
+                  ng-model="userModel.name.last">
+                  <div ng-messages="profileForm.last.$error" ng-show="profileForm.last.$touched || !profileForm.last.$pristine">
+                   <div class="messagenotify">
+                    <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                    <div ng-message="md-maxlength">The last name has to be less than 30 characters long.</div>
+                    <div ng-message="minlength">the last name should contain minimum 5characters</div></div></div>
+                  </md-input-container>
+
+                  <md-input-container class="md-block">
+                  <label>Email</label>
+                  <input md-maxlength="30" minlength="5" required name="email" 
+                  ng-model="userModel.email">
+                  <div ng-messages="profileForm.email.$error" ng-show="profileForm.email.$touched || !profileForm.email.$pristine">
+                   <div class="messagenotify">
+                    <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                    <div ng-message="md-maxlength">The email has to be less than 30 characters long.</div>
+                    <div ng-message="minlength">the email should contain minimum 5characters</div></div></div>
+                  </md-input-container>
+
+                  <md-input-container class="md-block">
+                  <label>Job Title</label>
+                  <input md-maxlength="30" minlength="5" required name="jobTitle" 
+                  ng-model="userModel.jobTitle">
+                  <div ng-messages="profileForm.jobTitle.$error" ng-show="profileForm.jobTitle.$touched || !profileForm.jobTitle.$pristine">
+                   <div class="messagenotify">
+                    <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                    <div ng-message="md-maxlength">The jobTitle has to be less than 30 characters long.</div>
+                    <div ng-message="minlength">the jobTitle should contain minimum 5characters</div></div></div>
+                  </md-input-container>
+
+                  <md-input-container class="md-block" style="height: auto;">
+                  <label>Summary</label>
+                  <textarea ng-model="userModel.summary" md-maxlength="150" minlength="30" required name="summary" 
+                  rows="4" aria-multiline="true" style="height: 116px;"></textarea>
+                  <div ng-messages="profileForm.summary.$error" ng-show="profileForm.summary.$touched || !profileForm.summary.$pristine">
+                   <div class="messagenotify">
+                    <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                    <div ng-message="md-maxlength">The summary has to be less than 150 characters long.</div>
+                    <div ng-message="minlength">the summary should contain minimum 30characters</div></div></div>
+                  </md-input-container>
+                  <button class="btn btn-primary pull-right" ng-click="editprofile(userModel,userModel._id)" ng-disabled="profileForm.$invalid">
+                    <i class="fa fa-floppy-o"></i>&nbsp;&nbsp;Edit Profile
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ANY>
+
+<ANY ng-switch-when="noUser">
+  <div class="text-danger" style="width:180px;!important;">
+    User not found!!!
+  </div>
+</ANY>
+
+<ANY ng-switch-default>
+  <div class="text-info" style="width:180px;!important;">
+    <!-- Default panel -->
+  </div>
+</ANY>
+</ANY>

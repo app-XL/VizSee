@@ -16,8 +16,8 @@ profileApp.service('multipartForm', ['$http', function($http){
 }]);
 
 
-profileApp.controller('profileControllerMain', ['$scope', '$http', '$routeParams', '$location', 'growl', '$rootScope', 'Upload', '$timeout','ngDialog',
-  function($scope, $http, $routeParams, $location, growl, $rootScope, Upload, $timeout, ngDialog,req) { 
+profileApp.controller('profileControllerMain', ['$scope', '$http', 'growl', '$rootScope', 'Upload', '$timeout','$mdDialog','$mdMedia',
+  function($scope, $http, growl, $rootScope, Upload, $timeout,$mdDialog,$mdMedia) { 
       
       //acts as get user profile by id
       var refresh = function(id) {
@@ -30,7 +30,8 @@ profileApp.controller('profileControllerMain', ['$scope', '$http', '$routeParams
       $scope.googletoken = '';
       });
       };refresh();  
-      
+
+/*      
       //upload the file(url of image) to database with ngFileupload and multer 
       $scope.upload = function (dataUrl) {
           Upload.upload({
@@ -38,8 +39,7 @@ profileApp.controller('profileControllerMain', ['$scope', '$http', '$routeParams
               data: {
                   file: Upload.dataUrltoBlob(dataUrl),                
               },
-          }).then(function (response) {
-            
+          }).then(function (response) {            
                 $scope.result = response.data;
                 $scope.user.avatar=response.data.file.path;   
                 $rootScope.cropdataurl=response.data.file.path;             
@@ -49,8 +49,7 @@ profileApp.controller('profileControllerMain', ['$scope', '$http', '$routeParams
       };
 
       //edit the profile picture of user by taking dataurl and user id.
-      $scope.editpicture = function (dataUrl,id) {
-          id=$rootScope.user._id;
+      $scope.editpicture = function (dataUrl,usersdata) {
           Upload.upload({
               url: '/api/v1/upload/',
               data: {
@@ -58,57 +57,47 @@ profileApp.controller('profileControllerMain', ['$scope', '$http', '$routeParams
               },
           }).then(function (response) {
                 $scope.result = response.data;
-                $scope.user.avatar= '\\' + response.data.file.path;                
-                $http.put('/api/v1/secure/admin/users/'+ id, $scope.user).success(function(response1) {
-                  window.location.reload();
+                usersdata.avatar= '\\' + response.data.file.path;
+                $http.put('/api/v1/secure/admin/users/'+ usersdata._id, usersdata).success(function(response1) {
+                  $mdDialog.hide();
                 });
            });
-          ngDialog.closeAll();        
+           
       };  
       
       //edit the profile data user by taking user id.
-      $scope.editprofile = function (id) {
-          id=$rootScope.user._id;
+      $scope.editprofile = function (id) {         
           $http.put('/api/v1/secure/admin/users/'+ id, $scope.user).success(function(response) {
-                window.location.reload();
+                
           });
       };  
 
-      $scope.cancel = function () {       
-          ngDialog.closeAll();
-      };    
-
+      $scope.showAdvanced = function(user,ev) {
+        $mdDialog.show({
+          controller: DialogController,
+          templateUrl: '/public/mods/profile/profiledialog.html',
+          locals: { users: user },
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose:true      
+        })   
+      };
+*/
+  
 }])
 
+/*
 profileApp.controller('MainCtrl', function($scope, ngDialog) {
     $scope.clickToOpen = function () {
         ngDialog.open({ template: 'templateId' });
     };
 });
+*/
+/*
+function DialogController($scope, $mdDialog, users) {
 
-profileApp.controller('AppCtrl', function($scope, $mdDialog, $mdMedia) {
-  $scope.status = '  '; 
+  $scope.usersdata=users;
 
-  $scope.showAdvanced = function(ev) {
-    $mdDialog.show({
-      controller: DialogController,
-      templateUrl: '/public/mods/profile/profiledialog.html',
-      parent: angular.element(document.body),
-      targetEvent: ev,
-      clickOutsideToClose:true
-     
-    })
-    .then(function(answer) {
-      $scope.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.status = 'You cancelled the dialog.';
-    });
-  
-  };
-
-});
-
-function DialogController($scope, $mdDialog) {
   $scope.hide = function() {
     $mdDialog.hide();
   };
@@ -119,4 +108,4 @@ function DialogController($scope, $mdDialog) {
     $mdDialog.hide(answer);
   };
 }
-
+*/

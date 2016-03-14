@@ -3,6 +3,7 @@ var usersApp = angular.module('users');
 
 usersApp.controller('usersControllerMain', ['$scope', '$http', '$routeParams','$location', 'growl','$rootScope','$mdDialog',
   function($scope, $http, $routeParams, $location,growl,$rootScope,$mdDialog) { 
+
     $scope.hideFilter = true;
     $scope.hideAddRow = true;
     $scope.action = "none";
@@ -21,7 +22,6 @@ usersApp.controller('usersControllerMain', ['$scope', '$http', '$routeParams','$
 
     refresh();
 
-    //method for adding new record dynamically
     $scope.addRecord = function(){
       $scope.hideAddRow = false;
       $scope.action = "add";

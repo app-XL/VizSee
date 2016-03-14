@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/public/assets/styles/profile-pic.css" />
+<md-dialog aria-label="Mango (Fruit)" ng-cloak>
+<form>
+  <md-toolbar>
+  <div class="md-toolbar-tools">
+    <h2>Edit profile pic</h2>
+    <span flex></span>
+    <md-button class="md-icon-button" ng-click="cancel()">
+    <md-icon <i class="fa fa-times" aria-label="Close dialog"></i></md-icon>
+  </md-button>
+</div>
+</md-toolbar>
+<md-dialog-content>
+  <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea">
+    <img-crop  image="picFile  | ngfDataUrl"
+    result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+  </img-crop>
+</div>
+
+<md-dialog-actions layout="row">
+<md-button class="btn btn-info" ngf-select ng-model="picFile" accept="image/*">
+select photo
+</md-button>
+<span flex></span>
+<div ng-controller="userprofileDirectiveControllerMain">
+<md-button class="btn btn-primary" ng-click="editpicture(croppedDataUrl,users)">
+update
+</md-button>
+</div>
+<md-button class="btn btn-danger" ng-click="cancel()" >
+cancel
+</md-button>
+</md-dialog-actions>
+</form>
+</md-dialog>

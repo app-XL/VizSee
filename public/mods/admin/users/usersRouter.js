@@ -13,5 +13,6 @@ angular.module('users')
         templateUrl: '/public/mods/admin/users/groupsViewMain.html',
         controller: 'usersControllerMain'
       });
+      
     }
   ]);

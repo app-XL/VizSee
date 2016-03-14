@@ -18,7 +18,7 @@
     </div>
 
 </script>
-
+<!--
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -31,9 +31,13 @@
                 <hr>
               </div>
             </div>
-
-            <div class="row" ng-controller="profileControllerMain">
-
+-->        
+           <br>
+           <br>
+           <div><userprofile user-model="userdata" user-id="user._id" user-email="user.email"/></userprofile></div>
+            <!--
+            <div class="row" ng-controller="profileControllerMain">                  
+                    
                 <div class="col-md-4 text-center">
 
                   <img ng-src="{{user.avatar}}" class="img-rectangle avatar-original pic"
@@ -41,8 +45,11 @@
                   <div ng-controller="AppCtrl">
 
                     <md-button class="md-primary md-raised" ng-click="showAdvanced($event)" flex="100" flex-gt-md="auto">
+                  
+                  <div>
+                  <md-button class="md-primary md-raised" ng-click="showAdvanced(user,$event)" flex="100" flex-gt-md="auto">
                      change picture
-                    </md-button>
+                  </md-button>
                   </div>
                 </div>
 
@@ -68,7 +75,7 @@
                       ng-model="user.email">
                     </div>
                     <div class="form-group">
-                      <label for="designation">Designation</label>
+                      <label for="designation">Job Title</label>
                       <input type="text" class="form-control" id="token" name="token"
                       ng-model="user.jobTitle">
                     </div>
@@ -77,12 +84,13 @@
                     </button>
               </div>
             </div>
+            
           </div>
         </div>
       </div>
     </div>
   </div>
-
+-->
 <div class="container" ng-controller="profileControllerMain">
 
     <div class="row">
