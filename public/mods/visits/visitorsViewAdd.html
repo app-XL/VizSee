@@ -11,8 +11,7 @@
   <tbody class="data-grid-data">
     <tr>
       <td>    
-        <div user type="picker" user-model="visitorDef.visitorUser" user-id="visitorDef.visitorId" user-email="visitorDef.visitor" >
-        </div>
+        <input type="email" ng-model="visitorDef.visitorId">
       </td>
       <td><select 
        ng-model="visitorDef.influence" 
@@ -22,8 +21,9 @@
    </td>
    <td><button class="btn btn-primary" ng-click="addvisitor(visitorDef)">Add visitor</button></td>
  </tr>
+ 
  <tr ng-repeat="visitorDef in visitors | filter: search |orderBy:orderByField:reverseSort">
-  <td>{{visitorDef.visitor}}</td>
+  <td><userprofile user-model="visitorDef.visitorUser" user-id="visitorDef.visitor"/></td>
   <td>{{visitorDef.influence}}</td>
   <td>
     <a class="table-btn" ng-click="removevisitor($index)"><span class="fa fa-trash" /></a>
@@ -31,5 +31,12 @@
 
   </td>
 </tr>
+
+    <td ng-if="showFlag == 'noUser'">
+    
+ {{message}}
+
+    </td>
+
 </tbody>
 </table>

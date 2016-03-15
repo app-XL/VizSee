@@ -46,7 +46,7 @@ function getOneById(id){
     .populate('anchor')
     .populate('createBy')
     .populate('client')
-    .populate('visitors.visitor')
+    //.populate('visitors.visitor')
     .exec(function (err, item) {
         if(err) {
             console.log(err);

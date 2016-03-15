@@ -31,6 +31,9 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
   $scope.hideFilter = true;
   $scope.schedules=[];
   $scope.visitors=[];
+  $scope.small= "small";
+  $scope.large= "LARGE";
+  $scope.medium= "medium";
   //filter table
   $scope.showAll = true;
   $scope.showFiltered = false;
@@ -75,7 +78,7 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
            if(item.locations === undefined)
             item.locations = sch.location;
           else
-            item.locations = item.locations + ", " + sch.location;
+            item.locations = item.locations;// + ", " + sch.location;
 
         })
        })
@@ -218,26 +221,44 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
   // Visit visitor table
 
   $scope.addvisitor=function(visitorDef){
+    $scope.showFlag='';
+    $scope.message='';
+    var influence= visitorDef.influence; 
+    $http.get('/api/v1/secure/admin/users/email/' + visitorDef.visitorId).success(function(response) {
+     $scope.userId = response._id;
+     $scope.showFlag = "user";
+     $scope.visitors.push({
+      visitor: $scope.userId,
+      influence: influence
+    });
 
-   $scope.visitors.push({
-    visitor: visitorDef.visitorId,
-    influence: visitorDef.influence
-  });
+   })
 
-   visitorDef.influence='';
-   visitorDef.visitorId='';
-   visitorDef.visitor = '';
-   visitorDef.visitorUser = '';
- };
+    .error(function(response, status){
+      $scope.showFlag = "noUser";
+      if(status===404)
+      {
+       $scope.message = "User not found plz register";
+     }
+     else
+      console.log("error with user directive");
+  }); 
+    
 
- $scope.removevisitor = function(index){
-  $scope.visitors.splice(index, 1);
-}; 
+    //if not found add visitor-post that and get id
+    visitorDef.influence='';
+    visitorDef.visitorId='';
+    visitorDef.visitor = '';
+    visitorDef.visitorUser = '';
+  };
+  $scope.removevisitor = function(index){
+    $scope.visitors.splice(index, 1);
+  }; 
 
-$scope.editvisitor = function(index,visitorDef){
-  $scope.visitorDef = visitorDef;
-  $scope.visitors.splice(index, 1);
-};
+  $scope.editvisitor = function(index,visitorDef){
+    $scope.visitorDef = visitorDef;
+    $scope.visitors.splice(index, 1);
+  };
 // Visit visitor table end
 
 //date- filter http://stackoverflow.com/questions/25719572/angularjs-next-and-previous-day-year-month
