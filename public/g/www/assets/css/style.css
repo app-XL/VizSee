@@ -1,39 +1,373 @@
-div#profileDetails {
-    padding-top: 20px;
-    background: url("../img/bg/header.jpg") no-repeat;
-    background-size: 113%;
+a,
+a:focus,
+a:hover {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-div#profileDetails .profilePic,
-div#profileDetails .profileName,
-div#profileDetails .profileDesg,
-div#profileDetails .profileLoc {
-    color: #fff;
-    display: block;
-    text-align: center;
+#menu .row div,
+.session-overview .row div,
+#menu .row div a div {
+  display: block;
+  text-align: center;
+}
+
+.agenda {
+  padding-bottom: 8px;
+  color: #fff;
+  top: 9px;
+  padding-top: 0;
+  font-family: workSansBold;
+  font-size: 0.75em;
+}
+
+.agenda a,
+.agenda a:hover {
+  color: #fff;
+  letter-spacing: 2px;
+  font-family: workSansBold;
+}
+
+div#profile-details {
+  padding-top: 60px;
+  background: url("../img/bg/header.jpg") no-repeat;
+  background-size: 113%;
+}
+
+div#profile-details .profile-pic,
+div#profile-details .profile-name,
+div#profile-details .profile-desc,
+div#profile-details .profile-location {
+  color: #fff;
+  display: block;
+  text-align: center;
+  padding-bottom: 10px;
+  font-family: workSansBold;
+  text-shadow: 1px 1px #444444;
+}
+
+div#profile-details .profile-location {
+  font-family: robotoBold;
+}
+
+div#profile-details .profile-name {
+  font-size: 1.3125em;
+}
+
+div#profile-details .profile-desc {
+  font-size: 0.875em;
+}
+
+div#profile-details .profile-location {
+  padding-bottom: 15px;
+  font-size: 0.75em;
+}
+
+div#profile-details .profile-location img {
+  width: 15px;
+  padding-right: 5px;
+  display: inline-block;
+}
+
+.session-overview {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.on-time {
+  font-family: robotoCondensedBold;
+  color: #9ed352;
+  font-size: 0.75em;
+}
+
+.second-span {
+  font-family: robotoBlack;
+  color: #fff;
+  font-size: 0.8125em;
+}
+
+.third-span {
+  font-family: workSansBold;
+  color: #efefef;
+  font-size: 0.625em;
+}
+
+.next {
+  font-family: robotoCondensedBold;
+  color: #d3d3d3;
+  font-size: 0.75em;
+}
+
+
+
+.profile-pic img {
+    width: 75px;
+    height: 75px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  
+}
+
+#profile-details .notifications {
+  top: 7px;
+  right: 35px;
+  position: absolute;
+}
+
+#profile-details .notifications a {
+  position: absolute;
+}
+
+#profile-details .notifications img {
+  width: 30px;
+  padding-right: 5px;
+}
+
+#menu .row div {
+    padding-top: 10px;
     padding-bottom: 10px;
-    font-family: workSansBold;
-    text-shadow: 1px 1px #444444;
-}
-div#profileDetails .profileLoc {
-    font-family: robotoBold;
+    font-size: 0.85em;
+    letter-spacing: 2px;
 }
 
-div#profileDetails .profileName {
-    font-size: 1.3125em;
+#menu .row {
+    padding-top: 15px;
 }
 
-div#profileDetails .profileDesg {
+span.menuName {
+    padding-top: 15px;
+}
+
+.menu-circle-icon {
+  width: 75px;
+  height: 75px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  margin: 0 auto;
+}
+
+.factsheets {
+  background: url("../img/ic/facts.png") #96859F no-repeat 50% 50%;
+  background-size: 45px;
+}
+
+.factsheets-text {
+  color: #54475A;
+  padding-top: 13px;
+  font-family: workSansBold;
+}
+
+.spoc {
+  background: url("../img/ic/contact.png") #850057 no-repeat 50% 50%;
+  background-size: 45px;
+}
+
+.spoc-text {
+  color: #4E1C3D;
+  padding-top: 13px;
+  font-family: workSansBold;
+}
+
+.feedback {
+    background: url("../img/ic/feedbk.png") #C4BB5B no-repeat 50% 50%;
+    background-size: 45px;
+}
+
+.feedback-text {
+  color: #545025;
+  padding-top: 13px;
+  font-family: workSansBold;
+}
+
+.exec-bio {
+  background: url("../img/ic/group.png") #003F60 no-repeat 50% 50%;
+  background-size: 45px;
+}
+
+.exec-bio-text {
+  color: #1F3F50;
+  padding-top: 13px;
+  font-family: workSansBold;
+}
+
+.past-visits {
+  background: url("../img/ic/cals.png") #588BA3 no-repeat 50% 50%;
+  background-size: 45px;
+}
+
+.past-visits-text {
+  color: #204353;
+  padding-top: 13px;
+  font-family: workSansBold;
+}
+
+.account-info {
+  background: url("../img/ic/acinfo.png") #A2915D no-repeat 50% 50%;
+  background-size: 45px;
+}
+
+.account-info-text {
+  color: #4D452e;
+  padding-top: 13px;
+  font-family: workSansBold;
+}
+
+
+/*   clock*/
+.clockContainer {
+    height: 70px;
+}
+
+.container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.day,
+.loc {
+    color: #fff;
+    font-size: 0.68em;
+    display: block;
+    font-family: robotoCondensedBold;
+}
+
+.day {
+    color: #EAEDF2;
+}
+
+.sessionOverview.clocksDisplay .row {
+    padding-top: 0px;
+}
+
+.profile-location u {
+  text-decoration: inherit;
+  border-bottom: dotted 1px #fff;
+  padding-bottom: 2px;
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+  .session-overview .row .currentSession,
+  .session-overview .row .next-session {
+    font-size: 1.1em;
+  }
+
+  .session-overview .row {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+
+  .session-overview.clocksDisplay .row {
+    padding-top: 0;
+  }
+
+  div#profile-details .profile-name {
+    font-size: 1.125em;
+  }
+
+  div#profile-details .profile-desc {
     font-size: 0.875em;
-}
+  }
 
-div#profileDetails .profileLoc {
-    padding-bottom: 15px;
+  div#profile-details .profile-location {
     font-size: 0.75em;
+  }
+
+  .menu-circle-icon {
+    width: 65px;
+    height: 65px;
+  }
+
+  .factsheets,
+  .spoc,
+  .account-info,
+  .feedback,
+  .exec-bio,
+  .past-visits {
+    background-size: 36px;
+  }
 }
 
-div#profileDetails .profileLoc img {
-    width: 15px;
-    padding-right: 5px;
-    display: inline-block;
+@media only screen and (min-device-width: 375px) and (max-device-width: 424px) {
+  .session-overview .row .current-session,
+  .session-overview .row .next-session {
+    font-size: 0.75em;
+  }
+
+  .menu-circle-icon {
+    width: 65px;
+    height: 65px;
+  }
+
+  .factsheets,
+  .spoc,
+  .account-info,
+  .feedback,
+  .exec-bio,
+  .past-visits {
+    background-size: 36px;
+  }
+}
+@media only screen and (min-device-width: 425px) and (max-device-width: 767px) {
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+  .session-overview .row .next-session div {
+    margin-left: 30px;
+  }
+
+  .session-overview .row .current-session div {
+    margin-right: 88px;
+  }
+
+  .clocksDisplay {
+    padding-bottom: 60px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) {
+  .clock {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
+  .session-overview .row .next-session div {
+    margin-left: 88px;
+  }
+
+  .session-overview .row .current-session div {
+    margin-right: 200px;
+  }
+
+  .clocksDisplay {
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+  
+  div#profile-details .profile-location img {
+    width: 18px;
+  }
+}
+
+
+
+/*navbar Styles*/
+
+
+.navbar-nav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
+.navbar {min-height:22px !important}.navbar-default .navbar-brand {
+    color: #fff;
+    height: 20px;
+    padding-top:5px !important;
+    padding-bottom:5px !important;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #5E5E5E;
 }

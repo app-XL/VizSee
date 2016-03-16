@@ -1,59 +1,44 @@
 <!DOCTYPE html>
 <!-- <html  ng-app="cViz-m" ng-strict-di> -->
-<html  ng-app="cViz-m">
-  <head>
+<html ng-app="cViz-m">
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
 
-
+    <!-- application js files referenced here  -->
     <script src="libs/angular/angular.js"></script>
     <script src="libs/angular-route/angular-route.js"></script>
     <script src="libs/angular-animate/angular-animate.js"></script>
 
 
-    <!-- application js files referenced here  -->
     <!-- your app's js -->
     <script src="mods/app.js"></script>
     <script src="mods/controllers.js"></script>
     <script src="mods/GenericCtrl.js"></script>
     <script src="mods/visits/visitsCtrl.js"></script>
     <script src="mods/sessions/sessionsCtrl.js"></script>
-		<script src="mods/dir/hmnu/dir.js"></script>
+    <script src="mods/dir/hmnu/dir.js"></script>
 
-		<!-- Application styles goes here -->
+    <!-- Application styles goes here -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/anim.css">
-		<link rel="stylesheet" href="assets/css/hmnu.css">
+    <link rel="stylesheet" href="assets/css/hmnu.css">
 
-		<!-- standard library styles goes here -->
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-  </head>
+    <!-- standard library styles goes here -->
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css" />
+</head>
 
-  <body ng-class="animation" ng-controller="ctrl">
-    <h3>
-      <i class="fa fa-bars"></i>&nbsp;&nbsp;
+<body ng-class="animation" ng-controller="ctrl">
 
-      <a ng-click='back()' ng-if="canBack()"><i class="fa fa-arrow-left"></i></a>&nbsp;&nbsp;
-      <a href="#/home"><i class="fa fa-home"></i></a>&nbsp;&nbsp;
-      CSC
-            <i class="fa fa-arrows pull-right"></i>
-      <!-- <div ng-include src="'./mods/menu.html'" class="pull-right"></div> -->
-			<ham-menu></ham-menu>
+    <div ng-include src="'./mods/menu.html'" class="pull-right"></div>
+    <div ng-view class="view"></div>
 
-    </h3>
+</body>
 
-    <hr/>
-
-    <div class="container">
-      <div ng-view class="view">
-
-      </div>
-    </div>
-
-  </body>
 </html>
 
 <style>

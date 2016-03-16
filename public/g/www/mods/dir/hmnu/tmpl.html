@@ -1,38 +1,36 @@
-<div id="hamBurgerMenu">
-    <button type="button" class="menuButton" ng-click="openMenu()"></button>
-    <div class="" id="menuList" ng-show="expanded">
-        <div class="closeMenu"><img src="assets/rem/close-btn-magenta.png" ng-click="openMenu()"></div>
-				<div class="profilePic"><img src="{{user.avatar}}"></div>
-				<div class="profileName">{{user.name.first}} {{user.name.last}}</div>
-				<div class="profileDesg">{{user.jobTitle}}, {{user.organization}}</div>
-				<div class="profileLoc"><img src="assets/img/ic/loc.png">You are at <u>CSC India, Bangalore</u></div>
-        <ul class="ulNavBar">
+<div id="hamburger-menu">
+    <button type="button" class="menu-button" ng-click="openMenu()"></button>
+    <div class="" id="menu-list" ng-show="expanded">
+        <div class="close-menu"><img src="assets/rem/close-btn-magenta.png" ng-click="openMenu()"></div>
+                <div class="menu-profile-pic"><img src="{{user.avatar}}"></div>
+                <div class="menu-profile-name">{{user.name.first}} {{user.name.last}}</div>
+        <ul class="ul-nav-bar">
             <li class="active">
-                <a href="#/cscHome" class="homeMenu"><img src="assets/img/ic/home.png">Home</a>
+                <a href="#/cscHome" class="home-menu"><img src="assets/img/ic/home.png">Home</a>
             </li>
             <li>
-                <a href="#" class="viewAgendaMenu"><img src="assets/img/ic/agenda.png">View Agenda</a>
+                <a href="#" class="view-agenda-menu"><img src="assets/img/ic/agenda.png">View Agenda</a>
             </li>
             <li>
-                <a href="#/cscFactsheet" class="factsMenu"><img src="assets/img/ic/facts.png">Factsheets</a>
+                <a href="#/facts" class="facts-menu"><img src="assets/img/ic/facts1.png">Factsheets</a>
             </li>
             <li>
-                <a href="#" class="contactMenu"><img src="assets/img/ic/contact.png">Contact SPOC</a>
+                <a href="#/contacts" class="contact-menu"><img src="assets/img/ic/contct1.png">Contact SPOC</a>
             </li>
             <li>
-                <a href="#" class="feedbackMenu"><img src="assets/img/ic/feedbk.png">Feedback</a>
+                <a href="#/feedback" class="feedback-menu"><img src="assets/img/ic/fb.png">Feedback</a>
             </li>
             <li>
-                <a href="#" class="execMenu"><img src="assets/img/ic/group.png">Executive BIO'S</a>
+                <a href="#" class="exec-menu"><img src="assets/img/ic/grp.png">Executive BIO'S</a>
             </li>
             <li>
-                <a href="#" class="pastVisitsMenu"><img src="assets/img/ic/cals.png">Past Visits</a>
+                <a href="#" class="past-visits-menu"><img src="assets/img/ic/cals1.png">Past Visits</a>
             </li>
             <li>
-                <a href="#" class="settingsMenu"><img src="assets/img/ic/setting.png">Settings</a>
+                <a href="#" class="settings-menu"><img src="assets/img/ic/setting.png">Settings</a>
             </li>
             <li>
-                <a href="#" class="logoutMenu"><img src="assets/logout.png">Logout</a>
+                <a href="#" class="logout-menu"><img src="assets/img/ic/logout.png">Logout</a>
             </li>
         </ul>
     </div>

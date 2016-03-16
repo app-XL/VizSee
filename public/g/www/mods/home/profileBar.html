@@ -1,9 +1,51 @@
-
-<div id="profileDetails">
+<div id="CVM-Home">
+<div id="profile-details">
 		<div class="notifications"><img src="assets/img/ic/ibox-f.png"></div>
-		<div class="profilePic"><img src="{{user.avatar}}"></div>
-		<div class="profileName">{{user.name.first}} {{user.name.last}}</div>
-		<div class="profileDesg">{{user.jobTitle}}, {{user.organization}}</div>
-		<div class="profileLoc"><img src="assets/img/ic/loc.png">You are at <u>CSC India, Bangalore</u></div>
-
-</div>
+		<div class="profile-pic"><img src="{{user.avatar}}"></div>
+		<div class="profile-name">{{user.name.first}} {{user.name.last}}</div>
+		<div class="profile-desc">{{user.jobTitle}} {{user.organization}}</div>
+		<div class="profile-location"><img src="assets/img/ic/loc.png">You are at <u>CSC India, Bangalore</u></div>
+<div class="session-overview" ng-hide="!visitStartSuccess">
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 currentSession">
+                    <div class="on-time">ON TIME</div>
+                    <div class="second-span">Cloud Computing</div>
+                    <div class="third-span">11:00 AM to 12:15 PM</div>
+                </div>
+                <div class="clock-container col-xs-4 col-sm-4 col-md-4">
+                    <clock-svg degree="progressDegree"></clock-svg>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 next-session">
+                    <div class="next">NEXT</div>
+                    <div class="second-span">Big Data</div>
+                    <div class="third-span">12:30 PM to 1:15 PM</div>
+                </div>
+            </div>
+            <div class="agenda"><a href="#/agendaOverview">VIEW AGENDA</a></div>
+        </div>
+        <div class="session-overview clocksDisplay" ng-hide="visitStartSuccess">
+            <div class="row">
+                <div class="clock-container col-xs-4 col-sm-4 col-md-4">
+                    <a href="#/agendaOverview">
+                        <label class="day">DAY 1</label>
+                        <clock-svg degree="progressDegree"></clock-svg>
+                        <label class="loc">BANGALORE</label>
+                    </a>
+                </div>
+                <div class="clock-container col-xs-4 col-sm-4 col-md-4">
+                    <a href="#/agendaOverview">
+                        <label class="day">DAY 2</label>
+                        <clock-svg degree="progressDegree"></clock-svg>
+                        <label class="loc">HYDERABAD</label>
+                    </a>
+                </div>
+                <div class="clock-container col-xs-4 col-sm-4 col-md-4">
+                    <a href="#/agendaOverview">
+                        <label class="day">DAY 3</label>
+                        <clock-svg degree="progressDegree"></clock-svg>
+                        <label class="loc">NOIDA</label>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
