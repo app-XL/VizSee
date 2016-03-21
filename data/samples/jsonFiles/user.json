@@ -1506,8 +1506,126 @@
 					}
 				],
 			"memberOf"			: ""
+	},
+	
+	
+	
+	
+	{
+				"_id"				: ObjectId("A02234567892345678900024"),
+				
+			"token"		:
+			{
+				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
+				"dateCreated"	: ISODate("2016-03-08T07:37:52.546Z")
+			},
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Michael",
+					"middle"	:  "J",
+					"last"		:  "Clark",
+					"suffix"		:  ""
+				},
+			"email"				: "mclark@vodafone.com",
+
+			"avatar"			: "\\public\\uploads\\profilePics\\mclark.jpg",
+			
+			"local"				:
+			{
+				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
+				"email"				: "mclark@vodafone.com"
+			},
+
+			"summary"		: " Minal works with AOL which is a vibrant industry association with ambitions of representing the entire gamut of digital businesses in India. ",
+			"jobTitle"			: "Chairman",
+			"organization"	: "Vodafone",	
+			
+			"orgRef"			: ObjectId("A03234567892345678900004"),
+			"association"		: "customer",
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/ssaydfyadud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=638879",
+						"network"		: "Vodo Perks"
+					}
+				],
+				
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9768624223",
+						"type"			: "mobile"
+					}
+				],
+			"memberOf"			: ""
+	},
+
+
+	
+	
+	{
+				"_id"				: ObjectId("A02234567892345678900025"),
+				
+			"token"		:
+			{
+				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
+				"dateCreated"	: ISODate("2016-03-08T07:37:52.546Z")
+			},
+		
+			"name":
+				{
+					"prefix"		:  "Mr.",
+					"first"		:  "Vince",
+					"middle"	:  "J",
+					"last"		:  "Kennedy",
+					"suffix"		:  ""
+				},
+			"email"				: "vkennedy@vodafone.com",
+
+			"avatar"			: "\\public\\uploads\\profilePics\\vkennedy.jpg",
+			
+			"local"				:
+			{
+				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
+				"email"				: "vkennedy@vodafone.com"
+			},
+
+			"summary"		: " Minal works with AOL which is a vibrant industry association with ambitions of representing the entire gamut of digital businesses in India. ",
+			"jobTitle"			: "Senior Executive",
+			"organization"	: "Vodafone",	
+			
+			"orgRef"			: ObjectId("A03234567892345678900004"),
+			"association"		: "customer",
+			
+			"socialProfile"	:		 
+				[
+					{
+						"handle"		: "https://www.facebook.com/ssaydfyadud15?fref=ts",
+						"network"		: "facebook"
+					},
+					
+					{
+						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=638879",
+						"network"		: "Vodo Perks"
+					}
+				],
+				
+			"contactNo"			: 
+				[
+					{
+						"number"		: "9768624223",
+						"type"			: "mobile"
+					}
+				],
+			"memberOf"			: ""
 	}
-
-
 	
 ]

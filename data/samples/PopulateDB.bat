@@ -50,10 +50,6 @@ ECHO Creating FactSheet Collection
 mongoimport --db cViz-Test --collection fact_sheets --file jsonFiles\factSheet.json --type json --jsonArray
 
 
-
-ECHO "Importing master List of Values..."
-mongoimport --db cViz-Test --collection lovs --file jsonFiles\lov.json --type json --jsonArray
-
 ECHO:
 ECHO Creating ListOfValues Collection
 mongoimport --db cViz-Test --collection lovs --file jsonFiles\lov.json --type json --jsonArray

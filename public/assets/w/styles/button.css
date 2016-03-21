@@ -201,7 +201,7 @@
 		border:1px solid #e03f3f; /*same colour as the background*/
 		color:#e2eaf3;
 		font-size:1em;
-		/*set the border-radius at half the size of the width and height*/
+		set the border-radius at half the size of the width and height
 		-webkit-border-radius: 50px;
 		-moz-border-radius: 50px;
 		border-radius: 50px;

@@ -1,90 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
+
   <title>panels</title>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="/public/assets/w/styles/dashboard.css" />
-  <script type="text/javascript" src="http://www.onextrapixel.com/examples/touch-swipe/jquery.touchSwipe.min.js"></script>
+  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
   <script type="text/javascript"> 
-    $(window).load(function(){
-        $("[data-toggle]").click(function() {
-          var toggle_el = $(this).data("toggle");
-          $(toggle_el).toggleClass("open-sidebar");
-        });
-
-         $(".swipe-area").swipe({
-              swipeStatus:function(event, phase, direction, distance, duration, fingers)
-                  {
-                      if (phase=="move" && direction =="left") {
-                           $(".container").addClass("open-sidebar");
-                           return false;
-                      }
-                      if (phase=="move" && direction =="right") {
-                           $(".container").removeClass("open-sidebar");
-                           return false;
-                      }
-                  }
-          }); 
-      });
+   $(window).load(function(){
+    $("[data-toggle]").click(function() {
+      var toggle_el = $(this).data("toggle");
+      $(toggle_el).toggleClass("open-sidebar");
+    });
+  });
   </script>
 
 </head>
 
 
 <body>
+
   <div class="container">
     <div id="sidebar">
-    <br><br><br>
-      
+
+      <!-- Side Bar Content Goes here  -->
     </div>
 
-    <div class="main-content">
-    
-    <br><br>
-      <a href="#" data-toggle=".container" id="sidebar-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </a>
+    <div class="row">
+      <div class="col-sm-11">
 
-      <div class="content">
-        <h2>Static Content</h2>
-        <br>
+        <div class="content">
+          <h2>Static Content</h2>
 
-        <div class="row">
-          <div class="col-sm-9">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <div class="pull-left">
-                  <p class="highlight">03</p>
+
+
+          <div class="row">
+
+
+            <div class="col-sm-9">
+              <div class="panel panel-default">
+
+                <div class="panel-heading">
+                  <div class="pull-left">
+                    <p class="highlight">03</p>
+                  </div>
+                  <h3 class="panel-title"> <b>Visits This Week</b></h3>
                 </div>
-                <h3 class="panel-title"> <b>Visits This Week</b></h3>
-              </div>
 
-              <div class = "panel-subheader">
-               <center> Mar, 2016</center>
-              </div>
+                <div class = "panel-subheader">
+                 <center> Mar, 2016</center>
+                </div>
 
-             <div class="panel-body">
-                Zurich Visit on 2nd-Mar<br>
-                Hyderabad
-                <br><br>
-                AOL Visit on 4th-Mar<br>
-                Bangalore
-              </div>
+                <div class="panel-body">
+                  Zurich Visit on 2nd-Mar<br>
+                  Hyderabad
+                  <br><br>
+                  AOL Visit on 4th-Mar<br>
+                  Bangalore
+                </div>
 
-              <div class="panel-footer">
-                <p></p>
+                <div class="panel-footer">
+                  <p></p>
+                </div>
               </div>
             </div>
-          </div>
+
 
           <div class="col-sm-3">
             <div class="panel panel-default">
+
               <div class="panel-heading">
                 <div class="pull-left">
                   <p class="highlight">03</p>
@@ -101,26 +91,30 @@
                   </font>
                 </p>
               </div>
+
               <div class="panel-footer">
                 <p></p>  
               </div>
             </div>
           </div>
+
+
         </div>
 
-      <br>
 
+
+        <br>
         <div class="row">
 
           <div class="col-sm-3">
             <div class="panel panel-default">
+
               <div class="panel-heading">
                 <div class="pull-left">
                   <p class="highlight"> 02 </p>
                 </div>
                 <h3 class="panel-title"><b> Visits Score </b></h3>
               </div>
-
 
               <div class="panel-body"> 
                 <p>
@@ -138,9 +132,10 @@
             </div>
           </div>
 
-          <div class="col-sm-9">
 
+          <div class="col-sm-9">
             <div class="panel panel-default">
+
               <div class="panel-heading">
                 <div class="pull-left">
                   <p class="highlight">02</p>
@@ -153,7 +148,6 @@
               </div>
 
               <div class="panel-body">
-
                 Motorola Visit on 12nd-Feb<br>
                 Noida
                 <br><br>
@@ -163,19 +157,24 @@
                 Vodafone Visit on 6th-Mar<br>
                 Chennai
               </div>
+
               <div class="panel-footer">
                 <p></p>  
               </div>
             </div>
           </div>
+
+
         </div>
+
+
+
         <br>
-
-
         <div class="row">
 
           <div class="col-sm-3">
             <div class="panel panel-default">
+
               <div class="panel-heading">
                 <div class="pull-left">
                   <p class="highlight"> 03 </p>
@@ -206,6 +205,8 @@
               </div>
             </div>
           </div>
+
+
 
           <div class="col-sm-3">
             <div class="panel panel-default">
@@ -239,6 +240,8 @@
             </div>
           </div>
 
+
+
           <div class="col-sm-3">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -271,6 +274,8 @@
             </div>
           </div>
 
+
+
           <div class="col-sm-3">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -302,24 +307,126 @@
                 <p></p>  
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div> <!-- Column 3-->
+
+
+        </div> <!-- row-->
+
+      </div> <!--content-->
+
+
+    </div> <!--column 11-->
+
+
+    <div class="col-sm-1">
+      <a href="#" data-toggle=".container" id="sidebar-toggle">
+      <div class="fa fa-angle-double-left fa-5x padtop rotate"></div></a>
     </div>
-  </div>
 
+  </div> <!--row-->
+
+  
+</div> <!--container-->
+
+
+
+
+<div class="panel-wrapper">
+  <div class="panel-controller">
+    <div class="tab-controller">
+      <span class="close">CLOSE PANEL</span>
+      <span class="show">OPEN PANEL</span>
+    </div><!-- tab-controller -->
+  </div><!-- panel-controller -->
+
+  <div class="panel-content">
+    <br>
+    <br><br>
+    <center>This is for panel content</center> 
+
+  </div> <!-- panel-content-->
+</div><!-- panel-wrapper -->
+
+
+
+
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 
 <script type="text/javascript">
-  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+  $(".rotate").click(function(){
+    $(this).toggleClass("side");
+  });
+
+
+  (function($) {
+
+    jQuery(document).ready(function() {
+
+      $(document).on('click', '.tab-controller', function() {
+        Panel.togglePanel();
+      });
+
+    });
+
+
+    var Panel = {
+
+      isVisible: false,
+      showMessage: null,
+      hideMessage: null,
+      animationDuration: 650,
+      animationEasing: 'linear',
+
+      init: function () {
+        $('.panel-wrapper').css("bottom", -$('.panel-content').height() + 'px');
+        $(".close").css("display", "none");
+        $(".show").css("display", "inline");
+      },
+
+      hidePanel: function() {
+        $('.panel-wrapper').animate({
+          bottom: -(Panel.getAnimationOffset())
+        }, Panel.animationDuration, Panel.animationEasing, function() {
+          Panel.isVisible = false;
+          Panel.updateTabMessage();
+        });
+      },
+
+      showPanel: function() {
+        $('.panel-wrapper').animate({
+          bottom: 0
+        }, Panel.animationDuration, Panel.animationEasing, function() {
+          Panel.isVisible = true;
+          Panel.updateTabMessage();
+        });
+      },
+
+      togglePanel: function() {
+        ((this.isVisible) ? this.hidePanel : this.showPanel)();
+      },
+
+      updateTabMessage: function() {
+        if (this.isVisible) {
+          $('.tab-controller .close').show();
+          $('.tab-controller .show').hide();
+        } else {
+          $('.tab-controller .close').hide();
+          $('.tab-controller .show').show();
+        }
+      },
+
+      getAnimationOffset: function() {
+        return $('.panel-content').height();
+      }
+
+    }
+
+    Panel.init();
+
+  })(jQuery);
+
+
 </script>
-
-<script type="text/javascript">
-  try {
-    var pageTracker = _gat._getTracker("UA-8453623-1");
-    pageTracker._trackPageview();
-  } catch(err) {}
-</script> 
-
 </body>
-</html>
+
