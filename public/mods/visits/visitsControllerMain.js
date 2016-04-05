@@ -429,69 +429,23 @@ $scope.editkeynote = function(index,keynoteDef){
         return questionIsNew;
     }
 
-//date- filter http://stackoverflow.com/questions/25719572/angularjs-next-and-previous-day-year-month
-$scope.eventDateFilter = function(column) {
-
-  if(column === 'today') {
-    var currentDate = $filter('date')(new Date(), "dd MMM yyyy");
-    $scope.visitsList.forEach(function(visit) {
-      visit.startDate = $filter('date')(visit.startDate, "dd MMM yyyy");
-    });
-    $scope.filteredDate = $filter('filter')($scope.visitsList, {startDate: currentDate});
-    $scope.showFiltered = true;
-    $scope.showAll = false;
-  }
-
-  else if (column === 'pastMonth') {
-
-    var previousMonth = new Date()
-    previousMonth.setMonth(previousMonth.getMonth() - 1);
-    $scope.pmonth = previousMonth;
-
-    var pastMonth = $filter('date')($scope.pmonth, 'MMM');
-    $scope.visitsList.forEach(function(visit) {
-      visit.startDate = $filter('date')(visit.startDate, "dd MMM yyyy");
-    });
-    $scope.filteredDate = $filter('filter')($scope.visitsList, {startDate: pastMonth});
-    $scope.showFiltered = true;
-    $scope.showAll = false;
-  }
-  else if (column === 'thisMonth') {
-
-    var previousMonth = new Date()
-    previousMonth.setMonth(previousMonth.getMonth());
-    $scope.month = previousMonth;
-
-    var pastMonth = $filter('date')($scope.month, 'MMM');
-    $scope.visitsList.forEach(function(visit) {
-      visit.startDate = $filter('date')(visit.startDate, "dd MMM yyyy");
-    });
-    $scope.filteredDate = $filter('filter')($scope.visitsList, {startDate: pastMonth});
-    $scope.showFiltered = true;
-    $scope.showAll = false;
-  }
-  else if (column === 'future') {
-
-    var nextmonth = new Date()
-    nextmonth.setMonth(nextmonth.getMonth() + 1);
-    $scope.nmonth = nextmonth;
-
-    var nextMonth = $filter('date')($scope.nmonth, 'MMM');
-    $scope.visitsList.forEach(function(visit) {
-      visit.startDate = $filter('date')(visit.startDate, "dd MMM yyyy");
-    });
-    $scope.filteredDate = $filter('filter')($scope.visitsList, {startDate: nextMonth});
-    $scope.showFiltered = true;
-    $scope.showAll = false;
-  }
-  else {
-    $scope.showAll = true;
-    $scope.showFiltered = false;
-  }
+//date filter
+$scope.setTimeline = function(time){
+  $scope.timeline = time;
+  console.log("setting timeline to " + $scope.timeline )
+  $scope.visitBatch = $scope.allVisits[$scope.timeline];
 }
 
-
-//date
+$http.get('/api/v1/secure/visits/all/my').success(function(response) {
+  $scope.allVisits = response;
+  if($scope.timeline=="" || $scope.timeline===undefined){
+    $scope.timeline = "this-week";
+    console.log("no timeline. Set to " + $scope.timeline);
+    $scope.visitBatch = $scope.allVisits[$scope.timeline];
+  }
+  console.log(JSON.stringify($scope.visitBatch,null,2));
+}
+);
 
 }])
 
