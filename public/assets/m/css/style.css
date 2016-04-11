@@ -32,7 +32,7 @@ a:hover {
 div#profile-details {
   padding-top: 60px;
   background: url("../img/bg/header.jpg") no-repeat;
-  background-size: 113%;
+  background-size: 170%;
 }
 
 div#profile-details .profile-pic,
@@ -97,8 +97,53 @@ div#profile-details .profile-location img {
   color: #d3d3d3;
   font-size: 0.75em;
 }
+.day,
+.loc {
+    color: #fff;
+    font-size: 0.75em;
+    display: block;
+    font-family: antonioLight;
+}
 
-
+.day {
+    color: #8FBC8F;
+}
+ .date{
+  color: #fff;
+  font-size: 0.75em;
+  display: block;
+  font-family: workSansMedium; 
+  }
+  .time{
+  color: #fff;
+  font-size: 0.75em;
+  display: block;
+  font-family: workSansMedium;
+  }
+  .temp{
+  color: #fff;
+  font-size:13px;
+  display: block;
+  font-family: workSansMedium;
+  }
+  #scrollBox {
+  overflow-x: relative;
+  overflow-y: hidden;
+  -ms-overflow-x: relative;
+  -ms-overflow-y: hidden;
+  white-space: nowrap;
+  }
+  #scrollBox > div {
+  display: inline-block;
+  margin-right: 5px;
+  }
+  #scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-align: center;
+  height: 200px;
+  width: 300px;
+  }
 
 .profile-pic img {
     width: 75px;
@@ -225,53 +270,38 @@ background-color: #40AABF;}
 }
 
 
-/*   clock*/
-.clockContainer {
-    height: 70px;
-}
-
-.container {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.day,
-.loc {
-    color: #fff;
-    font-size: 0.75em;
-    display: block;
-    font-family: antonioLight;
-}
-
-.day {
-    color: #2E86C1;
-}
-
-.sessionOverview.clocksDisplay .row {
-    padding-top: 0px;
-}
-
 .profile-location u {
   text-decoration: inherit;
   border-bottom: dotted 1px #fff;
   padding-bottom: 2px;
 }
+@media only screen and (min-device-width: 290px)and (max-device-width: 320px){
+  #scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  text-align: center;
+  height: 200px;
+  width:90px;
+  }
 
+}
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+@media only screen and (min-device-width: 321px) and (max-device-width: 374px) {
   .session-overview .row .currentSession,
   .session-overview .row .next-session {
     font-size: 1.1em;
   }
- 
+ #scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-align: center;
+  height: 200px;
+  width:97px;
+  }
 
   .session-overview .row {
     padding-top: 15px;
     padding-bottom: 10px;
-  }
-
-  .session-overview.clocksDisplay .row {
-    padding-top: 0;
   }
 
   div#profile-details .profile-name {
@@ -312,12 +342,18 @@ background-color: #40AABF;}
 
 /*media querries */
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 484px) {
   .session-overview .row .current-session,
   .session-overview .row .next-session {
     font-size: 0.75em;
   }
-
+#scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-align: center;
+  height: 200px;
+  width:120px;
+  }
   .menu-circle-icon {
     width: 55px;
     height: 55px;
@@ -343,6 +379,12 @@ background-color: #40AABF;}
     font-size: 0.75em;
   }
 
+#scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  text-align: center;
+  height: 280px;
+  }
   .menu-circle-icon {
     width: 65px;
     height: 65px;
@@ -394,6 +436,13 @@ background-color: #40AABF;}
     padding-top: 10px;
    
   }
+  #scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-align: center;
+  height: 200px;
+  width:150px;
+  }
   .profile-details{
     padding-top: 400px;
   }
@@ -417,18 +466,19 @@ background-color: #40AABF;}
     font-size: 0.85em;
     letter-spacing: 2px;
 }
-.clocksDisplay {
-    padding-top: 30px;
-    padding-bottom: 70px;
-  }
-  
 
 }
 
 
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
-  
+  #scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-align: center;
+  height: 300px;
+  width:250px;
+  }
   .session-overview .row .next-session div {
     margin-left: 88px;
   }
@@ -436,12 +486,6 @@ background-color: #40AABF;}
   .session-overview .row .current-session div {
     margin-right: 200px;
   }
-
-  .clocksDisplay {
-    padding-top: 30px;
-    padding-bottom: 70px;
-  }
-  
 
   div#profile-details .profile-location img {
     width: 18px;
