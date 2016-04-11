@@ -12,14 +12,6 @@
 
        <div ng-include src="'/public/mods/visits/partials/sortSearch.html'"></div>
     </div>
-
-    <a href ng-click="setTimeline('past')">Past ({{allVisits["past"].visits.length}})</a>&nbsp;&nbsp;
-    <a href ng-click="setTimeline('last-week')">Last Week ({{allVisits["last-week"].visits.length}})</a>&nbsp;&nbsp;
-    <a href ng-click="setTimeline('this-week')">This Week ({{allVisits["this-week"].visits.length}})</a>&nbsp;&nbsp;
-    <a href ng-click="setTimeline('today')">Today ({{allVisits["today"].visits.length}})</a>&nbsp;&nbsp;
-    <a href ng-click="setTimeline('next-week')">Next Week ({{allVisits["next-week"].visits.length}})</a>&nbsp;&nbsp;
-    <a href ng-click="setTimeline('further')">Future ({{allVisits["further"].visits.length}})</a>&nbsp;&nbsp;
-
     <table class="table table-striped table-condensed table-responsive table-hover">
       <thead class="data-grid-header">
         <!-- table header -->

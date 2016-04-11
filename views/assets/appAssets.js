@@ -76,6 +76,7 @@ module.exports = {
 			"/public/d/userProfile/script.js",
 			"/public/d/userDisplay/script.js",
 			"/public/d/user/script.js",
+			"/public/d/invitees/script.js",
 			"/public/d/fileUpload/script.js",
 			"/public/d/fileAttachment/script.js",
 			"/public/d/datePicker/script.js",

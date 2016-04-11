@@ -10,3 +10,11 @@
             </ul>
           </div>
       </div> 
+     <div class="col-xs-12">
+    <a href ng-click="setTimeline('past')">Past ({{allVisits["past"].visits.length}})</a>&nbsp;&nbsp;
+    <a href ng-click="setTimeline('last-week')">Last Week ({{allVisits["last-week"].visits.length}})</a>&nbsp;&nbsp;
+    <a href ng-click="setTimeline('this-week')">This Week ({{allVisits["this-week"].visits.length}})</a>&nbsp;&nbsp;
+    <a href ng-click="setTimeline('today')">Today ({{allVisits["today"].visits.length}})</a>&nbsp;&nbsp;
+    <a href ng-click="setTimeline('next-week')">Next Week ({{allVisits["next-week"].visits.length}})</a>&nbsp;&nbsp;
+    <a href ng-click="setTimeline('further')">Future ({{allVisits["further"].visits.length}})</a>&nbsp;&nbsp;
+    </div> 

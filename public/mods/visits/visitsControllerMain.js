@@ -300,25 +300,25 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
 // Visit schedule table end
 // Visit invitees table
 
-$scope.addInvitees=function(specialInvite){
-  console.log(specialInvite.inviteId);
-  $scope.inviteesData.push({
-    invite: specialInvite.inviteId
-  });
+// $scope.addInvitees=function(specialInvite){
+//   console.log(specialInvite.inviteId);
+//   $scope.inviteesData.push({
+//     invite: specialInvite.inviteId
+//   });
 
-  specialInvite.inviteId='';
-  specialInvite.inviteUser='';
-  specialInvite.inviteEmail='';
-};
+//   specialInvite.inviteId='';
+//   specialInvite.inviteUser='';
+//   specialInvite.inviteEmail='';
+// };
 
-$scope.removeInvitees = function(index){
-  $scope.inviteesData.splice(index, 1);
-};
+// $scope.removeInvitees = function(index){
+//   $scope.inviteesData.splice(index, 1);
+// };
 
-$scope.editInvitees = function(index,specialInvite){
-  $scope.specialInvite= specialInvite;
-  $scope.inviteesData.splice(index, 1);
-};
+// $scope.editInvitees = function(index,specialInvite){
+//   $scope.specialInvite= specialInvite;
+//   $scope.inviteesData.splice(index, 1);
+// };
 // Visit specialInvite table end
  // Visit keynote table
 
