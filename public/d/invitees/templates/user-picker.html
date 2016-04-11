@@ -1,0 +1,34 @@
+<input type="text" name="user" id="user"
+  placeholder="User" ng-blur="getUser()" ng-model="userEmail" ng-minlength="1" ng-maxlength="75">
+
+
+<br>
+<ANY ng-switch="showFlag">
+  <ANY ng-switch-when="user">
+  	<!-- <div class="user-badge" style="width:180px;!important;">
+		  <div class="pull-left">
+		    <img height="40" width="40" src="/public/assets/images/avatar.jpg" />
+		  </div>
+		  <div class="pull-right">
+		    <div class="text-highlight">{{userModel.name.first}} {{userModel.name.last}}</div>
+		    <div class="text-xsmall">{{userModel.email}}</div>
+		    <div class="text-xsmall">{{userModel.jobTitle}}<br/>{{userModel.organization}} </div>
+		  </div>
+		</div> -->
+      <div ng-include = "getTemplate()">
+
+</div>
+  </ANY>
+
+  <ANY ng-switch-when="noUser">
+	  <div class="text-danger" style="width:180px;!important;">
+			User not found!!!
+		</div>
+  </ANY>
+
+  <ANY ng-switch-default>
+    <div class="text-info" style="width:180px;!important;">
+			<!-- Default panel -->
+		</div>
+	</ANY>
+</ANY>
