@@ -24,7 +24,7 @@
     }
     
     .divtop {
-        padding-top: 60px;
+        padding-top: 150px;
     }
     .dropdown-menu{
        background-color: white;
@@ -72,10 +72,38 @@
   </div>
 </div>
 
-<div class="divtop">Contacts - {{contactList[0].location}}</div>
+<div class="divtop"></div>
 <div id="spoc-page">
     <div class="spoc-details-container">
-        <div class="heading1">CONTACT YOUR SPOC</div>
+
+        <div class="heading1">CONTACT YOUR VISIT MANAGER</div>
+        
+        <div class="list-group">
+            <div class="spoc-pic col-xs-1 col-sm-1 col-md-1">
+                <img class="img-circle spocpicture" ng-src="{{anchor.avatar}}">
+            </div>
+            <div class="spoc-bios-div col-xs-11 col-sm-11 col-md-11">
+                <div class="spoc-name">{{anchor.name.prefix}} {{anchor.name.first}} {{anchor.name.middle}} {{anchor.name.last}} {{anchor.name.suffix}}
+                </div>
+                <div class="spoc-designation">{{anchor.jobTitle}}</div>{{anchor.type}}
+                <div class="spoc-bios">{{anchor.summary}}</div>
+                <div class="reach-spoc-phone">
+                    <div class="number">{{anchor.contactNo[0].contactNumber}}</div>
+                    <a class="col-xs-6 col-sm-6 col-md-6 call-text" ng-href="tel: {{anchor.contactNo[0].contactNumber}}">CALL</a>
+                    <a class="col-xs-6 col-sm-6 col-md-6 message-text" ng-href="sms: {{anchor.contactNo[0].contactNumber}}">MESSAGE</a>
+                </div>
+                <div class="reach-spoc-email">
+                    <div class="number">{{anchor.email}}</div>
+                    <a class="email-text" ng-href="mailto: {{anchor.email}}">EMAIL</a>
+                </div>
+                <div class="download-contact glyphicon glyphicon-paperclip">
+                    <div class="download-text">Download Contact</div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="heading1">CONTACT YOUR LOCATION SPOC FOR {{contactList[0].location}}</div>
         <div class="list-group">
          <div class="spoc-details" class="list-group-item" ng-repeat="spoc in contactList">
             <div class="spoc-pic col-xs-1 col-sm-1 col-md-1">
@@ -91,7 +119,7 @@
                     <a class="col-xs-6 col-sm-6 col-md-6 message-text" ng-href="sms: {{spoc.contactNo}}">MESSAGE</a>
                 </div>
                 <div class="reach-spoc-email">
-                    <div class="email">{{spoc.email}}</div>
+                    <div class="number">{{spoc.email}}</div>
                     <a class="email-text" ng-href="mailto: {{spoc.email}}">EMAIL</a>
                 </div>
                 <div class="download-contact glyphicon glyphicon-paperclip">

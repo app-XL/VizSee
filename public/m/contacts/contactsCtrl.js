@@ -19,6 +19,10 @@ angular.module('contacts')
     $scope.cities = str.split(/[ ,]+/);
     console.log($scope.cities)
     $scope.title=response.visits.title;
+    $scope.anchor=response.visits.anchor;
+     $http.get('/api/v1/secure/admin/users/'+$scope.anchor).success(function(response) {
+       $scope.anchor=response;
+    })
    })
 
   $scope.collapseDiv = function(index, text){

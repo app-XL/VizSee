@@ -160,7 +160,8 @@
   <div class="col-md-4">
     <button type="submit" class="btn btn-success"
     ng-disabled="clientsForm.$invalid" ng-click="save()">Submit</button>
-    <button type="reset" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    <button type="reset" class="btn btn-warning" ng-click="cancel()" confirm-dialog header-text="Cancel Form Submission" content="Are you sure you want to cancel the submission of this form ?"
+            yes-text="Ok" no-text="Cancel">Cancel</button>
   </div>
 </div>
 </div>

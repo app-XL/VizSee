@@ -104,7 +104,7 @@ visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams
 	  }
 
 	  if($scope.mode =='edit')
-	  {
+	  { 
 	  	$scope.sessionFeedbackId = sessionId;
 	  }
 	}
@@ -194,6 +194,8 @@ visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams
 	      //$scope.startEndTime =
 				$scope.ownerId = $scope.schedule.session.owner;
 				$scope.supporterId = $scope.schedule.session.supporter;
+				$scope.arraydata = $scope.schedule.invitees;
+
 				console.log($scope.ownerId);
 				console.log($scope.supporterId);
 				console.log("edit session...");
@@ -241,6 +243,9 @@ visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams
 	    $scope.schedule.scheduleDate = $scope.entryDate;
 	    $scope.schedule.visit = $scope.visit._id;
 	    $scope.schedule.client = $scope.visit.client._id;
+	    console.log($scope.arraydata);
+	    $scope.schedule.invitees = $scope.arraydata;
+	    console.log($scope.schedule.invitees);
 	   // $scope.schedule.session.location = $scope.meetingPlacesData;
 			//session invitees to be added
 
@@ -252,20 +257,37 @@ visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams
 	    $scope.schedule.session.startTime = DateReplaceTime($scope.entryDate, startTime);
 	    $scope.schedule.session.endTime = DateReplaceTime($scope.entryDate, endTime);
 	    //console.log($scope.data);
-	    if($scope.sessionMeetingData == '' || $scope.sessionMeetingData == undefined)
-	    {
-	    $scope.schedule.session.location = $scope.meetingPlacesData;
+	   	if($scope.mode == 'add')
+	   	{	
+	    	if($scope.sessionMeetingData == '' || $scope.sessionMeetingData == undefined)
+	    	{
+	    	$scope.schedule.session.location = $scope.meetingPlacesData;
+			}
+
+			if($scope.sessionFeedbackId == '' || $scope.sessionFeedbackId == undefined)
+			{
+				$scope.schedule.feedbackTemplate = $scope.sessionFeedbackDefaultId;
+			}
 		}
+
+		if($scope.mode == 'edit')
+	   	{
+	   		if($scope.sessionMeetingData == '' || $scope.sessionMeetingData == undefined)
+	   		{
+	   			$scope.schedule.session.location = $scope.meetingPlaceData;
+	   		}
+
+	   		if($scope.sessionFeedbackId == '' || $scope.sessionFeedbackId == undefined)
+	   		{
+	   			$scope.schedule.feedbackTemplate = $scope.sessiondfbid;
+	   		}
+	   	}	
 
 		if($scope.sessionMeetingData != '' && $scope.sessionMeetingData != undefined)
 		{
 		 $scope.schedule.session.location = $scope.sessionMeetingData;
 		}
 
-		if($scope.sessionFeedbackId == '' || $scope.sessionFeedbackId == undefined)
-		{
-			$scope.schedule.feedbackTemplate = $scope.sessionFeedbackDefaultId;
-		}
 
 		if($scope.sessionFeedbackId != '' && $scope.sessionFeedbackId != undefined)
 		{

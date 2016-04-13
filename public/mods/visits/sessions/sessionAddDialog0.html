@@ -214,7 +214,13 @@
 					</md-input-container>
 				</div>
 			</div>
-</ANY>
+
+     
+        <!-- <div style="overflow-y: auto; height:100px; width:700px"> -->
+           <invitees arraydata="$parent.arraydata" switch-mode="mode" user-type="employee"></invitees>
+        <!-- </div>   -->
+     
+    </ANY>
       <ANY ng-switch-when="tea">
 
         <md-input-container class="md-block">
@@ -226,9 +232,7 @@
           <div ng-message="md-maxlength">The title  has to be less than 30 characters long.</div>
           <div ng-message="minlength">The title should contain minimum 5characters</div></div></div>
         </md-input-container>
-        <br>
-        <br>
-        <br>
+        <invitees arraydata="$parent.arraydata" switch-mode="mode" user-type="employee"></invitees>
         <br>
         <br>
         <br>
@@ -252,9 +256,7 @@
           <div ng-message="md-maxlength">The title  has to be less than 30 characters long.</div>
           <div ng-message="minlength">The title should contain minimum 5characters</div></div></div>
         </md-input-container>
-        <br>
-        <br>
-        <br>
+        <invitees arraydata="$parent.arraydata" switch-mode="mode" user-type="employee"></invitees>
         <br>
         <br>
         <br>
@@ -291,7 +293,8 @@
             <md-button class="md-primary md-raised" ng-click="save()" ng-disabled="sessionAddForm.$invalid">
               Submit
             </md-button>
-            <md-button class="md-warn md-raised" ng-click="cancel()" >
+            <md-button class="md-warn md-raised" ng-click="cancel()" confirm-dialog header-text="Cancel Form Submission" content="Are you sure you want to cancel the submission of this form ?"
+            yes-text="Ok" no-text="Cancel">
               Cancel
             </md-button>
 

@@ -5,17 +5,19 @@
   </div>
 
   <div class="container">
-    <div class="pnbdr panel panel-primary">
+    
 		<!--div class="panel-heading">keynotes panels view</div-->
-      <div class="searchpad">
+      <!--div class="searchpad"-->
 
-        <div class="form-inline has-feedback filter-header">
-          <input type="text" class="form-control" placeholder="Search" ng-model="search.$" />
+        <div class="row">
+          <div class="col-xs-5">
+           <input type="text" class="form-control" placeholder="Search" ng-model="search.$" />
             <!-- <i class="glyphicon glyphicon-search form-control-feedback"></i> -->
-          <button class="btn btn-default btn-sm" ng-click="hideFilter=!hideFilter">Advanced Search</button>
-          <div ng-include src="'/public/mods/feedback/partials/sortSearch.html'"></div>
+          </div>
+         <div ng-include src="'/public/mods/feedback/partials/sortSearch.html'"></div>
         </div>
         
+        <div class="pnbdr panel panel-primary">
         <div ng-repeat="keynote in keynotesList | filter: search |orderBy:orderByField:reverseSort">
           <div class="row">
 		
@@ -49,9 +51,10 @@
 		      </div>
 	      </div>
       </div>
-    </div>
-  </div>
+      <!--/div-->
 
+  </div>
+</div>
 
 
 

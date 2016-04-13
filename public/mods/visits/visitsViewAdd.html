@@ -242,7 +242,8 @@
       <button type="submit" class="btn btn-success"
       ng-click="save()" ng-disabled="visitsForm.$invalid">Submit
     </button>
-    <button type="reset" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    <button type="reset" class="btn btn-warning" ng-click="cancel()" confirm-dialog header-text="Cancel Form Submission" content="Are you sure you want to cancel the submission of this form ?"
+            yes-text="Ok" no-text="Cancel">Cancel</button>
   </div>
 </div>
 </form>
@@ -290,7 +291,7 @@
   </md-input-container>
   <div ng-include src="'/public/mods/visits/keynotesVisitAdd.html'"></div>
 
-<br><label>Invitees</label><br>
+<br>
 <invitees arraydata="arraydata" switch-mode="mode" user-type="employee"></invitees>
 
 </div>

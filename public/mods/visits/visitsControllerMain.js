@@ -190,8 +190,7 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
     $scope.visits.createBy= $rootScope.user._id;
     $scope.visits.client = $scope.clientId;
     $scope.visits.invitees = $scope.arraydata;
-    console.log("invitees:  " + $scope.arraydata);
-    console.log("invitees:  " + $scope.array);
+    
     if ($scope.checked == false){
       $scope.unbillable= "non-billable";
       if($scope.visits.wbsCode!=null){$scope.visits.wbsCode= null;}
@@ -300,28 +299,7 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
     $scope.schedules.splice(index, 1);
   };
 // Visit schedule table end
-// Visit invitees table
 
-// $scope.addInvitees=function(specialInvite){
-//   console.log(specialInvite.inviteId);
-//   $scope.inviteesData.push({
-//     invite: specialInvite.inviteId
-//   });
-
-//   specialInvite.inviteId='';
-//   specialInvite.inviteUser='';
-//   specialInvite.inviteEmail='';
-// };
-
-// $scope.removeInvitees = function(index){
-//   $scope.inviteesData.splice(index, 1);
-// };
-
-// $scope.editInvitees = function(index,specialInvite){
-//   $scope.specialInvite= specialInvite;
-//   $scope.inviteesData.splice(index, 1);
-// };
-// Visit specialInvite table end
  // Visit keynote table
 
  $scope.addkeynote=function(keynoteDef){

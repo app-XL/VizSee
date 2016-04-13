@@ -107,10 +107,10 @@
   padding-right: 10px;
 }
 
-.clientsBlockText1 {
+.clients-block-text-1 {
   position: absolute;
-  top: 60px;
-  font-size: 35px;
+  top: 40px;
+  font-size: 24px;
   font-family: antonioBold;
   width: 100%;
   left: 0px;
@@ -315,8 +315,213 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+/* rewards less */
+#industries {
+  background-color: #F4ECE9;
+}
 
-@media only screen and (max-width: 599px) {
+#industries .heading,
+#rewards-recognition .heading,
+#certifications .heading {
+  color: #555555;
+  font-size: 16px;
+  padding: 5px;
+  margin-top: 0;
+  font-family: workSansMedium;
+  text-align: left;
+}
+
+#industries .row div {
+  text-align: center;
+  color: #7E685B;
+  font-size: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#industries .row div label {
+  font-weight: 100;
+  padding-top: 10px;
+  font-family: workSansSemiBold;
+}
+
+#industries .row div img {
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+#rewards-recognition {
+  background-color: #F5EAD4;
+}
+
+#rewards-recognition .row .reward-set div {
+  height: 85px;
+  text-align: left;
+}
+
+#rewards-recognition img {
+  width: 120px;
+}
+
+#rewards-recognition .reward-set img {
+  width: 72px;
+  display: block;
+}
+
+#rewards-recognition label {
+  color: #8E6D25;
+  font-size: 12px;
+  font-family: workSansBold;
+  padding-top: 5px;
+  text-align: left;
+}
+
+.reward-badge-container {
+  text-align: center;
+}
+
+#certifications {
+  background-color: #F3E9F4;
+}
+
+#certifications .row div {
+  text-align: center;
+}
+
+#certifications .row div img {
+  width: 100px;
+  padding: 10px;
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+  .img-factsheet {
+    width: 75px;
+    height: 89px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .factsheet-csc-logo {
+    margin-left: 100px;
+  }
+
+  .map-title {
+    font-size: 16px;
+  }
+
+  .middlerow {
+    margin-top: -20px;
+    margin-bottom: -20px;
+  }
+
+  .startedText1 {
+    font-size: 10px;
+    top: 15px;
+  }
+
+  .startedText2 {
+    font-size: 19px;
+    top: 45px;
+  }
+
+  .professionalsText1 {
+    font-size: 19px;
+    top: 15px;
+  }
+
+  .professionalsText2 {
+    font-size: 10px;
+    top: 45px;
+    word-break: break-all;
+  }
+
+  .clients-block-text1 {
+    font-size: 19px;
+    top: 40px;
+  }
+
+  .clients-block-text-2 {
+    font-size: 10px;
+    top: 20px;
+  }
+
+  .top10text1 {
+    font-size: 19px;
+    top: 15px;
+  }
+
+  .top10text2 {
+    font-size: 8.4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    top: 35px;
+  }
+
+  .largest-text-1 {
+    font-size: 13.2px;
+    top: 20px;
+  }
+
+  .largest-text-2 {
+    font-size: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    top: 45px;
+  }
+
+  .indiaMapBlock {
+    font-size: 12px;
+  }
+
+  .indiaMap {
+    width: 275px;
+    height: 300px;
+  }
+
+  .loc1 {
+    left: 85px;
+    top: 75px;
+  }
+
+  .loc2 {
+    left: 65px;
+    top: 135px;
+  }
+
+  .loc3 {
+    left: 40px;
+    top: 138px;
+  }
+
+  .loc4 {
+    left: 38px;
+    top: 173px;
+  }
+
+  .loc5 {
+    left: 90px;
+    top: 200px;
+  }
+
+  .loc6 {
+    bottom: 33px;
+    left: 84px;
+  }
+
+  .loc7 {
+    bottom: 35px;
+    left: 101px;
+  }
+}
+@media only screen and (min-device-width: 485px)and (max-device-width: 768px) {
 
   .backIcon {
     width: 25px;
@@ -338,33 +543,33 @@
   }
 
   .startedText1 {
-    top: 50px;
-    font-size: 18px;
+    top: 45px;
+    font-size: 11px;
   }
 
   .startedText2 {
     top: 70px;
-    font-size: 34px;
+    font-size: 24px;
   }
 
   .professionalsText1 {
-    top: 40px;
-    font-size: 34px;
+    top: 45px;
+    font-size: 24px;
   }
 
   .professionalsText2 {
-    font-size: 15px;
-    top: 90px;
+    font-size: 11px;
+    top: 80px;
   }
 
   .clients-block-text-1 {
-    font-size: 34px;
-    top: 40px;
+    font-size: 24px;
+    top: 45px;
   }
 
   .clients-block-text-2 {
-    font-size: 18px;
-    top: 85px;
+    font-size: 11px;
+    top: 80px;
   }
 
   .top10text1 {
@@ -450,210 +655,7 @@
   }
 }
 
-@media only screen and (max-width: 450px) {
 
-  .img-factsheet {
-    width: 95px;
-    height: 109px;
-    margin-left: 3px;
-    margin-right: 3px;
-  }
-
-  .factsheet-csc-logo {
-    margin-left: 100px;
-  }
-
-  .map-title {
-    font-size: 16px;
-  }
-
-  .middlerow {
-    margin-top: -20px;
-    margin-bottom: -20px;
-  }
-
-  .startedText1 {
-    font-size: 13px;
-    top: 30px;
-  }
-
-  .startedText2 {
-    font-size: 30px;
-    top: 45px;
-  }
-
-  .professionalsText1 {
-    top: 30px;
-    font-size: 30px;
-  }
-
-  .professionalsText2 {
-    font-size: 10px;
-    top: 65px;
-  }
-
-  .clients-block-text1 {
-    font-size: 28px;
-    top: 25px;
-  }
-
-  .clients-block-text-2 {
-    font-size: 16px;
-    top: 60px;
-  }
-
-  .top10text1 {
-    font-size: 19px;
-    top: 25px;
-  }
-
-  .top10text2 {
-    font-size: 8.4px;
-    padding-left: 5px;
-    padding-right: 5px;
-    top: 55px;
-  }
-
-  .largest-text-1 {
-    font-size: 16px;
-    top: 30px;
-  }
-
-  .largest-text-2 {
-    font-size: 8.4px;
-    padding-left: 15px;
-    padding-right: 15px;
-    top: 55px;
-  }
-
-  .indiaMapBlock {
-    font-size: 12px;
-  }
-
-  .indiaMap {
-    width: 275px;
-    height: 300px;
-  }
-
-  .loc1 {
-    left: 85px;
-    top: 75px;
-  }
-
-  .loc2 {
-    left: 65px;
-    top: 135px;
-  }
-
-  .loc3 {
-    left: 40px;
-    top: 138px;
-  }
-
-  .loc4 {
-    left: 38px;
-    top: 173px;
-  }
-
-  .loc5 {
-    left: 90px;
-    top: 200px;
-  }
-
-  .loc6 {
-    bottom: 33px;
-    left: 84px;
-  }
-
-  .loc7 {
-    bottom: 35px;
-    left: 101px;
-  }
-}
-
-/* rewards less */
-#industries {
-  background-color: #F4ECE9;
-}
-
-#industries .heading,
-#rewards-recognition .heading,
-#certifications .heading {
-  color: #555555;
-  font-size: 16px;
-  padding: 5px;
-  margin-top: 0;
-  font-family: workSansMedium;
-  text-align: left;
-}
-
-#industries .row div {
-  text-align: center;
-  color: #7E685B;
-  font-size: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-#industries .row div label {
-  font-weight: 100;
-  padding-top: 10px;
-  font-family: workSansSemiBold;
-}
-
-#industries .row div img {
-  width: 50px;
-  display: block;
-  margin: 0 auto;
-}
-
-#rewards-recognition {
-  background-color: #F5EAD4;
-}
-
-#rewards-recognition .row .reward-set div {
-  height: 85px;
-  text-align: left;
-}
-
-#rewards-recognition img {
-  width: 120px;
-}
-
-#rewards-recognition .reward-set img {
-  width: 72px;
-  display: block;
-}
-
-#rewards-recognition label {
-  color: #8E6D25;
-  font-size: 12px;
-  font-family: workSansBold;
-  padding-top: 5px;
-  text-align: left;
-}
-
-.reward-badge-container {
-  text-align: center;
-}
-
-#certifications {
-  background-color: #F3E9F4;
-}
-
-#certifications .row div {
-  text-align: center;
-}
-
-#certifications .row div img {
-  width: 100px;
-  padding: 10px;
-}
-
-.row {
-  margin-right: 0;
-  margin-left: 0;
-}
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
   #rewards-recognition .reward-set img {
@@ -784,97 +786,4 @@
   font-size: 16px;
   font-family: workSansLight;
   color: #3f561e;
-}
-
-@media only screen and (max-device-width: 1024px) {
-
-  .ftb-year-class {
-    left: 17%;
-  }
-
-  .ftb-slice-class {
-    left: 26%;
-  }
-
-  .ftb-text-1 {
-    left: 26%;
-  }
-
-  .ftb-text-2 {
-    left: 16%;
-  }
-
-  .ftb-title-text {
-    left: 29%;
-  }
-
-  .ftb-title-class {
-    left: 32%;
-  }
-}
-
-@media only screen and (max-device-width: 760px) {
-  .ftb-year-class {
-    left: 6%;
-  }
-
-  .ftb-slice-class {
-    left: 22%;
-  }
-
-  .ftb-second-block {
-    top: 29%;
-    left: 45%;
-  }
-
-  .ftb-text-1 {
-    left: 24%;
-  }
-
-  .ftb-text-2 {
-    left: 12%;
-  }
-
-  .ftb-title-text {
-    left: 23%;
-  }
-
-  .ftb-title-class {
-    left: 32%;
-  }
-}
-
-@media only screen and (max-device-width: 370px) {
-  .ftb-year-class {
-    left: 2%;
-  }
-
-  .ftb-slice-class {
-    left: 20%;
-  }
-
-  .ftb-second-block {
-    left: 37%;
-  }
-
-  .ftb-text-1 {
-    left: 22%;
-  }
-
-  .ftb-text-2 {
-    left: 13%;
-  }
-
-  .ftb-third-block {
-    left: 29%;
-  }
-
-  .ftb-title-text {
-    top: 36%;
-    left: 21%;
-  }
-
-  .ftb-title-class {
-    left: 31%;
-  }
 }

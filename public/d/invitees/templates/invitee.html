@@ -1,37 +1,54 @@
 <link rel="stylesheet" type="text/css" href="/public/d/userDisplay/script.js"/>
 
 <div ng-if="switchMode=='add'">
-  <input ng-model="invite" type="invite"> 
-  <button class="btn btn-primary" ng-click="addInvitees(invite)">Add Invitee</button>
+  <div class="row">
+    <div class="col-xs-4">
+      <md-input-container class="md-block">
+      <label>Invitees</label>
+      <input ng-model="invite" id="invite" name="invite" type="text">
 
-    <div><span ng-show="checked" class="error text-danger">{{message}}</span></div>
-  
-    <div ng-repeat="special in array">
-        <div class="col-xs-6 col-sm-6 col-md-5 col-lg-6">
-       <userdisplay view-mode="medium" user-id="special.invite">
-        <div class="closeicon pull-right">
-          <a class="table-btn" ng-click="removeInviteesdata($index)"><li class="fa fa-times fa-lg" /></a>
-        </div>
-      </userdisplay>
-    </div>
+    </md-input-container>
   </div>
+  <div  class="col-xs-4">
+    <button class="btn btn-primary" ng-click="addInvitees(invite);invite = null">Add Invitee</button>
+  </div>
+</div>
+<div><span ng-show="checked" class="error text-danger">{{message}}</span></div>
+
+<div ng-repeat="special in array">
+    <div class="col-xs-6 col-sm-6 col-md-5 col-lg-6">
+   <userdisplay view-mode="medium" user-id="special.invite">
+    <div class="closeicon pull-right">
+      <a class="table-btn" ng-click="removeInvitees($index)"><li class="fa fa-times fa-lg" /></a>
+    </div>
+  </userdisplay>
+</div>
+</div>
 </div>
 
 
 
 <div ng-if="switchMode=='edit'" >
-  <input ng-model="invite" type="invite"> 
-  <button class="btn btn-primary" ng-click="addInvitees(invite)">Add Invitee</button>
+ <div class="row">
+  <div class="col-xs-4">
+    <md-input-container class="md-block">
+    <label>Invitees</label>
+    <input ng-model="invite" id="invite" name="invite" type="text">
+  </md-input-container>
+</div>
+<div  class="col-xs-4">
+  <button class="btn btn-primary" ng-click="addInvitees(invite);invite = null">Add Invitee</button>
+</div>
+</div>
+<div><span ng-show="checked" class="error text-danger">{{message}}</span></div>  
 
-    <div><span ng-show="checked" class="error text-danger">{{message}}</span></div>  
-  
-    <div ng-repeat="special in arraydata">
-        <div class="col-xs-6 col-sm-6 col-md-5 col-lg-6">
-       <userdisplay view-mode="medium" user-id="special">
-        <div class="closeicon pull-right">
-          <a class="table-btn" ng-click="removeInviteesdata($index)"><li class="fa fa-times fa-lg" /></a>
-        </div>
-      </userdisplay>
+<div ng-repeat="special in arraydata">
+    <div class="col-xs-6 col-sm-6 col-md-5 col-lg-6">
+   <userdisplay view-mode="medium" user-id="special">
+    <div class="closeicon pull-right">
+      <a class="table-btn" ng-click="removeInviteesdata($index)"><li class="fa fa-times fa-lg" /></a>
     </div>
-  </div>
+  </userdisplay>
+</div>
+</div>
 </div> 
