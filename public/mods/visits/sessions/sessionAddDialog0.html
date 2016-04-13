@@ -186,8 +186,14 @@
            </div>
          </div> -->
           <md-dialog-actions layout="row">
-            <md-button class="md-primary md-raised" ng-click="save()">
-              OK
+            <!--md-button class="md-primary md-raised" ng-click="save()">
+              Submit
+            </md-button>
+            <md-button class="md-warn md-raised" ng-click="cancel()" >
+              Cancel
+            </md-button-->
+            <md-button class="md-primary md-raised" ng-click="save()" ng-disabled="sessionAddForm.$invalid">
+              Submit
             </md-button>
             <md-button class="md-warn md-raised" ng-click="cancel()" >
               Cancel
@@ -214,5 +220,81 @@
   .dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
     font-size: 0.8em;
     margin-top: 50px; }
+  /* style for buttons */ 
+  .md-button.md-primary {
+      color: #FFF !important;
+      background-color: #5CB85C !important;
+      border-color: #4CAE4C;
+  }
 
+  .md-button.md-primary:focus{
+    color: #fff !important;
+    background-color: #449d44 !important;
+    border-color: #255625 !important;
+  }
+  .md-button.md-primary:hover,
+  .md-button.md-primary:active {
+    color: #fff !important;
+    background-color: #449d44 !important;
+    border-color: #398439 !important;
+  }
+  
+  .md-button.md-primary.disabled, 
+  .md-button.md-primary[disabled], fieldset[disabled] .md-button.md-primary {
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.65;
+    color: #FFF !important;
+  }
+
+  .md-button.md-warn {
+    color: #FFF !important;
+    background-color: #F0AD4E !important;
+    border-color: #EEA236 !important;
+  }
+  .md-button.md-warn:focus,
+  .md-button.md-warn.focus {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #985f0d;
+  }
+  .md-button.md-warn:hover {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+  }
+  .md-button.md-warn:active,
+  .md-button.md-warn.active{
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+  }
+  .md-button.md-warn:active:hover,
+  .md-button.md-warn.active:hover,
+  .md-button.md-warn:active:focus,
+  .md-button.md-warn.active:focus,
+  .md-button.md-warn:active.focus,
+  .md-button.md-warn.active.focus{
+    color: #fff;
+    background-color: #d58512;
+    border-color: #985f0d;
+  }
+  .md-button.md-warn:active,
+  .md-button.md-warn.active,
+  .open > .dropdown-toggle.md-button.md-warn {
+    background-image: none;
+  }
+  .md-button.md-warn.disabled:hover,
+  .md-button.md-warn[disabled]:hover,
+  fieldset[disabled] .md-button.md-warn:hover,
+  .md-button.md-warn.disabled:focus,
+  .md-button.md-warn[disabled]:focus,
+  fieldset[disabled] .md-button.md-warn:focus,
+  .md-button.md-warn.disabled.focus,
+  .md-button.md-warn[disabled].focus,
+  fieldset[disabled] .md-button.md-warn.focus {
+    background-color: #f0ad4e;
+    border-color: #eea236;
+  }
+   
 </style>
