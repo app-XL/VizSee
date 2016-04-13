@@ -97,8 +97,57 @@ div#profile-details .profile-location img {
   color: #d3d3d3;
   font-size: 0.75em;
 }
+.dayLike{
+  font-size:15px;
+  color:#fff;
+}
+.day,
+.loc {
+    color: #fff;
+    font-size: 0.75em;
+    display: block;
+    font-family: antonioLight;
+}
 
-
+.day {
+    color: #8FBC8F;
+}
+ .date{
+  color: #fff;
+  font-size: 0.75em;
+  display: block;
+  font-family: workSansMedium; 
+  }
+  .time{
+  color: #fff;
+  font-size: 0.75em;
+  display: block;
+  font-family: workSansMedium;
+  }
+  .temp{
+  color: #fff;
+  font-size:13px;
+  display: block;
+  font-family: workSansMedium;
+  }
+  #scrollBox {
+  overflow-x: relative;
+  overflow-y: hidden;
+  -ms-overflow-x: relative;
+  -ms-overflow-y: hidden;
+  white-space: nowrap;
+  }
+  #scrollBox > div {
+  display: inline-block;
+  margin-right: 5px;
+  }
+  #scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  text-align: center;
+  height: 180px;
+  width: 300px;
+  }
 
 .profile-pic img {
     width: 75px;
@@ -122,7 +171,7 @@ div#profile-details .profile-location img {
   position: absolute;
 }
 
-#profile-details .notifications img {
+#profile-details .notifications .image{
   width: 30px;
   padding-right: 5px;
 }
@@ -188,7 +237,11 @@ span.menuName {
   background: url("../img/ic/group.png") #003F60 no-repeat 50% 50%;
   background-size: 45px;
 }
-
+.agendaicon{
+    padding-top: 28%;
+    color: white;
+font-size: 30px;
+background-color: #40AABF;}
 .exec-bio-text {
   color: #1F3F50;
   padding-top: 13px;
@@ -199,7 +252,10 @@ span.menuName {
   background: url("../img/ic/cals.png") #588BA3 no-repeat 50% 50%;
   background-size: 45px;
 }
-
+.agenda{
+  background: url("/public/assets/m/img/ic/agenda2.png") #A2915D no-repeat 50% 50%;
+  background-size: 45px;
+}
 .past-visits-text {
   color: #204353;
   padding-top: 13px;
@@ -218,52 +274,48 @@ span.menuName {
 }
 
 
-/*   clock*/
-.clockContainer {
-    height: 70px;
-}
-
-.container {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.day,
-.loc {
-    color: #fff;
-    font-size: 0.68em;
-    display: block;
-    font-family: robotoCondensedBold;
-}
-
-.day {
-    color: #EAEDF2;
-}
-
-.sessionOverview.clocksDisplay .row {
-    padding-top: 0px;
-}
-
 .profile-location u {
   text-decoration: inherit;
   border-bottom: dotted 1px #fff;
   padding-bottom: 2px;
 }
+@media only screen and (min-device-width: 290px)and (max-device-width: 320px){
+  div#profile-details {
+  padding-top: 60px;
+  background: url("../img/bg/header.jpg") no-repeat;
+  background-size: 150%;
+}
+  #scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  text-align: center;
+  height: 180px;
+  width:95px;
+  }
 
+}
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+@media only screen and (min-device-width: 321px) and (max-device-width: 374px) {
   .session-overview .row .currentSession,
   .session-overview .row .next-session {
     font-size: 1.1em;
   }
+ #scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  text-align: center;
+  height: 180px;
+  width:100px;
+  }
+  div#profile-details {
+  padding-top: 60px;
+  background: url("../img/bg/header.jpg") no-repeat;
+  background-size: 150%;
+}
 
   .session-overview .row {
-    padding-top: 20px;
+    padding-top: 15px;
     padding-bottom: 10px;
-  }
-
-  .session-overview.clocksDisplay .row {
-    padding-top: 0;
   }
 
   div#profile-details .profile-name {
@@ -279,8 +331,51 @@ span.menuName {
   }
 
   .menu-circle-icon {
-    width: 65px;
-    height: 65px;
+    width: 50px;
+    height: 50px;
+  }
+  #menu .row {
+    padding-top: 0px;
+}
+
+  .factsheets,
+  .spoc,
+  .account-info,
+  .feedback,
+  .exec-bio,
+  .past-visits {
+    background-size: 36px;
+  }
+
+  .agendaicon{
+    padding-top: 20%;
+    color: white;
+font-size: 30px;
+background-color: #40AABF;}
+}
+
+/*media querries */
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 484px) {
+  .session-overview .row .current-session,
+  .session-overview .row .next-session {
+    font-size: 0.75em;
+  }
+#scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  text-align: center;
+  height: 180px;
+  width:130px;
+  }
+  div#profile-details {
+  padding-top: 60px;
+  background: url("../img/bg/header.jpg") no-repeat;
+  background-size: 130%;
+}
+  .menu-circle-icon {
+    width: 55px;
+    height: 55px;
   }
 
   .factsheets,
@@ -291,14 +386,25 @@ span.menuName {
   .past-visits {
     background-size: 36px;
   }
+  .agendaicon{
+    padding-top: 21%;
+    color: white;
+font-size: 30px;
+background-color: #40AABF;}
 }
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 424px) {
-  .session-overview .row .current-session,
+@media only screen and (min-device-width: 485px) and (max-device-width: 768px) {
+    .session-overview .row .current-session,
   .session-overview .row .next-session {
     font-size: 0.75em;
   }
 
+#scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-align: center;
+  height: 180px;
+  width:140;
+  }
   .menu-circle-icon {
     width: 65px;
     height: 65px;
@@ -312,58 +418,11 @@ span.menuName {
   .past-visits {
     background-size: 36px;
   }
-}
-@media only screen and (min-device-width: 425px) and (max-device-width: 767px) {
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-  .session-overview .row .next-session div {
-    margin-left: 30px;
-  }
-
-  .session-overview .row .current-session div {
-    margin-right: 88px;
-  }
-
-  .clocksDisplay {
-    padding-bottom: 60px;
-  }
-}
-
-@media only screen and (min-device-width: 768px) {
-  .clock {
+   .clock {
     width: 80px;
     height: 80px;
   }
-}
-
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
-  .session-overview .row .next-session div {
-    margin-left: 88px;
-  }
-
-  .session-overview .row .current-session div {
-    margin-right: 200px;
-  }
-
-  .clocksDisplay {
-    padding-top: 30px;
-    padding-bottom: 70px;
-  }
-  
-  div#profile-details .profile-location img {
-    width: 18px;
-  }
-}
-
-
-
-/*navbar Styles*/
-
-
-
-/* style for left pull menu */
-@media screen and (max-width: 768px) {
-  .side-collapse-container{
+    .side-collapse-container{
       width:100%;
       position:relative;
       left:0;
@@ -385,4 +444,73 @@ span.menuName {
   .side-collapse.in {
       width:0;
   }
+  .agendaicon{
+    padding-top: 25%;
+    color: white;
+font-size: 30px;
+background-color: #40AABF;}
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .clock-container{
+    height: 40px;
+    padding-top: 10px;
+   
+  }
+  #scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  text-align: center;
+  height: 180px;
+  width:250px;
+  }
+  .profile-details{
+    padding-top: 400px;
+  }
+  .session-overview .row .next-session div {
+    margin-left: 30px;
+
+  }
+
+  .session-overview .row .current-session div {
+    margin-right: 88px;
+  }
+
+  .clocksDisplay {
+    padding-bottom: 10px;
+  }
+  #menu{
+    margin-top: 30px;}
+#menu .row div {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 0.85em;
+    letter-spacing: 2px;
+}
+
+}
+
+
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
+  #scrollBox > div fieldset {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  text-align: center;
+  height: 280px;
+  width:250px;
+  }
+  .session-overview .row .next-session div {
+    margin-left: 88px;
+  }
+
+  .session-overview .row .current-session div {
+    margin-right: 200px;
+  }
+
+  div#profile-details .profile-location img {
+    width: 18px;
+  }
+}
+
+
+

@@ -2,13 +2,13 @@
 
 angular.module('mviz-main', [
 	'appFilters',
-	'home','locator','execBios','header','scroll',"clientInfo"
+	'home','locator','execBios','header','scroll', 'clientInfo','userViewDirective','overallFeedback'
 ]);
 
 angular.module('mviz-visits', [
 	'ui.bootstrap',
 	'appFilters', 'userdisplayDirective',
-	'visits','sessions','contacts','userdisplayDirective','header','scroll','feedbackDirective','userViewDirective'
+	'visits','sessions','contacts','userdisplayDirective','header','scroll','feedbackDirective','userViewDirective', 'overallFeedback'
 ]);
 
 angular.module('mviz-facts', [

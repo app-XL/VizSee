@@ -22,7 +22,7 @@ angular.module('contacts', ['ngRoute'])
 	})
     
     .when('/contacts', {
-		templateUrl: '/public/m/contacts/visitSpoc.html',
+		templateUrl: '/public/m/dummy.html',
 		controller: 'spocCtrl'
 	})
 

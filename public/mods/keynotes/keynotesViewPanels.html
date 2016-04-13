@@ -13,6 +13,7 @@
           <input type="text" class="form-control" placeholder="Search" ng-model="search.$" />
             <!-- <i class="glyphicon glyphicon-search form-control-feedback"></i> -->
           <button class="btn btn-default btn-sm" ng-click="hideFilter=!hideFilter">Advanced Search</button>
+          <div ng-include src="'/public/mods/feedback/partials/sortSearch.html'"></div>
         </div>
         
         <div ng-repeat="keynote in keynotesList | filter: search |orderBy:orderByField:reverseSort">
@@ -22,7 +23,7 @@
       			  <div class="col-xs-11">
       				  <div class="panel panel-info">
       					  <div class="panel-heading pn-bodyhdr" pull-left>
-      						  <span>Title:{{keynote.title}}</span>
+      						  <span>{{keynote.title}}</span>
                     <div class="pull-right">
                       <a class="table-btn" href="#/{{keynote._id}}/show"><span class="glyphicon glyphicon-eye-open" /></a>
                       <a class="table-btn" href="#/{{keynote._id}}/edit"><span class="glyphicon glyphicon-edit" /></a>
@@ -36,10 +37,10 @@
                       </div>
 
                       <div class="pn-inrbodypad">
-                        <div class="text-highlight">speaker:{{keynote.noteBy}}</div>
-                        <div class="pull-right">created on:{{keynote.createOn}}</div>
-                        <div class="text-xs"><div ng-repeat="tags in keynote.tags track by $index"--> tags:{{tags}}</div> </div>
-                        <div class="text-big-noraml">desc:{{keynote.desc}}</div>
+                        <div class="text-highlight"><div userdisplay view-mode="nameonly" user-id="keynote.noteBy"></div></div>
+                        <div class="pull-right">{{keynote.createOn | date:'dd-MM-yyyy'}}</div>
+                        <div class="text-xs"><div ng-repeat="tags in keynote.tags track by $index"> {{keynote.tags}}</div> </div>
+                        <div class="text-big-noraml"><p ng-bind-html="keynote.desc"></p></div>
                       </div>
 				            </div>
 			          </div>

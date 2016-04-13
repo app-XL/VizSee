@@ -1,53 +1,67 @@
 
- <div class="modal fade" id="myModal" role="dialog">
- 	<div class="modal-dialog modal-lg">
- 		<div class="modal-content">
- 			<div class="modal-header">
- 				<button type="button" class="close" data-dismiss="modal">&times;</button>
- 				<h4 class="modal-title">welcome header</h4>
- 			</div>
- 			<div class="modal-body">
- 				<div  class="headerwel">
-
- 					<img src="/public/assets/g/imgs/csclogo.png" class="logo">
- 					<p>welcomes you !</p>
- 				</div>
- 				<div class="well well-sm welltext"><i class="fa fa-map-marker"></i> CSC Banglore India &nbsp;&ngsp;&nbsp; <i class="fa fa-sun-o"></i> 34 C/23 C</div>
-
- 				<div class="details">
-
- 					<h5>15 dec 2015</h5>
-                      <video id="video"   controls  autoplay loop muted>
- 						<source src="/public/uploads/video/CSCandHCL.mp4" type="video/mp4">
 
 
- 							Your browser does not support the video tag.
- 					  </video><br><br>
- 						<p class="text">Enterprise mobility management (EMM) is the set of people, processes and technology focused on managing mobile devices, wireless networks, and other mobile computing services in a business context. As more workers have bought smartphone and tablet computing devices and have sought support for using these devices in the workplace, EMM has become increasingly significant.
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
- 							The goal of EMM is to determine if and how available mobile IT should be integrated with work processes and objectives, and how to support workers when they are using these devices in the workplace.</p>
- 							<hr>
+                <div  class="headerwel">
+<br>
+                    <img src="/public/assets/g/imgs/csclogo.png" class="logo">
+                    <p>welcomes you !</p>
+                </div>
 
- 							<div class="profile">
- 								<div class="pull-left">
- 									<img src="/public/assets/g/imgs/avatar.jpg" class="img-thumbnail userpic"> 
- 								</div>
- 								<div class="panelpdmd">
- 									<div class="text-highlight">jon brace</div>
- 									<div class="text-xsmall">jonb@gmail.com</div>
- 									<div class="text-xsmall">CEO </div>
- 									<div class="text-xsmall">csc</div>
+                <div class="details">
+                 <video id="welcome"  controls  autoplay muted>
+                        <source src="/public/uploads/video/message.mp4" type="video/mp4">
 
- 									
- 								</div>       
- 							</div>
 
- 						</div>
+                      </video>
+                      <br>
+                      <br>
+              <p class="text">Enterprise mobility management (EMM) is the set of people, processes and technology focused on managing mobile devices, wireless networks, and other mobile computing services in a business context. As more workers have bought smartphone and tablet computing devices and have sought support for using these devices in the workplace, EMM has become increasingly significant.
 
- 					</div>
- 					<div class="modal-footer">
- 						<button type="button" class="btn btn-default" data-dismiss="modal">continue&nbsp;<i class="fa fa-angle-right"></i></button>
- 					</div>
- 				</div>
- 			</div>
- 		</div>
+                       </p>
+                            <hr>
+
+                            <div class="profile">
+                                <div class="pull-left">
+                                    <img src="/public/assets/g/imgs/avatar.jpg" class="img-thumbnail userpic"> 
+                                </div>
+                                <div class="panelpdmd">
+                                    <div class="text-highlight">jon brace</div>
+                                    <div class="text-xsmall">jonb@gmail.com</div>
+                                    <div class="text-xsmall">CEO </div>
+                                    <div class="text-xsmall">csc</div>
+
+                                    
+                                </div>       
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" href="/m/main/" class="btn btn-default" data-dismiss="modal">continue&nbsp;<i class="fa fa-angle-right"></i></button>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <script type="text/javascript">
+$('#videoModal').on('hidden.bs.modal', function(e) {    
+    
+    var $if = $(e.delegateTarget).find('video');
+    var src = $if.attr("src");
+    $if.attr("src", '/public/uploads/video/message.mp4');
+    $if.attr("src", src);
+});</script><!--script>
+$('.close').click(function () {
+    alert('hellow');
+  $('#videoModal').hide();
+  $('#videoModal video').attr("src", jQuery("#videoModal video").attr("src"));
+})</script-->

@@ -2,14 +2,38 @@ var client=angular.module('clientInfo', ['ngRoute'])
 client.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
 
-  .when('/clientInfo', {
+
+
+  .when('/clientInfo/id/:id', {
     templateUrl: '/public/m/clientInfo/clientInfo.html',
     controller: 'clientInformationCtrl'
 })
-  
-
+  .when('/clientInfo/id', {
+        templateUrl: '/public/m/dummy.html',
+        controller: 'clientBlankCtrl'
+    })
 }])
-client.controller('clientInformationCtrl', function($scope) {
+
+client.controller('clientBlankCtrl', function($scope, $routeParams, $http, $location) {
+    console.log("client  blank controller running");
+        $http.get('/api/v1/secure/visits/all/activeVisit').success(function(response) {
+                //console.log("next visit id " + "#/sessions/" + response.visits._id));
+        console.log(response.visits._id);
+                $location.path("clientInfo/id/" + response.visits._id);
+        });
+})
+client.controller('clientInformationCtrl', function($scope, $routeParams, $http) {
+    //$scope.id="a02234567892345678900001";
+    $http.get('/api/v1/secure/clients').success(function(response) {
+        $scope.clientList1 = response;
+    });
+       $http.get('/api/v1/secure/clients/id/' + $routeParams.id).success(function(response) {
+        $scope.clientList = response;
+        console.log($scope.clientList);
+        console.log($scope.clientList.name);
+        console.log($scope.clientList.cscPersonnel.salesExec._id)
+
+    });
 
         angular.element('#hamburger-menu').css('display', 'none');
 

@@ -1,6 +1,10 @@
+ 
 
+  <!--link rel="stylesheet" href="/public/assets/m/css/userview.css"-->
 
 <style>
+
+
 
 .tb-big {
     height: 140px;
@@ -28,50 +32,68 @@
     font-family: robotoRegular;
 }
 .divtop{
-    padding-top: 90px;
+    padding-top: 100px;
 }
+.client-rep {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+ .hd-sticky {
+        background-color:;
+        position: relative;
+        height: 0px;
+        padding-top: 10px;
+    }
+
+
+@media only screen and (max-device-width: 320px){
+
+    .tb-big {
+    height: 170px;
+
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    font-size: 1.1em;
+    box-shadow: 2px 2px 5px #676767;
+
+    font-family: robotoRegular;
+}}
 
 </style>
 
 
 <div header showprofile="false" icon="fa fa-line-chart" title1="client details page" title2="client details">
-clients
+clients information
     </div>
     <div class="divtop">
-<div id="client-information" ng-repeat="representative in representatives">
-    <div class="header2">Client Information</div>
+  <div id="client-information">
+    <div class="header2"></div>
     <div class="company-logo-category">
         <div class="col-xs-4 col-sm-2 col-md-2 col-lg-1 company-logo">
             <img src="/public/uploads/images/industry/diversified.png">
         </div>
         <div class="col-xs-8 col-sm-10 col-md-10 col-lg-11">
-            <div class="client-category">GOLD CATEGORY CLIENT</div>
+            <div class="client-category">{{clientList.name}}</div>
             <div class="team-size">Team Size <span class="size-figure">355</span></div>
         </div>
-    </div>
+    </div></div>
     <div class="client-rep">
         <div class="heading">CLIENT REPRESENTATIVES</div>
         <div class="list-group">
-            <div href="#" class="list-group-item" ng-repeat="clientRep in representative.client_representatives" ng-click="collapseDiv($index,'client')">
-                <div class="representative-pic col-xs-2 col-sm-1 col-md-1">
-                    <img  class="img-circle clientpic" ng-src="{{clientRep.picture}}">
+           <div href="#" class="list-group-item"  ng-repeat="client in clientList.cscPersonnel" ng-click="collapseDiv($index,'client')">
+            <div class="representative-pic col-xs-2 col-sm-1 col-md-1">
+                    <userview user-id="client._id" user-model view-mode="bullet-small"></userview>
+
                 </div>
-                <div class="representative-bios-div col-xs-8 col-sm-10 col-md-10">
-                    <div class="representative-name">{{clientRep.name}}</div>
-                    <div class="representative-designation">{{clientRep.designation}}</div>
-                </div>
-                <div class="chevron-div1 col-xs-2 col-sm-1 col-md-1 glyphicon glyphicon-menu-down"></div>
-                <div class="rep-hidden-details col-xs-10 col-sm-11 col-md-11" id="client{{$index}}">
-                    <div class="representative-bios">{{clientRep.bio}}</div>
-                    <div class="reach-representative">
-                        <div class="reach-representative-text">Reach him by</div>
-                        <a ng-href="tel: {{clientRep.telephone}}" class="tele-link">
-                            <div class="glyphicon glyphicon-earphone phone"></div>
-                        </a>
-                        <a ng-href="mailto: {{clientRep.email}}">
-                            <div class="glyphicon glyphicon-envelope email"></div>
-                        </a>
-                    </div>
+               <div class="representative-bios-div col-xs-8 col-sm-10 col-md-10">
+                    <userview user-id="client._id" user-model view-mode="brief-view"></userview>
+            </div>
+                  <div class="chevron-div col-xs-1 col-sm-1 col-md-1"></div>
+                <div class="rep-hidden-details collapse col-xs-11 col-sm-12 col-md-12" id="client{{$index}}">
+             <userview user-id="client._id" user-model  view-mode="detial-view"></userview>
                 </div>
             </div>
         </div>
@@ -114,8 +136,9 @@ clients
     <div class="prime-competitors">
         <div class="heading">PRIME COMPETITORS</div>
         <div class="competitors-list">
-            <div class="col-xs-4 col-sm-3 col-md-3 col-lg-1 img-div" ng-repeat="competitor in prime_competitors">
+            <div class="col-xs-4 col-sm-3 col-md-3 col-lg-1 img-div" ng-repeat="competitor in clientList.competitors">
                 <img ng-src="{{competitor.image}}">
+                {{competitor}}
             </div>
         </div>
     </div>

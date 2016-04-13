@@ -34,7 +34,7 @@
     margin-top: 0px;
     padding: 10px;
     font-family: robotoCondensedBold;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
   }
 
@@ -83,9 +83,9 @@
   }
 
   .session-status-img {
-    width: 50px;
-    height: 50px;
-    margin-left: -19px;
+    width: 28px;
+    height: 28px;
+    margin-left: -16px;
   }
   #session1 {
     background-color: #F3E8EC;
@@ -93,20 +93,20 @@
   }
 
   .agenda-session-time {
-    font-family: antonioBold;
-    font-size: 16px;
+    font-family: workSansMedium;
+    font-size: 14px;
     color: #87075A;
   }
 
   .agenda-session-name {
-    font-family: workSansLight;
-    font-size: 26px;
+    font-family: workSansMedium;
+    font-size: 16px;
     color: #87075A;
   }
   .agenda-session-loc {
-    color: #999999;
+    color: black;
     font-family: workSansMedium;
-    font-size: 20px;
+    font-size: 12px;
   }
 
 
@@ -191,11 +191,11 @@ vertical-align: top;
 }
 @media screen and (max-width: 940px) {
 
-  .agenda-list  li{
+  /*.agenda-list  li{
       display: inline;
       margin-right: 50px;
     }
-  
+  */
 
   .agenda-list a {  
     font-size: 1em;
@@ -228,14 +228,23 @@ vertical-align: top;
    
 }
 
+@media screen and (max-width: 320px){
+    .agenda-list  li{
+      display: inline;
+      margin-right: 25px;
+    }
+
+}
+
+
+
 @media screen and (max-width: 600px) {
  
-  .agenda-list  li{
+  /*.agenda-list  li{
       display: inline;
-      margin-right: 30px;
-     
+      margin-right: 25px;
     }
-  
+  */
 
   .agenda-list a {  
     font-size: 1em;
@@ -258,14 +267,58 @@ vertical-align: top;
 .agenda-list a:focus {
 
   border-bottom: 3px solid purple;
-font-size: 1.6em;
-height: 35px;
-vertical-align: top;
-
-
-
+    font-size: 1.6em;
+    height: 35px;
+    vertical-align: top;
+  }
 }
 
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+  .agenda-session-name {
+    font-family: workSansMedium;
+    font-size: 16px;
+    color: #87075A;
+    padding-left: 10px;
+  }
+  .agenda-session-overview {
+    padding-left: 10px;
+  }
+
+  .session-status-img {
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+  }
+
+    .agenda-list  li{
+      display: inline;
+      margin-right: 35px;
+    }
+
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 768px) {
+
+        .agenda-list  li{
+        display: inline;
+        margin-right: 50px;
+    }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      .agenda-list  li{
+      display: inline;
+      margin-right: 60px;
+    }
+}
+
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
+  
+        .agenda-list  li{
+      display: inline;
+      margin-right: 70px;
+    }
+}
    
 
 

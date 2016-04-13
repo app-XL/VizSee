@@ -1,11 +1,4 @@
-#exec-bios {
-    background-color: #eeeeee;
-}
-.app{
-    height:55px;
-    width: 60px;
-}
-    .header {
+/*.header {
         padding: 10px;
         background-color: #fff;
         position: fixed;
@@ -28,18 +21,20 @@
         .representative-pic {
             padding: 0px;
             padding-top: 10px;
-            padding-bottom: 10px;}
+            padding-bottom: 10px;
+            padding-left: 20px;}
 
             img {
                 width: 60px;
             }
         
         .representative-bios-div {
-            padding-left: 30px;
+            padding-left: 0px;
             padding-top: 20px;
         }
         .representative-name {
             font-family: robotoBold;
+            font-size: 10px;
             color: #676767;
         }
         .representative-designation {
@@ -88,6 +83,11 @@
                 width: 20px;
                 height: 20px;
             }
+            .rep-hidden-details{
+              padding-left: 100px;
+              padding-right: 0px;
+              margin-right: 0px;
+            }
         
         .chevron-div {
             background: url(/public/assets/m/rem/down-arrow.png) no-repeat;
@@ -106,7 +106,7 @@
         }
         .chevron-down-arrow {
             /*background: url('up-arrow.png') no-repeat;
-            background-size: 18px;*/
+            background-size: 18px;*//*
             -webkit-transform: rotate(-180deg);
             -moz-transform: rotate(-180deg);
             transform: rotate(-180deg);
@@ -124,8 +124,8 @@
         font-family: workSansLight;
         font-size: 1.4em;
         padding-bottom: 5px;
-    }
-    .csc-india-rep,
+    }*/
+   /* .csc-india-rep,
     .client-rep {
         margin: 10px;
         background-color: #fff;
@@ -133,7 +133,7 @@
         padding: 10px;
         box-shadow: 2px 2px 2px #c1c1c1;
     }
-    .client-rep {
+    /*.client-rep {
         margin-top: 55px;
         margin-bottom: 0px;
     }
@@ -144,6 +144,6 @@
         .csc-india-rep,
         .client-rep {
             display: block;
+            
         }
     }
-}

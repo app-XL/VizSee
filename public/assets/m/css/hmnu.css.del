@@ -1,0 +1,110 @@
+#hamburger-menu .home-menu img,
+#hamburger-menu .view-agenda-menu img,
+#hamburger-menu .facts-menu img,
+#hamburger-menu .contact-menu img,
+#hamburger-menu .feedback-menu img,
+#hamburger-menu .exec-menu img,
+#hamburger-menu .past-visits-menu img,
+#hamburger-menu .settings-menu img,
+#hamburger-menu .logout-menu img {
+  width: 20px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.menu-button {
+  position: absolute;
+  float: left;
+  margin-right: 15px;
+  padding: 10px;
+  margin-top: 65px;
+  margin-bottom: 8px;
+  background: url('/public/assets/m/rem/hmnu.png') no-repeat;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-left: 20px;
+  background-size: 22px;
+  z-index: 1;
+}
+
+.ul-nav-bar {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+#menu-list {
+  position: fixed;
+  font-size: 20px;
+  z-index: 1;
+  background: white;
+  width: 80%;
+  padding-bottom: 5px;
+}
+
+.ul-nav-bar a {
+  display: block;
+  padding: 12px;
+  padding-left: 14px;
+  color: #2a2a2a;
+  font-family: robotoLight;
+  font-size: 1.1em;
+}
+
+.ulNavBar li {
+  border-bottom: 1px solid #ddd;
+}
+
+.close-menu {
+  float: right;
+}
+
+.close-menu img {
+  width: 10px;
+  margin: 10px;
+}
+
+.menu-profile-pic,
+.menu-profile-name {
+  text-align: center;
+  padding: 10px;
+  background-color: #f3f2f7;
+  font-family: workSansRegular;
+  font-size: 1.3em;
+  color: #606060;
+}
+
+.menu-profile-pic img {
+    width: 75px;
+    height: 75px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  
+}
+
+.menu-profile-name {
+  padding-top: 7px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+  #hamburger-menu .home-menu img,
+  #hamburger-menu .view-agenda-menu img,
+  #hamburger-menu .facts-menu img,
+  #hamburger-menu .contact-menu img,
+  #hamburger-menu .feedback-menu img,
+  #hamburger-menu .exec-menu img,
+  #hamburger-menu .past-visits-menu img,
+  #hamburger-menu .settings-menu img,
+  #hamburger-menu .logout-menu img {
+    width: 16px;
+  }
+
+  .ul-nav-bar a {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+}

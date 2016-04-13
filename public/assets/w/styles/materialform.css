@@ -7,6 +7,12 @@
  /*ng materal styles*/
 
 
+md-input-container:not(.md-input-focused) label{
+   
+    font-weight: normal;
+    font-style: italic !important;
+}
+
 [tabindex='-1']:focus {
   outline: none; }
 

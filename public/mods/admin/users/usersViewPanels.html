@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="page-header">
+   Facts
+    <div class="sub-header">list of facts</div>
+  </div>
+
+  <div class="container">
+   <div class="row">
+    <div class="col-xs-5">
+      <input type="text" class="form-control" placeholder="Search" ng-model="search.$" />
+    </div>
+    <div ng-include src="'/public/mods/admin/users/partials/sortSearch.html'"></div>
+    </div>
+    <div class="pnbdr panel panel-primary">
+      <!--div class="panel-heading">visits panels view</div--><div class="searchpad">
+      <div ng-repeat="user in userlist | filter: search |orderBy:orderByField:reverseSort">
+        <div class="row">
+
+          <div class="pn-bodypad">
+            <div class="col-xs-11">
+              <div class="panel panel-info">
+                <div class="panel-heading pn-bodyhdr" pull-left>
+                  <span>{{user.name.first}} {{user.name.last}}</span>
+                  <div class="pull-right">
+                    <a class="table-btn" ng-click="edit(user._id)"><span class="fa fa-pencil-square-o fa-lg" /></a>
+                    <a class="table-btn" ng-click="remove(user)" confirm-dialog header-text="Delete User" content="Are you sure you want to delete the user with name <b>{{user.name.first}} {{user.name.last}} ?</b>" 
+                    yes-text="Ok" no-text="Cancel"><span class="fa fa-trash-o fa-lg" /></a>
+                    <a class="table-btn" ng-if="user.status == 'Active'" ng-click="lock(user._id,user)" confirm-dialog header-text="Lock User" content="Are you sure you want to lock the user with name <b>{{user.name.first}} {{user.name.last}} ?</b>" 
+                    yes-text="Ok" no-text="Cancel"><span class="fa fa-lock fa-lg" /></a>
+                    <a class="table-btn" ng-if="user.status == 'Locked'" ng-click="unlock(user._id,user)" confirm-dialog header-text="Unlock User" content="Are you sure you want to unlock the user with name <b>{{user.name.first}} {{user.name.last}} ?</b>" 
+                    yes-text="Ok" no-text="Cancel"><span class="fa fa-unlock fa-lg" /></a>
+                    <a ng-click="getUserDetails(user._id,$event)" class="table-btn"><span class="fa fa-users fa-lg" /></a>
+                  </div>
+                </div>
+
+                <div class="panel-body">
+                  <div class="pn-inrbodypad">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <div class="text-xs">E-mail ID: {{user.email}}</div>
+                      </div>
+                      <div class="col-xs-4">
+                        <div class="text-xs">Organization: {{user.organization}}</div>
+                      </div>
+                      <div class="col-xs-4">
+                        <div class="text-xs">Status: {{user.status}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

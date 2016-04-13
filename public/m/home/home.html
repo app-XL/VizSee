@@ -13,53 +13,52 @@
 /*   transition:0.5s linear all;*/
 /*   z-index:10000;*/
 /*}*/
-
 /*.big {*/
-/*  padding-top:60px;*/
+/*  padding-top:40px;*/
 /*  font-color:white;*/
 /*    height:110px;*/
 /*    font-size: 30px;*/
-
 /*}*/
-
 /*.big > .secondary{*/
-/*	display:none;*/
+/*  display:none;*/
 /*}*/
-
 /*.small {*/
 /*   padding-top:60px;*/
 /*   font-color:white;*/
 /*   height:90px;*/
 /*    font-size: 20px;*/
 /*}*/
-
 /*.small > .primary {*/
-/*	display:none;*/
+/*  display:none;*/
 /*}*/
 /*</style>*/
-
 <div scroll id="header_nav" ng-class="navClass">
-	<div class="primary">
+    <div class="primary">
     Primary
-	</div>
-		<div class="secondary">
-	  Secondary
-	</div>
+    </div>
+        <div class="secondary">
+      Secondary
+    </div>
 </div>
 -->
+
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <div scroll id="profile-details">
         <div class="notifications">
-         <div type="button" data-toggle="modal" data-target="#myModal"><img src="/public/assets/m/img/ic/ibox-f.png"></div></div>
+         <!--a type="button" data-toggle="modal" data-target="#myModal"><img src="/public/assets/m/img/ic/ibox-f.png"></a-->
+
+            <div type="button"  data-toggle="modal" data-target="#videoModal"><img class="image"  src="/public/assets/m/img/ic/ibox-f.png"></div>
+
+<div ng-include src="'/public/m/home/welcome.html'"></div></div>
 
   <!-- Modal -->
-   <div ng-include src="'/public/m/home/welcome.html'"></div>
+ 
 
 
         <div class="profile-pic"><img src="{{user.avatar}}"></div>
         <div class="profile-name">{{user.name.first}} {{user.name.last}}</div>
         <div class="profile-desc">{{user.jobTitle}} {{user.organization}}</div>
         <div class="profile-location">
-            <img src="/public/assets/m/img/ic/loc.png">
                <location-picker ng-model="pickedLocation" limit-to="1"></location-picker>
     
         </div>
@@ -82,74 +81,72 @@
             </div>
             <div class="agenda"><a href="#/agendaOverview">VIEW AGENDA</a></div>
         </div>
-        <div class="session-overview clocksDisplay" ng-hide="visitStartSuccess">
-            <div class="row">
-                <div class="clock-container col-xs-4 col-sm-4 col-md-4">
-                    <a href="#/agendaOverview">
-                        <label class="day">DAY 1</label>
-                        <clock-svg degree="progressDegree"></clock-svg>
-                        <label class="loc">BANGALORE</label>
-                    </a>
-                </div>
-                <div class="clock-container col-xs-4 col-sm-4 col-md-4">
-                    <a href="#/agendaOverview">
-                        <label class="day">DAY 2</label>
-                        <clock-svg degree="progressDegree"></clock-svg>
-                        <label class="loc">HYDERABAD</label>
-                    </a>
-                </div>
-                <div class="clock-container col-xs-4 col-sm-4 col-md-4">
-                    <a href="#/agendaOverview">
-                        <label class="day">DAY 3</label>
-                        <clock-svg degree="progressDegree"></clock-svg>
-                        <label class="loc">NOIDA</label>
-                    </a>
-                </div>
-            </div>
+       <form id="form1">
+    <div id="scrollBox">
+      <div ng-repeat="objs in dayHighlighter">
+        <fieldset class="firstPanel">
+          <h4><label class="day">Day {{objs.day}}</label></h4>
+          <label class="date"> {{objs.date}}</label>
+          <i class="fa fa-sun-o" style="font-size:30px;color:#F8C471;"></i><br>
+          <label class="dayLike" >{{objs.climate.dayLike}}</label>
+          <label class="temp">{{objs.climate.temp}}</label>
+          <h4> <label class="loc">{{objs.location}}</label></h4>
+        </fieldset>
+      </div>
+    </div>
+  </form>
         </div>
-        </div>
+
 
 
 
     <div class="container" id="menu">
         <div class="container" id="menu">
         <div class="row">
-            <div class="col-xs-6 col-sm-4 col-md-4">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <a href="/m/visits/#/agenda">
+                <i class="menu-circle-icon fa fa-list agendaicon"></i>
+                    <div class="account-info-text">AGENDA</div>
+                </a>
+         
+            </div>
+              <div class="col-xs-4 col-sm-4 col-md-4">
+                <a href="/m/main/#/execBios">
+                    <div class="menu-circle-icon exec-bio"></div>
+                    <div class="exec-bio-text">EXECUTIVE BIO'S</div>
+                </a>
+            </div>
+             <div class="col-xs-4 col-sm-4 col-md-4">
+                <a href="/m/main/#/feedback">
+                    <div class="menu-circle-icon feedback"></div>
+                    <div class="feedback-text">FEEDBACK</div>
+                </a>
+            </div>
+          
+           
+            </div>
+            <div class="row">
+              
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <a href="/m/visits/#/contacts">
+                    <div class="menu-circle-icon spoc"></div>
+                    <div class="spoc-text">CONTACT SPOC</div>
+                </a>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
                 <a href="/m/facts/">
                     <div class="menu-circle-icon factsheets"></div>
                     <div class="factsheets-text">FACTSHEETS</div>
                 </a>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-4">
-                <a href="#">
-                    <div class="menu-circle-icon spoc"></div>
-                    <div class="spoc-text">CONTACT SPOC</div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4">
-                <a href="#/feedback">
-                    <div class="menu-circle-icon feedback"></div>
-                    <div class="feedback-text">FEEDBACK</div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4">
-                <a href="#/contacts">
-                    <div class="menu-circle-icon exec-bio"></div>
-                    <div class="exec-bio-text">EXECUTIVE BIO'S</div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4">
-                <a href="#">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <a href="/m/visits/">
                     <div class="menu-circle-icon past-visits"></div>
                     <div class="past-visits-text">PAST VISITS</div>
                 </a>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-4">
-                <a href="#">
-                    <div class="menu-circle-icon account-info"></div>
-                    <div class="account-info-text">ACCOUNT INFO</div>
-                </a>
-            </div>
+           
         </div>
     </div>
     </div>
+    

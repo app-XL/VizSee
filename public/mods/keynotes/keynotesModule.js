@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('keynotes', ['ngRoute', 'angular-growl', 'ngMaterial'])
+angular.module('keynotes', ['ngRoute', 'angular-growl', 'ngMaterial','ngFileUpload'])
 
 .run(function ($rootScope, $location, $http) {
 	$http.get('/token')

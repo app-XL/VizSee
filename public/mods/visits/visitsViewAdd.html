@@ -1,111 +1,111 @@
 
 
-   <!-- page header/subheader -->
-   <div class="page-header">
-    Visit Planner - Add New Visit
-    <div class="sub-header">Highlevel planning for the visit
-    </div>
+<!-- page header/subheader -->
+<div class="page-header">
+  Visit Planner - Add New Visit
+  <div class="sub-header">Highlevel planning for the visit
   </div>
-  <div class= "page-toolbar">
-    <div class="pull-right">
-      <a href="#"><i class="fa fa-envelope fa-lg"></i></a>&nbsp;email&nbsp;
-      <a href="#"> <i class="fa fa-thumbs-o-up fa-lg"></i></a>&nbsp;follow&nbsp;
-      <a href="#/session"><i class="fa fa-calendar fa-lg"></i></a>&nbsp;schedule&nbsp;
-    </div>
-  </div><br>
+</div>
+<div class= "page-toolbar">
+  <div class="pull-right">
+    <a href="#"><i class="fa fa-envelope fa-lg"></i></a>&nbsp;email&nbsp;
+    <a href="#"> <i class="fa fa-thumbs-o-up fa-lg"></i></a>&nbsp;follow&nbsp;
+    <a href="#/session"><i class="fa fa-calendar fa-lg"></i></a>&nbsp;schedule&nbsp;
+  </div>
+</div><br>
 
-  <!-- visits pageheader input-->
+<!-- visits pageheader input-->
+<!-- <md-content class="md-padding"> -->
+<md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+<div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;"></div>
+
+<!--Basic Information TAB PAGE ONE-->
+<md-tab label="Agenda">
+<div class="panel-group">
   <!-- <md-content class="md-padding"> -->
-  <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
-  <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;"></div>
+  <div class="data-form">
 
-  <!--Basic Information TAB PAGE ONE-->
-  <md-tab label="Agenda">
-  <div class="panel-group">
-    <!-- <md-content class="md-padding"> -->
-    <div class="data-form">
+    <form name="visitsForm" id="visitsForm" class="form-vertical" >
 
-      <form name="visitsForm" id="visitsForm" class="form-vertical" >
+      <!--panel-one-->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"> <b>Info about the client's visit agenda...</b></h3>
+        </div>
+        <div class = "panel-subheader pull-right">
+        </div>
+        <div class="panel-body">
 
-        <!--panel-one-->
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"> <b>Info about the client's visit agenda...</b></h3>
-          </div>
-          <div class = "panel-subheader pull-right">
-          </div>
-          <div class="panel-body">
-
-            <!-- visits title input-->
-            <md-input-container class="md-block">
-            <label>Title</label>
-            <input md-maxlength="30" minlength="5" required name="title" ng-model="visits.title">
-            <div ng-messages="visitsForm.title.$error" ng-show="visitsForm.title.$touched || !visitsForm.title.$pristine">
-             <div class="messagenotify">
-              <div ng-messages-include="/public/mods/partials/messages.html"></div>
-              <div ng-message="md-maxlength">The title  has to be less than 30 characters long.</div>
-              <div ng-message="minlength">the title should contain minimum 5characters</div>
-            </div>
-          </div>
-        </md-input-container>
-
-        <!-- visits client input-->
-        <md-input-container class="md-block">
-        <label>Client Name</label>
-        <input  required name="clientname" ng-model="clientName" autocomplete required>
-        <div ng-messages="visitsForm.clientname.$error" ng-show="visitsForm.clientname.$touched || !visitsForm.clientname.$pristine">
-          <div class="messagenotify">
+          <!-- visits title input-->
+          <md-input-container class="md-block">
+          <label>Title</label>
+          <input md-maxlength="30" minlength="5" required name="title" ng-model="visits.title">
+          <div ng-messages="visitsForm.title.$error" ng-show="visitsForm.title.$touched || !visitsForm.title.$pristine">
+           <div class="messagenotify">
             <div ng-messages-include="/public/mods/partials/messages.html"></div>
+            <div ng-message="md-maxlength">The title  has to be less than 30 characters long.</div>
+            <div ng-message="minlength">the title should contain minimum 5characters</div>
           </div>
         </div>
       </md-input-container>
 
-      <!-- visits agenda-->
-      <div class="field">
-        <label ng-show="visits.agenda" class="show-hide">Agenda</label>
-        <div class="form-group">
-          <text-angular
-          ta-toolbar="[['bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],['p', 'quote'],
-          ['justifyLeft', 'justifyCenter', 'justifyRight', 'indent', 'outdent','insertLink']]"
-          ng-model="visits.agenda" name="agenda" placeholder="Agenda of visit." required /></text-angular>
+      <!-- visits client input-->
+      <md-input-container class="md-block">
+      <label>Client Name</label>
+      <input  required name="clientname" ng-model="clientName" autocomplete required>
+      <div ng-messages="visitsForm.clientname.$error" ng-show="visitsForm.clientname.$touched || !visitsForm.clientname.$pristine">
+        <div class="messagenotify">
+          <div ng-messages-include="/public/mods/partials/messages.html"></div>
         </div>
+      </div>
+    </md-input-container>
+
+    <!-- visits agenda-->
+    <div class="field">
+      <label ng-show="visits.agenda" class="show-hide">Agenda</label>
+      <div class="form-group">
+        <text-angular
+        ta-toolbar="[['bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],['p', 'quote'],
+        ['justifyLeft', 'justifyCenter', 'justifyRight', 'indent', 'outdent','insertLink']]"
+        ng-model="visits.agenda" name="agenda" placeholder="Agenda of visit." required /></text-angular>
       </div>
     </div>
   </div>
+</div>
 
 
-  <!--panel-two-->
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title"> <b>Key personnel for the visit...</b></h3>
+<!--panel-two-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"> <b>Key personnel for the visit...</b></h3>
+  </div>
+  <div class = "panel-subheader pull-right">
+  </div>
+  <div class="panel-body">
+
+    <!-- visits AGM By input-->
+    <div class="row">
+      <div class="form-group col-xs-5">
+        <md-input-container class="md-block">
+        <label>Sponsor</label>
+        <div class="form-group" ng-class="{ 'has-error': clientsForm.anchorUser.$touched && clientsForm.agmUser.$invalid }">
+          <div user type="picker" user-model="agmUser" user-id="agmId" user-email="agmEmail" view-type="small" switch-mode="mode" user-type="employee"></div>
+        </div>
+      </md-input-container>
     </div>
-    <div class = "panel-subheader pull-right">
-    </div>
-    <div class="panel-body">
-
-      <!-- visits AGM By input-->
-      <div class="row">
-        <div class="form-group col-xs-5">
-          <md-input-container class="md-block">
-          <label>Sponsor</label>
-          <div class="form-group" ng-class="{ 'has-error': clientsForm.anchorUser.$touched && clientsForm.agmUser.$invalid }">
-            <div user type="picker" user-model="agmUser" user-id="agmId" user-email="agmEmail" view-type="small" switch-mode="mode"></div>
-          </div>
-        </md-input-container>
-      </div>
 
 
     <!-- visits anchor By input-->
 
-      <div class="form-group col-xs-5">
-        <md-input-container class="md-block">
-        <label>Anchor</label>
-        <div class="form-group" ng-class="{ 'has-error': clientsForm.anchorUser.$touched && clientsForm.anchorUser.$invalid }">
-          <div user type="picker" user-model="anchorUser" user-id="anchorId" user-email="anchorEmail" view-type="small" switch-mode="mode"></div>
-        </div>
-      </md-input-container>
-    </div>
+    <div class="form-group col-xs-5">
+      <md-input-container class="md-block">
+      <label>Anchor</label>
+      <div class="form-group" ng-class="{ 'has-error': clientsForm.anchorUser.$touched && clientsForm.anchorUser.$invalid }">
+        <div user type="picker" user-model="anchorUser" user-id="anchorId" user-email="anchorEmail" view-type="small" switch-mode="mode" user-type="employee"></div>
+      </div>
+    </md-input-container>
   </div>
+</div>
 </div>
 </div>
 
@@ -138,9 +138,9 @@
       <div class="col-xs-5">
         <div class="form-group">
           <label>Is billable?</label>&nbsp;
-					<input type="checkbox"  ng-click="checked=!checked" aria-label="Toggle ngHide">
-					&nbsp;You need an active WBS code...
-					<br/>
+          <input type="checkbox"  ng-click="checked=!checked" aria-label="Toggle ngHide">
+          &nbsp;You need an active WBS code...
+          <br/>
 
           <div>
             <div class="check-element animate-show" ng-show="checked">
@@ -201,7 +201,7 @@
             </select>
           </div>
           <div id="existing" ng-if="visits.interest.businessType == 'existing'">
-            <label>visit type-Existing</label>
+            <label>Visit Type-Existing</label>
             <select name="type" ng-model="visits.interest.visitType" ng-dropdown>
               <option ng-option value="operationsReview">Operations Review</option>
               <option ng-option value="renewals">Renewals</option>
@@ -236,14 +236,14 @@
    </div>  
 
 
-<!--buttons-->
-<div class="form-group">
-  <div class="pull-left">
-    <button type="submit" class="btn btn-success"
-    ng-click="save()" ng-disabled="visitsForm.$invalid">Submit
-  </button>
-  <button type="reset" class="btn btn-warning" ng-click="cancel()">Cancel</button>
-</div>
+   <!--buttons-->
+   <div class="form-group">
+    <div class="pull-left">
+      <button type="submit" class="btn btn-success"
+      ng-click="save()" ng-disabled="visitsForm.$invalid">Submit
+    </button>
+    <button type="reset" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  </div>
 </div>
 </form>
 </div></div></div>
@@ -258,33 +258,64 @@
 </md-content>
 </md-tab>
 
-<!--Add Schedules TAB PAGE THREE-->
+<!--Add Schedules TAB PAGE THREE
 <md-tab label="Session">
 <md-content class="md-padding">
 <!-- <div ng-include src="'/lol.html'"></div> -->
-<h3><i>Work in progress..</i></h3>
+<!-- <h3><i>Work in progress..</i></h3>
 </md-content>
-</md-tab>
+</md-tab> -->
 
 <!--Add Finalize TAB PAGE FOUR-->
 <md-tab label="Finalize">
 <md-content class="md-padding">
 
-<!-- visits Feedback input-->
-<md-input-container class="md-block">
-<label>Feedback Template</label>
-<input name="feedback" ng-model="feedback" feedback required>
-<div ng-messages="visitsForm.feedback.$error" ng-show="visitsForm.feedback.$touched || !visitsForm.feedback.$pristine">
-  <div class="messagenotify">
-    <div ng-messages-include="/public/mods/partials/messages.html"></div>
+<!--panel-three-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"> <b>Feedback default panel</b></h3>
   </div>
-</div>
-</md-input-container>
+  <div class = "panel-subheader pull-right">
+  </div>
+  <div class="panel-body">
+    <!-- visits Feedback input-->
+    <md-input-container class="md-block">
+    <label>Feedback Template</label>
+    <input name="feedback" ng-model="feedback" feedback required>
+    <div ng-messages="visitsForm.feedback.$error" ng-show="visitsForm.feedback.$touched || !visitsForm.feedback.$pristine">
+      <div class="messagenotify">
+        <div ng-messages-include="/public/mods/partials/messages.html"></div>
+      </div>
+    </div>
+  </md-input-container>
+  <div ng-include src="'/public/mods/visits/keynotesVisitAdd.html'"></div>
 
-<!--including keynotes template table-->
-<div ng-include src="'/public/mods/visits/keynotesVisitAdd.html'"></div>
-<!--including invitees template table-->
-<div ng-include src="'/public/mods/visits/inviteesAdd.html'"></div>
+<br><label>Invitees</label><br>
+<invitees arraydata="arraydata" switch-mode="mode" user-type="employee"></invitees>
+
+</div>
+</div>
+
+<!--panel-three-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"> <b>Session default panel</b></h3>
+  </div>
+  <div class = "panel-subheader pull-right">
+  </div>
+  <div class="panel-body">
+    <!-- visits session input-->
+    <md-input-container class="md-block">
+    <label>Session Template</label>
+    <input name="session" ng-model="session" session required>
+    <div ng-messages="visitsForm.session.$error" ng-show="visitsForm.session.$touched || !visitsForm.session.$pristine">
+      <div class="messagenotify">
+        <div ng-messages-include="/public/mods/partials/messages.html"></div>
+      </div>
+    </div>
+  </md-input-container>
+</div>
+</div>
 </md-content>
 </md-tab>
 

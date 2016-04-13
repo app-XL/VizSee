@@ -1,9 +1,49 @@
-
+ <!--link rel="stylesheet" href="/public/assets/m/css/execBios.css">
+  <link rel="stylesheet" href="/public/assets/m/css/userview.css"-->
 
 <style>
 
-.tb-big {
-    height: 125px;
+ .tb-big {
+        height: 140px;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        font-size: 1.1em;
+        box-shadow: 2px 2px 5px #676767;
+        font-family: robotoRegular;
+    }
+    
+    .tb-small {
+        height: 65px;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        font-size: 1.1em;
+        box-shadow: 2px 2px 5px #676767;
+        font-family: robotoRegular;
+    }
+    
+    .divtop {
+        padding-top: 80px;
+    }
+    
+
+
+
+ .hd-sticky {
+        background-color: ;
+        position: relative;
+        height: 0px;
+    }
+
+@media only screen and (max-device-width: 320px){
+
+    .tb-big {
+    height: 170px;
 
     background-color: #fff;
     position: fixed;
@@ -14,87 +54,69 @@
     box-shadow: 2px 2px 5px #676767;
 
     font-family: robotoRegular;
+    }
+
+    .divtop {
+        padding-top: 110px;
+    }
+
 }
 
-.tb-small {
-    height: 48px;
-    background-color: #fff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    font-size: 1.1em;
-    box-shadow: 2px 2px 5px #676767;
-    font-family: robotoRegular;
-}
-.divtop{
-    padding-top: 60px;
-}
 
 </style>
 
 
-<div header showprofile="false" icon="fa fa-line-chart" title1="Executive Bios" title2="Executive Bios">
-Executive Bios
+<div header showprofile="false" icon="fa fa-line-chart"  title1="Executive Bios" title2={{title}} query='query'>
+   <div class="searchViewHead col-xs-12">
+        <div class="searchDivHead col-xs-10 col-sm-9 col-md-10 div-padding">
+            <i class="fa fa-search fonticon1"></i>
+            <input type="text" placeholder="Search" ng-model="$parent.query.$" />
     </div>
-   
-   <div class="divtop"> 
+    </div> 
+</div>
+
+<div class="divtop"> 
+
+
+
 
     <div class="header">Executive Bio's</div>
+
     <div class="client-rep">
-        <div class="heading">CLIENT REPRESENTATIVES</div>
-        <div class="list-group">
-            <div href="#" class="list-group-item" ng-repeat="clientRep in clientData" ng-click="collapseDiv($index,'client')">
-                <div class="representative-pic col-xs-2 col-sm-1 col-md-1">
-                    <img  class="img-circle pic" ng-src="{{clientRep.avatar}}">
-                   
-                </div>
-                <div class="representative-bios-div col-xs-8 col-sm-10 col-md-10">
-                    <div class="representative-name">{{clientRep.name}}</div>
-                    <div class="representative-jobTitle">{{clientRep.jobTitle}}</div>
-                </div>
-                <div class="chevron-div col-xs-2 col-sm-1 col-md-1"></div>
-                <div class="rep-hidden-details collapse col-xs-10 col-sm-10 col-md-10" id="client{{$index}}">
-                    <div class="representative-bios">{{clientRep.summary}}</div>
-                    <div class="reach-representative">
-                        <div class="reach-representative-text">Reach him by</div>
-                        <a ng-href="tel: {{clientRep.contactNo}}" class="tele-link">
-                           <i class="fa fa-phone"></i>
-                        </a>
-                        <a ng-href="mailto: {{clientRep.email}}">
-                            <i class="fa fa-envelope-o"></i>
-                        </a>
-                    </div>
-                </div>
+        <div class="heading">CLIENT REPRESENTATIVES:   </div>
+        
+            <div class="list-group">
+                <div href="#" class="list-group-item" ng-repeat="clientRep in clientData | filter:query" ng-click="collapseDiv($index,'client')">
+                    <div class="representative-pic col-xs-2 col-sm-1 col-md-1">
+                     <userview user-model="clientRep" view-mode="bullet-small"></userview>
+                 </div>
+                 <div class="representative-bios-div col-xs-8 col-sm-10 col-md-10">
+                   <userview user-model="clientRep" view-mode="brief-view"></userview></br>
+                   <div class="reprole">{{clientRep.role}}</div>
+               </div>
+               <div class="chevron-div col-xs-1 col-sm-1 col-md-1"></div>
+               <div class="rep-hidden-details collapse col-xs-11 col-sm-12 col-md-12" id="client{{$index}}">
+                <userview user-model="clientRep" view-mode="detial-view"></userview>
             </div>
-        </div>
-    </div>
-    <div class="csc-india-rep">
-        <div class="heading">CSC INDIA REPRESENTATIVES</div>
-        <div class="list-group">
-            <div href="#" class="list-group-item" ng-repeat="cscRep in cscData track by $index" ng-click="collapseDiv($index,'cscRep')">
-                <div class="representative-pic col-xs-2 col-sm-1 col-md-1">
-                    
-                       <img ng-src="{{cscRep.avatar}}" class="img-circle pic" alt> 
-                </div>
-                <div class="representative-bios-div col-xs-8 col-sm-10 col-md-10">
-                    <div class="representative-name">{{cscRep.name}}</div>
-                    <div class="representative-jobTitle">{{cscRep.jobTitle}}</div>
-                    <div class="representative-role">{{cscRep.role}}</div>
-                </div>
-                <div class="chevron-div col-xs-2 col-sm-1 col-md-1"></div>
-                <div class="rep-hidden-details collapse col-xs-10 col-sm-10 col-md-10" id="cscRep{{$index}}">
-                    <div class="representative-bios">{{cscRep.summary}}</div>
-                    <div class="reach-representative">
-                        <div class="reach-representative-text">Reach him by</div>
-                        <a ng-href="tel: {{cscRep.contactNo}}" class="tele-link">
-                            <i class="fa fa-phone"></i>
-                        </a>
-                        <a ng-href="mailto: {{cscRep.email}}">
-                               <i class="fa fa-envelope-o"></i>
-                        </a>
-                    </div>
-                </div>
             </div>
-        </div>
     </div>
+</div>
+<div class="client-rep">
+    <div class="heading">CSC INDIA REPRESENTATIVES</div>
+    <div class="list-group">
+        <div href="#" class="list-group-item" ng-repeat="cscRep in cscData track by $index" ng-click="collapseDiv($index,'cscRep')">
+            <div class="representative-pic col-xs-2 col-sm-1 col-md-1">
+                <userview user-model="cscRep" view-mode="bullet-small"></userview>
+            </div>
+            <div class="representative-bios-div col-xs-8 col-sm-10 col-md-10">
+                <userview user-model="cscRep" view-mode="brief-view"></userview>
+                <br>
+            <span class="reprole">{{cscRep.role}}</span>
+            </div>
+            <div class="chevron-div col-xs-1 col-sm-1 col-md-1"></div>
+            <div class="rep-hidden-details collapse col-xs-12 col-sm-12 col-md-12" id="cscRep{{$index}}">
+                <userview user-model="cscRep" view-mode="detial-view"></userview>
+         </div>
+         </div>
+ </div>
+</div>

@@ -1,6 +1,9 @@
 <label ng-init="getUser()" ng-minlength="1" ng-maxlength="75">
 <ANY ng-switch="showFlag">
   <ANY ng-switch-when="user">
+  	<div class="closeicon">
+        <ng-transclude></ng-transclude>
+    </div>
       <div ng-include = "getTemplate()">
 	  </div>
   </ANY>

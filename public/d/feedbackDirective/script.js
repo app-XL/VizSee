@@ -1,7 +1,8 @@
 
 
-angular.module('feedbackDirective', ['ngRateIt'])
-.controller('feedbackDirectiveControllerMain', ['$scope', '$http','$rootScope', function($scope, $http, $rootScope) {
+angular.module('feedbackDirective', ['ngRateIt','ngAnimate', 'toaster'])
+
+.controller('feedbackDirectiveControllerMain', ['$scope', '$http','$rootScope','$timeout','toaster', function($scope, $http, $rootScope,$timeout,toaster) {
 
   // console.log($scope.feedbackId);
   // console.log($scope.visitId);
@@ -160,12 +161,11 @@ function arrayIntersection() {
       console.log(response);
     })
 
-
-                    var myEl = angular.element(document.getElementsByClassName('feedback-form'));
-                    myEl.css('display', 'none');
-                    var myEl2 = angular.element(document.getElementsByClassName('submit-success-text'));
-                    myEl2.css('display', 'block');
-
+    var myEl = angular.element(document.getElementsByClassName('feedback-form'));
+    myEl.css('display', 'none');
+    var myEl2 = angular.element(document.getElementsByClassName('submit-success-text'));
+    myEl2.css('display', 'block');
+    showSuccessMessage();
   };
 
   $scope.selection = [];
@@ -190,6 +190,11 @@ function arrayIntersection() {
       console.log(answerChoice.toString());
       $scope.feedbackModel.item[index].answer = answerChoice.toString();
     };
+
+function showSuccessMessage()
+{
+  toaster.info({title: "Thank You Note", body:"Thank you for your valuable feedback."});
+}
 
 }])
 

@@ -55,24 +55,44 @@ function getOneById(id){
 
 function getWithCity(query){
     var deferred = Q.defer();
+    var user = [];
     console.log("im here:"+query.location);
     model
-    .aggregate(
-        [ { $match : { location : query.location} } ])
-        .exec(function (err, item) {
-            if(err) {
-                console.log(err);
-                deferred.reject(err);
-            }
-            else
-            {
-                console.log(item);
-                deferred.resolve(item);
-            }
-        });
+    .find({ location: query.location })
+    .populate('user')
+    .select('location type user _id')
 
+    .exec(function (err, item) {
+        if(err) {
+            console.log(err);
+            deferred.reject(err);
+        }
+        else
+        { 
+            console.log("no of city's: "+item.length);
+            for (var i =0;i< item.length; i++) {
+              user.push(transform(item[i].user, item[i].type, item[0].location));
+          };
+          deferred.resolve(user);
+      }
+  });
+    function transform(type, role, loc)
+    {
+            var typeData={
+                name :(type.name.prefix+" "+type.name.first+" "+type.name.middle+" "+type.name.last+" "+type.name.suffix),
+                avatar :type.avatar,
+                jobTitle :type.jobTitle,
+                summary :type.summary,
+                email :type.email,
+                contactNo :type.contactNo[0].contactNumber,
+                type: role,
+                location: loc
+            }
+            return typeData;
+        }
         return deferred.promise;
 } // getWithCity method ends
+
 
 function create(data) {
     console.log(data);

@@ -1,13 +1,18 @@
+<style>
+md-dialog {
+  margin-top: 100px;
+}
+</style>
 <!-- ng-img-crop extended dependencies for cropping image -->
 <md-dialog aria-label="Mango (Fruit)" ng-cloak>
 <form name="UploadForm">
   <md-toolbar>
   <div class="md-toolbar-tools">
-    <h2>MULTI FILE UPLOAD</h2>
+    <h2>Please Attach the files</h2>
     <span flex></span>
-    <md-button class="md-icon-button" ng-click="cancel()">
+<!--     <md-button class="md-icon-button" ng-click="delete(array.length)">
     <md-icon <i class="fa fa-times" aria-label="Close dialog"></i></md-icon>
-  </md-button>
+  </md-button> -->
 </div>
 </md-toolbar>
 <md-dialog-content>
@@ -19,6 +24,17 @@
   </div>
 </div>
 </div>
+<md-dialog-actions layout="row">
+<span flex></span>
+<md-button class="md-primary md-raised" ng-click="cancel()">
+OK
+</md-button>
+<!-- 
+<md-button class="btn btn-danger" ng-click="cancel()" >
+cancel
+</md-button>
+ -->
+</md-dialog-actions>
  </md-dialog-content>
 </form>
 </md-dialog>

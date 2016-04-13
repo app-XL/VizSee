@@ -22,7 +22,7 @@
 		"__v"				:	0,
 		"email"				: "admin@csc.com",
 
-		"avatar"			:  "\\public\\assets\\g\\imgs\\avatar.jpg",
+		"avatar"			:  "/public/assets/g/imgs/avatar.jpg",
 
 		"local"				:
 			{
@@ -52,8 +52,8 @@
 		"contactNo"			:
 			[
 				{
-					"number"		: "864-643-0563",
-					"type"			: "mobile"
+					"contactnumber"		: "864-643-0563",
+					"contacttype"			: "mobile"
 				}
 			],
 

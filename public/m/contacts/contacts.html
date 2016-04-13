@@ -1,88 +1,106 @@
 <style>
-  .list-group-item {
-  	display: inline-block;
-  	border: none;
-  	border-bottom: 1px solid #dddddd;
-  	padding: 0px;
-  	border-radius: 0px;
-  	width: 100%;
-  }
-  .chevron-div {
-  	background: url(/public/assets/m/rem/down-arrow.png) no-repeat;
-  	height: 20px;
-  	width: 20px;
-  	background-size: 18px;
-  	margin-top: 30px;
-  	padding: 0;
-  	margin-left: 25px;
-  	-webkit-transform: rotate(0deg);
-  	-moz-transform: rotate(0deg);
-  	transform: rotate(0deg);
-  	-webkit-transition: all 0.5s ease;
-  	-moz-transition: all 0.5s ease;
-  	transition: all 0.5s ease;
-  }
-  .chevron-down-arrow {
-  	-webkit-transform: rotate(-180deg);
-  	-moz-transform: rotate(-180deg);
-  	transform: rotate(-180deg);
-  	margin-top: 15px;
-  	-webkit-transition: all 0.5s ease;
-  	-moz-transition: all 0.5s ease;
-  	transition: all 0.5s ease;
-  }
-  .header {
-  	padding: 10px;
-  	background-color: #fff;
-  	position: fixed;
-  	top: 0;
-  	width: 100%;
-  	z-index: 1;
-  	font-size: 1.1em;
-  	box-shadow: 2px 2px 5px #676767;
-  	padding-left: 40px;
-  	font-family: robotoRegular;
-  }
-  .heading {
-  	color: #ef2525;
-  	font-family: workSansLight;
-  	font-size: 1.4em;
-  	padding-bottom: 5px;
-  }
-  .client-rep {
-  	margin: 10px;
-  	background-color: #fff;
-  	display: inline-block;
-  	padding: 10px;
-  	box-shadow: 2px 2px 2px #c1c1c1;
-  }
-  .client-rep {
-  	margin-top: 55px;
-  	margin-bottom: 0px;
-  }
-  
+.tb-big {
+        height: 160px;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        font-size: 1.1em;
+        box-shadow: 2px 2px 5px #676767;
+        font-family: robotoRegular;
+    }
+    
+    .tb-small {
+        height: 65px;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        font-size: 1.1em;
+        box-shadow: 2px 2px 5px #676767;
+        font-family: robotoRegular;
+    }
+    
+    .divtop {
+        padding-top: 60px;
+    }
+    .dropdown-menu{
+       background-color: white;
+    }
+    
+     .hd-sticky {
+        background-color:;
+        position: relative;
+        height: 0px;
+        padding-top: 0px;
+    }
+@media only screen and (min-device-width: 320px) and (max-device-width: 484px) {
+    
+    .tb-big {
+        height: 180px;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        font-size: 1.1em;
+        box-shadow: 2px 2px 5px #676767;
+        font-family: robotoRegular;
+    }
+}
 </style>
-  <div class="header">CONTACT DETAILS</div>
-  <div class="client-rep">
-  	<div class="heading">LOCATION : {{contactList[0].location}}</div>
-  	<hr>
-  	<div class="list-group">
-  		<div href="#" class="list-group-item" ng-repeat="contact in contactList" ng-click="collapseDiv($index,'client')">
-
-  			<div class="row">
-  				<div class="col-xs-1">
-  					<userview user-id="contact.user" view-mode="bullet-small"></userview>
-
-  				</div>
-  				<div class="col-xs-11">
-  					<userview user-id="contact.user" view-mode="brief-view"></userview>
-  					{{contact.type}}
-  					<div class="chevron-div col-xs-2 col-sm-1 col-md-1"></div>
-  					<div class="rep-hidden-details collapse" id="client{{$index}}">
-  						<userview user-id="contact.user" view-mode="detial-view"></userview>
-  					</div>
-  				</div>  			
-  			</div>
-  		</div>
-  	</div>
+<div header showprofile="false" icon="fa fa-phone" title1="Key Contacts" title2={{title}}>  
+ <div class="searchViewHead  col-xs-12">
+   <div class="searchDivHead col-xs-12 col-sm-8 col-md-12 div-padding">
+    <i class="fa fa-search fonticon1"></i>
+    <input type="text" placeholder="Search" value="" name="search" id="search">
+    <div class="pull-right">
+        <div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+            LOCATION
+            <span class="caret"></span>
+        </div>
+        <ul class="dropdown-menu">
+            <div ng-repeat="city in cities">
+                <li><a href="#/contacts/{{city}}">{{city}}</a></li>
+                <li class="divider"></li>
+            </div>
+        </ul>
+     </div>
+    </div>
   </div>
+</div>
+
+<div class="divtop">Contacts - {{contactList[0].location}}</div>
+<div id="spoc-page">
+    <div class="spoc-details-container">
+        <div class="heading1">CONTACT YOUR SPOC</div>
+        <div class="list-group">
+         <div class="spoc-details" class="list-group-item" ng-repeat="spoc in contactList">
+            <div class="spoc-pic col-xs-1 col-sm-1 col-md-1">
+                <img class="img-circle spocpicture" ng-src="{{spoc.avatar}}">
+            </div>
+            <div class="spoc-bios-div col-xs-11 col-sm-11 col-md-11">
+                <div class="spoc-name">{{spoc.name}}</div>
+                <div class="spoc-designation">{{spoc.jobTitle}}</div>{{spoc.type}}
+                <div class="spoc-bios">{{spoc.summary}}</div>
+                <div class="reach-spoc-phone">
+                    <div class="number">{{spoc.contactNo}}</div>
+                    <a class="col-xs-6 col-sm-6 col-md-6 call-text" ng-href="tel: {{spoc.contactNo}}">CALL</a>
+                    <a class="col-xs-6 col-sm-6 col-md-6 message-text" ng-href="sms: {{spoc.contactNo}}">MESSAGE</a>
+                </div>
+                <div class="reach-spoc-email">
+                    <div class="email">{{spoc.email}}</div>
+                    <a class="email-text" ng-href="mailto: {{spoc.email}}">EMAIL</a>
+                </div>
+                <div class="download-contact glyphicon glyphicon-paperclip">
+                    <div class="download-text">Download Contact</div>
+                </div>
+
+            </div>
+         
+         </div>
+        </div>
+    </div>
+</div>

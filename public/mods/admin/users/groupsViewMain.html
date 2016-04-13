@@ -5,8 +5,15 @@
   </div>
 
   <div class="form-inline has-feedback filter-header">
-    <input type="text" class="form-control" placeholder="Search" ng-model="search.$" />
-    <button class="btn btn-default btn-sm" ng-click="hideFilter=!hideFilter">Advanced Search</button>
+     <div class="row">
+        <div class="col-xs-5">
+          <input type="text" class="form-control" placeholder="Search" ng-model="search.$" />
+          <button class="btn btn-default btn-sm" ng-click="hideFilter=!hideFilter">Advanced Search</button>
+        </div>
+        <div class="col-xs-4">
+          <button class="btn btn-default btn-sm pull-right" ng-click="addGroupRecord()"> Add New Group</button>
+      </div>
+    </div>
   </div>
 
   <table class="table table-striped table-condensed table-responsive table-hover"> 
@@ -19,12 +26,30 @@
         <th>
           <a href="" ng-click="orderByField='description'; reverseSort = !reverseSort">Group Description</a>
         </th>
+        <th>Action</th>
       </tr>
+
+      <!-- table add new record template start-->
+      <tr ng-hide="hideAddRow">
+        <td><span ng-hide="hideAddRow"><input type="text" ng-model="group.name"></span></td>
+        <td><span ng-hide="hideAddRow"><input type="text" ng-model="group.description"></span></td>
+        <td>
+          <span ng-hide="hideAddRow">
+            <a class="table-btn" ng-click="saveGroup()"><span class="glyphicon glyphicon-ok"/></a>
+            <a class="table-btn" ng-click="deselectGroup()"><span class="glyphicon glyphicon-remove"/></a>
+          </span>
+        </td>
+      </tr>
+      <!-- table add new record template end-->
+
     </thead>    
     <tbody class="data-grid-data">
       <tr ng-repeat="group in grouplist | filter: search |orderBy:orderByField:reverseSort">
         <td>{{group.name}}</td>
         <td>{{group.description}}</td>
+         <td>
+          <a class="table-btn" ng-click="editGroup(group._id)"><span class="fa fa-pencil-square-o fa-lg" /></a>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -13,7 +13,8 @@ module.exports = {
 			"/public/assets/g/css/sidebar.css",
 			"/public/assets/m/css/font.css",
 			"/public/assets/g/css/rateit.css",
-			"/public/assets/g/js/rateit.js"
+			"/public/assets/g/css/toaster.css"
+
 		],
 		"prod":[
 			"/public/assets/w/styles/layout.min.css",
@@ -26,7 +27,7 @@ module.exports = {
 			"/public/assets/g/css/sidebar.css",
 			"/public/assets/m/css/font.css",
 			"/public/assets/g/css/rateit.css",
-			"/public/assets/g/js/rateit.js"
+			"/public/assets/g/js/toaster.css"
 		]
 	},
 
@@ -75,6 +76,7 @@ module.exports = {
 			"/public/d/userProfile/script.js",
 			"/public/d/userDisplay/script.js",
 			"/public/d/user/script.js",
+			"/public/d/invitees/script.js",
 			"/public/d/fileUpload/script.js",
 			"/public/d/fileAttachment/script.js",
 			"/public/d/datePicker/script.js",
@@ -82,6 +84,8 @@ module.exports = {
 			"/public/d/clientDisplay/script.js",
 			"/public/d/richText/script.js",
 			"/public/d/feedbackDirective/script.js",
+			"/public/assets/g/js/rateit.js",
+			"/public/assets/g/js/toaster.js"
 		],
 		"prod":[
 		]
@@ -160,7 +164,9 @@ module.exports = {
 			"/public/d/feedbackDirective/script.js",
 			"/public/d/scroll/scroll.js",
 			"/public/d/header/header.js",
-			"/public/d/userView/script.js"
+			"/public/d/userView/script.js",
+			"/public/assets/g/js/rateit.js",
+			"/public/assets/g/js/toaster.js"
 		],
 		"prod":[
 		]
@@ -178,7 +184,8 @@ module.exports = {
 		"dev":[
 			"/public/assets/m/css/font.css",
 			"/public/assets/m/css/style.css",
-			"/public/assets/m/css/header.css"
+			"/public/assets/m/css/header.css",
+			"/public/assets/m/css/userview.css"
 		],
 		"prod":[
 
@@ -192,7 +199,8 @@ module.exports = {
 			"/public/m/home/homeCtrl.js",
 			"/public/d/geoLocation/locator.js",
 			"/public/d/geoLocation/locator-tpl.js",
-			"/public/assets/m/css/welcome.css"
+			"/public/assets/m/css/welcome.css",
+			"/public/assets/m/css/thankyou.css"
 		]
 
 	},
@@ -233,7 +241,8 @@ module.exports = {
 	"m-clientInfo":{
 		"dev":[
 			"/public/assets/m/css/clientInfo.css",
-		    "/public/m/clientInfo/clientInfo.js"
+		    "/public/m/clientInfo/clientInfo.js",
+		    "/public/assets/m/css/userview.css"
 		    ]
 		 },
 
@@ -245,11 +254,19 @@ module.exports = {
 		    ]
 		 },
 
+   "m-feedback":{
+		"dev":[
+			"/public/assets/m/css/overallFeedback.css",
+		    "/public/m/overallFeedback/overallFeedback.js"
+		    ]
+		 },
+		 
+
 	"m-contacts":{
 		"dev":[
 			"/public/m/contacts/contacts.js",
-			"/public/m/contacts/contactsCtrl.js"
-			// "/public/assets/m/css/userview.css"
+			"/public/m/contacts/contactsCtrl.js",
+			"/public/assets/m/css/visitspoc.css"
 			]
 		}
 	}

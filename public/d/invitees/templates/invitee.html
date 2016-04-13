@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="/public/d/userDisplay/script.js"/>
+
+<div ng-if="switchMode=='add'">
+  <input ng-model="invite" type="invite"> 
+  <button class="btn btn-primary" ng-click="addInvitees(invite)">Add Invitee</button>
+
+    <div><span ng-show="checked" class="error text-danger">{{message}}</span></div>
+  
+    <div ng-repeat="special in array">
+        <div class="col-xs-6 col-sm-6 col-md-5 col-lg-6">
+       <userdisplay view-mode="medium" user-id="special.invite">
+        <div class="closeicon pull-right">
+          <a class="table-btn" ng-click="removeInviteesdata($index)"><li class="fa fa-times fa-lg" /></a>
+        </div>
+      </userdisplay>
+    </div>
+  </div>
+</div>
+
+
+
+<div ng-if="switchMode=='edit'" >
+  <input ng-model="invite" type="invite"> 
+  <button class="btn btn-primary" ng-click="addInvitees(invite)">Add Invitee</button>
+
+    <div><span ng-show="checked" class="error text-danger">{{message}}</span></div>  
+  
+    <div ng-repeat="special in arraydata">
+        <div class="col-xs-6 col-sm-6 col-md-5 col-lg-6">
+       <userdisplay view-mode="medium" user-id="special">
+        <div class="closeicon pull-right">
+          <a class="table-btn" ng-click="removeInviteesdata($index)"><li class="fa fa-times fa-lg" /></a>
+        </div>
+      </userdisplay>
+    </div>
+  </div>
+</div> 

@@ -8,11 +8,11 @@
 
 <head>
 
-	<% include ../partials/head.ejs%>
-	<!-- standard assets  -->
-	<%-locals.stdAssets%>
-	<!-- application assets  -->
-	<%-locals.appAssets%>
+  <% include ../partials/head.ejs%>
+  <!-- standard assets  -->
+  <%-locals.stdAssets%>
+  <!-- application assets  -->
+  <%-locals.appAssets%>
 <style>.sb-profile{
   padding-top: 0px;
 }
@@ -110,7 +110,7 @@
   color: #2a2a2a;
   font-family: robotoLight;
   font-size: 1.1em;
-	decoration:none;
+  decoration:none;
 }
 
 .menu-icon{
@@ -148,7 +148,7 @@
 
 
 
-@media(min-width:768px) {
+/*@media(min-width:768px) {
     #page {
         padding-left: 250px;
     }
@@ -174,38 +174,88 @@
         position: relative;
         margin-right: 0;
     }
-}
+}*/
 #sb-wrapper h1{
   color: #006699;
   padding-left: 30px;
+}
+
+@media only screen and (max-device-width: 320px) {
+  #pg-content-wrapper {
+      width: 100%;
+      position: absolute;
+      padding: 2px;
+  }
+}
+
+@media only screen and (min-device-width: 321px) and (max-device-width: 374px) {
+  #pg-content-wrapper {
+      width: 100%;
+      position: absolute;
+      padding: 2px;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 480px) {
+  #pg-content-wrapper {
+      width: 100%;
+      position: absolute;
+      padding: 2px;
+  }
+}
+
+
+/*media queries from 485 - 768*/
+@media only screen and (min-device-width: 485px) and (max-device-width: 768px) {
+  #pg-content-wrapper {
+      width: 100%;
+      position: absolute;
+      padding: 2px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+    #pg-content-wrapper {
+      width: 100%;
+      position: absolute;
+      padding: 2px;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
+    #pg-content-wrapper {
+      width: 100%;
+      position: absolute;
+      padding: 2px;
+  }
 }
 
 </style>
 </head>
 
 <body>
-	<div id="page">
+  <div id="page">
 
-		<!-- Sidebar -->
-		<div id="sb-wrapper"><h1>Visit Portal</h1>
-		    <div class="sb-profile">
-				<%if (locals.user !== undefined) { %>
-				<div class="menu-profile-pic"><img src="<%=locals.user.avatar%>"></div>
-				<div class="menu-profile-name"><%=locals.user.name.first%> <%=locals.user.name.last%></div>
-				<% } %>
-			</div> <!-- sb-profile end -->
-			<%-locals.menu %>
-		</div> <!-- sb-wrapper -->
+    <!-- Sidebar -->
+    <div id="sb-wrapper"><h1>Visit Portal</h1>
+        <div class="sb-profile">
+        <%if (locals.user !== undefined) { %>
+        <div class="menu-profile-pic"><img src="<%=locals.user.avatar%>"></div>
+        <div class="menu-profile-name"><%=locals.user.name.first%> <%=locals.user.name.last%></div>
+        <% } %>
+      </div> <!-- sb-profile end -->
+      <%-locals.menu %>
+    </div> <!-- sb-wrapper -->
 
-		<!-- Page Content -->
-		<div id="pg-content-wrapper">
-			<div class="pg-content">
-				<div class="ng-content">
-				<%- body%>
-				</div>
-			</div> <!-- end container -->
-		</div> <!-- page-content-wrapper -->
-	</div> <!-- end of page wrapper -->
+    <!-- Page Content -->
+    <div id="pg-content-wrapper">
+      <div class="pg-content">
+        <div class="ng-content">
+        <%- body%>
+        </div>
+      </div> <!-- end container -->
+    </div> <!-- page-content-wrapper -->
+  </div> <!-- end of page wrapper -->
 <!-- Menu Toggle Script -->
 </body>
 

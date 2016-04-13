@@ -40,8 +40,8 @@ var userSchema = mongoose.Schema({
       network        : String
     }],
     contactNo        : [{
-      number         : String,
-      type           : String
+      contactNumber         : String,
+      contactType           : String
     }],
     stats            : {
       dateCreated    : Date,

@@ -1,0 +1,189 @@
+
+
+<style>
+
+    .tb-big {
+        height: 125px;
+
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        font-size: 1.1em;
+        box-shadow: 2px 2px 5px #676767;
+
+        font-family: robotoRegular;
+    }
+
+    .tb-small {
+        height: 48px;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        font-size: 1.1em;
+        box-shadow: 2px 2px 5px #676767;
+        font-family: robotoRegular;
+    }
+    .divtop{
+        padding-top: 80px;
+    }
+    input.star {
+       display: none;
+   }
+   label.star {
+    float: right;
+    color: #F3C227;
+    font-size: 1.6em;
+    padding-right: 5px;
+}
+input.star:checked ~ label.star:before {
+    content: '\f005';
+    color: #F3C227;
+}
+input {
+    margin-right: 5px;
+    margin-top: 0px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 19px;
+    cursor: pointer;
+    outline: none;
+    background: url('/public/assets/m/img/ic/checkbox-sprite.png') no-repeat;
+    background-position: 0px 0px;
+    background-size: 36px;
+}
+input[type=checkbox]:checked {
+    background: url('/public/assets/m/img/ic/checkbox-sprite.png') no-repeat;
+    background-position: -18px 0px;
+    background-size: 36px;
+}
+
+
+</style>
+
+
+<div header showprofile="false" icon="fa fa-line-chart" title1="Feedback page" title2="feedback for visit">
+    factsheet
+</div>
+<div class="divtop">  
+    <div id="overall-feedback-page">
+        <div class="header">Overall Feedback</div>
+        <div class="scrollable-content">
+
+            <div class="corousel">
+                <div class="corousel-inner" style="width: 1496px;">
+                    <form id="form-1" class="form-div active">
+                        <div class="checkbox-div">
+                            <div class="checkbox-text">Was your objective met with content of the presentations ?</div>
+                            <div class="checkbox-input">
+                                <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <input type="checkbox" />&nbsp;&nbsp;Extremely Well</label>
+                                    <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <input type="checkbox" />&nbsp;&nbsp;Very Well</label>
+                                        <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <input type="checkbox" />&nbsp;&nbsp;Somewhat Well</label>
+                                            <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                <input type="checkbox" />&nbsp;&nbsp;Not AT All Well</label>
+                                            </div>
+                                        </div>
+                                        <div class="comments-div">
+                                            <div class="comments-text">Please leave your comments, if any</div>
+                                            <div class="comments-input">
+                                                <textarea></textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form id="form-2" class="form-div">
+                                        <div class="star-ratings-div">
+                                            <div class="star-rating-text">How would you rate your hospitality in and outside Bangalore ?</div>
+                                            <div class="stars">
+                                                <input class="star star-5" id="star-5" type="radio" name="star" />
+                                                <label class="star star-5" for="star-5"></label>
+                                                <input class="star star-4" id="star-4" type="radio" name="star" />
+                                                <label class="star star-4" for="star-4"></label>
+                                                <input class="star star-3" id="star-3" type="radio" name="star" />
+                                                <label class="star star-3" for="star-3"></label>
+                                                <input class="star star-2" id="star-2" type="radio" name="star" />
+                                                <label class="star star-2" for="star-2"></label>
+                                                <input class="star star-1" id="star-1" type="radio" name="star" />
+                                                <label class="star star-1" for="star-1"></label>
+                                            </div>
+                                        </div>
+                                        <div class="comments-div">
+                                            <div class="comments-text">Please leave your comments, if any</div>
+                                            <div class="comments-input">
+                                                <textarea></textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form id="form-3" class="form-div">
+                                        <div class="checkbox-div">
+                                            <div class="checkbox-text">How was your visit experience to India ?</div>
+                                            <div class="checkbox-input">
+                                                <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <input type="checkbox" />&nbsp;&nbsp;Excellent</label>
+                                                    <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                        <input type="checkbox" />&nbsp;&nbsp;Good</label>
+                                                        <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                            <input type="checkbox" />&nbsp;&nbsp;Average</label>
+                                                            <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                                <input type="checkbox" />&nbsp;&nbsp;Bad</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="comments-div">
+                                                            <div class="comments-text">Please leave your comments, if any</div>
+                                                            <div class="comments-input">
+                                                                <textarea></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <form id="form-4" class="form-div">
+                                                        <div class="star-ratings-div">
+                                                            <div class="star-rating-text">How did you like the cuisine ?</div>
+                                                            <div class="stars">
+                                                                <input class="star star-5" id="star-5" type="radio" name="star" />
+                                                                <label class="star star-5" for="star-5"></label>
+                                                                <input class="star star-4" id="star-4" type="radio" name="star" />
+                                                                <label class="star star-4" for="star-4"></label>
+                                                                <input class="star star-3" id="star-3" type="radio" name="star" />
+                                                                <label class="star star-3" for="star-3"></label>
+                                                                <input class="star star-2" id="star-2" type="radio" name="star" />
+                                                                <label class="star star-2" for="star-2"></label>
+                                                                <input class="star star-1" id="star-1" type="radio" name="star" />
+                                                                <label class="star star-1" for="star-1"></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="comments-div">
+                                                            <div class="comments-text">Please leave your comments, if any</div>
+                                                            <div class="comments-input">
+                                                                <textarea></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="save-and-progress">
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                                </div>
+                                            </div>
+                                            <div class="prev-and-save-buttons">
+                                                <div class="prev-button disabled" ng-click="prev()">
+                                                    <div class="prev-icon"></div>PREV</div>
+                                                    <div class="save-next-button" type="submit" ng-click="next()">SAVE & NEXT
+                                                        <div class="next-icon"></div>
+                                                    </div>
+                                                    <div class="save-exit-button" type="submit" ng-click="submitAndExitForm()">SAVE & EXIT
+                                                        <div class="next-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>

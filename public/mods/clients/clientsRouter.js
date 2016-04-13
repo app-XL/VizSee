@@ -22,6 +22,11 @@ angular.module('clients')
 	  .when('/clients/:id/edit', {
 	    templateUrl: '/public/mods/clients/clientsViewAdd.html',
 	    controller: 'clientsControllerMain'
+	  })
+
+	  .when('/clients/panels', {
+	    templateUrl: '/public/mods/clients/clientsViewPanels.html',
+	    controller: 'clientsControllerMain'
 	  });
 	}
 ]);

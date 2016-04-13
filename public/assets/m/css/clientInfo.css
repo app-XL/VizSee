@@ -1,5 +1,5 @@
 #client-information {
-    background-color: #eeeeee;
+    background-color:;
     padding-top: 42px;
     padding-bottom: 25px;
     /*
@@ -7,113 +7,6 @@
         color: #888;
     }*/
 }
-    .header2 {
-        padding: 10px;
-        background-color: #fff;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1;
-        font-size: 1.1em;
-        box-shadow: 2px 2px 5px #676767;
-        padding-left: 40px;
-        font-family: robotoRegular;
-    }
-    .client-rep { }
-        .list-group-item {
-            display: inline-block;
-            border: none;
-            border-bottom: 1px solid #dddddd;
-            padding: 0px;
-            border-radius: 0px;
-            width: 100%;
-        }
-            .representative-pic {
-                padding: 0px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                img {
-                    width: 60px;
-                }
-            }
-
-            .clientpic{
-                width: 60px;
-                height: 55px;
-            }
-            .representative-bios-div {
-                padding-left: 30px;
-                padding-top: 20px;
-            }
-            .representative-name {
-                font-family: robotoBold;
-                color: #676767;
-            }
-            .representative-designation {
-                font-family: robotoBold;
-                color: #8a8a8a;
-                font-size: 0.8em;
-                margin-bottom: 12px;
-            }
-            .representative-bios {
-                font-family: robotoRegular;
-                font-size: 0.8em;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                border-top: 1px solid #d0d0d0;
-                border-bottom: 1px solid #d0d0d0;
-            }
-            .reach-representative {
-                display: -webkit-flex;
-                display: flex;
-                -webkit-flex-direction: row;
-                flex-direction: row;
-                -webkit-justify-content: flex-end;
-                justify-content: flex-end;
-                padding-top: 5px;
-            }
-                .reach-representative-text {
-                    align-self: center;
-                    display: inline-block;
-                    font-size: 0.8em;
-                    margin-bottom: 12px;
-                    color: #8a8a8a;
-                }
-                .tele-link {
-                    margin-left: 10px;
-                    margin-right: 10px;
-                }
-                .phone,
-                .email {
-                    color: white;
-                    width: 20px;
-                    height: 20px;
-                    background: #888;
-                    border-radius: 15px;
-                    text-align: center;
-                    padding-top: 4px;
-                    font-size: 0.8em;
-                }
-            
-            .rep-hidden-details {
-                opacity: 0;
-                transition: opacity 0.5s ease-out;
-                display: none;
-            }
-            .rep-hidden-details.active {
-                opacity: 1;
-            }
-    
-    .list-group-item:first-child {
-        margin-top: -10px;
-    }
-    .heading {
-        color: #ef2525;
-        font-family: workSansLight;
-        font-size: 1.4em;
-        padding-bottom: 5px;
-    }
-    .client-rep,
     .company-logo-category,
     .past-events,
     .current-engagement,
@@ -166,7 +59,7 @@
                 color: #6C6C6C;
             }
      }
-     /*pastevents*/
+/*pastevents*/
       .past-events {}
         .past-events  .list-group-item {
             display: inline-block;
@@ -232,8 +125,8 @@
             margin-top: 5px;
         }
      
-   
-    /* current engagement*/
+
+  /* current engagement*/
      .current-engagement {}
       .current-engagement .list-group-item {
             display: inline-block;
@@ -268,36 +161,9 @@
      .current-engagement    .list-group-item:first-child {
             margin-top: 5px;
         }
-   
-    .chevron-div1 {
-        width: auto;
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-        padding-right: 0px;
-        padding-left: 0px;
-        float: right;
-        margin-top: 30px;
-    }
-    .chevron-down-arrow {
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
-        transform: rotate(180deg);
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
-    .list-group {
-        margin-bottom: 0px;
-    }
-    /*pre  competitors*/
+
+
+  /*pre  competitors*/
      .competitors-list {
             display: -webkit-flex;
             display: -webkit-box;
@@ -309,7 +175,7 @@
         }
            .competitors-list .img-div {
                 border-left: 1px solid #d0d0d0;
-                text-align: center;
+                /*text-align: center;*/
                 padding-left: 10px;
             }
             .competitors-list .img-div img {
@@ -318,68 +184,5 @@
             
             .img-div:first-child {
                 border-left: none;
-            }
-   
-
-
-@media (min-width: 375px) and (max-width: 410px) {
-    #client-information {}
-        .client-rep .list-group-item .representative-bios-div {
-            padding-left: 20px;
-        }
-        .past-events .list-group-item .past-visit-date {
-            width: 27%;
-        }
- 
-
-@media (min-width: 411px) and (max-width: 767px) {
-    #client-information {}
-        .past-events .list-group-item .past-visit-date {
-            width: 25%;
-        }
-
-@media (min-width: 667px) and (max-width: 737px) {
-    #client-information {}
-        .client-rep .list-group-item .representative-pic {
-            width: 9%;
-        }
-        .past-events .list-group-item .past-visit-date {
-            width: 14%;
-        }
- 
-
-@media (min-width: 600px) and (max-width: 601px) {
-    #client-information {}
-        .client-rep .list-group-item .representative-pic {
-            width: 11%;
-        }
-        .past-events .list-group-item .past-visit-date {
-            width: 17%;
-        }
-  
-
-@media (min-width: 768px) {
-    #client-information {
-        font-size: 16px;
-    }
-
-
-@media (min-width: 411px) and (max-width: 1023px) {
-    #client-information {}
-        .client-rep .list-group-item .representative-bios-div {
-            padding-left: 10px;
-        }
- 
-
-@media (min-width: 960px) {
-    #client-information {}
-        .client-rep .list-group-item .representative-pic {
-            width: 6%;
-        }
-        .client-rep .list-group-item .rep-hidden-details {
-            width: 96%;
-        }
-        .past-events .list-group-item .past-visit-date {
-            width: 10%;
-        }
+}
   

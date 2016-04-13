@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <div class="container"  ng-controller="sessionsControllerMain" >
 <md-dialog aria-label="Visit Scheduler"  ng-cloak>
@@ -17,19 +18,96 @@
        <div >
          <!-- session start date and end date -->
          <!-- sch:: {{schedule}} owner: {{ownerId}}, {{ownerEmail}} -->
-         <h5>Timeline</h5>
+         <!-- <h5>Timeline</h5> -->
+<!--          {{startHourTime}}:{{startMinTime}}
+          {{endHourTime}}:{{endMinTime}} -->
          <div class="form-group">
 
            <div class="row">
+            <h5><i>&nbsp;&nbsp;Select Start Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select End Time</i></h5>
                <div class="col-sm-8">
+                <select ng-model="startHourTime" ng-dropdown ng-change="checkTime()">
+                  <option value=""></option>
+                  <option ng-option value="06">06</option>
+                  <option ng-option value="07">07</option>
+                  <option ng-option value="08">08</option>
+                  <option ng-option value="09">09</option>
+                  <option ng-option value="10">10</option>
+                  <option ng-option value="11">11</option>
+                  <option ng-option value="12">12</option>
+                  <option ng-option value="13">13</option>
+                  <option ng-option value="14">14</option>
+                  <option ng-option value="15">15</option>
+                  <option ng-option value="16">16</option>
+                  <option ng-option value="17">17</option>
+                  <option ng-option value="18">18</option>
+                  <option ng-option value="19">19</option>
+                  <option ng-option value="20">20</option>
+                  <option ng-option value="21">21</option>
+                  <option ng-option value="22">22</option>
+                </select>
+
+                <select ng-model="startMinTime" ng-dropdown  ng-change="checkTime()">
+                  <option value=""></option>
+                  <option ng-option value="00">00</option>
+                  <option ng-option value="05">05</option>
+                  <option ng-option value="10">10</option>
+                  <option ng-option value="15">15</option>
+                  <option ng-option value="9">20</option>
+                  <option ng-option value="10">25</option>
+                  <option ng-option value="11">30</option>
+                  <option ng-option value="12">35</option>
+                  <option ng-option value="13">40</option>
+                  <option ng-option value="14">45</option>
+                  <option ng-option value="15">50</option>
+                  <option ng-option value="16">55</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <select ng-model="endHourTime" ng-dropdown ng-change="checkTime()">
+                  <option value=""></option>
+                  <option ng-option value="06">06</option>
+                  <option ng-option value="07">07</option>
+                  <option ng-option value="08">08</option>
+                  <option ng-option value="09">09</option>
+                  <option ng-option value="10">10</option>
+                  <option ng-option value="11">11</option>
+                  <option ng-option value="12">12</option>
+                  <option ng-option value="13">13</option>
+                  <option ng-option value="14">14</option>
+                  <option ng-option value="15">15</option>
+                  <option ng-option value="16">16</option>
+                  <option ng-option value="17">17</option>
+                  <option ng-option value="18">18</option>
+                  <option ng-option value="19">19</option>
+                  <option ng-option value="20">20</option>
+                  <option ng-option value="21">21</option>
+                  <option ng-option value="22">22</option>
+                </select>
+
+                <select ng-model="endMinTime" ng-dropdown  ng-change="checkTime()">
+                  <option value=""></option>
+                  <option ng-option value="00">00</option>
+                  <option ng-option value="05">05</option>
+                  <option ng-option value="10">10</option>
+                  <option ng-option value="15">15</option>
+                  <option ng-option value="20">20</option>
+                  <option ng-option value="25">25</option>
+                  <option ng-option value="30">30</option>
+                  <option ng-option value="35">35</option>
+                  <option ng-option value="40">40</option>
+                  <option ng-option value="45">45</option>
+                  <option ng-option value="50">50</option>
+                  <option ng-option value="55">55</option>
+                </select>
+<!-- 
              <input type="text" class="time-picker" id="startTime" name="startTime"
               ng-model="startTime" placeholder="Start Time"> -
              <input type="text" class="time-picker" id="endTime" name="endTime"
-              ng-model="endTime" placeholder="End Time">
+              ng-model="endTime" placeholder="End Time"> -->
            
-           <span>{{errMessage}}</span>
+           <span class="text-danger">&nbsp;&nbsp;{{errMessage}}</span>
          </div>
-<div class="col-sm-3">
+<div class="col-sm-4">
          <!-- session type -->
          <div class="form-group">
            <!-- <select  class="form-control"  id="type" ng-model="schedule.session.type" ng-options="t.session for t in type ">
@@ -45,7 +123,7 @@
          <!--title have to pic from User -->
          <br>
          <br>
-<ANY ng-switch="schedule.session.type"> 
+    <ANY ng-switch="schedule.session.type"> 
        <ANY ng-switch-default>         
             <md-input-container class="md-block">
         <label>Title</label>
@@ -56,32 +134,30 @@
           <div ng-message="md-maxlength">The title  has to be less than 30 characters long.</div>
          <div ng-message="minlength">The title should contain minimum 5characters</div></div></div>
       </md-input-container>
-      
-      
-         <!--div class="form-group">
-             
-           <input type="text" class="form-control" placeholder="title" id="title"
-             ng-model="schedule.session.title"  />
-         </div -->
 
          <!--location have to pic from User -->
-             <md-input-container class="md-block">
-        <label>Location</label>
-        <input md-maxlength="30" minlength="5" required name="location" ng-model="schedule.session.location">
-        <div ng-messages="sessionAddForm.location.$error" ng-show="sessionAddForm.location.$touched || !sessionAddForm.location.$pristine">
-             <div class="messagenotify">
-              <div ng-messages-include="/public/mods/partials/messages.html"></div>
-          <div ng-message="md-maxlength">The title  has to be less than 30 characters long.</div>
-         <div ng-message="minlength">The title should contain minimum 5characters</div></div></div>
-      </md-input-container>
-         <!--div class="form-group">
-           <!-- <select  class="form-control" ng-model="session.location" id="location" ng-options="l.session for l in location">
-             <option value="">---pick location ---</option>
-           </select>>
+         <!-- {{meetingPlacesData}} -->
+         <md-input-container class="md-block" ng-if="mode=='add'">
+         <label>Location</label>
+         <input md-maxlength="30" minlength="5" required name="location" ng-model="meetingPlacesData" 
+         ng-blur="sendMeetingPlace(meetingPlacesData)">
+         <div ng-messages="sessionAddForm.location.$error" ng-show="sessionAddForm.location.$touched || !sessionAddForm.location.$pristine">
+           <div class="messagenotify">
+            <div ng-messages-include="/public/mods/partials/messages.html"></div>
+            <div ng-message="md-maxlength">The location  has to be less than 30 characters long.</div>
+            <div ng-message="minlength">The location should contain minimum 5characters</div></div></div>
+          </md-input-container>
 
-					 <input type="text" class="form-control" placeholder="location" id="location"
-						 ng-model="schedule.session.location"  />
-         </div -->
+          <md-input-container class="md-block" ng-if="mode=='edit'">
+          <label>Location</label>
+          <input md-maxlength="30" minlength="5" required name="location" ng-model="meetingPlaceData" 
+          ng-blur="sendMeetingPlace(meetingPlaceData)">
+          <div ng-messages="sessionAddForm.location.$error" ng-show="sessionAddForm.location.$touched || !sessionAddForm.location.$pristine">
+           <div class="messagenotify">
+            <div ng-messages-include="/public/mods/partials/messages.html"></div>
+            <div ng-message="md-maxlength">The location  has to be less than 30 characters long.</div>
+            <div ng-message="minlength">The location should contain minimum 5characters</div></div></div>
+          </md-input-container>
 
          <!--desc have to pic from User -->
              <md-input-container class="md-block">
@@ -90,13 +166,33 @@
         <div ng-messages="sessionAddForm.desc.$error" ng-show="sessionAddForm.desc.$touched || !sessionAddForm.desc.$pristine">
              <div class="messagenotify">
               <div ng-messages-include="/public/mods/partials/messages.html"></div>
-          <div ng-message="md-maxlength">The title  has to be less than 30 characters long.</div>
-         <div ng-message="minlength">The title should contain minimum 5characters</div></div></div>
+          <div ng-message="md-maxlength">The description  has to be less than 30 characters long.</div>
+         <div ng-message="minlength">The description should contain minimum 5characters</div></div></div>
       </md-input-container>
-         <!-- div class="form-group">
-           <textarea type="text" class="form-control" placeholder="description" id="desc"
-             ng-model="schedule.session.desc"  />
-         </div-->
+
+      <md-input-container class="md-block" ng-if="mode=='add'">
+      <label>Session Feedback Template</label>
+<!--       {{sessionId}}
+      {{session}} -->
+      <input name="session" ng-model="session" session required ng-blur="sendFeedbackId(sessionId)">
+      <div ng-messages="sessionAddForm.session.$error" ng-show="sessionAddForm.session.$touched || !sessionAddForm.session.$pristine">
+       <div class="messagenotify">
+        <div ng-messages-include="/public/mods/partials/messages.html"></div>
+        <div ng-message="md-maxlength">The feedback template  has to be less than 30 characters long.</div>
+        <div ng-message="minlength">The feedback template should contain minimum 5characters</div></div></div>
+      </md-input-container>
+
+      <md-input-container class="md-block" ng-if="mode=='edit'">
+      <label>Session Feedback Template</label>
+<!--       {{sessionId}}
+      {{session}} -->
+      <input name="sessiondata" ng-model="sessiondata" sessiondata required ng-blur="sendFeedbackId(sessionId)">
+      <div ng-messages="sessionAddForm.sessiondata.$error" ng-show="sessionAddForm.sessiondata.$touched || !sessionAddForm.sessiondata.$pristine">
+       <div class="messagenotify">
+        <div ng-messages-include="/public/mods/partials/messages.html"></div>
+        <div ng-message="md-maxlength">The feedback template has to be less than 30 characters long.</div>
+        <div ng-message="minlength">The feedback template should contain minimum 5characters</div></div></div>
+      </md-input-container>
 
 		 	<!-- session speaker -->
 			<div class="row">
@@ -104,7 +200,7 @@
 					<md-input-container class="md-block">
 						<div class="form-group" ng-class="{ 'has-error': sessionAddForm.speakerModel.$touched && sessionAddForm.speakerModel.$invalid }">
 						<label >Speaker &nbsp;&nbsp; :</label>
-						<div user type="picker" user-model="ownerUser" user-id="$parent.ownerId" view-type="small" user-email="ownerEmail" switch-mode="mode"></div>
+						<div user type="picker" user-model="ownerUser" user-id="$parent.ownerId" view-type="small" user-email="ownerEmail" switch-mode="mode" user-type="employee"></div>
 						</div>
 					</md-input-container>
 				</div>
@@ -113,7 +209,7 @@
 					<md-input-container class="md-block">
 						<div class="form-group" ng-class="{ 'has-error': sessionAddForm.supporterModel.$touched && sessionAddForm.supporterModel.$invalid }">
 						<label >Supporter &nbsp;&nbsp; :</label>
-						<div user type="picker" user-model="supporterUser" user-id="$parent.supporterId" view-type="small" user-email="supporterEmail" switch-mode="mode"></div>
+						<div user type="picker" user-model="supporterUser" user-id="$parent.supporterId" view-type="small" user-email="supporterEmail" switch-mode="mode" user-type="employee"></div>
 						</div>
 					</md-input-container>
 				</div>

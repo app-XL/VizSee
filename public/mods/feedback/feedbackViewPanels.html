@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="page-header">
+   feedback Management 
+    <div class="sub-header">list of feedback templates</div>
+  </div>
+
+  <div class="container">
+   <div class="form-inline has-feedback filter-header">
+		<div class="row">
+	     <div class="col-xs-5">
+				<input type="text" class="form-control" placeholder="Search" ng-model="search.$" />
+				<!-- <i class="glyphicon glyphicon-search form-control-feedback"></i> -->
+				<button class="btn btn-default btn-sm" ng-click="hideFilter=!hideFilter">Advanced Search</button>
+			</div>			
+		 	<div ng-include src="'/public/mods/feedback/partials/sortSearch.html'"></div>
+		</div>
+	</div>
+
+
+    <div class="pnbdr panel panel-primary">
+      <!--div class="panel-heading">visits panels view</div--><div class="searchpad">
+      <div ng-repeat="feedback in feedbackList | filter: search |orderBy:orderByField:reverseSort">
+        <div class="row">
+          <div class="pn-bodypad">
+            <div class="col-xs-11">
+              <div class="panel panel-info">
+                <div class="panel-heading pn-bodyhdr" pull-left>
+                  <span>{{feedback.title}}</span>
+                  <div class="pull-right">
+                    <a class="table-btn" href="#/feedbackTmpl/{{feedback._id}}/show"><span class="fa fa-eye fa-lg" /></a>
+                    <a class="table-btn" href="#/feedbackTmpl/{{feedback._id}}/edit"><span class="fa fa-pencil-square-o fa-lg" /></a>
+                    <a class="table-btn" ng-click="delete(feedback)" confirm-dialog header-text="Delete Feedback" content="Are you sure you want to delete the feedback with feedback title <b>{{feedback.title}} ? </b>" yes-text="Ok" no-text="Cancel"><span class="fa fa-trash-o fa-lg" /></a>
+                    <a class="table-btn" ng-click="showFeedbackTemp($event,feedback._id)"><span class="fa fa-comments fa-lg"/></a>
+                  </div>
+                </div>
+
+                <div class="panel-body">
+                  <div class="pn-inrbodypad">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <div class="text-xs">{{feedback.type}}</div>
+                      </div>
+                      <div class="col-xs-4">
+                        <div class="text-xs">{{feedback.createOn | date:'dd-MM-yyyy'}}</div>
+                      </div>
+                      <div class="col-xs-4">
+                      	<div class="text-xs">
+                      		<div userdisplay view-mode="nameonly" user-id="feedback.createBy"></div>
+                      	</div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

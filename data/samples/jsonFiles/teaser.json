@@ -21,7 +21,7 @@
 		"type"                				: "audio",
 		"teaserText"          			: " ",
 
-		"externalLink"        			: "\\public\\uploads\\audios\\CSC_UXC.m4a",
+		"externalLink"        			: "/public/uploads/audios/CSC_UXC.m4a",
 
 		"tags"								: ["CSC", "UXC", "Acquisition", "Australia"],
 		"createdBy"						: ObjectId("A02234567892345678900002")
@@ -36,7 +36,7 @@
 		"type"                				: "video",
 		"teaserText"          			: "",
 
-		"externalLink"        			: "\\public\\uploads\\videos\\CSC and HCL.mp4",
+		"externalLink"        			: "/public/uploads/videos/CSCandHCL.mp4",
 
 		"tags"								: ["CSC", "Fruition", "Acquisition"],
 		"createdBy"						: ObjectId("A02234567892345678900003")

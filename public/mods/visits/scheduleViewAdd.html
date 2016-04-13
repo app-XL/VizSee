@@ -6,6 +6,7 @@
       <th><span class="fa fa-calendar fa-lg"></span>&nbsp;&nbsp;Start Date</th>
       <th><span class="fa fa-calendar fa-lg"></span>&nbsp;&nbsp;End Date</th>
       <th><span class="fa fa-globe fa-lg"></span>&nbsp;&nbsp;Location</th>
+      <th><span class="fa fa-globe fa-lg"></span>&nbsp;&nbsp;Meeting Place</th>
       <th></th>
     </tr>
   </thead>
@@ -17,8 +18,8 @@
        ng-model="schedule.location"
        ng-options="data for data in location">
      </select>
-     <!-- <pre>selected: {{schedule.location}}</pre> -->
    </td>
+   <td><input type="text" placeholder="Meeting Place" ng-model="schedule.meetingPlace"></td>
    <td><button class="btn btn-primary" ng-click="addSchedule(schedule)">Add Schedule</button></td>
 
  </tr>
@@ -26,6 +27,7 @@
   <td>{{schedule.startDate | date:"dd MMM yyyy"}}</td>
   <td>{{schedule.endDate | date:"dd MMM yyyy"}}</td>
   <td>{{schedule.location}}</td>
+  <td>{{schedule.meetingPlace}}</td>
   <td><a class="table-btn" ng-click="removeSchedule($index)"><span class="fa fa-trash fa-lg" /></a>
     <a class="table-btn" ng-click="editSchedule($index,schedule)"><span class="fa fa-edit fa-lg" /></a>
   </td>

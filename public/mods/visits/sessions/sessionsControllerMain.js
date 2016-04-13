@@ -2,8 +2,27 @@
 
 var visitsApp = angular.module('visits');
 
-visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams', '$location', 'growl', '$filter', '$mdDialog',
-  function($scope, $http, $routeParams ,$location, growl, $filter, $mdDialog) {
+//Autocompleate - Factory
+visitsApp.factory('SessionDataService', ["$http", function ($http) {
+  return {
+    search: function (term) {
+      //var client = {title: new RegExp(term, 'i')};
+      var maxRecs = 10;
+      var fields = ('title _id');
+      var sort = ({title:'ascending'});
+      return $http({
+        method: 'GET',
+        url: '/api/v1/secure/feedbackDefs/find',
+        params: { query: term, fields: fields, maxRecs: maxRecs, sort: sort }
+      }).then(function (response) {
+        return response.data;
+      });
+    }
+  };
+}]);
+
+visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams', '$location', 'growl', '$filter', '$mdDialog','SessionService',
+  function($scope, $http, $routeParams ,$location, growl, $filter, $mdDialog,SessionDataService) {
 
 		console.log("session controller running");
 
@@ -16,6 +35,8 @@ visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams
 		$scope.showAll = true;
 		$scope.showFiltered = false;
 		$scope.hideFilter = true;
+		$scope.meetingPlaces =[];
+		//	$scope.meetingPlacesData ='';
 		// $scope.ownerId = "";
 		// $scope.ownerEmail = "";
 		// $scope.ownerUser = "";
@@ -33,6 +54,15 @@ visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams
 				$scope.visitStartDate = $scope.visit.startDate;
 				$scope.visitEndDate = $scope.visit.endDate;
 				$scope.scheduleDates = $scope.buildScheduleDates();
+				//console.log($scope.scheduleDates);
+				$scope.session = $scope.visit.sessionTmpl.title;//session feedback default title
+				$scope.sessionFeedbackDefaultId = $scope.visit.sessionTmpl._id;//session feedback default id
+				console.log($scope.visit);
+				for(var i=0;i<$scope.visit.schedule.length;i++)
+				{
+				$scope.meetingPlaces.push($scope.visit.schedule[i].meetingPlace);
+				$scope.meetingPlacesData = $scope.meetingPlaces.toString();//pushing all meeting location data to meetingPlacesData
+				}
 			});
 			console.log("init complete");
 		}
@@ -41,12 +71,43 @@ visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams
 			console.log("refresh init");
 			$http.get('/api/v1/secure/visitSchedules/visit/' + $scope.visitId ).success(function(response) {
 				$scope.scheduleList = response;
+				console.log($scope.scheduleList);
 			}); // get visitSchedule call back ends
 			console.log("refresh complete");
 		}; // refresh method ends
 
 		init();
 		refresh();
+
+	  $scope.sendMeetingPlace = function(meetingPlacesData)
+	  {
+	  //$scope.meetingPlacesData = '';
+	  //console.log($scope.meetingPlacesData);
+	  //console.log(meetingPlacesData);
+	  $scope.sessionMeetingData = meetingPlacesData;
+	  }
+
+	  $scope.sendFeedbackId = function(sessionId)
+	  {
+	  //console.log(sessionId);
+	  if($scope.mode =='add')
+	  {
+	  	if(sessionId != undefined || sessionId != '')
+	  	{
+	  		$scope.sessionFeedbackId = sessionId;
+	  	}
+
+	  	if(sessionId == '' || sessionId == undefined)
+	  	{
+	  		$scope.sessionFeedbackId = $scope.sessionFeedbackDefaultId;
+	  	}
+	  }
+
+	  if($scope.mode =='edit')
+	  {
+	  	$scope.sessionFeedbackId = sessionId;
+	  }
+	}
 
 	  $scope.buildScheduleDates = function()
 	  {
@@ -112,10 +173,25 @@ visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams
 	  $scope.editSession = function(ev, id){
 	    $scope.mode = "edit";
 	    $http.get('/api/v1/secure/visitSchedules/' + id ).success(function(response) {
+	      console.log(response)	;
 	      $scope.schedule = response;
 				// reassign data
 	      $scope.startTime = DateGetTime($scope.schedule.session.startTime);
 	      $scope.endTime = DateGetTime($scope.schedule.session.endTime);
+	      $scope.startHourTime = $scope.startTime.split(":")[0];
+	      $scope.startMinTime = $scope.startTime.split(":")[1];
+	      $scope.endHourTime = $scope.endTime.split(":")[0];
+	      $scope.endMinTime = $scope.endTime.split(":")[1];
+	      $scope.meetingPlaceData = $scope.schedule.session.location;
+	      $scope.sessiondfbid = $scope.schedule.feedbackTemplate;
+	      $http.get('/api/v1/secure/feedbackDefs/id/' + $scope.sessiondfbid).success(function(response) {
+	  	  console.log(response);
+	  	  $scope.sessiondata = response.title;
+	      });
+
+	      // $scope.session = $scope.schedule;
+	      //$scope.startMinTime = $scope.hourStartTime[1];
+	      //$scope.startEndTime =
 				$scope.ownerId = $scope.schedule.session.owner;
 				$scope.supporterId = $scope.schedule.session.supporter;
 				console.log($scope.ownerId);
@@ -126,6 +202,20 @@ visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams
 	    }); // get visitSchedule call back ends
 	  }
 
+	$scope.checkTime = function()
+	 {
+	var start_time = $scope.startHourTime + $scope.startMinTime;
+	var end_time = $scope.endHourTime + $scope.endMinTime;
+
+	if (start_time > end_time || end_time < start_time) {
+		$scope.errMessage = "Wrong Time Entry Done !!!"
+	}
+
+	else
+	{
+		$scope.errMessage="";
+	}
+    };
 		// $scope.editSession1 = function(id){
 		// 	$scope.mode = "edit";
 		// 	$http.get('/api/v1/secure/visitSchedules/' + id ).success(function(response) {
@@ -147,17 +237,40 @@ visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams
 	  }; // delete method ends
 
 	  $scope.save = function() {
-			console.log("session save init for " + $scope.entryDate);
+		console.log("session save init for " + $scope.entryDate);
 	    $scope.schedule.scheduleDate = $scope.entryDate;
 	    $scope.schedule.visit = $scope.visit._id;
 	    $scope.schedule.client = $scope.visit.client._id;
+	   // $scope.schedule.session.location = $scope.meetingPlacesData;
 			//session invitees to be added
 
 			// session info
 			$scope.schedule.session.owner = $scope.ownerId;
 	    $scope.schedule.session.supporter = $scope.supporterId;
-	    $scope.schedule.session.startTime = DateReplaceTime($scope.entryDate, $scope.startTime);
-	    $scope.schedule.session.endTime = DateReplaceTime($scope.entryDate, $scope.endTime);
+	    var startTime = $scope.startHourTime + ":" +$scope.startMinTime;
+	    var endTime = $scope.endHourTime + ":" +$scope.endMinTime;
+	    $scope.schedule.session.startTime = DateReplaceTime($scope.entryDate, startTime);
+	    $scope.schedule.session.endTime = DateReplaceTime($scope.entryDate, endTime);
+	    //console.log($scope.data);
+	    if($scope.sessionMeetingData == '' || $scope.sessionMeetingData == undefined)
+	    {
+	    $scope.schedule.session.location = $scope.meetingPlacesData;
+		}
+
+		if($scope.sessionMeetingData != '' && $scope.sessionMeetingData != undefined)
+		{
+		 $scope.schedule.session.location = $scope.sessionMeetingData;
+		}
+
+		if($scope.sessionFeedbackId == '' || $scope.sessionFeedbackId == undefined)
+		{
+			$scope.schedule.feedbackTemplate = $scope.sessionFeedbackDefaultId;
+		}
+
+		if($scope.sessionFeedbackId != '' && $scope.sessionFeedbackId != undefined)
+		{
+			$scope.schedule.feedbackTemplate = $scope.sessionFeedbackId;
+		}
 
 	    switch ($scope.mode) {
 	      case "add":
@@ -249,3 +362,32 @@ visitsApp.controller('sessionsControllerMain', ['$scope', '$http', '$routeParams
 	}
 
 ]);
+
+//Autocompleate - Directive
+visitsApp.directive("sessiondata", ["SessionDataService", function (SessionDataService) {
+  return {
+    restrict: "A",              //Taking attribute value
+    link: function (scope, elem, attr, ctrl) {
+      elem.autocomplete({
+        source: function (searchTerm, response) {
+          SessionDataService.search(searchTerm.term).then(function (autocompleteResults) {
+            response($.map(autocompleteResults, function (autocompleteResult) {
+              return {
+                label: autocompleteResult.title,
+                value: autocompleteResult.title,
+                id: autocompleteResult._id
+              }
+            }))
+          });
+        },
+        minLength: 4,
+        select: function (event, selectedItem) {
+          scope.sessiondata= selectedItem.item.value;
+          scope.sessionId= selectedItem.item.id;
+          scope.$apply();
+          event.preventDefault();
+        }
+      });
+    }
+  };
+}]);

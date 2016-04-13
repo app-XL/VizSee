@@ -45,18 +45,35 @@
   .inactivesession{
 	background: #D3D3D3;
 }*/
+	.scroll-outer {
+		overflow-x:hidden;
+	}
+
+	.scroll-inner{
+		overflow-x: scroll;
+		white-space: nowrap;
+		margin-bottom: -9px;
+		padding-bottom: 6px;
+	}
+	 ul {
+
+	    -webkit-padding-start: 10px;
+	}
+
 </style>
 
-<div header showprofile="false" icon="fa fa-line-chart" title1="Agenda page" title2="agenda">
+<div header showprofile="false" icon="fa fa-line-chart" title1="agenda page" title2="feedback" >
 
-
-	<ul ng-init="vm.tab=1" class="agenda-list">
-		<li ng-repeat="schedules in scheduleList track by $index">
-			<a href ng-click="vm.tab = schedules.day"><font class="inactivetab">Day {{schedules.day}}</font><br>
-				<div class="schday"><font class="inactivetab">&nbsp;&nbsp;{{schedules.date | date : "EEE"}} </font></div></a>
-		</li>
+	 <ul class="scroll-outer"> 
+		<ul ng-init="vm.tab=1" class="agenda-list scroll-inner">
+			<li ng-repeat="schedules in scheduleList track by $index">
+				<a href ng-click="vm.tab = schedules.day"><font class="inactivetab">Day {{schedules.day}}</font><br>
+					<div class="schday"><font class="inactivetab">&nbsp;&nbsp;{{schedules.date | date : "EEE"}} </font></div></a>
+			</li>
+		</ul>
 	</ul>
 </div>
+
 	
 	<ul ng-init="vm.tab=1" class="agenda-list">
 		
@@ -126,7 +143,7 @@
 										<img ng-switch-when="tea-break" src="/public/assets/g/imgs/ic/tea.png" class="session-status-img">
 										<img ng-switch-when="floor-walk" src="/public/assets/g/imgs/ic/handshake.png" class="session-status-img">
 										<img ng-switch-when="discussion" src="/public/assets/g/imgs/ic/discussion.png" class="session-status-img">
-										<img ng-switch-default src="/public/assets/g/imgs/ic/handshake.png" class="session-status-img">
+										<img ng-switch-default src="/public/assets/m/rem/future-event.png" class="session-status-img">
 									</span>
 									<span class="agenda-session-time">
 										{{session.session.startTime | date : "HH:mm"}} -
@@ -153,8 +170,8 @@
 										</p>
 										<p> <!--Roboto-->
 											<span class="agenda-session-loc">with</span>
-											<userview user-id="session.session.owner"  view-mode="bullet-small"></userview>
-											<userview user-id="session.session.supporter" view-mode="bullet-small"></userview>
+											<userview user-id="session.session.owner" user-model view-mode="bullet-small"></userview>
+											<userview user-id="session.session.supporter" user-model view-mode="bullet-small"></userview>
 
 											+{{session.invitees.length}}
 											<span class="feedback-link" ng-click="hideFeeedbackDiv = !hideFeeedbackDiv;$event.stopPropagation()">Feedback

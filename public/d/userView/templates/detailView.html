@@ -1,54 +1,12 @@
-<style>
-.representative-bios {
-    font-family: robotoRegular;
-    font-size: 0.8em;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-top: 1px solid #d0d0d0;
-    border-bottom: 1px solid #d0d0d0;
-}
-
-.reach-representative {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
-    padding-top: 5px;
-}
-
-.reach-representative-text {
-    align-self: center;
-    display: inline-block;
-    font-size: 0.8em;
-    margin-bottom: 12px;
-    color: #8a8a8a;
-}
-.tele-link {
-    margin-left: 5px;
-    margin-right: 10px;
-}
-.phone {
-    background-image: url(/public/assets/m/rem/phone-icon-20px.png);
-
-    width: 5px;
-    height: 5px;
-}
-.email {
-    background-image: url(asset.png);
-    background-position: -633px -429px;
-    width: 20px;
-    height: 20px;
-}
-</style>
+<div ng-if="userModel">
 <div class="representative-bios">{{userModel.summary}}</div>
 <div class="reach-representative">
     <div class="reach-representative-text">Reach him by</div>
     <a ng-href="tel: {{userModel.contactNo}}" class="tele-link">
      <i class="fa fa-phone"></i>
  </a>
- <a ng-href="mailto: {{userModel.email}}">
+ <a ng-href="mailto: {{userModel.email}}" class = "email-link">
     <i class="fa fa-envelope-o"></i>
 </a>
+</div>
 </div>

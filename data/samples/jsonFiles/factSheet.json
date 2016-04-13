@@ -5,7 +5,7 @@
 		
 		"title" 							: "CSC India",
 
-		"logoLink"            			: "\\public\\uploads\\linkPics\\CSC_Logo.jpg",
+		"logoLink"            			: "/public/uploads/linkPics/CSC_Logo.jpg",
 
 		"address"            			:
 			{
@@ -128,7 +128,7 @@
 		
 		"title" 							: "CSC Australia",
 
-		"logoLink"            			: "\\public\\uploads\\linkPics\\CSC_Logo.jpg",
+		"logoLink"            			: "/public/uploads/linkPics/CSC_Logo.jpg",
 
 		"address"            			: 
 			{ 

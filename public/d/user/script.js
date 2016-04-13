@@ -3,9 +3,9 @@
 angular.module('userDirective', [])
 .controller('userDirectiveControllerMain', ['$scope', '$http', function($scope, $http) {
 
-  console.log($scope.switchMode);
-  // console.log($scope.userId);
-  // console.log($scope.userEmail);
+  // console.log($scope.switchMode);
+  // console.log($scope.userType);
+
   if($scope.userModel === undefined || $scope.userModel === "")
     $scope.showFlag = "none";
   else
@@ -28,11 +28,19 @@ angular.module('userDirective', [])
     // }
 
     $http.get(url).success(function(response) {
+
+    if($scope.userType == response.association){
       $scope.userModel = response;
       $scope.userId = response._id;
       $scope.userEmail = response.email;
-
       $scope.showFlag = "user";
+    }
+
+    else{
+      $scope.showFlag = "noUser";
+      message = "User not found";
+    }
+
     })
     .error(function(response, status){
       $scope.showFlag = "noUser";
@@ -47,7 +55,11 @@ angular.module('userDirective', [])
   
   if($scope.switchMode == 'edit')
   {  
-	$scope.getUser(); // autoload data
+   if($scope.userId)
+   { 
+	 $scope.getUser(); // autoload data
+   }
+   $scope.showFlag = "user";
   }
 
   //ToDo: User Picker not working with inline editing.
@@ -62,7 +74,8 @@ angular.module('userDirective', [])
       userId: "=userId",
       userEmail: "=userEmail",
       viewType: "=viewType",
-      switchMode: "=switchMode"
+      switchMode: "=switchMode",
+      userType: "@userType"
     },
 
     link : function(scope,element,attrs)

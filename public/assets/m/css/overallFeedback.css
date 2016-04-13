@@ -1,0 +1,200 @@
+
+#overall-feedback-page {
+    background-color: #eee;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    overflow-y: hidden;
+    height: 100%;
+}
+    .header {
+        padding-left: 40px;
+    }
+
+    .save-and-progress {
+        margin: 10px;
+        margin-bottom: 50px;}
+
+        .progress {
+            height: 3px;
+            background-color: #fff;
+            margin-bottom: 15px;
+            .progress-bar {
+                background-color: #F02423;
+            }
+        }
+        .prev-and-save-buttons {
+            color: #F02423;
+            font-family: robotoRegular;
+        }
+            .prev-button {
+                float: left;
+                cursor: pointer;
+            }
+                .prev-icon {
+                    .sprite(@feedback-prev-arrow-16x16);
+                    display: inline-block;
+                    margin-right: 6px;
+                    margin-bottom: -2px;
+                }
+           
+            .prev-button.disabled {
+                color: #888;
+            }
+                .prev-icon {
+                    .sprite(@prev-disabled-16x13);
+                    display: inline-block;
+                    margin-right: 6px;
+                    margin-bottom: -2px;
+                }
+           
+            .save-next-button,
+            .save-exit-button {
+                float: right;
+                cursor: pointer;}
+                .next-icon {
+                    .sprite(@feedback-next-arrow-16x16);
+                    display: inline-block;
+                    margin-left: 6px;
+                    margin-bottom: -2px;
+                }
+          
+            .save-exit-button {
+                display: none;
+            }
+       
+    .scrollable-content {
+        margin-top: 40px;
+        padding-bottom: 0px;}
+    
+        .corousel {
+            position: relative;
+            overflow-x: hidden;
+            margin-right: 10%;
+        }
+        .corousel-inner {
+            position: relative;
+            overflow: hidden;
+            width: 960px;
+
+            -webkit-transition: all 1.0s ease-in-out;
+            -moz-transition: all 1.0s ease-in-out;
+            -o-transition: all 1.0s ease-in-out;
+            transition: all 1.0s ease-in-out;
+        }
+        .form-div {
+            display: block;
+            position: relative;
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px;
+            font-family: workSansLight;
+            color: #000;
+            height: 272px;
+            text-align: left;
+            float: left;
+            width: 300px;
+        }
+        .star-ratings-div {
+            padding-bottom: 10px;
+        }
+            .star-rating-text {
+                padding-bottom: 5px;
+            }
+            .stars {
+                color: #F3C227;
+                display: inline-block;
+            }
+               
+                label.star:before {
+                    content: '\f006';
+                    font-family: FontAwesome;
+                    font-weight: normal;
+                }
+         
+        .comments-div {
+            padding-bottom: 20px;
+            margin-right: 30%;}
+
+            .comments-text {
+                padding-bottom: 15px;
+            }
+            .comments-input {}
+                textarea {
+                    width: 100%;
+                    height: 50px;
+                    padding: 10px;
+                    padding-top: 5px;
+                    border: 1px solid #D6D6D6;
+                    resize: none;
+                }
+          
+        .checkbox-div {
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+            .checkbox-text {
+                padding-bottom: 15px;
+            }
+            .checkbox-input {
+                color: #888;}
+                label {
+                    font-weight: normal;
+                    margin-bottom: 10px;
+                    padding-left: 0px;}
+                
+
+@media (min-height: 500px) {
+    #overall-feedback-page .save-and-progress {
+        margin-bottom: 200px;
+    }
+}
+
+   @media only screen and (max-device-width: 320px){
+  .comments-div {
+            padding-bottom: 20px;
+            margin-right: 30%;}
+
+
+ .corousel {
+            position: relative;
+            overflow-x: hidden;
+            margin-right: 2%;
+        }
+
+}
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .comments-div {
+            padding-bottom: 20px;
+            margin-right: 10%;}
+
+
+ .corousel {
+            position: relative;
+            overflow-x: hidden;
+            margin-right: 2%;
+        }
+
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 768px) {
+      .comments-div {
+            padding-bottom: 20px;
+            margin-right: 30%;}
+
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      .comments-div {
+            padding-bottom: 20px;
+            margin-right: 30%;}
+
+}
+
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
+  
+
+}

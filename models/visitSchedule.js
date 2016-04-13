@@ -6,7 +6,7 @@ var mongoose = require('mongoose')
 var userSchema 				= require('./user');
 var clientSchema 			= require('./client');
 var visitSchema 			= require('./visit');
-//var feedbackDefSchema	= require('./feedbackDef');
+var feedbackDefSchema	= require('./feedbackDef');
 
 var visitScheduleSchema = new mongoose.Schema({
     	client 							: { type: Schema.Types.ObjectId, ref: 'clients' },
@@ -22,8 +22,8 @@ var visitScheduleSchema = new mongoose.Schema({
 		owner						: { type: Schema.Types.ObjectId, ref: 'User' },
 		supporter					: { type: Schema.Types.ObjectId, ref: 'User' }
 	},
-	invitees						: [{ type: Schema.Types.ObjectId, ref: 'User' }]
-	//feedbackTemplate		: { type: Schema.Types.ObjectId, ref: 'FeedbackDef' }
+	invitees						: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+	feedbackTemplate		: { type: Schema.Types.ObjectId, ref: 'feedbackDefs',required: false }
 
 });
 

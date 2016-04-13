@@ -6,10 +6,10 @@ angular.module('cviz-customize',
 	['userprofileDirective','userDirective','userdisplayDirective',
 	'appFilters',
 	'datePicker',
-	'keynotes','facts','feedback','confirmDialogDirective','contactList','richTextDirective','ngRateIt','feedbackDirective']);
+	'keynotes','facts','feedback','confirmDialogDirective','contactList','richTextDirective','ngRateIt','feedbackDirective','dropzone']);
 
 angular.module('cviz-manage',
-	['userprofileDirective','userDirective','userdisplayDirective', 'clientDisplayDirective',
+	['userprofileDirective','userDirective','userdisplayDirective', 'clientDisplayDirective', 'inviteesDirective',
 	'appFilters',
 	'datePicker','dropzone','fileuploadDirective',
 	'visits',"clients",'confirmDialogDirective','richTextDirective','ngRateIt']);

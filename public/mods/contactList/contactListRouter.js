@@ -7,8 +7,11 @@ angular.module('contactList')
       .when('/contactList/list', {
         templateUrl: '/public/mods/contactList/contactListViewMain.html',
         controller: 'contactListControllerMain'
+      })
+
+      .when('/contactList/panels', {
+        templateUrl: '/public/mods/contactList/contactListViewPanels.html',
+        controller: 'contactListControllerMain'
       });
-
-
     }
   ]);

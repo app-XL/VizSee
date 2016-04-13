@@ -10,7 +10,7 @@ module.exports = {
 			name: "Dashboard",
 			link: "/",
 			icon: "fa-tachometer",
-			roles: "exec,vManger,"
+			roles: "exec,vManger"
 		},
 		{
 			name: "My Visits",
@@ -47,6 +47,12 @@ module.exports = {
 			link: "/m/facts/",
 			icon: "fa-line-chart",
 			roles: "user,exec,customer,vManger"
+		},
+		{
+			name: "Feedback",
+			link: "/m/main/#/feedback",
+			icon: "fa fa-comments",
+			roles: "exec,customer"
 		},
 		{
 			name: "Logout",

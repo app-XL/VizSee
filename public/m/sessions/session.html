@@ -1,10 +1,15 @@
 
 
-
+  <!-- custom style sheets-->
+  <!--link rel="stylesheet" href="/public/assets/m/css/sessionDetail.css">
+  <link rel="stylesheet" href="/public/assets/m/css/userview.css"-->
 <style>
+#session-details-page {
+    background-color: #eeeeee;
+}
 
 .tb-big {
-    height: 125px;
+    height: 150px;
 
     background-color: #fff;
     position: fixed;
@@ -16,6 +21,10 @@
 
     font-family: robotoRegular;
 }
+
+  .header{margin-top: 20px;
+    position: relative;
+  } 
 
 .tb-small {
     height: 48px;
@@ -29,11 +38,36 @@
     font-family: robotoRegular;
 }
 .divtop{
-    padding-top: 0px;
+    padding-top: 130px;
+   
 }
-.header{margin-top: 80px;
-position: relative;}
 
+
+ .client-rep {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+ .hd-sticky {
+        background-color: ;
+        position: relative;
+        height: 0px;
+
+    }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    .tb-big {
+    height: 170px;
+
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    font-size: 1.1em;
+    box-shadow: 2px 2px 5px #676767;
+
+    font-family: robotoRegular;
+}}
 </style>
 
 
@@ -41,14 +75,11 @@ position: relative;}
 session details page
     </div>
 <div class="divtop">
-
-<h1>Session details</h1>
-
 <div id="session-details-page">
 
     <div class="header">
         <div class="time-session-name-div">
-            <div class="session-time">{{sessions.session.startTime}}</div>
+            <div class="session-time">{{session.session.startTime | date : "dd MMM yyyy"}}</div>
             <div class="session-name">{{session.session.title | uppercase}}</div>
         </div>
         <br>
@@ -57,62 +88,67 @@ session details page
             <div class="feedback-button">Feedback&nbsp;<i class="fa fa-chevron-down"></i></div>
         </div>
     </div>
-    <div class="feedback-form">
-    </div>
+   
     <div class="session-contents">
         <div class="session-description-div">
             <div class="session-heading">
                 {{session.session.title | uppercase}}
             </div>
-            <div class="session-image">
+            <!--div class="session-image">
                 <img ng-src="{{session.picture}}">
-            </div>
+            </div-->
             <div class="session-description">{{session.session.desc}}
             </div>
-            <div class="share">
-            <div>
+            <!--div class="share">
+             <div>
              <i class="fa fa-share-alt"></i>
-             Share</div>
-            </div>
+              Share</div>
+            </div-->
         </div>
-        <div class="session-presenter">
-            <div class="heading">PRESENTER</div>
-            <div class="presenter-details" ng-repeat="presenter in session.presenter">
-                <div class="presenter-pic col-xs-2 col-sm-1 col-md-1">
+    </div>
 
-                 <img  class="img-circle prestrpic" ng-src="{{presenter.picture}}">
+
+ 
+    <div class="session-presenter">
+ <div class="heading">PRESENTER</div>
+            <div class="list-group">
+            <div  ng-repeat="owner in arrayData" class="list-group-item" ng-click="collapseDiv($index,'client')">
+                  <div class="representative-pic col-xs-2 col-sm-1 col-md-1">
+                    <userview user-id="owner" user-model view-mode="bullet-small"></userview>
+                  </div>
+                   <div class="representative-bios-div col-xs-8 col-sm-10 col-md-10">
+                    <userview user-id="owner" user-model view-mode="brief-view"></userview>
+                  {{owner.type}}
+                  </div>
+                  <div class="chevron-div col-xs-1 col-sm-1 col-md-1"></div>
+                <div class="rep-hidden-details collapse col-xs-11 col-sm-12 col-md-12" id="client{{$index}}">
+             <userview user-id="owner" user-model view-mode="detial-view"></userview>
                 </div>
-                <div class="presenter-bios-div col-xs-10 col-sm-11 col-md-11">
-                    <div class="presenter-name">Presenter name</div>
-                    <div class="presenter-designation">presenter designation</div>
-                    <div class="presenter-bios">summary</div>
-                    <div class="reach-presenter">
-                        <div class="reach-presenter-text">Reach him by</div>
-                        <a ng-href="tel: phone" class="tele-link">
-                             <i class="fa fa-phone"></i>
-                        </a>
-                        <a ng-href="mailto: email">
-                               <i class="fa fa-envelope-o"></i>
-                        </a>
-                    </div>
-                </div>
+
+          <br>
             </div>
-        </div>
-        <!-- <div class="session-participants">
+            </div>
+            </div>
+          
+      
+     
+        <div class="session-presenter">   
             <div class="heading">PARTICIPANTS</div>
             <div class="list-group">
-                <a href="#" class="list-group-item" ng-repeat="participant in session.participants">
-                    <div class="participant-pic col-xs-2 col-sm-1 col-md-1">
-
-                          <img  class="img-circle prtcptpic" ng-src="{{participant.picture}}">
-                    </div>
-                    <div class="participant-bios-div col-xs-10 col-sm-11 col-md-11">
-                        <div class="participant-name">{{participant.name}}</div>
-                        <div class="participant-designation">{{participant.designation}}</div>
-                    </div>
-                </a>
+                <div  href="#" class="list-group-item" ng-repeat="invite in session.invitees" ng-click="collapseDiv($index,'client1')">
+                  <div class="representative-pic col-xs-2 col-sm-1 col-md-1">
+                    <userview user-id="invite" user-model  view-mode="bullet-small"></userview>
+                  </div>
+                   <div class="representative-bios-div col-xs-8 col-sm-10 col-md-10">
+                    <userview user-id="invite" user-model view-mode="brief-view"></userview>
+            
             </div>
-        </div> -->
+             <div class="chevron-div col-xs-1 col-sm-1 col-md-1"></div>
+                <div class="rep-hidden-details collapse col-xs-11 col-sm-12 col-md-12" id="client1{{$index}}">
+             <userview user-id="invite" user-model  view-mode="detial-view"></userview>
+                </div>
+                
+            </div>
+        </div>
     </div>
-</div>
 </div>

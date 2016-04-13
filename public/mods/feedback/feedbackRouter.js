@@ -4,10 +4,10 @@ angular.module('feedback')
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
 
-		.when('/feedbackTmpl/list', {
-			templateUrl: '/public/mods/feedback/feedbackViewMain.html',
-			controller: 'feedbackControllerMain'
-		})
+  		.when('/feedbackTmpl/list', {
+  			templateUrl: '/public/mods/feedback/feedbackViewMain.html',
+  			controller: 'feedbackControllerMain'
+  		})
 
       .when('/feedbackTmpl/add', {
         templateUrl: '/public/mods/feedback/feedbackViewAdd.html',
@@ -21,6 +21,11 @@ angular.module('feedback')
 
       .when('/feedbackTmpl/:id/edit', {
         templateUrl: '/public/mods/feedback/feedbackViewAdd.html',
+        controller: 'feedbackControllerMain'
+      })
+
+      .when('/feedbackTmpl/panels', {
+        templateUrl: '/public/mods/feedback/feedbackViewPanels.html',
         controller: 'feedbackControllerMain'
       });
     }

@@ -1,4 +1,5 @@
 <!-- <link rel="stylesheet" href="/public/assets/styles/feedbackPage.css" /> -->
+<script src="https://code.angularjs.org/1.2.0/angular-animate.min.js" ></script>
 <style>
 #feedback-section
 {
@@ -155,37 +156,48 @@ button {
     <ANY ng-switch="showFlag">
       <ANY ng-switch-when="feedback">
         <div id="feedback-section">
+        <form>
           <div class="feedback-form">
             <div  ng-repeat="(index,item) in feedbackModel.item">
                 <div class="query-text"><label>{{item.query}}</label></div>
+
+                <form>
                 <div class="star-ratings-div" ng-if="item.mode == 'star-rating'">           
                   <label>
                     <ng-rate-it ng-model="feedbackModel.item[index].answer"></ng-rate-it>
                   </label>              
                 </div>
+                </form>
 
+                <form>
                 <div class="comments-div" ng-if="item.mode == 'freetext'">  
                   <div class="comments-input">					
                     <textarea placeholder="Write here..." ng-model="feedbackModel.item[index].answer"></textarea>
                   </div>  
                 </div>
+                </form>
 
+                <form>
                 <div class="checkbox-div" ng-if="item.mode == 'single-choice'">  					
                  <label class="radio-inline" ng-repeat="choice in item.choices">
                    <input type="radio" name="choice" ng-model="feedbackModel.item[index].answer" value="{{choice}}"/>
                    {{choice}}  	
                  </label>
                </div>
+               </form>
 
+               <form>
                <div class="checkbox-div" ng-if="item.mode == 'multi-choice'">            					
                 <label class="checkbox-inline" ng-repeat="choice in item.choices">
                   <input type="checkbox" name="choice" class="checkbox-input" ng-checked="selection.indexOf(choice) > -1" ng-click="toggleSelection(choice,index)"/>
                   {{choice}}
                 </label>      
               </div>
+              </form>
         </div>
          <button type="submit" ng-click="submit(feedbackData)">SUBMIT</button>
       </div>
+      </form>
           <div class="submit-success-text">Feedback submitted successfully</div>
 
 <!--       <md-button class="md-primary md-raised" ng-click="submit(feedbackData)">
@@ -206,3 +218,5 @@ button {
    </div>
  </ANY>
 </ANY>
+
+<toaster-container toaster-options="{'time-out': 3000, 'close-button':false, 'animation-class': 'toast-center'}"></toaster-container>

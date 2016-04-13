@@ -11,9 +11,10 @@
       <input type="text" class="form-control" placeholder="Search" ng-model="search.$" /></div>
       <div ng-include src="'/public/mods/visits/partials/sortSearch.html'"></div>
     </div>
+
     <div class="pnbdr panel panel-primary">
       <!--div class="panel-heading">visits panels view</div--><div class="searchpad">
-      <div ng-repeat="visit in visitsList | filter: search |orderBy:orderByField:reverseSort">
+      <div ng-repeat="visit in visitBatch.visits | filter: search |orderBy:orderByField:reverseSort">
         <div class="row">
 
           <div class="pn-bodypad">
@@ -38,7 +39,7 @@
 
                     <div class="row">
                       <div class="col-xs-4">
-                        <div class="text-xs" clientdisplay view-mode="clientnameonly" client-id="visit.client"></div>
+                        <div class="text-xs" clientdisplay view-mode="clientnameonly" client-id="visit.client._id"></div>
                       </div>
                       <div class="col-xs-4">
                         <div class="text-xs">{{visit.startDate | date:"dd MMM yyyy"}} - {{visit.endDate | date:"dd MMM yyyy"}}</div>

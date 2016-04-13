@@ -4,7 +4,7 @@ var keynotesApp = angular.module('keynotes');
 
 keynotesApp.controller('keynotesControllerMain', ['$scope', '$http','$rootScope', '$routeParams', '$location', 'growl',
   function($scope, $http,$rootScope, $routeParams, $location, growl) {
-
+   // $scope.entity = "entity";
     var self = this;
     self.readonly = false;
     $scope.nameonly= "nameonly";
@@ -22,7 +22,6 @@ keynotesApp.controller('keynotesControllerMain', ['$scope', '$http','$rootScope'
   $scope.small= "small";
   $scope.large= "LARGE";
   $scope.medium= "medium";
-
 
   var refresh = function() {
     $http.get('/api/v1/secure/keynotes').success(function(response) {
@@ -45,6 +44,7 @@ keynotesApp.controller('keynotesControllerMain', ['$scope', '$http','$rootScope'
             $scope.noteByUser = response.noteBy;
             $scope.noteByEmail = response.noteBy.email;
             $scope.noteById = response.noteBy._id;
+            $scope.array = response.attachment;
 
 
             // reformat date fields to avoid type compability issues with <input type=date on ng-model
@@ -60,6 +60,7 @@ keynotesApp.controller('keynotesControllerMain', ['$scope', '$http','$rootScope'
   $scope.save = function(){
     // set noteBy based on the user picker value
     $scope.keynotes.noteBy = $scope.noteById;
+    $scope.keynotes.attachment = $scope.array;
     console.log($scope.keynotes.noteBy);
     $scope.keynotes.createby = $rootScope.user._id;
 
@@ -139,5 +140,11 @@ keynotesApp.controller('keynotesControllerMain', ['$scope', '$http','$rootScope'
       $scope.keynotes.receiver = parse("%s %s, <%s>", user.name.first, user.name.last, user.email);
     });*/
   }
+
+    $scope.removeImageItem = function(index){
+    console.log($scope.array);
+    $scope.array.splice(index, 1);
+    console.log($scope.array);
+  };
 
 }]);﻿ // controller ends

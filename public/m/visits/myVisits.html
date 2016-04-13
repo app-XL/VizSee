@@ -1,160 +1,154 @@
-
 <style>
-
-.tb-big {
-    height: 150px;
-
-    background-color: #fff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    font-size: 1.1em;
-    box-shadow: 2px 2px 5px #676767;
-
-    font-family: robotoRegular;
-}
-
-.tb-small {
-    height: 65px;
-    background-color: #fff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    font-size: 1.1em;
-    box-shadow: 2px 2px 5px #676767;
-    font-family: robotoRegular;
-}
-.divtop{
-	padding-top: 140px;
-}
-.hd-sticky{
-    background-color: ;
-    position:relative;
-    height: 0px;
-
-}
+    .tb-big {
+        height: 150px;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        font-size: 1.1em;
+        box-shadow: 2px 2px 5px #676767;
+        font-family: robotoRegular;
+    }
     
-
+    .tb-small {
+        height: 65px;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        font-size: 1.1em;
+        box-shadow: 2px 2px 5px #676767;
+        font-family: robotoRegular;
+    }
+    
+    .divtop {
+        padding-top: 140px;
+    }
+    
+    .hd-sticky {
+        background-color: ;
+        position: relative;
+        height: 0px;
+    }
+    .dropdown-menu{
+       background-color: white;
+    }
+    .hd-sec{
+    background-color:#F8F8FF;
+    position:relative;
+    padding-left: 20px;
+    height:25px;
+}
+.searchViewHead{
+    padding-left: 20px;
+}
 </style>
+<div header showprofile="false" icon="fa fa-calendar" title1="My Visits" query='query'>
+  <div class="searchViewHead col-xs-12">
+        <div class="searchDivHead col-xs-12 col-sm-8 col-md-10 div-padding">
+    
+            <i class="fa fa-search fonticon1"></i>
+            <input type="text" placeholder="Search" ng-model="$parent.query" />
 
-<div header showprofile="false" icon="fa fa-calendar" title1="myvisits page" title2="agenda">  
-   <div class="searchView col-xs-12">
-	         <div class="searchDiv col-xs-10 col-sm-9 col-md-10 div-padding">
-	                <i class="fa fa-search fonticon1"></i>
-	                <input type="text" placeholder="Search" value="" name="search" id="search">
+            <div class="pull-right">{{visitBatch.start | date:"dd MMM"}} - {{visitBatch.end | date:"dd MMM"}} ({{visitBatch.visits.length}})
 
-
-	        
-							<div class="pull-right">{{visitBatch.start | date:"dd MMM"}} - {{visitBatch.end | date:"dd MMM"}} ({{visitBatch.visits.length}})
-
-								<div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-									<i class="fa fa-th-large fonticon1"></i>
-									<span class="caret"></span>
-								</div>
-						
-								<ul class="dropdown-menu">
-									<li><a href ng-click="setTimeline('past')">Past ({{allVisits["past"].visits.length}})</a></li>
-									<li><a href ng-click="setTimeline('last-week')">Last Week ({{allVisits["last-week"].visits.length}})</a></li>
-									<li><a href ng-click="setTimeline('this-week')">This Week ({{allVisits["this-week"].visits.length}})</a></li>
-									<li><a href ng-click="setTimeline('today')">Today ({{allVisits["today"].visits.length}})</a></li>
-									<li><a href ng-click="setTimeline('next-week')">Next Week ({{allVisits["next-week"].visits.length}})</a></li>
-									<li><a href ng-click="setTimeline('further')">Future ({{allVisits["further"].visits.length}})</a></li>
-								</ul> 
-
-							</div>
-
-	         
-	          </div>
-	</div>
-</div>
-<div class="divtop">
-
-    <div class="my-visit-content col-xs-12 col-sm-12 col-md-12">
-        <div ng-repeat="visit in visitBatch.visits" class="visit-card">
-         <div>
-                <h3><a href="#/sessions/{{visit._id}}" >{{visit.title}}</a><br>
-                <a href="/m/main/#/clientInfo">{{visit.client.name}}</a></h3>
-
-                       <div class="dropdown pull-right">
-  <div class="dropdown-toggle" type="button" data-toggle="dropdown">
-  <img src="/public/assets/m/rem/vertical-ellipsis.png"></div>
-  <ul class="dropdown-menu">
-    <li><a href="#">View Visit</a></li>
-    <li><a href="#">View visit Agenda</a></li>
-  </ul>
-</div>
-                        
-            </div>
-            <!--div class="actionDropDown data-drop-down" ng-show="IsActionVisible">
-                <ul class="list-group">
-                    <li class="list-group-item" ng-click="performAction()">Edit</li>
-                    <li class="list-group-item" ng-click="performAction()">Schedule</li>
-                    <li class="list-group-item" ng-click="performAction()">Delete</li>
-                </ul>
-            </div-->
-
-                       
-
-                        
-
-            <p>
-              {{visit.agenda}}
-            </p>
-
-            <p>
-							<span ng-if="visit.status.toLowerCase() =='confirmed'" class="visit-status-confirmed">CONFIRMED</span>
-							<span ng-if="visit.status.toLowerCase() =='tentative'" class="visit-status-tentative">TENTATIVE</span>
-						</p>
-            <p class="visit-details"><i class="fa fa-calendar">
-							</i>   {{visit.startDate | date:"dd MMM yyyy"}} - {{visit.endDate | date:"dd MMM yyyy"}}
-						</p>
-            <p class="visit-details">
-							<i class="fa fa-map-marker"></i> {{visit.locations}}
-
-            <div class="upcoming-sessions">
-                <span class="yp">Your Participation</span>
-
-                <div ng-repeat="item in visit.involved">
-
-                  <div ng-click="getSession(item)">
-
-                    <p class="sessiondiv">
-                           
-                              <div>      <span class="sessionday">{{item.startTime | DateFormat:"ddd, DD MMM"}}</span>
-                                               <span class="sessiontitle" >  &nbsp;&nbsp;{{item.title}}</span>
-
-                                             </div>
-                    
-                       <span class="sessiontime pull-left">
-											 {{item.startTime | date : "HH:mm"}}&nbsp;
-												{{item.endTime | duration:item.startTime}}
-											 </span>
-                                     
-                       <span class="pull-right">
-                       <span class="sessionrole">
-                         <img src="/public/assets/m/rem/presenter-icon.png">
-													{{item.role}} for {{item.type}}</span>
-                                                    <i class="fa fa-angle-right pull-right"></i>
-											 </span>
-											
-                        
-											
-                    </p>
-                    </div>
+                <div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                    <i class="fa fa-th-large fonticon1"></i>
+                    <span class="caret"></span>
                 </div>
+
+                <ul class="dropdown-menu">
+                    <li><a href ng-click="setTimeline('past')">Past ({{allVisits["past"].visits.length}})</a></li>
+                    <li class="divider"></li>
+                    <li><a href ng-click="setTimeline('last-week')">Last Week ({{allVisits["last-week"].visits.length}})</a></li>    
+                    <li class="divider"></li>
+                    <li><a href ng-click="setTimeline('this-week')">This Week ({{allVisits["this-week"].visits.length}})</a></li>    
+                    <li class="divider"></li>
+                    <li><a href ng-click="setTimeline('today')">Today ({{allVisits["today"].visits.length}})</a></li>
+                    <li class="divider"></li>
+                    <li><a href ng-click="setTimeline('next-week')">Next Week ({{allVisits["next-week"].visits.length}})</a></li>  
+                    <li class="divider"></li>
+                    <li><a href ng-click="setTimeline('further')">Future ({{allVisits["further"].visits.length}})</a></li>
+                </ul>
+
             </div>
+
+</div>
         </div>
     </div>
 </div>
-<div ng-if="visitBatch.visits.length==0">
-  Oops!@! No visits available
-</div>
-<script>
-	$("#menu-toggle").click(function(e) {
-		e.preventDefault();
-		$("#page").toggleClass("toggled");
-	});
-</script>
+<div class="divtop">
+    <!-- <input type="text" placeholder="Search" ng-model="search" /> -->
+    <div class="my-visit-content col-xs-12 col-sm-12 col-md-12">
+        <div ng-repeat="visit in visitBatch.visits | filter: query" class="visit-card">
 
+            <div>
+                <h3><a href="#/sessions/{{visit._id}}" >{{visit.title}}</a><br>
+                <a href="/m/main/#/clientInfo/id/{{visit.client._id}}">{{visit.client.name}}</a></h3>
+
+                <div class="dropdown pull-right">
+                    <div class="dropdown-toggle" type="button" data-toggle="dropdown">
+                        <img src="/public/assets/m/rem/vertical-ellipsis.png"></div>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">View Visit</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#/sessions/{{visit._id}}">View Agenda</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <p>
+                {{visit.agenda}}
+            </p>
+
+            <p>
+                <span ng-if="visit.status.toLowerCase() =='confirmed'" class="visit-status-confirmed">CONFIRMED</span>
+                <span ng-if="visit.status.toLowerCase() =='tentative'" class="visit-status-tentative">TENTATIVE</span>
+            </p>
+            <p class="visit-details"><i class="fa fa-calendar">
+              </i> {{visit.startDate | date:"dd MMM yyyy"}} - {{visit.endDate | date:"dd MMM yyyy"}}
+            </p>
+            <p class="visit-details">
+                <i class="fa fa-map-marker"></i> {{visit.locations}}
+
+                <div class="upcoming-sessions">
+                    <span class="yp">Your Participation</span>
+
+                    <div ng-repeat="item in visit.involved">
+
+                        <div ng-click="getSession(item)">
+                       
+
+                            <p class="sessiondiv">
+
+                                <div > <span class="sessionday">{{item.startTime | DateFormat:"ddd, DD MMM"}}</span>
+                                    <span class="sessiontitle">  &nbsp;&nbsp;{{item.title}}</span>
+
+                                </div>
+
+                                <span class="sessiontime pull-left">
+                               {{item.startTime | date : "HH:mm"}}&nbsp;
+                                {{item.endTime | duration:item.startTime}}
+                               </span>
+
+                                <span class="pull-right">
+                               <span class="sessionrole">
+                                 <img class="presenterimg" src="/public/assets/m/rem/presenter-icon.png">
+                                  {{item.role}} for {{item.type}}</span>
+                                        <i class="fa fa-angle-right pull-right"></i>
+                                        </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </p>
+        </div>
+
+        <div ng-if="visitBatch.visits.length==0">
+            Oops!@! No visits available
+        </div>
+
+    </div>
+</div>

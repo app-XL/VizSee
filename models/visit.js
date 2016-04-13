@@ -20,7 +20,9 @@ var visitSchema = new mongoose.Schema({
 	schedule						: [{
 		startDate					: { type: Date, required: true},
 		endDate						: { type: Date, required: true},
-		location					: { type: String, required: true }  // set of csc locations
+		location					: { type: String, required: true },  // set of csc locations
+		meetingPlace				: { type: String}
+		
 	}],
 	billable						: { type: String, lowercase: true, trim: true, required: true, enum: ['billable', 'non-billable']},
 	wbsCode							: { type: String, trim: true },
@@ -38,14 +40,13 @@ var visitSchema = new mongoose.Schema({
 	createBy						: { type: Schema.Types.ObjectId, ref: 'User', required: true },
 	createOn						: { type: Date, default: Date.now, required: true },
 	feedbackTmpl				    : { type: Schema.Types.ObjectId, ref: 'feedbackDefs', required: false },
+	sessionTmpl				    	: { type: Schema.Types.ObjectId, ref: 'feedbackDefs', required: false },
 	 keynote						: [{
 		note   						: { type: Schema.Types.ObjectId, ref: 'keynotes', required: false },
 	 	context 					: {type: String, enum: ['welcome', 'thankyou'], required: false},
 	 	order						: {type: Number, required: false}
 	 }],
-	 invitees						: [{
-	 invite 						:{ type: Schema.Types.ObjectId, ref: 'User' }
-	}]
+	 invitees						: [{type: Schema.Types.ObjectId, ref: 'User', required: true}]
 
 });
 

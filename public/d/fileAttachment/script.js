@@ -6,7 +6,8 @@ angular.module('dropzone', [])
  var folderType = $scope.folderType;
  var filesize = $scope.fileSize;
  var files = $scope.fileAllowed;
-
+ $scope.array = [];
+ $scope.showPanel = false;
  //dropzone configuration for uploading files,files allowed,max File size,acceptedFiles.
  $scope.dropzoneConfig = {
     'options': { // passed into the Dropzone constructor
@@ -15,7 +16,7 @@ angular.module('dropzone', [])
      'maxThumbnailFilesize': 10,
      'parallelUploads': 10,
      'autoProcessQueue': true,
-     'addRemoveLinks': true,
+     //'addRemoveLinks': true,
      'uploadMultiple': false,
      'maxFiles': files,
       acceptedFiles: ".jpg,.jpeg,.png,.gif,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.pdf"
@@ -25,7 +26,7 @@ angular.module('dropzone', [])
     },
     //event handler for checking the file type and based on file type showing the thumbnail.
     'addedfile': function(file) {
-      console.log(file.type);
+      //console.log(file.type);
       if (file.type ==='application/msword' || file.type ==='application/vnd.openxmlformats-officedocument.wordprocessingml.document' || file.type ==='application/vnd.ms-excel.sheet.macroEnabled.12')
         {
           // This is not an image, so Dropzone doesn't create a thumbnail.
@@ -48,7 +49,18 @@ angular.module('dropzone', [])
         }
     },
     'success': function (file, responseText) {
-      console.log(responseText.file.path);
+      var filepath = responseText.file.path;
+      var imagepath = '/'+ filepath.replace(/\\/g , "/");
+      $scope.array.push(imagepath);
+      //console.log($scope.array);
+      //$scope.showPanel =true;
+    },
+
+
+   'removedfile' : function(file) {
+      console.log(file.xhr.responseText);
+      var jsonObj = JSON.parse(file.xhr.responseText);
+      console.log(jsonObj);
     }
   }
 };
@@ -65,8 +77,9 @@ $scope.showUploadButton = function(ev) {
     templateUrl: '/public/d/fileAttachment/templates/fileDialog.html',
     parent: angular.element(document.body),
     locals: { dropzoneConfig: dropzoneConfig },
+    //scope: $scope.$new(),
     targetEvent: ev,
-    clickOutsideToClose:true
+    clickOutsideToClose:false
 
   })
    .then(function(answer) {
@@ -77,6 +90,30 @@ $scope.showUploadButton = function(ev) {
 
  };
 
+
+ $scope.removeImageItem = function(index,x){
+  console.log(index);
+  console.log($scope.array);
+  $scope.array.splice(index, 1);
+  console.log($scope.array);
+  // window.unlink(x);
+  localStorage.removeItem(x);
+};
+
+ $scope.viewImageItem = function(x){
+  window.open(x,'_blank');
+};
+
+$scope.delete = function(index){
+  console.log(index)
+  console.log($scope.array);
+  $scope.array =[];
+  console.log($scope.array);
+  $mdDialog.hide();
+}
+
+
+
 }])
 
 
@@ -85,9 +122,10 @@ $scope.showUploadButton = function(ev) {
     controller: 'fileattachmentDirectiveControllerMain',
     templateUrl: '/public/d/fileAttachment/templates/fileAttachment.html',
     scope: {
-      folderType:"=folderType",
-      fileSize:"=fileSize",
-      fileAllowed:"=fileAllowed"
+      folderType:"@folderType",
+      fileSize:"@fileSize",
+      fileAllowed:"@fileAllowed",
+      array: "=array"
     }
 }
 })
@@ -120,4 +158,5 @@ function DialogUploadCtrl($scope, $mdDialog,dropzoneConfig) {
   $scope.answer = function(answer) {
     $mdDialog.hide(answer);
   };
+
 }

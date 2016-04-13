@@ -22,8 +22,11 @@ angular.module('facts')
       .when('/facts/:id/edit', {
         templateUrl: '/public/mods/facts/factsViewAdd.html',
         controller: 'factsControllerMain'
+      })
+
+      .when('/facts/panels', {
+        templateUrl: '/public/mods/facts/factsViewPanels.html',
+        controller: 'factsControllerMain'
       });
-
-
     }
   ]);

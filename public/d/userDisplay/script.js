@@ -40,6 +40,7 @@ angular.module('userdisplayDirective', [])
       userId: "=userId",
       viewMode: "=viewMode"
     },
+    transclude: true,
 
     link : function(scope,element,attrs)
     {

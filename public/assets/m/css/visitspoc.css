@@ -7,8 +7,8 @@
 
 
     .spocpicture{
-        width: 80px;
-        height: 75px;
+        width: 75px;
+        height: 65px;
 
     }
     .spoc-details-container {
@@ -26,14 +26,14 @@
             padding-bottom: 5px;
         }
         .spoc-pic {
-            padding: 0px;}
+            padding-left: 10px;}
             /*
             img {
                 width: 60px;
             }*/
       
         .spoc-bios-div {
-            padding-left: 25px;
+            padding-left: 20px;
             padding-right: 0;
         }
             .spoc-name {
@@ -105,61 +105,61 @@
                 }
       
 
-@media (min-width: 375px) {
-    #spoc-page {
-        font-size: 16px;
-        padding-top: 50px;
-    }
-}
 
-@media (min-width: 411px) {
-    #spoc-page {
-        font-size: 19px;
-        padding-top: 50px;
-    }
+@media (max-width: 320px) {
+     .spocpicture{
+        width: 40px;
+        height: 35px;
 }
+   .spoc-pic {
+            padding-left: 7px;}
 
-@media (min-width: 600px) and (max-width: 601px) {
-    #spoc-page {
+   
+.spoc-bios-div {
+    padding-left: 29px;
+    padding-right: 0;
+}
+    }
+
+    @media only screen and (min-device-width: 323px) and (max-device-width: 480px) {
+         .spocpicture{
+        width: 40px;
+        height: 35px;
+        }
+        .spoc-pic {
+            padding-left: 9px;}
+
+   
+        .spoc-bios-div {
+            padding-left: 25px;
+            padding-right: 0;
+        }
+
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 768px) {
+       #spoc-page {
         font-size: 25px;
         padding-top: 60px;
+    } 
+    .spoc-pic {
+            padding-left: 7px;}
+
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .spoc-pic{
+       padding-left: 0px;
+     
     }
+
 }
 
-@media (min-width: 768px) {
-    #spoc-page {
-        font-size: 30px;
-        padding-top: 95px;}
 
-        .header {
-            padding: 20px;
-        }
-        .spoc-details-container {
-            margin: 15px;
-            padding: 15px;}
-            .spoc-pic {}
-               /* img {
-                    width: 120px;
-                }*/
-      
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
+  
+            
+
 }
 
-@media (min-width: 800px) and (max-width: 801px) {
-    #spoc-page {
-        font-size: 33px;
-    }
-}
 
-@media (min-width: 1024px) {
-    #spoc-page {
-        font-size: 20px;
-        padding-top: 73px;
-    }
-}
 
-@media only screen and (min-device-width: 1280px) and (max-device-width: 1439px) {
-    #spoc-page {
-        font-size: 25px;
-        padding-top: 78px;
-    }
-}
+

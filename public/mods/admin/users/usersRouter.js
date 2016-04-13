@@ -12,6 +12,11 @@ angular.module('users')
       .when('/groups/', {
         templateUrl: '/public/mods/admin/users/groupsViewMain.html',
         controller: 'usersControllerMain'
+      })
+
+      .when('/users/panels', {
+        templateUrl: '/public/mods/admin/users/usersViewPanels.html',
+        controller: 'usersControllerMain'
       });
 
     }

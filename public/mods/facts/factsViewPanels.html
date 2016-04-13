@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="page-header">
+   Facts
+    <div class="sub-header">list of facts</div>
+  </div>
+
+  <div class="container">
+   <div class="row">
+    <div class="col-xs-5">
+      <input type="text" class="form-control" placeholder="Search" ng-model="search.$" /></div>
+       <div ng-include src="'/public/mods/facts/partials/sortSearch.html'"></div>
+    </div>
+    <div class="pnbdr panel panel-primary">
+      <!--div class="panel-heading">visits panels view</div--><div class="searchpad">
+      <div ng-repeat="fact in factsList | filter: search |orderBy:orderByField:reverseSort">
+        <div class="row">
+
+          <div class="pn-bodypad">
+            <div class="col-xs-11">
+              <div class="panel panel-info">
+                <div class="panel-heading pn-bodyhdr" pull-left>
+                  <span>{{fact.title}}</span><div class="pull-right">
+                  <a class="table-btn" href="#/facts/{{fact._id}}/show"><span class="glyphicon glyphicon-eye-open" /></a>
+                  <a class="table-btn" href="#/facts/{{fact._id}}/edit"><span class="glyphicon glyphicon-edit" /></a>
+                  <a class="table-btn" ng-click="delete(fact)" confirm-dialog header-text="Delete Fact" content="Are you sure you want to delete the fact with fact title <b>{{fact.title}} ? </b>" yes-text="Ok" no-text="Cancel"><span class="glyphicon glyphicon-trash" /></a>
+                  </div>
+                </div>
+
+                <div class="panel-body">
+                  <div class="pn-inrbodypad">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <div class="text-xs">
+                          <p ng-bind-html="fact.description"></p>
+                        </div>
+                      </div>
+                      <div class="col-xs-4">
+                        <div class="text-xs">{{fact.createOn | date:'dd-MM-yyyy'}}</div>
+                      </div>
+                      <div class="col-xs-4">
+                      	<div class="text-xs">
+                      		<div userdisplay view-mode="nameonly" user-id="fact.editedBy"></div>
+                      	</div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

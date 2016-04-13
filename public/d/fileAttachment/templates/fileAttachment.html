@@ -1,4 +1,39 @@
-<md-button class="md-primary md-raised" 
+<!-- <md-button class="md-primary md-raised"
 	ng-click="showUploadButton($event)">
-<i class="fa fa-paperclip"></i>&nbsp;&nbsp;Attach Files 
-</md-button>
+<i class="fa fa-paperclip"/>&nbsp;&nbsp;Attach Files
+</md-button> -->
+<br>
+<a class="btn btn-primary" ng-click="showUploadButton($event)"><i class="fa fa-paperclip"/>&nbsp;&nbsp;Attach Files
+</a>
+<br>
+<br>
+<div ng-if="showPanel == true || array!=''" class="panel panel-default">
+<div class="panel-body " ng-repeat="x in array">
+	{{fileExt=x.split(".").pop();""}}
+	<!-- {{fileExt}} -->
+	<div class="row">
+		&nbsp;
+		<img ng-if="fileExt=='jpg'" ng-src="{{x}}" height="50" width="50" />
+		<img ng-if="fileExt=='png'" ng-src="{{x}}" height="50" width="50" />
+		<img ng-if="fileExt=='gif'" ng-src="{{x}}" height="50" width="50" />
+		<img ng-if="fileExt=='jpeg'" ng-src="{{x}}" height="50" width="50" />
+		<img ng-if="fileExt=='pdf'" ng-src="/public/assets/g/imgs/pdf.jpg" height="50" width="50" />
+		<img ng-if="fileExt=='docx'" ng-src="/public/assets/g/imgs/word.png" height="50" width="50" />
+		<img ng-if="fileExt=='doc'" ng-src="/public/assets/g/imgs/word.png" height="50" width="50" />
+		<img ng-if="fileExt=='xlsx'" ng-src="/public/assets/g/imgs/excel.jpg" height="50" width="50" />
+		<img ng-if="fileExt=='xls'" ng-src="/public/assets/g/imgs/excel.jpg" height="50" width="50" />	
+		<img ng-if="fileExt=='pptx'" ng-src="/public/assets/g/imgs/ppt.png" height="50" width="50" />
+		<img ng-if="fileExt=='ppt'" ng-src="/public/assets/g/imgs/ppt.png" height="50" width="50" />
+		&nbsp;
+		&nbsp;
+		{{x.split('\\').pop().split('/').pop()}}
+		<div class="pull-right" style="margin-right:1cm;">
+		<a href="" ng-click="removeImageItem($index,x)"><span class="glyphicon glyphicon-trash"/></a>
+		<a href="" ng-click="viewImageItem(x)"><span class="glyphicon glyphicon-eye-open"/></a>
+		<a href="{{x}}" download="{{x.split('\\').pop().split('/').pop()}}">
+		<span class="glyphicon glyphicon-download-alt"/></a>
+		</div>
+	</div>
+	<hr>
+</div>
+</div>

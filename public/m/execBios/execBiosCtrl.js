@@ -26,7 +26,10 @@ bios.controller('execBiosBlankCtrl', function($scope, $routeParams, $http, $loca
 });
 
 bios.controller('execBiosCtrl', function($scope, $routeParams, $http) {
-
+$http.get('/api/v1/secure/visits/all/activeVisit').success(function(response) {
+                //console.log("next visit id " + "#/sessions/" + response.visits._id));
+                $scope.title= response.visits.title;
+        });
     $http.get('/api/v1/secure/visits/'+$routeParams.id+'/execs').success(function(response) {
         console.log(response);//responce has two arrays with clienId's and cscId's
         $scope.cscData = response[0];

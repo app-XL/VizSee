@@ -1,7 +1,4 @@
-    <div class="col-xs-4">
-      <a class="btn btn-default btn-sm pull-right" href="#/visits/add">Add New Visit</a>
-    </div>
-      <div class="col-xs-3">
+        <div class="col-xs-3">
         <div class="dropdown">
           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
             <i class="fa fa-th-large"></i>
@@ -9,7 +6,15 @@
             <ul class="dropdown-menu" >
               <li><a href="#/visits/list">List</a></li>
               <li><a href="#/visits/panels">Detail</a></li>
-              <li><a href="#/visits/calendar">Calander</a></li>
+              <li><a href="#/visits/calendar">Calendar</a></li>
             </ul>
           </div>
       </div> 
+     <div class="col-xs-12">
+    <a href ng-click="setTimeline('past')">Past ({{allVisits["past"].visits.length}})</a>&nbsp;&nbsp;
+    <a href ng-click="setTimeline('last-week')">Last Week ({{allVisits["last-week"].visits.length}})</a>&nbsp;&nbsp;
+    <a href ng-click="setTimeline('this-week')">This Week ({{allVisits["this-week"].visits.length}})</a>&nbsp;&nbsp;
+    <a href ng-click="setTimeline('today')">Today ({{allVisits["today"].visits.length}})</a>&nbsp;&nbsp;
+    <a href ng-click="setTimeline('next-week')">Next Week ({{allVisits["next-week"].visits.length}})</a>&nbsp;&nbsp;
+    <a href ng-click="setTimeline('further')">Future ({{allVisits["further"].visits.length}})</a>&nbsp;&nbsp;
+    </div> 

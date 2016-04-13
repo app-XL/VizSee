@@ -17,6 +17,7 @@ usersApp.controller('usersControllerMain', ['$scope', '$http', '$routeParams','$
 
       $http.get('/api/v1/secure/admin/groups').success(function(response) {
         $scope.grouplist = response;
+        $scope.group = "";
       });
     };
 
@@ -39,7 +40,7 @@ usersApp.controller('usersControllerMain', ['$scope', '$http', '$routeParams','$
         $scope.update();
         break;
       }
-    }
+    };
 
     //adding new user into the user model
     $scope.addUser = function() {
@@ -165,6 +166,59 @@ usersApp.controller('usersControllerMain', ['$scope', '$http', '$routeParams','$
       })
       $mdDialog.hide();
     };
+
+    //method for adding new group record dynamically start
+    $scope.addGroupRecord = function(){
+      $scope.hideAddRow = false;
+      $scope.action = "addGroup";
+    };
+
+    $scope.saveGroup = function() {
+      switch($scope.action)
+      {
+        case "addGroup":
+        $scope.addNewGroup();
+        break;
+
+        case "updateGroup":
+        $scope.updateGroupDetail();
+        break;
+      }
+    };
+
+    $scope.addNewGroup = function() {
+      $http.post('/api/v1/secure/admin/groups/', $scope.group).success(function(response) {
+        refresh();
+        $scope.action = "none";
+        $scope.hideAddRow = true;
+        growl.info(parse("New Group [%s]<br/>added successfully",$scope.group.name));
+      });
+    };
+
+    //closing the new record by clicking on close button
+    $scope.deselectGroup = function() {
+      $scope.group = "";
+      $scope.hideAddRow = true;
+    };
+
+    //editing the existing group details
+     $scope.editGroup = function(id) {
+      $http.get('/api/v1/secure/admin/groups/'+id).success(function(response) {
+        $scope.group = response;
+        $scope.hideAddRow = false;
+        $scope.action = "updateGroup";
+      });
+    };
+
+    //updating group details
+    $scope.updateGroupDetail = function() {
+      $http.put('/api/v1/secure/admin/groups/' + $scope.group._id, $scope.group).success(function(response) {
+        refresh();
+        $scope.action = "none";
+        $scope.hideAddRow = true;
+      });
+    };
+    //method for adding new group record dynamically start
 
   }]);
 

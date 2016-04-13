@@ -10,8 +10,19 @@
   </thead>
   <tbody class="data-grid-data">
     <tr>
-      <td>    
-        <input type="email" ng-model="visitorDef.visitorId">
+<!--       <td>
+
+        <input type="email" name="email" ng-model="visitorDef.visitorId" required>
+        <br>
+        <span ng-show="showFlag == 'noUser'" class="error text-danger">{{message}}</span>
+      </td> -->
+      <td>
+        <form name="myForm">
+          <input type="email" name="email" ng-model="visitorDef.visitorId" required>
+          <br>
+            <span class="error text-danger" ng-show="myForm.email.$error.email">
+              Not valid email!</span>
+            <span ng-show="showFlag == 'noUser'" class="error text-danger">{{message}}</span>  
       </td>
       <td><select 
        ng-model="visitorDef.influence" 
@@ -19,7 +30,8 @@
      </select>
      <!-- <pre>selected: {{visitorDef.influence}}</pre> -->
    </td>
-   <td><button class="btn btn-primary" ng-click="addvisitor(visitorDef)">Add visitor</button></td>
+   <td><button class="btn btn-primary" ng-click="addvisitor(visitorDef)" ng-disabled="myForm.$invalid">Add visitor</button></td>
+   </form>
  </tr>
  
  <tr ng-repeat="visitorDef in visitors | filter: search |orderBy:orderByField:reverseSort">
@@ -33,10 +45,140 @@
 </td>
 </tr>
 
-<td ng-if="showFlag == 'noUser'">
-
+<td colspan="3" ng-if="showFlag == 'notRegisteredUser'">
+ <!-- {{emailId}} 
  {{message}}
+ {{influencedata}} -->
+    <br>
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
 
+             <div class="row">
+
+                <div class="col-md-4 text-center">
+                  <br>
+                  <br>
+                  <img ng-if="showAvatar == false" ng-src="/public/assets/g/imgs/avatar.jpg" width="122" height="122" 
+                  />
+                  <img ng-if="showAvatar == true" ng-src="{{avatar}}" class="img-rectangle avatar-original pic" width="122" height="122"
+                  style="background-size:cover;"/>
+                  <div>
+                   <md-button class="md-primary md-raised" 
+                    ng-click="showProfileButton($event)">
+                    change picture
+                  </md-button>
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <form name="profileForm">
+
+                  <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                    <label>First Name</label>
+                    <input md-maxlength="20" required name="first" 
+                    ng-model="userdata.name.first">
+                    <div ng-messages="profileForm.first.$error" ng-show="profileForm.first.$touched || !profileForm.first.$pristine">
+                     <div class="messagenotify">
+                      <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                      <div ng-message="md-maxlength">The first name has to be less than 20 characters long.</div>
+                      <div ng-message="minlength">the first name should contain minimum 5 characters</div></div></div>
+                    </md-input-container>
+                    
+                    <md-input-container class="md-block" flex-gt-sm>
+                    <label>Middle Name</label>
+                    <input md-maxlength="10" required name="middle" 
+                    ng-model="userdata.name.middle">
+                    <div ng-messages="profileForm.middle.$error" ng-show="profileForm.middle.$touched || !profileForm.middle.$pristine">
+                     <div class="messagenotify">
+                      <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                      <div ng-message="md-maxlength">The middle name has to be less than 10 characters long.</div>
+                      <div ng-message="minlength">the middle name should contain minimum 5 characters</div></div></div>
+                    </md-input-container>  
+                    
+                    <md-input-container class="md-block" flex-gt-sm>
+                    <label>Last Name</label>
+                    <input md-maxlength="20" required name="last" 
+                    ng-model="userdata.name.last">
+                    <div ng-messages="profileForm.last.$error" ng-show="profileForm.last.$touched || !profileForm.last.$pristine">
+                     <div class="messagenotify">
+                      <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                      <div ng-message="md-maxlength">The last name has to be less than 20 characters long.</div>
+                      <div ng-message="minlength">the last name should contain minimum 5 characters</div></div></div>
+                    </md-input-container>
+                  </div>
+
+                  <div>
+                    <md-input-container class="md-block" flex-gt-sm>
+                    <label>Email</label>
+                    <input type="email" md-maxlength="255" minlength="8" required name="email" 
+                    ng-model="emailId">
+                    <div ng-messages="profileForm.email.$error" ng-show="profileForm.email.$touched || !profileForm.email.$pristine">
+                     <div class="messagenotify">
+                      <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                      <div ng-message="md-maxlength">The email has to be less than 255 characters long.</div>
+                      <div ng-message="minlength">the email should contain minimum 8 characters</div></div></div>
+                    </md-input-container>
+                  </div>
+
+                  <div>
+                    <md-input-container class="md-block" flex-gt-sm>
+                    <label>Password</label>
+                    <input type="password" md-maxlength="255" minlength="8" required name="password" 
+                    ng-model="userdata.password">
+                    <div ng-messages="profileForm.password.$error" ng-show="profileForm.password.$touched || !profileForm.password.$pristine">
+                     <div class="messagenotify">
+                      <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                      <div ng-message="md-maxlength">The password has to be less than 255 characters long.</div>
+                      <div ng-message="minlength">the password should contain minimum 8 characters</div></div></div>
+                    </md-input-container>
+                  </div>
+                  
+                </div>
+
+                <div class="col-md-12">
+                  <md-input-container class="md-block" flex-gt-sm>
+                  <label>Job Title</label>
+                  <input md-maxlength="40" minlength="5" required name="jobTitle" 
+                  ng-model="userdata.jobTitle">
+                  <div ng-messages="profileForm.jobTitle.$error" ng-show="profileForm.jobTitle.$touched || !profileForm.jobTitle.$pristine">
+                   <div class="messagenotify">
+                    <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                    <div ng-message="md-maxlength">The jobTitle has to be less than 40 characters long.</div>
+                    <div ng-message="minlength">the jobTitle should contain minimum 5characters</div></div></div>
+                  </md-input-container>
+                </div>
+                  
+                <div class="col-md-12">
+                  <md-input-container class="md-block" style="height: auto;">
+                  <label>Summary</label>
+                  <textarea ng-model="userdata.summary" md-maxlength="2000" minlength="30" required name="summary" 
+                  rows="4" aria-multiline="true" style="height: 116px;"></textarea>
+                  <div ng-messages="profileForm.summary.$error" ng-show="profileForm.summary.$touched || !profileForm.summary.$pristine">
+                   <div class="messagenotify">
+                    <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                    <div ng-message="md-maxlength">The summary has to be less than 2000 characters long.</div>
+                    <div ng-message="minlength">the summary should contain minimum 30characters</div></div></div>
+                  </md-input-container>
+                </div>
+                <!-- {{userdata}}
+                {{emailId}} -->
+                  <button class="btn btn-primary pull-right" ng-click="addvisitordata(userdata,emailId,influencedata,avatar)">
+                    <i class="fa fa-floppy-o"></i>&nbsp;&nbsp;Add Visitor
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </td>
 
 </tbody>

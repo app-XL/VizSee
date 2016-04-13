@@ -56,21 +56,21 @@
           <div class="form-group" ng-class="{ 'has-error': inputctrl.speaker.$touched && inputctrl.speaker.$invalid }">
                <div class="col=md-4">
 
-           <div user type="picker" user-model="noteByUser" view-type="large" user-id="noteById" user-email="noteByEmail" switch-mode="mode"></div>
+           <div user type="picker" user-model="noteByUser" view-type="large" user-id="noteById" user-email="noteByEmail" switch-mode="mode" user-type="employee"></div>
       </div>
             </div>
 
-     
+          <div fileattachment folder-type="keynotes" file-size="25" file-allowed="5" array="array"></div>
 
  
-<md-chips 
+<!--md-chips 
        name="tags"
         ng-model="tags"
         readonly="ctrl.readonly"
         placeholder="Enter a tag"
         delete-button-label="Remove Tag"
         delete-hint="Press delete to remove tag"
-        secondary-placeholder="+Tag"></md-chips></md-input-container>
+        secondary-placeholder="+Tag"></md-chips--></md-input-container>
 <br>
           <div class="form-group">
               <div class="pull-left">

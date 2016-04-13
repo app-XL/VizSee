@@ -51,7 +51,7 @@
   to {height: 0px;}
 }
 .hd-prime{
-    background-color: #ffccff;
+    background-color: #fff;
     position:relative;
     height:100px;
 }
@@ -79,7 +79,9 @@
 }
 .my-visit-sub-header {
     text-align: left;
+    /*background-color: blue;*/
     background: url("/public/uploads/images/hero-bg.jpg") no-repeat;
+    background-size: 100%;
 }
 .profile-details-div {
       
@@ -99,5 +101,107 @@
     width: 60px;
     height: 55px;
     margin-top: 15px;
+
+}
+.searchViewHead {
+    padding: 10px 15px;
+    font-family: robotoRegular;
+    font-size: 1em;
+    color: #a4a4a4;
+    height: 42px;
+
+    }
+
+.searchDivHead input {
+    border: none;
+    margin-left: 10px;
+}
+
+   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+.searchViewHead {
+    padding: 10px 0px;
+    font-family: robotoRegular;
+    font-size: 14px;
+    color: #a4a4a4;
+    height: 42px;
+
+    }
+
+.searchDivHead input {
+    border: none;
+
+}
+
+}
+@media only screen and (max-device-width: 320px){
+    .searchViewHead {
+    padding: 10px 0px;
+    font-family: robotoRegular;
+    font-size: 9px;
+    color: #a4a4a4;
+    height: 42px;
+
+    }
+
+.searchDivHead input {
+    border: none;
+
+}
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .searchViewHead {
+    padding: 10px 0px;
+    font-family: robotoRegular;
+    font-size: 9px;
+    color: #a4a4a4;
+    height: 42px;
+
+    }
+
+.searchDivHead input {
+    border: none;
+
+}
+}
+
+@media only screen and (min-device-width: 480px) and (max-device-width: 768px) {
+      .searchViewHead {
+    padding: 10px 0px;
+    font-family: robotoRegular;
+    font-size: 14px;
+    color: #a4a4a4;
+    height: 42px;
+    
+
+    }
+
+.searchDivHead input {
+    border: none;
+
+}
+
+}
+@media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
+    .searchViewHead {
+    padding: 10px 0px;
+    font-family: robotoRegular;
+    font-size: 14px;
+    color: #a4a4a4;
+    height: 42px;
+    padding-right: 90px;
+    
+
+    }
+
+.searchDivHead input {
+    border: none;
+
+}
+
+}
+
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
+  
 
 }

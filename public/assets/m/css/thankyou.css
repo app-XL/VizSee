@@ -1,0 +1,180 @@
+	.headerwelT{
+		padding-left: 450px;
+		font-weight: bold;
+	
+	}
+	.logoT{
+		margin-left: 20px;
+		height: 50px;
+		width: 70px;
+
+	}
+	.welltextT{
+		text-align: center;
+	}
+	h5{
+		color: red;
+		padding-left: 10px;
+	}
+	hr{
+		color: red;
+		background-color: red;
+		border-color: red;
+		margin-left: 20px;
+		margin-left: 20px;
+	}
+	
+	.btn-defaultT {
+		color: #333;
+		background-color: #fff;
+		border-color: red;
+		border-width: 1px;
+	}
+	.panelpdmdT{
+		padding-left: 70px;
+	}
+	.userpicT{
+		width:60px;
+		height:55px;
+	}
+	.textT{
+		text-align: justify;
+		padding-left: 20px;
+		padding-right: 20px; 
+}
+
+
+	#welcomeT{
+ 		object-fit: initial;
+ 		width: 92%;
+ 		height: 300px;
+ 		padding-left: 50px;
+ 	}
+	
+	button{
+		background-color: #fff;
+		margin-left: 550px;
+
+		border-color: red;
+		border-width: 1px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.profileT{
+		padding-left: 20px;
+	}
+	@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+		#welcomeT{
+ 		object-fit: initial;
+ 		width: 95%;
+ 		height: 300px;
+ 		padding-left: 10px;
+ 	}
+ 	.modal-bodyT{
+    position: relative;
+    padding: 0px;
+}
+		button{
+			background-color: #fff;
+			margin-left: 180px;
+
+			border-color: red;
+			border-width: 1px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		.headerwelT{
+			padding-left: 120px;
+		}
+
+}
+@media only screen and (max-device-width: 320px){
+		#welcomeT{
+ 		
+ 		width: 280px;
+ 		height: 300px;
+ 		margin-left: 2px;
+ 		margin-right: 2px;
+ 	}
+ 	.headerwelT{
+			padding-left: 92px;
+		}
+
+
+}
+@media only screen and (min-device-width: 485px) and (max-device-width: 768px) {
+		#welcomeT{
+ 		object-fit: initial;
+ 		width: 95%;
+ 		height: 300px;
+ 		padding-left: 20px;
+ 	}
+		button{
+			background-color: #fff;
+			margin-left: 120px;
+
+			border-color: red;
+			border-width: 1px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		.headerwelT{
+			padding-left: 40%;
+		}
+
+
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+			#welcomeT{
+ 		object-fit: initial;
+ 		width: 100%;
+ 		height: 400px;
+ 		padding-left: 20px;
+ 	}
+		button{
+			background-color: #fff;
+			margin-left: 220px;
+
+			border-color: red;
+			border-width: 1px;
+			padding-left: 300px;
+			padding-right: 10px;
+		}
+
+		.headerwelT{
+			padding-left: 40%;
+		}
+		      #videoModalT{
+padding-top: 10%;
+padding-bottom: 10%;
+}
+
+}
+ 
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
+			#welcomeT{
+ 		object-fit: initial;
+ 		width: 100%;
+ 		height: 300px;
+ 		padding-left: 80px;
+ 	}
+		button{
+			background-color: #fff;
+			margin-left: 120px;
+
+			border-color: red;
+			border-width: 1px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		.headerwelT{
+			padding-left: 40%;
+		}
+
+  
+
+}

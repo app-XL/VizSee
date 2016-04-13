@@ -1,10 +1,26 @@
 angular.module('contacts')
 
-.controller('contactsCtrl', function($scope, $routeParams, $http) {
-	$http.get('/api/v1/secure/contactList/city/' + $routeParams.city).success(function(response) {
-		$scope.contactList = response;
+.controller('spocCtrl', function($scope, $routeParams, $http, $location) {
+   $http.get('/api/v1/secure/visits/all/activeVisit').success(function(response) {
+    var str= String(response.visits.locations);
+    var loc= str.split(",");
+    $location.path("contacts/"+loc[0]);
+    });
+})
 
-	})
+.controller('contactsCtrl', function($scope, $routeParams, $http) {
+
+  $http.get('/api/v1/secure/contactList/city/' +$routeParams.city).success(function(response) {
+    $scope.contactList = response;
+  })
+
+  $http.get('/api/v1/secure/visits/all/activeVisit').success(function(response) {
+    var str= String(response.visits.locations);
+    $scope.cities = str.split(/[ ,]+/);
+    console.log($scope.cities)
+    $scope.title=response.visits.title;
+   })
+
   $scope.collapseDiv = function(index, text){
     var ele = angular.element(document.getElementById(text + index));
     ele.toggle();
@@ -16,22 +32,6 @@ angular.module('contacts')
     }
   };
 })
-
-.controller('spocCtrl', function($scope) {
-  $scope.spoc_details = [{
-    'picture': '/public/assets/g/imgs/avatar.jpg',
-    'name': 'Mr Vincent Chase',
-    'designation': 'Sr Analyst, CSC, Bangalore',
-    'bio': 'Met my aggressive timeline requirement with very good quality. Worked with me to come up with a viable solution to meet the timeline. Easy to work with and have the customers best interest in mind. You can find less expensive alternatives but the quality and responsiveness is well worth the price',
-    'email': 'vincent@csc.com',
-    'telephone': [
-    '+555 555 5555',
-    '+91 923 823 0982'
-    ]
-  }];
-})
-
-
 .directive("scroll", function ($window) {
   return function(scope, element, attrs) {
    console.log("scrolling...");

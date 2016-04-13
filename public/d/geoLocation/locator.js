@@ -1,44 +1,13 @@
 var app =angular.module("locator", []);
 var app= angular.module("locator");
 
-app.directive("locationPredictions", [function() {
 
-    return {
-        restrict: "E",
-        scope: {
-            results: "="
-        },
-        template: '<input type="text" placeholder="search for a location">',
-        link: function(e, o) {
-            var t = new google.maps.places.AutocompleteService,
-                n = angular.element(o.find("input")),
-                a = function(e) {
-                    t.getPlacePredictions({
-                        input: e
-                    }, r)
-                },
-                r = function(o, t) {
-                    return t !== google.maps.places.PlacesServiceStatus.OK ? (e.$apply(function() {
-                        e.results = []
-                    }), void 0) : (e.$apply(function() {
-                        e.results = o
-                    }), void 0)
-                };
-            n.on("input", function() {
-                var o = n.val();
-                o && o.length >= 3 ? a(o) : e.$apply(function() {
-                    e.results = []
-                })
-            })
-        }
-    }
-}]);
 app.directive("locationPicker", ["$log", "location", "reverseGeocoder", function(e, o, t) {
     return {
         restrict: "E",
         require: "?ngModel",
         scope: {},
-        templateUrl: "/public/m/home/profileBar.html",
+        templateUrl: "location-picker/location-picker.html",
         link: function(n, a, r, i) {
             n.limitTo = n.$eval(r.limitTo) || 15, o.ready(function() {
                 t.geocode(o.current).then(function(e) {

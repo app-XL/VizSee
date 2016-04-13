@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="page-header">
+   Client Account Management - Panel
+    <div class="sub-header">Managing Accounts</div>
+  </div>
+
+  <div class="container">
+   <div class="row">
+      <div class="col-xs-5">
+        <input type="text" class="form-control" placeholder="Search" ng-model="search.$" />
+        <button class="btn btn-default btn-sm" ng-click="hideFilter=!hideFilter">Advanced Search</button>
+      </div>
+      <div ng-include src="'/public/mods/clients/partials/sortSearch.html'"></div>
+    </div>
+    <div class="pnbdr panel panel-primary">
+      <!--div class="panel-heading">visits panels view</div--><div class="searchpad">
+      <div ng-repeat="clients in clientsList | filter: search |orderBy:orderByField:reverseSort">
+        <div class="row">
+
+          <div class="pn-bodypad">
+            <div class="col-xs-11">
+              <div class="panel panel-info">
+                <div class="panel-heading pn-bodyhdr" pull-left>
+                  <span>{{clients.name}}</span>
+                  <div class="pull-right">
+                    <a class="table-btn" href="#/clients/{{clients._id}}/show"><span class="fa fa-eye fa-lg" /></a>
+                    <a class="table-btn" href="#/clients/{{clients._id}}/edit"><span class="fa fa-pencil-square-o fa-lg" /></a>
+                    <a class="table-btn" ng-click="delete(clients)" confirm-dialog header-text="Delete Client" content="Are you sure you want to delete the client with client name <b>{{clients.name}} ? </b>" 
+                    yes-text="Ok" no-text="Cancel"><span class="glyphicon glyphicon-trash" /></a>
+                  </div>
+                </div>
+
+                <div class="panel-body">
+                  <div class="pn-inrbodypad">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <div class="text-xs">{{clients.vertical}}</div>
+                      </div>
+                      <div class="col-xs-4">
+                        <div class="text-xs">
+                          <div ng-repeat="regions in clients.regions track by $index">{{regions}}</div>
+                        </div>
+                      </div>
+                      <div class="col-xs-4">
+                        <div class="text-xs">
+                          <div ng-repeat="offerings in clients.offerings track by $index">{{offerings}}</div>
+                        </div>
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
