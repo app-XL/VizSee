@@ -284,8 +284,8 @@
            </div>
          </div> -->
           <md-dialog-actions layout="row">
-            <md-button class="md-primary md-raised" ng-click="save()">
-              OK
+            <md-button class="md-primary md-raised" ng-click="save()" ng-disabled="sessionAddForm.$invalid">
+              Submit
             </md-button>
             <md-button class="md-warn md-raised" ng-click="cancel()" confirm-dialog header-text="Cancel Form Submission" content="Are you sure you want to cancel the submission of this form ?"
             yes-text="Ok" no-text="Cancel">
@@ -314,4 +314,48 @@
     font-size: 0.8em;
     margin-top: 50px; }
 
+    /* Style for Submit-cancel button end */
+  .md-button.md-primary {
+      color: #FFF !important;
+      background-color: #5CB85C !important;
+      border-color: #4CAE4C;
+  }
+
+  .md-button.md-primary:focus{
+    color: #fff !important;
+    background-color: #449d44 !important;
+    border-color: #255625 !important;
+  }
+  .md-button.md-primary:hover,
+  .md-button.md-primary:active {
+    color: #fff !important;
+    background-color: #449d44 !important;
+    border-color: #398439 !important;
+  }
+  
+  .md-button.md-primary.disabled, 
+  .md-button.md-primary[disabled], fieldset[disabled] .md-button.md-primary {
+    cursor: not-allowed !important;
+    box-shadow: none;
+    opacity: 0.65;
+    color: #FFF !important;
+  }
+
+  .md-button.md-warn {
+    color: #FFF !important;
+    background-color: #F0AD4E !important;
+    border-color: #EEA236 !important;
+  }
+  .md-button.md-warn:focus{
+    color: #fff !important;
+    background-color: #ec971f !important;
+    border-color: #985f0d !important;
+  }
+  .md-button.md-warn:hover,
+  .md-button.md-warn:active{
+    color: #fff !important;
+    background-color: #ec971f !important;
+    border-color: #d58512 !important;
+  }
+  /* Style for Submit-cancel button end */
 </style>
