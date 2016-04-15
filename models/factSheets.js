@@ -8,22 +8,23 @@ var cityFactSchema       = require('./cityFacts');
 
 var factSheetSchema = new mongoose.Schema({
 
-  title               : { type: String },
-  logoLink            : { type: String },
-  address             : { type: Object },
+  title               : { type: String, trim: true, required: true },
+  logoLink            : { type: String, trim: true},
+  address             : { type: Object, required: true },
   strength            : { type: Number },
 
   locations           : [{
-    name              : { type: String },
-    city              : { type: Schema.Types.ObjectId, ref: 'city_facts' },
-    address           : { type: Object },
+    name              : { type: String, trim: true, required: true },
+    city              : { type: Schema.Types.ObjectId, ref: 'city_facts', required: true },
+    address           : { type: Object, required: true },
     strength          : { type: Number },
-    facilities        : [{
-      name            : { type: String },
-      address         : { type: String },
-      type            : { type: String },
-      strength        : { type: Number }
-    }],
+
+      facilities        : [{
+        name            : { type: String, trim: true, required: true },
+        address         : { type: String, trim: true },
+        type            : { type: String, trim: true },
+        strength        : { type: Number }
+        }],
   }],
 
   editdBy            : { type: Schema.Types.ObjectId, ref: 'User' },

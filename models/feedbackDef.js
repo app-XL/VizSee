@@ -7,11 +7,11 @@ var userSchema 				= require('./user');
 
 var feedbackDefSchema = new mongoose.Schema({
 
-	title								: { type: String },
-	type								: { type: String },  // {session, visit}
-	item								: [{
-		query							: { type: String },
-		mode							: { type: String, lowercase: true, trim: true },  // {freetext, singlechoice, multichoice}
+	title							: { type: String, trim: true, required: true },
+	type							: { type: String, lowercase: true, trim: true, required: true, enum: ['Session', 'Visit'] },  // {session, visit}
+	item							: [{
+		query							: { type: String, trim: true, required: true },
+		mode							: { type: String, lowercase: true, trim: true, required: true},  // {freetext, singlechoice, multichoice}
 		choices							: [ { type: String, trim: true } ]
 	}],
 	createBy						: { type: Schema.Types.ObjectId, ref: 'User' },

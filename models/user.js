@@ -22,55 +22,55 @@ var TokenModel = mongoose.model('Token', Token);
 // define the schema for our user model
 var userSchema = mongoose.Schema({
     name             : {
-      prefix         : String,
-      first          : String,
-      middle         : String,
-      last           : String,
-      suffix         : String
+      prefix         : { type: String, trim: true, required: true },
+      first          : { type: String, trim: true, required: true },
+      middle         : { type: String, trim: true },
+      last           : { type: String, trim: true, required: true },
+      suffix         : { type: String, trim: true }
     },
-    email            : String,
-    avatar           : String,
-    summary          : String,
-    jobTitle         : String,
-    organization     : String,
+    email            : { type: String, trim: true, required: true },
+    avatar           : { type: String, trim: true, required: true },
+    summary          : { type: String, trim: true },
+    jobTitle         : { type: String, trim: true, required: true },
+    organization     : { type: String, trim: true, required: true },
 		orgRef					 : { type: Schema.Types.ObjectId, ref: 'client' },
-		association			 : {type: String, enum: ['employee', 'partner', 'customer', 'contractor']},
+		association			 : {type: String, enum: ['employee', 'partner', 'customer', 'contractor'], trim: true, required: true },
     socialProfile    : [{
-      handle         : String,
-      network        : String
+      handle         : { type: String, trim: true },
+      network        : { type: String, trim: true }
     }],
     contactNo        : [{
-      contactNumber         : String,
-      contactType           : String
+      contactNumber         : { type: String, trim: true, required: true },
+      contactType           : { type: String, trim: true, required: true }
     }],
     stats            : {
-      dateCreated    : Date,
-      dateLastLogin  : Date
+      dateCreated    : { type: Date},
+      dateLastLogin  : { type: Date}
     },
     preferences      : {
-      language       : String
+      language       : { type: String, trim: true, required: true }
     },
     local            : {
-        email        : String,
-        password     : String
+        email        : { type: String, trim: true, required: true },
+        password     : { type: String, trim: true, required: true }
     },
     facebook         : {
-        id           : String,
-        token        : String,
-        email        : String,
-        name         : String
+        id           : { type: String, trim: true, required: true },
+        token        : { type: String, trim: true, required: true },
+        email        : { type: String, trim: true, required: true },
+        name         : { type: String, trim: true, required: true }
     },
     twitter          : {
-        id           : String,
-        token        : String,
-        displayName  : String,
-        username     : String
+        id           : { type: String, trim: true, required: true },
+        token        : { type: String, trim: true, required: true },
+        displayName  : { type: String, trim: true, required: true },
+        username     : { type: String, trim: true, required: true }
     },
     google           : {
-        id           : String,
-        token        : String,
-        email        : String,
-        name         : String
+        id           : { type: String, trim: true, required: true },
+        token        : { type: String, trim: true, required: true },
+        email        : { type: String, trim: true, required: true },
+        name         : { type: String, trim: true, required: true }
     },
     token            : {type: Object},
     status           : {type: String, default: 'Active'},

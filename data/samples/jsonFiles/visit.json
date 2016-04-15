@@ -50,12 +50,11 @@
 		"createBy"			: ObjectId("A02234567892345678900009"),
 		
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900001"),
-		
+		"sessionTmpl"						: ObjectId("A10234567892345678900005"),
 		"invitees"						: 
-			[{
-					"invite" 						: ObjectId("A02234567892345678900010")
-			}]
-
+			[
+				ObjectId("A02234567892345678900010")
+			]
 	},
 
 
@@ -113,12 +112,11 @@
 		"createBy"			: ObjectId("A02234567892345678900008"),
 		
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900002"),
-		
+		"sessionTmpl"						: ObjectId("A10234567892345678900004"),
 		"invitees"						: 
-			[{
-					"invite" 						: ObjectId("A02234567892345678900009")
-			}]
-
+			[
+				ObjectId("A02234567892345678900009")
+			]
 	},
 
 
@@ -178,12 +176,11 @@
 		"createBy"			: ObjectId("A02234567892345678900007"),
 		
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900003"),
-		
+		"sessionTmpl"						: ObjectId("A10234567892345678900002"),
 		"invitees"						: 
-			[{
-					"invite" 						: ObjectId("A02234567892345678900005")
-			}]
-
+			[
+				ObjectId("A02234567892345678900005")
+			]
 	},
 
 
@@ -249,18 +246,13 @@
 		"createBy"			: ObjectId("A02234567892345678900004"),
 		
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900004"),
+		"sessionTmpl"						: ObjectId("A10234567892345678900003"),
 		
 		"invitees"						: 
 			[
-				{
-					"invite" 						: ObjectId("A02234567892345678900010")
-				},
-				
-				{
-					"invite" 						: ObjectId("A02234567892345678900005")
-				}
+				ObjectId("A02234567892345678900010"),
+				ObjectId("A02234567892345678900005")
 			]
-
 	},
 
 
@@ -333,23 +325,14 @@
 		"createBy"			: ObjectId("A02234567892345678900010"),
 		
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900005"),
-		
+		"sessionTmpl"						: ObjectId("A10234567892345678900001"),
 		"invitees"						: 
 			[
-				{
-					"invite" 						: ObjectId("A02234567892345678900021")
-				},
-				
-				{
-					"invite" 						: ObjectId("A02234567892345678900008")
-				},
-				
-				{
-					"invite" 						: ObjectId("A02234567892345678900021")
-				}
 			
+				ObjectId("A02234567892345678900021"),
+				ObjectId("A02234567892345678900008"),
+				ObjectId("A02234567892345678900021")
 			]
-
 	},
 
 
@@ -429,26 +412,14 @@
 		"createBy"			: ObjectId("A02234567892345678900011"),
 		
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900003"),
-		
+		"sessionTmpl"						: ObjectId("A10234567892345678900005"),
 		"invitees"						: 
 			[
-				{
-					"invite" 						: ObjectId("A02234567892345678900023")
-				},
-				
-				{
-					"invite" 						: ObjectId("A02234567892345678900009")
-				},
-				
-				{
-					"invite" 						: ObjectId("A02234567892345678900022")
-				},
-				
-				{
-					"invite" 						: ObjectId("A02234567892345678900001")
-				}			
+				ObjectId("A02234567892345678900023"),
+				ObjectId("A02234567892345678900009"),
+				ObjectId("A02234567892345678900022"),
+				ObjectId("A02234567892345678900001")
 			]
-
 	}
 
 ]

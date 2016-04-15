@@ -7,9 +7,9 @@ var userSchema = require('./user');
 
 var groupSchema = new mongoose.Schema({
 
-	name 							: { type: String },
-	description						: { type: String },
-	users 							: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+	name 							: { type: String, trim: true, required: true },
+	description						: { type: String, trim: true, required: true },
+	users 							: [{ type: Schema.Types.ObjectId, ref: 'User', required: true }]
 	
 	});
 

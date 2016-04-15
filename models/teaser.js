@@ -7,14 +7,14 @@ var userSchema = require('./user');
 
 var teaserSchema = new mongoose.Schema({
 
-	title 				: { type: String },
-	teaser				: { type: String },
-	type                : { type: String }, // video/audio/text
-	teaserText          : { type: String },
-	externalLink        : [{ type: String }],
-	tags				: [],
-	createdBy			: { type: Schema.Types.ObjectId, ref: 'User' },
-	createOn			: { type: Date, default: Date.now },
+  title 				: { type: String, trim: true, required: true },
+  teaser				: { type: String, trim: true, required: true },
+  type                	: { type: String, trim: true, required: true }, // video/audio/text
+  teaserText          	: { type: String, trim: true },
+  externalLink        	: [{ type: String, trim: true }],
+  tags					: [],
+  createdBy				: { type: Schema.Types.ObjectId, ref: 'User' },
+  createOn				: { type: Date, default: Date.now },
 
 });
 
