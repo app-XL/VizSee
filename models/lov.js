@@ -5,8 +5,8 @@ var mongoose = require('mongoose')
 
 var lovSchema = new mongoose.Schema({
 
-	name 							: { type: String },
-	values							: [{ type: String }]
+	name 							: { type: String, trim: true, required: true },
+	values							: [{ type: String, trim: true, required: true }]
 
 	});
 

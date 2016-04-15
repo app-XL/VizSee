@@ -5,10 +5,10 @@ var mongoose = require('mongoose')
 
 var factSchema = new mongoose.Schema({
 
-	title 								: { type: String },
-	editedBy							: { type: Schema.Types.ObjectId, ref: 'User' },
+	title 							: { type: String, trim: true, required: true },
+	editedBy						: { type: Schema.Types.ObjectId, ref: 'User' },
 	createOn						: { type: Date, default: Date.now },
-	description						: { type: String }
+	description						: { type: String, trim: true, required: true }
 	});
 
 module.exports = mongoose.model('facts', factSchema);

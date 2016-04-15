@@ -1211,18 +1211,18 @@
 				{
 					"prefix"		:  "Ms.",
 					"first"		:  "Nidhi",
-					"middle"	:  "Sharma",
-					"last"		:  "Joyaluka",
+					"middle"	:  "J",
+					"last"		:  "Sharma",
 					"suffix"		:  ""
 				},
-			"email"				: "njoyaluka@aol.com",
+			"email"				: "nsharma@aol.com",
 
-			"avatar"			: "/public/uploads/profilePics/nidhi.jpg",
+			"avatar"			: "/public/uploads/profilePics/nsharma.jpg",
 			
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
-				"email"				: "njoyaluka@aol.com"
+				"email"				: "nsharma@aol.com"
 			},
 
 			"summary"		: " 4+ year experience in Learning &Talent Management Function in the IT, ITES & CRO Multi-National Companies.",
@@ -1823,7 +1823,7 @@
 			"name":
 				{
 					"prefix"		:  "Mr.",
-					"first"		:  "Jamest",
+					"first"		:  "James",
 					"middle"	:  "K",
 					"last"		:  "Watson",
 					"suffix"		:  ""

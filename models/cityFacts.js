@@ -7,24 +7,23 @@ var userSchema = require('./user');
 
 var cityFactSchema = new mongoose.Schema({
 
-  	name: { type: String },
-  	desc: { type: String },
-	bannerLink: { type: String },
-
-  	geospot: { type: [Number], index: '2dsphere'},
+  	name: 				{ type: String, trim: true, required: true },
+  	desc: 				{ type: String, trim: true, required: true },
+	bannerLink: 		{ type: String, trim: true },
+  	geospot: 			{ type: [Number], index: '2dsphere'},
 
 	places : [{
-		name: { type: String },
-	  	desc: { type: String },
-		imageLinks: [{ type: String }],
-		geospot: {type: [Number], index: '2dsphere'},
-		quickFacts: [{type: String }],
+		name: 			{ type: String, trim: true, required: true },
+		desc: 			{ type: String, trim: true, required: true },
+		imageLinks: 	[{ type: String, trim: true }],
+		geospot: 		{type: [Number], index: '2dsphere'},
+		quickFacts: 	[{type: String, trim: true }],
 	}],
 
-  quickFacts: [{type: String }],
+  quickFacts: 			[{type: String, trim: true }],
 
-  editBy: { type: Schema.Types.ObjectId, ref: 'User' },
-  editOn: { type: Date, default: Date.now }
+  editBy: 				{ type: Schema.Types.ObjectId, ref: 'User' },
+  editOn: 				{ type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('city_facts', cityFactSchema);

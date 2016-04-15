@@ -14,11 +14,12 @@ var feedbackSchema = new mongoose.Schema({
 	template					: { type: Schema.Types.ObjectId, ref: 'FeedbacDefs', required:true },
 	providedBy					: { type: Schema.Types.ObjectId, ref: 'User', required:true },
 	providedOn					: { type: Date, default: Date.now },
-	feedbackOn					: {type: String, enum: ['Session', 'Visit']},
-	item								: [{
-		query							: { type: String, required:true },
-		mode							: { type: String, lowercase: true, trim: true, required:true,
-		 											enum: ['freetext', 'single-choice', 'multi-choice', 'star-rating']},
+	feedbackOn					: {type: String, lowercase:true, enum: ['Session', 'Visit'], trim: true},
+
+	item						: [{
+		query						: { type: String, trim: true, required: true },
+		mode						: { type: String, lowercase: true, trim: true, required:true,
+		 									enum: ['freetext', 'single-choice', 'multi-choice', 'star-rating']},
 		choices						: [ { type: String, trim: true, required:true } ],
 		answer						: { type: String, trim: true, required:true }
 	}]

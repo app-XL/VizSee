@@ -6,10 +6,10 @@ var mongoose = require('mongoose')
 var csclocationSchema = new mongoose.Schema({
 
 	id 							: { type: String },
-	name						: { type: String, required: true},
-	info						: { type: String, required: true},
-	url							: { type: String },
-	pos 						: { coordinates: {type: "Number", index: '2dsphere'} }
+	name						: { type: String, trim: true, required: true },
+	info						: { type: String, trim: true, required: true },
+	url							: { type: String, trim: true },
+	pos 						: { type: [Number], index: '2dsphere'}
 
 });
 
