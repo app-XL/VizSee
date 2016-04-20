@@ -391,6 +391,7 @@ function getOneById(id){
 	.findOne({ _id: id })
 	.populate('agm')
 	.populate('anchor')
+	.populate('secondaryVmanager')
 	.populate('createBy')
 	.populate('client')
 	.populate('feedbackTmpl')

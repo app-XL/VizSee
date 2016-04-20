@@ -15,8 +15,9 @@ var visitSchema = new mongoose.Schema({
 	startDate						: { type: Date},//, default: Date.now },
 	endDate							: { type: Date},//, default: Date.now },
 	locations						: { type: String, trim: true },  // set of csc locations
-	agm								: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-	anchor							: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+	agm								: { type: Schema.Types.ObjectId, ref: 'User'},
+	anchor							: { type: Schema.Types.ObjectId, ref: 'User'},
+	secondaryVmanager				: { type: Schema.Types.ObjectId, ref: 'User'},
 	schedule						: [{
 		startDate					: { type: Date, required: true},
 		endDate						: { type: Date, required: true},
@@ -37,7 +38,7 @@ var visitSchema = new mongoose.Schema({
 		objective					: { type: String, trim: true, required: true }
 	},
 	status							: { type: String, lowercase: true, trim: true, required: true },		// {confirmed, tentative, freeze, done}
-	createBy						: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+	createBy						: { type: Schema.Types.ObjectId, ref: 'User'},
 	createOn						: { type: Date, default: Date.now, required: true },
 	feedbackTmpl				    : { type: Schema.Types.ObjectId, ref: 'feedbackDefs', required: false },
 	sessionTmpl				    	: { type: Schema.Types.ObjectId, ref: 'feedbackDefs', required: false },

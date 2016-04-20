@@ -96,30 +96,25 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
   $scope.showAvatar = false;
   $scope.arraydata = [];
   $scope.tab=false;
+  $scope.anchor='';
+  $scope.secondaryVmanager='';
   // $scope.errMessage = '';
 
-var user= $rootScope.user._id; 
-var group = $rootScope.user.memberOf;
+  var user= $rootScope.user._id; 
+  var group = $rootScope.user.memberOf;
 
-$http.get('/api/v1/secure/admin/users/' + user).success(function(response){
-  if("employee" ==response.association)
-  {
-    $http.get('/api/v1/secure/admin/groups/' + group).success(function(response){
-      if ("Visit Manager Group"==response.name) {
-        console.log("true Visit Manager Group");
-        $scope.tab= true;
-      }
-      else
-      {
-        $scope.tab= false ;
-                // console.log($scope.showTab)
-              }
-            })
+  if ($rootScope.user.groups.indexOf("vManager") > -1) {
+    $scope.tab= true;
   }
-        // console.log($scope.showTab);
+  else
+  {
+    $scope.tab= false ;
+  }
 
-
-      })
+  //visit manager group- HTTP get for drop-down
+  $http.get('/api/v1/secure/admin/groups/vManager/users').success(function(response) {
+    $scope.data=response;
+  });
 
   //Location - Http get for drop-down
   $http.get('/api/v1/secure/lov/locations').success(function(response) {
@@ -139,9 +134,9 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
   $scope.agmEmail = "";
   $scope.agmUser =  "";
 
-  $scope.anchorId = "";
-  $scope.anchorEmail = "";
-  $scope.anchorUser =  "";
+  // $scope.anchorId = "";
+  // $scope.anchorEmail = "";
+  // $scope.anchorUser =  "";
 
   var refresh = function() {
 
@@ -179,11 +174,14 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
       case "edit":
       $scope.visits = $http.get('/api/v1/secure/visits/' + id).success(function(response){
         var visits = response;
+
+        $scope.anchor = visits.anchor._id;
+        $scope.secondaryVmanager = visits.secondaryVmanager._id;
+        
           $scope.schedules = visits.schedule;       //List of schedules
           $scope.keynotes = visits.keynote;
           $scope.visitors = visits.visitors;      //List of visitors
           $scope.visits = visits;               //Whole form object
-          // $scope.inviteesData =visits.invitees;
           $scope.arraydata=response.invitees;
           
           $scope.agmUser = response.agm;
@@ -193,10 +191,11 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
           $scope.clientName= response.client.name;//auto fill with reff client db
           $scope.feedback= response.feedbackTmpl.title;//auto fill with reff feedback db
           $scope.session= response.sessionTmpl.title;//auto fill with reff feedback db
+          
 
-          $scope.anchorUser = response.anchor;
-          $scope.anchorEmail = response.anchor.email;
-          $scope.anchorId = response.anchor._id;
+          
+          // $scope.anchorEmail = response.anchor.email;
+          // $scope.anchorId = response.anchor._id;
 
             // Reformat date fields to avoid type compability issues with <input type=date on ng-model
             $scope.visits.createdOn = new Date($scope.visits.createdOn);
@@ -210,11 +209,16 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
 
   $scope.save = function(){
     // Set agm based on the user picker value
+    console.log("title:  "+$scope.visits.title);
+    // console.log("anchor:  "+$scope.anchorman);
+    // console.log("vman: "+$scope.vman);
     $scope.visits.agm = $scope.agmId;
-    $scope.visits.anchor = $scope.anchorId;
+    $scope.visits.anchor = $scope.anchorman;
+    $scope.visits.secondaryVmanager= $scope.vman;
     $scope.visits.createBy= $rootScope.user._id;
     $scope.visits.client = $scope.clientId;
     $scope.visits.invitees = $scope.arraydata;
+    console.log($scope.visits);
     
     if ($scope.checked == false){
       $scope.unbillable= "non-billable";
@@ -294,12 +298,37 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
       var user = response;
       $scope.visits.agm = parse("%s %s, <%s>", user.name.first, user.name.last, user.email); });
 
-    $http.get('/api/v1/secure/admin/users/' + inData.anchor).success(function(response) {
-      var user = response;
-      $scope.visits.anchor = parse("%s %s, <%s>", user.name.first, user.name.last, user.email);  });
+    // $http.get('/api/v1/secure/admin/users/' + inData.anchor).success(function(response) {
+    //   var user = response;
+    //   $scope.visits.anchor = parse("%s %s, <%s>", user.name.first, user.name.last, user.email);  });
 
+}
+
+   //add vmanager
+   $scope.AddVmanager=function(){
+    $scope.visits.anchor = $scope.anchorman;
+    $scope.visits.secondaryVmanager= $scope.vman;
+    $scope.visits.agm = $scope.agmId;
+    $scope.visits.anchor = $scope.anchorman;
+    $scope.visits.secondaryVmanager= $scope.vman;
+    $scope.visits.createBy= $rootScope.user._id;
+    $scope.visits.client = $scope.clientId;
+    $scope.visits.invitees = $scope.arraydata;
+
+    $http.put('/api/v1/secure/visits/' + $scope.visits._id, $scope.visits).success(function(response) {
+     growl.info(parse("visit [%s]<br/>Edited successfully"));
+   })
+    
+  };
+
+  $scope.sendAnchor= function(anchor){
+    $scope.anchorman = anchor;
+    console.log($scope.anchorman);
   }
-
+  $scope.sendSecVman= function(secondaryVmanager){
+    $scope.vman = secondaryVmanager;
+    console.log($scope.vman);
+  }
   // Visit schedule table
 
   $scope.addSchedule=function(schedule){

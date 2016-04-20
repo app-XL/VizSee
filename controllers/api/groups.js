@@ -79,7 +79,7 @@ function updateById(req, res) {
 }
 
 function getUsersByGroup(req,res){
-	dataService.getUsersById(req.params.name)
+	dataService.getUsersByGroup(req.params.name)
 		.then(function(userList){
 				if (userList){
 						res.send(userList);
