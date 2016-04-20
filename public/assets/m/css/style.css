@@ -28,7 +28,7 @@ a:hover {
 div#profile-details {
   padding-top: 60px;
   background: url("/public/uploads/images/f.jpg") no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% 94%;
 }
 
 div#profile-details .profile-pic,
@@ -95,9 +95,9 @@ div#profile-details .profile-location img {
 .day,
 .loc {
   color: #fff;
-  font-size: 0.75em;
+  font-size: 16px;
   display: block;
-  font-family: antonioLight;
+  font-family: workSansRegular;
 }
 
 .day {
@@ -154,7 +154,7 @@ div#profile-details .profile-location img {
 
 #profile-details .notifications {
   top: 7px;
-  right: 35px;
+  right: 0px;
   position: absolute;
   padding-right: 14px;
   padding-top: 8px;
@@ -318,11 +318,11 @@ span.menuName {
 
 
 @media only screen and (min-device-width: 290px)and (max-device-width: 320px){
-  div#profile-details {
-    padding-top: 60px;
-    background: url("../img/bg/header.jpg") no-repeat;
-    background-size: 150%;
-  }
+div#profile-details {
+  padding-top: 60px;
+  background: url("/public/uploads/images/f.jpg") no-repeat;
+  background-size: 100% 91%;
+}
   #scrollBox > div fieldset {
     background: rgba(0, 0, 0, 0.5);
     padding: 5px;
@@ -363,11 +363,6 @@ span.menuName {
     text-align: center;
     height: 180px;
     width:110px;
-  }
-  div#profile-details {
-    padding-top: 60px;
-    background: url("../img/bg/header.jpg") no-repeat;
-    background-size: 150%;
   }
   .exec-icon:before{
     font-size: 27px;
@@ -435,11 +430,6 @@ span.menuName {
     height: 180px;
     width:130px;
     margin-right: 15px;
-  }
-  div#profile-details {
-    padding-top: 60px;
-    background: url("../img/bg/header.jpg") no-repeat;
-    background-size: 130%;
   }
   .exec-icon:before{
     font-size: 29px;

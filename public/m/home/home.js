@@ -37,7 +37,10 @@ angular.module('home', ['ngRoute'])
     templateUrl: '/public/m/home/splash.html',
     controller: 'splashCtrl'
   })
-
+.when('/sessions/:id', {
+    templateUrl: '/public/m/sessions/sessions.html',
+    controller: 'sessionsCtrl'
+  })
 
 	// if none of the above states are matched, use this as the fallback
   $routeProvider.otherwise('/home');

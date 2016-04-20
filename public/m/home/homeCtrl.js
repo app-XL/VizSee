@@ -3,13 +3,16 @@
 var app = angular.module('home');
 
 app.controller('homeCtrl', function ($scope, location, $routeParams, $http) {
-
+		$scope.value=$routeParams.id;
+           
 	location.get(angular.noop, angular.noop);
 	$scope.loading = true;
 	$http.get('/api/v1/secure/visits/'+$routeParams.id+'/schedules').success(function(response) {
         //console.log(response);
         $scope.dayHighlighter = response;
         $scope.loading = false;
+           
+          console.log($scope.dayHighlighter);
     })
 });
 
