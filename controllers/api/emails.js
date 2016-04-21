@@ -28,6 +28,14 @@ function sendMails(req, res){
 			emailService.welcomeClient(req.params.id, basePath);
 			break;
 
+		case "inviteAttendees":
+			emailService.inviteAttendees(req.params.id, basePath);
+			break;
+
+		case "newuser":
+			emailService.newUserAdd(req.params.id, basePath);
+			break;
+
 		default:
 			res.status(404).send("Action could not be identified");
 	}
