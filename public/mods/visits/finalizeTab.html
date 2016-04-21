@@ -1,6 +1,5 @@
 <div ng-controller="visitsControllerMain">
-  {{visits.status}}
-  
+
   <!--panel-three-->
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -102,16 +101,16 @@
 
   </div>
 </div><br><br><br>
-<!--panel-three-->
-<div class="panel panel-default">
+<!--panel-three -->
+<div class="panel panel-default" ng-if='!notifyTab'>
   <div class="panel-heading">
     <h3 class="panel-title"> <b>Finalize</b></h3>
   </div>
   <div class = "panel-subheader pull-right">
   </div>
   <div class="panel-body">
-   If you are done with the completion of all data required, please click <b>finalize</b> to initiate notifications. 
-    <button type="reset" class="btn btn-danger" ng-click="showNotifie(status)">Finalize</button>
+   If you are done with the completion of all data required, please click <b>finalize</b> to initiate notifications. <br>
+   <div class="pull-right"> <button type="reset" class="btn btn-danger" ng-click="showNotifie(status)" pull-right>Finalize</button></div>
   </div>
 </div>
 
