@@ -19,7 +19,11 @@ angular.module('visitAdd', ['ngRoute','header','scroll','ui.calendar','angular-g
     templateUrl: '/public/mods/visits/visitAdd.html',
     controller: 'visitsControllerMain'
   })
+  .when('/home',{
+    templateUrl: '/public/m/dummy2.html',
+    controller: 'homeBlankCtrl'
+  })
 
-  $routeProvider.otherwise('/home');
+$routeProvider.otherwise('/home');
 
 }]);

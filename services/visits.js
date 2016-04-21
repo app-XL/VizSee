@@ -461,7 +461,7 @@ function getExecsById(id){
     			cscId.push(transform(val.cscPersonnel.industryExec,'Industry Executive'));
     			cscId.push(transform(val.cscPersonnel.globalDelivery,'Global Delivery'));
     			cscId.push(transform(val.cscPersonnel.cre,'CRE'));
-    			client.push({clientName:val.name});
+    			// client.push({clientName:val.name});
     		});
 
              //fectching owner,suppporter from visitScheduler schema

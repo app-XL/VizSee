@@ -102,7 +102,7 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
   $scope.visitGrid=false;
 
   $scope.agendaTab=true;
-  $scope.visitorsTab=true;
+  $scope.visitorsTab=false;
   $scope.finalizeTab=false;
   $scope.notifyTab=false;
   // $scope.errMessage = '';
@@ -297,9 +297,8 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
           $scope.update();
           break;
       } // End of switch scope.mode ends
-
-      // $location.path("visits/list"); 
-      window.history.back();
+       $location.path("visits/list"); 
+     // window.history.back();
   } // End of save method
 
   $scope.create = function() {
@@ -311,7 +310,12 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
     inData.createBy =  $rootScope.user._id;
     
     $http.post('/api/v1/secure/visits', inData).success(function(response) {
+
+    $http.get('/api/v1/secure/email/'+ response._id+'/newvisit').success(function(response) {
+     console.log(response);
+   })
       refresh();
+
       growl.info(parse("visit [%s]<br/>Added successfully", inData.title));
     })
     .error(function(data, status){
@@ -344,8 +348,8 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
   $scope.cancel = function() {
 
     $scope.visits="";
-    // $location.path("visits/list");
-    window.history.back();
+     $location.path("visits/list");
+   // window.history.back();
   }
 
   $scope.getUser = function(){
@@ -367,13 +371,10 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
     $scope.visits.invitees = $scope.arraydata;
 
     $http.put('/api/v1/secure/visits/' + $scope.visits._id, $scope.visits).success(function(response) {
-       // refresh();
+     growl.info(parse("Visit Manager Edited successfully"));
+     $location.path("/visits/"+$scope.visits._id+"/finalize"); 
 
-       growl.info(parse("Visit Manager Edited successfully"));
-
-       $location.path("/visits/"+$scope.visits._id+"/finalize"); 
-
-     })
+   })
   };
 
   $scope.showNotifie= function(status){
@@ -399,7 +400,10 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
    })
 
   }
-
+  $scope.next= function(){
+     $location.path("/visits/"+$scope.visits._id+"/finalize"); 
+    // $scope.visitorsTab=true;
+  }
   $scope.sendAnchor= function(anchor,status){
     $scope.anchorman = anchor;
 

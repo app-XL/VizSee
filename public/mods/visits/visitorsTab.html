@@ -12,12 +12,6 @@
     </thead>
     <tbody class="data-grid-data">
       <tr>
-<!--       <td>
-
-        <input type="email" name="email" ng-model="visitorDef.visitorId" required>
-        <br>
-        <span ng-show="showFlag == 'noUser'" class="error text-danger">{{message}}</span>
-      </td> -->
       <td>
         <!-- <form name="visitorForm"> -->
         <input type="email" name="email" ng-model="visitorDef.visitorId" class="form-control" required>
@@ -30,7 +24,6 @@
          ng-model="visitorDef.influence" 
          ng-options="data for data in influence" class="form-control" required>
        </select>
-       <!-- <pre>selected: {{visitorDef.influence}}</pre> -->
      </td>
      <td><button class="btn btn-primary" ng-click="addvisitor(visitorDef)" ng-disabled="visitorForm.$invalid">Add visitor</button></td>
    </form>
@@ -177,7 +170,7 @@
                   <i class="fa fa-floppy-o"></i>&nbsp;&nbsp;Add Visitor
                 </md-button>
               </div>
-            </form>
+            
           </div>
         </div>
       </div>
