@@ -17,13 +17,13 @@ var visitScheduleSchema = new mongoose.Schema({
 		startTime					: { type: Date, required: true},
 		endTime						: { type: Date, required: true},
 		title						: { type: String, trim: true },
-		location					: { type: String, trim: true, required: true },
+		location					: { type: String, trim: true },
 		desc						: { type: String, trim: true },
 		owner						: { type: Schema.Types.ObjectId, ref: 'User' },
 		supporter					: { type: Schema.Types.ObjectId, ref: 'User' }
 	},
-	invitees						: [{ type: Schema.Types.ObjectId, ref: 'User', required: true }],
-	feedbackTemplate				: { type: Schema.Types.ObjectId, ref: 'feedbackDefs', required: false }
+	invitees						: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+	feedbackTemplate				: { type: Schema.Types.ObjectId, ref: 'feedbackDefs' }
 
 });
 

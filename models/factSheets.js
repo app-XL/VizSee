@@ -19,12 +19,12 @@ var factSheetSchema = new mongoose.Schema({
     address           : { type: Object, required: true },
     strength          : { type: Number },
 
-      facilities        : [{
-        name            : { type: String, trim: true, required: true },
-        address         : { type: String, trim: true },
-        type            : { type: String, trim: true },
-        strength        : { type: Number }
-        }],
+    facilities        : [{
+      name            : { type: String, trim: true, required: true },
+      address         : { type: String, trim: true },
+      type            : { type: String, trim: true },
+      strength        : { type: Number }
+      }],
   }],
 
   editdBy            : { type: Schema.Types.ObjectId, ref: 'User' },

@@ -24,9 +24,7 @@
 					"mode"							:  "multi-choice",
 					"choices"						: 
 						[ 
-							"Yes",
 							"Could have been louder",
-							"No",
 							"Could have been lower"
 						]
 				},
@@ -145,7 +143,7 @@
 				
 				
 				{
-					"query"							: "The presenter spoke clearly and presented well",
+					"query"							: "Is the presenter spoke clearly and presented well",
 					"mode"							:  "multi-choice", 
 					"choices"						: 
 						[ 
@@ -323,7 +321,6 @@
 							"To Know the Progress of CSC into Big Data Analytics ",
 							"To observe the different activities and techniques",
 							"Partnership",
-							"To observe the different activities and techniques",
 							"To know the progress of CSC into Cloud Technologies"
 							
 						]

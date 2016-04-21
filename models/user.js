@@ -22,55 +22,55 @@ var TokenModel = mongoose.model('Token', Token);
 // define the schema for our user model
 var userSchema = mongoose.Schema({
     name             : {
-      prefix         : { type: String, trim: true, required: true },
+      prefix         : { type: String, trim: true },
       first          : { type: String, trim: true, required: true },
       middle         : { type: String, trim: true },
       last           : { type: String, trim: true, required: true },
       suffix         : { type: String, trim: true }
     },
     email            : { type: String, trim: true, required: true },
-    avatar           : { type: String, trim: true, required: true },
+    avatar           : { type: String, trim: true },
     summary          : { type: String, trim: true },
-    jobTitle         : { type: String, trim: true, required: true },
-    organization     : { type: String, trim: true, required: true },
+    jobTitle         : { type: String, trim: true },
+    organization     : { type: String, trim: true },
 		orgRef					 : { type: Schema.Types.ObjectId, ref: 'client' },
-		association			 : {type: String, enum: ['employee', 'partner', 'customer', 'contractor'], trim: true, required: true },
+		association			 : {type: String, enum: ['employee', 'partner', 'customer', 'contractor'], trim: true },
     socialProfile    : [{
       handle         : { type: String, trim: true },
       network        : { type: String, trim: true }
     }],
     contactNo        : [{
-      contactNumber         : { type: String, trim: true, required: true },
-      contactType           : { type: String, trim: true, required: true }
+      contactNumber         : { type: String, trim: true },
+      contactType           : { type: String, trim: true }
     }],
     stats            : {
       dateCreated    : { type: Date},
       dateLastLogin  : { type: Date}
     },
     preferences      : {
-      language       : { type: String, trim: true, required: true }
+      language       : { type: String, trim: true }
     },
     local            : {
         email        : { type: String, trim: true, required: true },
         password     : { type: String, trim: true, required: true }
     },
     facebook         : {
-        id           : { type: String, trim: true, required: true },
-        token        : { type: String, trim: true, required: true },
-        email        : { type: String, trim: true, required: true },
-        name         : { type: String, trim: true, required: true }
+        id           : { type: String, trim: true },
+        token        : { type: String, trim: true },
+        email        : { type: String, trim: true },
+        name         : { type: String, trim: true }
     },
     twitter          : {
-        id           : { type: String, trim: true, required: true },
-        token        : { type: String, trim: true, required: true },
-        displayName  : { type: String, trim: true, required: true },
-        username     : { type: String, trim: true, required: true }
+        id           : { type: String, trim: true },
+        token        : { type: String, trim: true },
+        displayName  : { type: String, trim: true },
+        username     : { type: String, trim: true }
     },
     google           : {
-        id           : { type: String, trim: true, required: true },
-        token        : { type: String, trim: true, required: true },
-        email        : { type: String, trim: true, required: true },
-        name         : { type: String, trim: true, required: true }
+        id           : { type: String, trim: true },
+        token        : { type: String, trim: true },
+        email        : { type: String, trim: true },
+        name         : { type: String, trim: true }
     },
     token            : {type: Object},
     status           : {type: String, default: 'Active'},

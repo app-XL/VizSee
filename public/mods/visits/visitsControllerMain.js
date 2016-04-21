@@ -356,8 +356,13 @@ $scope.editkeynote = function(index,keynoteDef){
   //adding visitor data if not registered user
   $scope.addvisitordata = function(userdata,emailId,influencedata,avatar)
   {
-    //console.log(userdata);
-    console.log(emailId);
+    $scope.contactNo = [];
+    
+    $scope.contactNo.push({
+      contactNumber:userdata.contactNumber,
+      contactType:userdata.contactType
+    })
+    
     if(avatar == '' || avatar == undefined)
     {
       userdata.avatar = '/public/assets/g/imgs/avatar.jpg';
@@ -368,6 +373,7 @@ $scope.editkeynote = function(index,keynoteDef){
     }
     userdata.email = emailId;
     userdata.association = 'customer';
+    userdata.contactNo = $scope.contactNo;
     console.log(userdata);
     $http.post('/api/v1/secure/admin/users/',userdata).success(function(response){
       console.log('POST');
@@ -387,6 +393,10 @@ $scope.editkeynote = function(index,keynoteDef){
     $scope.avatar = '/public/assets/g/imgs/avatar.jpg';
   }
 
+  $scope.cancelButton = function(){
+    $scope.showFlag = "noUser";
+    $scope.message = "";
+  }; 
   // Visit visitor table
 
   $scope.addvisitor=function(visitorDef){

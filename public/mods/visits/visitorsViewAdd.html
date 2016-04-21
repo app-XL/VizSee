@@ -143,6 +143,23 @@
                   
                 </div>
 
+                <!-- {{userdata.contactNo[0].contactNumber}} -->
+                {{userdata.contactType="Mobile";""}}
+                <!-- {{userdata.contactNo}} -->
+                <div class="col-md-12">
+                  <md-input-container class="md-block" flex-gt-sm>
+                  <label>Contact No</label>
+                  <input type="text" md-maxlength="255" minlength="8" required name="contactno" 
+                  ng-model="userdata.contactNumber">
+                  <div ng-messages="profileForm.contactno.$error" ng-show="profileForm.contactno.$touched || !profileForm.contactno.$pristine">
+                   <div class="messagenotify">
+                    <div ng-messages-include="/public/mods/partials/messages.html"></div>
+                    <div ng-message="md-maxlength">The contact no has to be less than 10 characters long.</div>
+                    <div ng-message="minlength">The contact no should contain minimum 10 characters</div></div></div>
+                  </md-input-container>
+                </div>
+
+
                 <div class="col-md-12">
                   <md-input-container class="md-block" flex-gt-sm>
                   <label>Job Title</label>
@@ -168,11 +185,13 @@
                     <div ng-message="minlength">The summary should contain minimum 30characters</div></div></div>
                   </md-input-container>
                 </div>
-                <!-- {{userdata}}
-                {{emailId}} -->
-                  <!-- <button class="btn btn-primary pull-right" ng-click="addvisitordata(userdata,emailId,influencedata,avatar)" ng-disabled="profileForm.$invalid">
-                    <i class="fa fa-floppy-o"></i>&nbsp;&nbsp;Add Visitor
-                  </button> -->
+
+                  <md-button class="md-warn md-raised pull-right" 
+                  ng-click="cancelButton()" confirm-dialog header-text="Cancel Add Visitor??" content="Are you sure you want to proceed without adding visitor? </b>"
+                  yes-text="Ok" no-text="Cancel">
+                  <i class="fa fa-floppy-o"></i>&nbsp;&nbsp;Cancel
+                </md-button> 
+                
                   <md-button class="md-primary md-raised pull-right" ng-click="addvisitordata(userdata,emailId,influencedata,avatar)" ng-disabled="profileForm.$invalid">
                   <i class="fa fa-floppy-o"></i>&nbsp;&nbsp;Add Visitor
                 </md-button>

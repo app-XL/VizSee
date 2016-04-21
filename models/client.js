@@ -8,7 +8,7 @@ var clientSchema = new mongoose.Schema({
 	name 							: { type: String, trim: true, required: true },
 	vertical						: { type: String, trim: true, required: true },
 	profile							: { type: String, trim: true, required: true },
-	logo							: { type: String, trim: true, required: true },
+	logo							: { type: String, trim: true },
 	createOn						: { type: Date, default: Date.now },
 	competitors 					: [{ type: String, trim: true }],
 	regions 						: [{ type: String, trim: true, required: true }],

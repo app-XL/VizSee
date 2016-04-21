@@ -9,7 +9,7 @@ var groupSchema = new mongoose.Schema({
 
 	name 							: { type: String, trim: true, required: true },
 	description						: { type: String, trim: true, required: true },
-	users 							: [{ type: Schema.Types.ObjectId, ref: 'User', required: true }]
+	users 							: [{ type: Schema.Types.ObjectId, ref: 'User' }]
 	
 });
 
