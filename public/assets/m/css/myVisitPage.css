@@ -10,7 +10,7 @@
 }
 
 .searchViewHead{
-   padding-left: 20px;
+   padding-left: 0px;
 }
 
 .dropdown-menu{
@@ -22,12 +22,12 @@
     margin-top: 15px;
 }
 .visitlinks a{
-    color: purple;
+    color: black;
     font-weight: bold;
 }
 .fonticon1{
   font-size:20px;
-  color: purple;
+  color: black;
 }
 
 .my-visit-header {
@@ -80,14 +80,49 @@ button {
     background-color: #fff;
 }
 img {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
 }
 .drop-down-img {
     width: 5px;
     height: 5px;
     margin-left: 10px;
 }
+.visitbatch{
+color : black;
+}
+.sandwich:before {
+    content: "\f078"; 
+    font-family: FontAwesome;
+    color:gray;
+    height: 12px;
+    width: 12px;
+    background-size: 18px;
+    margin-top: 30px;
+    padding: 0;
+    margin-left: 25px;
+
+   
+
+}
+.rotateicon{
+    /*background: url('up-arrow.png') no-repeat;
+    background-size: 18px;*/
+    content: "\f078"; 
+    font-family: FontAwesome;
+    color:green;
+    height: 12px;
+    width: 12px;
+    background-size: 18px;
+    margin-top: 0px;
+    padding: 0;
+    margin-left: 0px;
+    padding-right: -30px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
 
 .sortByDropDown {
     float: right;
@@ -97,7 +132,8 @@ img {
 
     font-family: robotoRegular;
     font-size: 0.8em;
-    margin-top: -1px;}
+    margin-top: -1px;
+}
     ul {
         margin-bottom: 0px;
     }
@@ -209,14 +245,15 @@ img {
 
 }
 .sessionday{
-    color: blue;
+    color: #939393;
     font-size: 12px;
 
 }
 .sessionrole{
     font-family: robotoRegular;
     font-size: 14px;
-    padding-right: 30px;
+    padding-right: 0px;
+    padding-top: 2px;
 }
 .sessiontime{
     font-family: robotoRegular;
@@ -260,12 +297,12 @@ margin-left: 0px;
     border-bottom: #D3D3D3 solid 0.5px;
 }
 .sessiontitle{
-    color: red;
-    font-size: 14px;
+
+   font-size: 14px;
 
 }
 .sessionday{
-    color: blue;
+
     font-size: 10px;
 
 }
@@ -284,6 +321,9 @@ margin-left: 0px;
 .presenterimg{
     width:10px;
     height:10px;
+}
+.sessionrole img{
+
 }
 .upcoming-sessions {
     border-top: #b5b5b5 solid 1px;
@@ -317,12 +357,10 @@ img {
     border-bottom: #D3D3D3 solid 0.5px;
 }
 .sessiontitle{
-    color: red;
     font-size: 14px;
 
 }
-.sessionday{
-    color: blue;
+.sessionday{;
     font-size: 10px;
 
 }
@@ -338,10 +376,7 @@ img {
 .yp{
     font-family: robotoRegular;
 }
-.presenterimg{
-  width:10px;
-  height:10px;
-}
+
 .upcoming-sessions {
     border-top: #b5b5b5 solid 1px;
     padding: 10px 0;

@@ -6,7 +6,7 @@
             <i class="fa fa-search fonticon1"></i>
             <input type="text" placeholder="Search" ng-model="$parent.query" />
 
-            <div class="pull-right">{{visitBatch.start | date:"dd MMM"}} - {{visitBatch.end | date:"dd MMM"}} ({{visitBatch.visits.length}})
+            <div class="visitbatch pull-right">{{visitBatch.start | date:"dd MMM"}} - {{visitBatch.end | date:"dd MMM"}} ({{visitBatch.visits.length}})
 
                 <div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                     <i class="fa fa-th-large fonticon1"></i>
@@ -38,8 +38,8 @@
         <div ng-repeat="visit in visitBatch.visits | filter: query" class="visit-card">
 
             <div> <div class="visitlinks">
-                <h3><a href="#/sessions/{{visit._id}}" >{{visit.title}}</a><br>
-                <a href="/m/main/#/clientInfo/id/{{visit.client._id}}">{{visit.client.name}}</a></h3>
+                <h3><a href="#/sessions/{{visit._id}}" >{{visit.title}}</a><br></h3>
+                <h5><a href="/m/main/#/clientInfo/id/{{visit.client._id}}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;{{visit.client.name}}</a></h5>
                 </div>
                 <div class="dropdown pull-right">
                     <div class="dropdown-toggle" type="button" data-toggle="dropdown">
@@ -67,32 +67,35 @@
                 <i class="fa fa-map-marker"></i> {{visit.locations}}
 
                 <div class="upcoming-sessions">
-                    <span class="yp">Your Participation</span>
+                    <span class="yp" >Your Participation</span>
+                    <span class="sandwich pull-right" ng-class="{'rotateicon':showDetails}" ng-click="showDetails = ! showDetails"></span>
 
-                    <div ng-repeat="item in visit.involved">
+                    <div ng-repeat="item in visit.involved" ng-show="showDetails">
 
                         <div ng-click="getSession(item)">
                        
+                         <br>
+                            <div class="sessiondiv">
 
-                            <p class="sessiondiv">
-
-                                <div > <span class="sessionday">{{item.startTime | DateFormat:"ddd, DD MMM"}}</span>
-                                    <span class="sessiontitle">  &nbsp;&nbsp;{{item.title}}</span>
+                                <div >
+                                 <span class="sessionday">{{item.startTime | DateFormat:"ddd, DD MMM"}}</span>
+                                    <br>
+                                <span class="sessiontitle"> {{item.title}}</span>
 
                                 </div>
 
-                                <span class="sessiontime pull-left">
-                               {{item.startTime | date : "HH:mm"}}&nbsp;
+                                <div class="sessiontime pull-left">
+                               {{item.startTime | date : "HH:mm"}}&nbsp;-
                                 {{item.endTime | duration:item.startTime}}
-                               </span>
-
-                                <span class="pull-right">
-                               <span class="sessionrole">
+                               </div>
+                             <br>
+                                <div class="sessionrole">
+                             
                                  <img class="presenterimg" src="/public/assets/m/rem/presenter-icon.png">
-                                  {{item.role}} for {{item.type}}</span>
+                                  {{item.role}} for {{item.type}}</div>
                                   <i class="fa fa-angle-right pull-right"></i>
-                                        </span>
-                            </p>
+                                       
+                            </div>
                         </div>
                     </div>
                  </div>   

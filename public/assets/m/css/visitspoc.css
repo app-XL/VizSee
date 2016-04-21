@@ -20,6 +20,7 @@
         display: inline-block;
         padding: 10px;
         box-shadow: 2px 2px 2px #c1c1c1;
+        width: 98%;
     }
         .heading1 {
             padding-top: 30px;

@@ -22,6 +22,7 @@ var factSheets				=	require(constants.paths.controllers + '/api/factSheets');
 var teasers					=	require(constants.paths.controllers + '/api/teasers');
 var contactList			=	require(constants.paths.controllers + '/api/contactList');
 var feedbacks				=	require(constants.paths.controllers + '/api/feedbacks');
+var emails					=	require(constants.paths.controllers + '/api/emails');
 
 /*
  * Routes that can be accessed by any one
@@ -154,5 +155,7 @@ router.get('/api/v1/secure/feedbacks/:id', feedbacks.getOneById);
 router.post('/api/v1/secure/feedbacks', feedbacks.create);
 router.put('/api/v1/secure/feedbacks/:id', feedbacks.updateById);
 router.delete('/api/v1/secure/feedbacks/:id', feedbacks.deleteById);
+
+router.get('/api/v1/secure/email/:id/:action', emails.sendMails);
 
 module.exports = router;

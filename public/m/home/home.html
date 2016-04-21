@@ -24,18 +24,22 @@
      <location-picker ng-model="pickedLocation" limit-to="1"></location-picker>
 
  </div>
+   
  <div class="scroll-outer">
     <div class="load" ng-show="loading"><img src="/public/assets/m/img/bg/ajax-loading.gif"/></div>
     <div id="scrollBox" align="center" class="scroll-inner">
         <div ng-repeat="objs in dayHighlighter">
+            
             <fieldset>
-                <span class="day">Day {{objs.day}}</span>
+                 <a href="#/sessions/{{value}}/?day={{objs.day}}">
+                 <span class="day">Day {{objs.day}}</span></a>
                 <span class="date"> {{objs.date | date : "dd MMM yyyy"}}<br>
                     <img ng-src="{{objs.climate.icon}}"/></span>
                     <span class="dayLike">{{objs.climate.daylike}}</span><br>
                     <span class="temp" >{{objs.climate.temperature}}&deg;C</span>
                     <h4> <span class="loc">{{objs.location}}</span></h4>
                 </fieldset>
+                
             </div>
         </div>
     </div>

@@ -7,27 +7,44 @@
 </div>
 
 <div class="detailsT">
-   <video id="welcomeT"  controls  autoplay muted>
-    <source src="/public/uploads/video/message.mp4" type="video/mp4">
-  </video>
-    <br>
-    <br>
-    <p class="text">Enterprise mobility management (EMM) is the set of people, processes and technology focused on managing mobile devices, wireless networks, and other mobile computing services in a business context. As more workers have bought smartphone and tablet computing devices and have sought support for using these devices in the workplace, EMM has become increasingly significant.
+  {{url=thankyouResponse[order].attachment;""}}
+  {{fileExt=url.split(".").pop();""}}
 
+  <div ng-if="fileExt == 'mp4' || fileExt == 'mkv' || fileExt == 'avi' || fileExt == 'wmv'">
+    <video id="welcome"  controls  autoplay muted ng-src="{{url}}" 
+    type="video/fileExt">
+    </video>
+  </div>
+
+  <div ng-if="fileExt =='jpg' || fileExt=='png' || fileExt=='gif' || fileExt=='jpeg'">
+    <img ng-src="{{url}}" class="image1" />
+  </div>
+
+  <div ng-if="fileExt =='mp3' || fileExt=='wav' || fileExt=='aac'">
+    <audio id="audio"  controls  autoplay muted ng-src="{{url}}" 
+    type="audio/fileExt">
+    </audio>
+  </div>
+
+    <br>
+    <br>
+    <p class="text">  
+     <div style="overflow-y: auto; height:100px; width:850px">
+       <richtext class="text" body-text="thankyouResponse[order].noteText">
+       </richtext>
+     </div>
     </p>
     <hr>
 
     <div class="profileT">
         <div class="pull-left">
-            <img src="/public/assets/g/imgs/avatar.jpg" class="img-thumbnail userpicT"> 
+            <img ng-src="{{user.avatar}}" class="img-thumbnail userpicT"> 
         </div>
         <div class="panelpdmdT">
-            <div class="text-highlight">jon brace</div>
-            <div class="text-xsmall">jonb@gmail.com</div>
-            <div class="text-xsmall">CEO </div>
-            <div class="text-xsmall">csc</div>
-
-
+            <div class="text-highlight">{{user.name.first}} {{user.name.last}}</div>
+            <div class="text-xsmall">{{user.email}}</div>
+            <div class="text-xsmall">{{user.jobTitle}}</div>
+            <div class="text-xsmall">{{user.organization}}</div>
         </div>       
     </div>
 

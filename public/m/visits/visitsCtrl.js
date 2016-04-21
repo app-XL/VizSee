@@ -27,12 +27,13 @@ angular.module('visits')
 	  $scope.getSession = function(item1){
 	  	console.log('helow'+item1);
 	  	console.log('helow'+item1.type);
-	  	 if(item1.type=== "visit"){
-       $location.path("/sessions/" +item1.id);}
-       else{
-   $location.path("sessions/" +item1.id+"/details");
+	  	 if(item1.type === "Visit"){
+            $location.path("/sessions/" +item1.id);}
+         else{
+            $location.path("sessions/" +item1.id+"/details");
     }
   }
+         
 
   $http.get('/api/v1/secure/visits/all/my').success(function(response) {
 	    $scope.allVisits = response;
@@ -44,5 +45,7 @@ angular.module('visits')
 
 			console.log(JSON.stringify($scope.visitBatch,null,2));
 		}
-	);
+	)
+
+ 
 })

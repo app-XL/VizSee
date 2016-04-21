@@ -1,17 +1,16 @@
-<!-- <link rel="stylesheet" href="/public/assets/w/styles/feedbackPage.css" /> -->
 <script src="https://code.angularjs.org/1.2.0/angular-animate.min.js" ></script>
 <style>
 #feedback-section
 {
-    background-color: #f1f1f1;
+    background-color: #f8f8f8;
     font-family: robotoRegular;
-    color: black;
+    color: #888;
     font-size: 0.76em;
     position: relative;
 }
 
 .feedback-form {
-  padding: 25px 0px;
+  padding: 25px;
   text-align: left;
   -webkit-box-shadow: inset 0 18px 20px -25px #c5c5c5;
   -moz-box-shadow: inset 0 18px 20px -25px #c5c5c5;
@@ -57,39 +56,10 @@ textarea {
   outline: none
 }
 
-/*label {
-  font-weight: normal;
-  margin-bottom: 0px;
-  margin-right: 7px;
-}
-
-input {
-  margin-right: 5px;
-  margin-top: 0px;
-  vertical-align: middle;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #fff;
-  border-radius: 0px;
-  border: 1px solid #D6D6D6;
-  width: 10px;
-  height: 10px;
-  cursor: pointer;
-  outline: none
-}*/
-
 input[type=checkbox]:after {
   content: " ";
   display: inline-block;
   visibility: visible;
-}
-
-input[type=checkbox]:checked:after {
-  content: "\f00c";
-  font-size: 0.75em;
-  font-family: FontAwesome;
-  vertical-align: text-top;
 }
 
 .star-ratings-div {
@@ -126,7 +96,7 @@ label.star:before {
   font-weight: normal;
 }
 
-button {
+input[type=submit] {
   height: 30px;
   width: 125px;
   color: white;
@@ -171,45 +141,44 @@ button {
 
                 <form>
                 <div class="comments-div" ng-if="item.mode == 'freetext'">  
-                  <div class="comments-input">					
+                  <div class="comments-input">          
                     <textarea placeholder="Write here..." ng-model="feedbackModel.item[index].answer"></textarea>
                   </div>  
                 </div>
                 </form>
 
                 <form>
-                <div class="checkbox-div" ng-if="item.mode == 'single-choice'">  					
-                 <label class="radio-inline" ng-repeat="choice in item.choices">
-                   <input type="radio" name="choice" ng-model="feedbackModel.item[index].answer" value="{{choice}}"/>
-                   {{choice}}  	
+                <div class="checkbox-div" ng-if="item.mode == 'single-choice'">           
+                 <label ng-repeat="choice in item.choices">
+                   <li style="list-style: none; "><input type="radio" name="choice" ng-model="feedbackModel.item[index].answer" value="{{choice}}"/>
+                   {{choice}}&nbsp;&nbsp;&nbsp;</li>   
                  </label>
                </div>
                </form>
 
                <form>
-               <div class="checkbox-div" ng-if="item.mode == 'multi-choice'">            					
-                <label class="checkbox-inline" ng-repeat="choice in item.choices">
-                  <input type="checkbox" name="choice" class="checkbox-input" ng-checked="selection.indexOf(choice) > -1" ng-click="toggleSelection(choice,index)"/>
-                  {{choice}}
+               <div class="checkbox-div" ng-if="item.mode == 'multi-choice'">                     
+                <label ng-repeat="choice in item.choices">
+                  <li style="list-style: none; "><input type="checkbox" name="choice" class="checkbox-input" ng-checked="selection.indexOf(choice) > -1" ng-click="toggleSelection(choice,index)"/>
+                  {{choice}}&nbsp;&nbsp;&nbsp;</li>
                 </label>      
               </div>
               </form>
         </div>
-         <button type="submit" ng-click="submit(feedbackData)">SUBMIT</button>
+         <input type="submit" ng-click="submit()"></input>
       </div>
+      <toaster-container toaster-options="{'time-out': 3000, 'close-button':false, 'animation-class': 'toast-center'}"></toaster-container>
       </form>
-          <div class="submit-success-text">Feedback submitted successfully</div>
+      <div class="submit-success-text">Feedback submitted successfully</div>
 
-<!--       <md-button class="md-primary md-raised" ng-click="submit(feedbackData)">
-      Submit
-    </md-button> -->
   </div>
+
 </ANY>
 
   <ANY ng-switch-when="noFeedback">
-	  <div class="text-danger" style="width:180px;!important;">
-			Feedback not found!!!
-		</div>
+    <div class="text-danger" style="width:180px;!important;">
+      Feedback not found!!!
+    </div>
   </ANY>
 
   <ANY ng-switch-default>
@@ -219,4 +188,3 @@ button {
  </ANY>
 </ANY>
 
-<toaster-container toaster-options="{'time-out': 3000, 'close-button':false, 'animation-class': 'toast-center'}"></toaster-container>

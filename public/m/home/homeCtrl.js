@@ -3,13 +3,16 @@
 var app = angular.module('home');
 
 app.controller('homeCtrl', function ($scope, location, $routeParams, $http) {
-
+		$scope.value=$routeParams.id;
+           
 	location.get(angular.noop, angular.noop);
 	$scope.loading = true;
 	$http.get('/api/v1/secure/visits/'+$routeParams.id+'/schedules').success(function(response) {
         //console.log(response);
         $scope.dayHighlighter = response;
         $scope.loading = false;
+           
+          console.log($scope.dayHighlighter);
     })
 });
 
@@ -51,9 +54,21 @@ app.controller('welcomeCtrl', ['$scope', 'location','$http','$routeParams', func
 	}
 }]);
 
-app.controller('thankyouCtrl', ['$scope', 'location', function ($scope, location) {
-
+app.controller('thankyouCtrl', ['$scope', 'location', '$http', function ($scope, location, $http) {
+	console.log("Thank You Controller Running");
+	$scope.order = 0;
+	$http.get('/api/v1/secure/visits/current/keynotes').success(function(response) {
+		console.log(response[1]);
+		$scope.thankyouResponse = response[1];
+		// $scope.length = $scope.welcomeResponse.length - 1;
+		$scope.user_id = $scope.thankyouResponse[0].noteBy;
+		$http.get('/api/v1/secure/admin/users/' + $scope.user_id).success(function(response) 
+		{
+			$scope.user = response;
+		})
+	})	
 }]);
+
 app.controller('homeBlankCtrl', ['$scope', '$routeParams', '$http', '$location', function ($scope, $routeParams, $http, $location) {
 	$http.get('/api/v1/secure/visits/all/activeVisit').success(function(response) {
 		$location.path("home/" + response.visits._id);

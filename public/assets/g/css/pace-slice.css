@@ -24,7 +24,6 @@
 }
 
 .pace.pace-active .pace-activity {
-   filter: blur 5px;
   -webkit-transform: translateX(50%) translateY(-50%) rotate(45deg);
   transform: translateX(50%) translateY(-50%) rotate(45deg);
 }

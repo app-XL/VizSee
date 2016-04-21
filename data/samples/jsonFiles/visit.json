@@ -11,11 +11,11 @@
 		"agm"					: ObjectId("A02234567892345678900006"),
 
 		"anchor"				: ObjectId("A02234567892345678900004"),
-		
+
 		"startDate"			: { "$date" : "2016-04-01T09:00:00.000Z"} ,
 		"endDate"				: { "$date" : "2016-04-01T19:00:00.000Z"} ,
 		"locations"			: "Hyderabad",
-		
+
 		"schedule"			:
 			[
 				{
@@ -48,10 +48,10 @@
 
 		"status"					:  "tentaive",
 		"createBy"			: ObjectId("A02234567892345678900009"),
-		
+
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900001"),
 		"sessionTmpl"						: ObjectId("A10234567892345678900005"),
-		"invitees"						: 
+		"invitees"						:
 			[
 				ObjectId("A02234567892345678900010")
 			]
@@ -73,11 +73,11 @@
 		"agm"					: ObjectId("A02234567892345678900005"),
 
 		"anchor"				: ObjectId("A02234567892345678900011"),
-	
+
 		"startDate"			: { "$date" : "2016-04-14T08:00:00.000Z"} ,
 		"endDate"				: { "$date" : "2016-04-14T19:00:00.000Z"} ,
 		"locations"			: "Bangalore",
-		
+
 		"schedule"			:
 			[
 				{
@@ -110,10 +110,10 @@
 
 		"status"					:  "confrimed",
 		"createBy"			: ObjectId("A02234567892345678900008"),
-		
+
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900002"),
 		"sessionTmpl"						: ObjectId("A10234567892345678900004"),
-		"invitees"						: 
+		"invitees"						:
 			[
 				ObjectId("A02234567892345678900009")
 			]
@@ -137,11 +137,11 @@
 		"agm"					: ObjectId("A02234567892345678900004"),
 
 		"anchor"				: ObjectId("A02234567892345678900010"),
-		
+
 		"startDate"			: { "$date" : "2016-05-02T09:00:00.000Z"} ,
 		"endDate"				: { "$date" : "2016-05-02T20:00:00.000Z"} ,
 		"locations"			: "Chennai",
-		
+
 		"schedule"			:
 			[
 				{
@@ -174,10 +174,10 @@
 
 		"status"					:  "closed",
 		"createBy"			: ObjectId("A02234567892345678900007"),
-		
+
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900003"),
 		"sessionTmpl"						: ObjectId("A10234567892345678900002"),
-		"invitees"						: 
+		"invitees"						:
 			[
 				ObjectId("A02234567892345678900005")
 			]
@@ -199,12 +199,12 @@
 
 		"agm"					: ObjectId("A02234567892345678900003"),
 
-		"anchor"				: ObjectId("A02234567892345678900009"),
-		
+		"anchor"				: ObjectId("A02234567892345678900004"),
+
 		"startDate"			: { "$date" : "2016-04-21T08:30:00.000Z"} ,
 		"endDate"				: { "$date" : "2016-04-22T20:30:00.000Z"} ,
 		"locations"			: "Bangalore",
-		
+
 		"schedule"			:
 			[
 				{
@@ -244,11 +244,11 @@
 
 		"status"					:  "closed",
 		"createBy"			: ObjectId("A02234567892345678900004"),
-		
+
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900004"),
 		"sessionTmpl"						: ObjectId("A10234567892345678900003"),
-		
-		"invitees"						: 
+
+		"invitees"						:
 			[
 				ObjectId("A02234567892345678900010"),
 				ObjectId("A02234567892345678900005")
@@ -272,11 +272,11 @@
 		"agm"					: ObjectId("A02234567892345678900001"),
 
 		"anchor"				: ObjectId("A02234567892345678900007"),
-		
+
 		"startDate"			: { "$date" : "2016-04-18T08:00:00.000Z"} ,
 		"endDate"				: { "$date" : "2016-04-20T20:00:00.000Z"} ,
 		"locations"			: "Mumbai,Hyderabad,Noida",
-		
+
 		"schedule"			:
 			[
 				{
@@ -323,12 +323,12 @@
 
 		"status"					:  "confrimed",
 		"createBy"			: ObjectId("A02234567892345678900010"),
-		
+
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900005"),
 		"sessionTmpl"						: ObjectId("A10234567892345678900001"),
-		"invitees"						: 
+		"invitees"						:
 			[
-			
+
 				ObjectId("A02234567892345678900021"),
 				ObjectId("A02234567892345678900008"),
 				ObjectId("A02234567892345678900021")
@@ -345,7 +345,7 @@
 		"_id"						: ObjectId("A01234567892345678900006"),
 
 		"title"					: "Test data visit 11 Apr-15 Apr",
-		
+
 		"client" 					: ObjectId("A03234567892345678900005"),
 
 		"agenda"				: "New Client",
@@ -353,7 +353,7 @@
 		"agm"					: ObjectId("A02234567892345678900002"),
 
 		"anchor"				: ObjectId("A02234567892345678900008"),
-		
+
 
 		"startDate"			: { "$date" : "2016-04-25T08:00:00.000Z"} ,
 		"endDate"				: { "$date" : "2016-04-29T20:00:00.000Z"} ,
@@ -367,7 +367,7 @@
 					"endDate"			: { "$date" : "2016-04-26T20:00:00.000Z"} ,
 					"location"			: "Hyderabad"
 				},
-				
+
 				{
 
 					"startDate"		: { "$date" : "2016-04-27T08:00:00.000Z"} ,
@@ -394,7 +394,7 @@
 					"visitor"			: ObjectId("A02234567892345678900019"),
 					"influence"		: "Influencer"
 				},
-				
+
 				{
 					"visitor"			: ObjectId("A02234567892345678900020"),
 					"influence"		: "Others"
@@ -410,10 +410,10 @@
 
 		"status"					:  "Confirmed",
 		"createBy"			: ObjectId("A02234567892345678900011"),
-		
+
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900003"),
 		"sessionTmpl"						: ObjectId("A10234567892345678900005"),
-		"invitees"						: 
+		"invitees"						:
 			[
 				ObjectId("A02234567892345678900023"),
 				ObjectId("A02234567892345678900009"),

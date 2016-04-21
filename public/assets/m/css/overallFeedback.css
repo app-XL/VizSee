@@ -24,7 +24,7 @@ input.star:checked ~ label.star:before {
     content: '\f005';
     color: #F3C227;
 }
-.checkbox-input input {
+input[type=checkbox] {
     margin-right: 5px;
     margin-top: 0px;
     vertical-align: middle;

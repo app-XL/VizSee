@@ -4,8 +4,6 @@ angular.module('feedbackDirective', ['ngRateIt','ngAnimate', 'toaster'])
 
 .controller('feedbackDirectiveControllerMain', ['$scope', '$http','$rootScope','$timeout','toaster', function($scope, $http, $rootScope,$timeout,toaster) {
 
-  // console.log($scope.feedbackId);
-  // console.log($scope.visitId);
   if($scope.feedbackModel === undefined || $scope.feedbackModel === "")
     $scope.showFlag = "none";
   else
@@ -32,70 +30,6 @@ angular.module('feedbackDirective', ['ngRateIt','ngAnimate', 'toaster'])
         console.log("error with feedback directive");
     });
   }
-
-// function longestCommonSubstring(str1, str2){
-//   if (!str1 || !str2)
-//     return {
-//       length: 0,
-//       sequence: "",
-//       offset: 0
-//     };
-
-//   var sequence = "",
-//     str1Length = str1.length,
-//     str2Length = str2.length,
-//     num = new Array(str1Length),
-//     maxlen = 0,
-//     lastSubsBegin = 0;
-
-//   for (var i = 0; i < str1Length; i++) {
-//     var subArray = new Array(str2Length);
-//     for (var j = 0; j < str2Length; j++)
-//       subArray[j] = 0;
-//     num[i] = subArray;
-//   }
-//   var thisSubsBegin = null;
-//   for (var i = 0; i < str1Length; i++)
-//   {
-//     for (var j = 0; j < str2Length; j++)
-//     {
-//       if (str1[i] !== str2[j])
-//         num[i][j] = 0;
-//       else
-//       {
-//         if ((i === 0) || (j === 0))
-//           num[i][j] = 1;
-//         else
-//           num[i][j] = 1 + num[i - 1][j - 1];
-
-//         if (num[i][j] > maxlen)
-//         {
-//           maxlen = num[i][j];
-//           thisSubsBegin = i - num[i][j] + 1;
-//           if (lastSubsBegin === thisSubsBegin)
-//           {//if the current LCS is the same as the last time this block ran
-//             sequence += str1[i];
-//           }
-//           else //this block resets the string builder if a different LCS is found
-//           {
-//             lastSubsBegin = thisSubsBegin;
-//             sequence= ""; //clear it
-//             sequence += str1.substr(lastSubsBegin, (i + 1) - lastSubsBegin);
-//           }
-//         }
-//       }
-//     }
-//   }
-//   return {
-//     length: maxlen,
-//     sequence: sequence,
-//     offset: thisSubsBegin
-//   };
-// }
-
-// function reverseString(str) {
-//     return str.split('').reverse().join('');
-// }
 
 var arrayContains = Array.prototype.indexOf ?
     function(arr, val) {
@@ -147,24 +81,18 @@ function arrayIntersection() {
  }
 
   $scope.submit = function() {
-
+    
     deleteData();
     providedById = $rootScope.user._id;
     $scope.feedbackModel.visitid = $scope.visitId;
     $scope.feedbackModel.template = $scope.feedbackId;
     $scope.feedbackModel.providedBy = providedById;
     $scope.feedbackModel.feedbackOn = $scope.feedbackModel.type;
+    $scope.feedbackModel.sessionid = $scope.sessionId;
 
-    delete $scope.feedbackModel.type;
-    console.log($scope.feedbackModel);
     $http.post('/api/v1/secure/feedbacks/', $scope.feedbackModel).success(function(response) {
-      console.log(response);
     })
 
-    var myEl = angular.element(document.getElementsByClassName('feedback-form'));
-    myEl.css('display', 'none');
-    var myEl2 = angular.element(document.getElementsByClassName('submit-success-text'));
-    myEl2.css('display', 'block');
     showSuccessMessage();
   };
 
@@ -185,17 +113,13 @@ function arrayIntersection() {
       }
 
       var answerChoice = arrayIntersection( $scope.feedbackModel.item[index].choices.toString().split(","),$scope.selection.toString().split(","));
-      //var multiAnswerChoice = longestCommonSubstring($scope.feedbackModel.item[index].choices.toString(),$scope.selection.toString());
-      //console.log(multiAnswerChoice.sequence);
-      console.log(answerChoice.toString());
       $scope.feedbackModel.item[index].answer = answerChoice.toString();
     };
 
 function showSuccessMessage()
 {
-  toaster.info({title: "Thank You Note", body:"Thank you for your valuable feedback."});
+  toaster.pop({title: "Thank You Note", body:"Thank you for your valuable feedback."});
 }
-
 }])
 
 .directive('feedback', function() {
@@ -205,7 +129,8 @@ function showSuccessMessage()
     scope: {
       feedbackModel: "=feedbackModel",
       feedbackId: "=feedbackId",
-      visitId: "=visitId"
+      visitId: "=visitId",
+      sessionId: "=sessionId"
     },
 
 };

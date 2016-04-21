@@ -27,10 +27,10 @@
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
 				"email"				: "admin@gmail.com"
 			},
-		
+
 		"summary"		: "Ar. Admin is the admin for this application.",
 		"jobTitle"			: "Admin",
-		"organization"	: "CSC",	
+		"organization"	: "CSC",
 		"orgRef"			: "",
 		"association"		: "employee",
 		"socialProfile"	:
@@ -69,13 +69,13 @@
 
 	{
 				"_id"				: ObjectId("A02234567892345678900001"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -87,7 +87,7 @@
 			"email"				: "sgoud0099@gmail.com",
 
 			"avatar"			:  "/public/uploads/profilePics/shiva.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -97,51 +97,51 @@
 			"summary"		: "Dr. Shiva Kumar is a partner in CSC’s Big Data and Analytics practice. He is a results-oriented data scientist with 15 years as an analytics subject matter expert. He is experienced in the design and execution of data-driven business strategy using analytics to drive results.",
 			"jobTitle"			: "Sr. Principal",
 			"organization"	: "CSC",
-			
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=652752",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "864 643-0563",
 						"contactType"			: "mobile"
 					}
 				],
-				
+
 			"memberOf"			: ""
 	},
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900002"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -153,7 +153,7 @@
 			"email"				: "spediripatti@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/spediripatti.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -162,50 +162,50 @@
 
 			"summary"		: " Proven ability in Building and leading teams, Engineering Program Management, Agile product development",
 			"jobTitle"			: "Chief Technical Officer",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sumangoud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
-					{ 
+
+					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=635979",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9167629823",
 						"contactType"			: "mobile"
 					}
 				],
-			
+
 			"memberOf"			: ""
 	},
 
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900003"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -217,7 +217,7 @@
 			"email"				: "spediri0099@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/spediri.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -226,24 +226,24 @@
 
 			"summary"		: " 8 years of work experience in Organizational Development, Training & Development and Executive Coaching, currently conducting need based training programs for Engineering, PG students & Employees",
 			"jobTitle"			: "Senior Executive Officer",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sumanperiri15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=667979",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9354629823",
@@ -252,20 +252,20 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900004"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -277,7 +277,7 @@
 			"email"				: "rwilliams00991@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/rwilliams.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -286,24 +286,24 @@
 
 			"summary"		: " 10+ years of experience in the field of HR with exposure to Learning & Development, Induction/Orientation, Data Management, HRIS, Employee Engagement, Joining formalities and Campus Recruitment",
 			"jobTitle"			: "Chief  Executive Officer",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sumanperiri15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=667979",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9354629823",
@@ -312,20 +312,20 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900005"),
-			
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-			
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -337,7 +337,7 @@
 			"email"				: "kbhagya0099@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/kbhgya.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -346,24 +346,24 @@
 
 			"summary"		: " 8+ year experience in Learning &Talent Management Function in the IT, ITES & CRO Multi-National Companies.",
 			"jobTitle"			: "Senior Executive",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/kbhgya115?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=635699",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "5783629823",
@@ -372,21 +372,21 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900006"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -398,7 +398,7 @@
 			"email"				: "akumar@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/akumar.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -407,24 +407,24 @@
 
 			"summary"		: " Possess excellent leadership and people management skills and subject matter expertise on Learning and Development function. Have been instrumental in setting up the L&D function in my curent assignment",
 			"jobTitle"			: "Junior Executive Officer",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sgoud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=636779",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9162849823",
@@ -433,23 +433,23 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-	
-		
+
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900007"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -461,7 +461,7 @@
 			"email"				: "rgundala@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/rgundala.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -470,49 +470,49 @@
 
 			"summary"		: "5 yrs of exp in Telecom/ISP(Technical Support/Network Administration ) and have got an opportunity to work on different skill sets like DSL,IPMPLS,ISDN ,ATM,Frame relay issues.",
 			"jobTitle"			: "Network Engineer",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/rajeshgoud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=632379",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "8121629823",
 						"contactType"			: "mobile"
 					}
-				],	
+				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-	
-		
+
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900008"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -524,7 +524,7 @@
 			"email"				: "ayapa@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/ayapa.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -533,24 +533,24 @@
 
 			"summary"		: " Information Technology, Strategy & Operations Executive with over 20 years of experience in Strategy, Governance, Innovative Business Process, Operations & Technology",
 			"jobTitle"			: "Director CIO",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sashokoud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=115979",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9700629823",
@@ -559,22 +559,22 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-		
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900009"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -583,10 +583,10 @@
 					"last"		:  "Jyothi",
 					"suffix"		:  ""
 				},
-			"email"				: "ksigamani@gmail.com",
+			"email"				: "ksigamani0099@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/ksigamani.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -595,24 +595,24 @@
 
 			"summary"		: " Sigamani is a technology enthusiast, futurist, researcher and author who is an expert in artificial intelligence (AI) and other disruptive technologies.",
 			"jobTitle"			: "Chief Technology Officer",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/ssdgusgfd15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=637879",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9167673723",
@@ -621,24 +621,24 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-	
-	
-		
+
+
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900010"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -650,7 +650,7 @@
 			"email"				: "dkammutam@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/dkammutam.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -659,24 +659,24 @@
 
 			"summary"		: " Calling himself the “Everything Else Guy,” Heis a performance engineer whose wide-ranging technical expertise ensures that systems perform, are secure, fail over, and are easy to operate and troubleshoot.",
 			"jobTitle"			: "Chairman",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/ssaydfyadud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=638879",
 						"network"		: "Zurich My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9768624223",
@@ -685,24 +685,24 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 		{
 				"_id"				: ObjectId("A02234567892345678900011"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -714,7 +714,7 @@
 			"email"				: "lchris0099@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/lchris.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -723,24 +723,24 @@
 
 			"summary"		: "He is a lead architect with experience leveraging technology and architectural solutions to solve problems for such diverse clients as Kroger, NY Health Exchange, Fannie Mae, Federal Reserve",
 			"jobTitle"			: "Sr. Principal",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://linkedin/myperks/aboutuser/view?user.id=652752",
 						"network"		: "linkedin"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "864 643-0563",
@@ -750,22 +750,22 @@
 			"memberOf"			: ""
 	},
 
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 			{
 				"_id"				: ObjectId("A02234567892345678900021"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -777,7 +777,7 @@
 			"email"				: "mjohnson00991@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/mjohnson.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -786,24 +786,24 @@
 
 			"summary"		: "He is a lead architect with experience leveraging technology and architectural solutions to solve problems for such diverse clients as Kroger, NY Health Exchange, Fannie Mae, Federal Reserve",
 			"jobTitle"			: "Project Architect",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://linkedin/myperks/aboutuser/view?user.id=652752",
 						"network"		: "linkedin"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "864 643-0563",
@@ -812,24 +812,24 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900022"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -841,7 +841,7 @@
 			"email"				: "bwayne0099@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/bwayne.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -850,24 +850,24 @@
 
 			"summary"		: "He is a lead architect with experience leveraging technology and architectural solutions to solve problems for such diverse clients as Kroger, NY Health Exchange, Fannie Mae, Federal Reserve",
 			"jobTitle"			: "System Architect",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://linkedin/myperks/aboutuser/view?user.id=652752",
 						"network"		: "linkedin"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "864 643-0563",
@@ -876,23 +876,23 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900023"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -904,7 +904,7 @@
 			"email"				: "randresson0099@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/randresson.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -913,24 +913,24 @@
 
 			"summary"		: "He is an Associate systems engineer with experience leveraging technology and architectural solutions to solve problems for such diverse clients as Kroger, NY Health Exchange, Fannie Mae, Federal Reserve",
 			"jobTitle"			: "System Engineer",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://linkedin/myperks/aboutuser/view?user.id=652752",
 						"network"		: "linkedin"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "864 643-0563",
@@ -939,25 +939,25 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900012"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -969,7 +969,7 @@
 			"email"				: "dtorreto@zurich.com",
 
 			"avatar"			: "/public/uploads/profilePics/dtorreto.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -978,24 +978,24 @@
 
 			"summary"		: " 8 years of work experience in Organizational Development, Training & Development and Executive Coaching, currently conducting need based training programs for Engineering, PG students & Employees",
 			"jobTitle"			: "Chief Executive Officer",
-			"organization"	: "Zurich",	
-			
+			"organization"	: "Zurich",
+
 			"orgRef"			: ObjectId("A03234567892345678900001"),
 			"association"		: "customer",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sumangoud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://plus.google/profile/myperks/aboutuser/view?user.id=635979",
 						"network"		: "google"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9167629823",
@@ -1005,22 +1005,22 @@
 			"memberOf"			: ""
 	},
 
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900013"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1032,7 +1032,7 @@
 			"email"				: "sandresson@zurich.com",
 
 			"avatar"			: "/public/uploads/profilePics/sandresson.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1041,24 +1041,24 @@
 
 			"summary"		: " 8 years of work experience in Organizational Development, Training & Development and Executive Coaching, currently conducting need based training programs for Engineering, PG students & Employees",
 			"jobTitle"			: "Chief Executive Officer",
-			"organization"	: "Zurich",	
-			
+			"organization"	: "Zurich",
+
 			"orgRef"			: ObjectId("A03234567892345678900001"),
 			"association"		: "customer",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sumanperiri15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://plus.google/profile/myperks/aboutuser/view?user.id=667979",
 						"network"		: "Google"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9354629823",
@@ -1067,21 +1067,21 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-		
-		
-		
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900014"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1093,7 +1093,7 @@
 			"email"				: "apenny@telenor.com",
 
 			"avatar"			: "/public/uploads/profilePics/apenny.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1103,23 +1103,23 @@
 			"summary"		: " 1 yr of exp in Telecom/ISP(Technical Support/Network Administration ) and have got an opportunity to work on different skill sets like DSL,IPMPLS,ISDN ,ATM,Frame relay issues.",
 			"jobTitle"			: "Associate Professional",
 			"organization"	: "Telenor",
-			
+
 			"orgRef"			: ObjectId("A03234567892345678900002"),
 			"association"		: "customer",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/bpedda15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://hdfc.in/myperks/aboutuser/view?user.id=635239",
 						"network"		: "Telenor"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "8867629823",
@@ -1128,23 +1128,23 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-	
-		
+
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900015"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Ms.",
@@ -1156,7 +1156,7 @@
 			"email"				: "jlewis@telenor.com",
 
 			"avatar"			: "/public/uploads/profilePics/jlewis.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1165,24 +1165,24 @@
 
 			"summary"		: " 8+ year experience in Learning &Talent Management Function in the IT, ITES & CRO Multi-National Companies.",
 			"jobTitle"			: "Senior Executive",
-			"organization"	: "Telenor",	
-			
+			"organization"	: "Telenor",
+
 			"orgRef"			: ObjectId("A03234567892345678900002"),
 			"association"		: "customer",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/kbhgya115?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://scotlandroyal.bank.in/myperks/aboutuser/view?user.id=635699",
 						"network"		: "Telenor"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "5783629823",
@@ -1191,22 +1191,22 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-		
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900016"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Ms.",
@@ -1218,7 +1218,7 @@
 			"email"				: "nsharma00991@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/nsharma.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1227,24 +1227,24 @@
 
 			"summary"		: " 4+ year experience in Learning &Talent Management Function in the IT, ITES & CRO Multi-National Companies.",
 			"jobTitle"			: "Junior Executive Officer",
-			"organization"	: "AOL",	
-			
+			"organization"	: "AOL",
+
 			"orgRef"			: ObjectId("A03234567892345678900005"),
 			"association"		: "customer",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sgoud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://bankswiss.in/myperks/aboutuser/view?user.id=636779",
 						"network"		: "AOL"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9162849823",
@@ -1253,21 +1253,21 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-		
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900017"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1279,7 +1279,7 @@
 			"email"				: "mwatney0099@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/mwatney.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1288,24 +1288,24 @@
 
 			"summary"		: "5 yrs of exp in Telecom/ISP(Technical Support/Network Administration ) and have got an opportunity to work on different skill sets like DSL,IPMPLS,ISDN ,ATM,Frame relay issues.",
 			"jobTitle"			: "Senior Proffesional",
-			"organization"	: "AOL",	
-			
+			"organization"	: "AOL",
+
 			"orgRef"			: ObjectId("A03234567892345678900005"),
 			"association"		: "customer",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/rajeshgoud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://walmart.myperks.in/myperks/aboutuser/view?user.id=632379",
 						"network"		: "Aol profiles"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "8121629823",
@@ -1314,23 +1314,23 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-	
-		
+
+
+
+
+
+
+
+
 	{
 				"_id"				:ObjectId("A02234567892345678900018"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1342,7 +1342,7 @@
 			"email"				: "fcopper0099@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/fcopper.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1351,24 +1351,24 @@
 
 			"summary"		: " Information Technology, Strategy & Operations Executive with over 20 years of experience in Strategy, Governance, Innovative Business Process, Operations & Technology",
 			"jobTitle"			: "Director CIO",
-			"organization"	: "AOL",	
-			
+			"organization"	: "AOL",
+
 			"orgRef"			: ObjectId("A03234567892345678900005"),
 			"association"		: "customer",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sashokoud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://toyata.in/myperks/aboutuser/view?user.id=115979",
 						"network"		: "AOL"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9700629823",
@@ -1377,22 +1377,22 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-		
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900019"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1404,7 +1404,7 @@
 			"email"				: "jberg@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/jberg.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1413,24 +1413,24 @@
 
 			"summary"		: " Is an infrastructure and data domain expert with experience in data center optimization, consolidation, transformation and migration across multiple client accounts in a variety of industries ranging from financial services and healthcare to high-tech manufacturing",
 			"jobTitle"			: "Chief Technology Officer",
-			"organization"	: "AOL",	
-			
+			"organization"	: "AOL",
+
 			"orgRef"			: ObjectId("A03234567892345678900005"),
 			"association"		: "customer",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/ssdgusgfd15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://telenor.myperks.in/myperks/aboutuser/view?user.id=637879",
 						"network"		: "Aol Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9167673723",
@@ -1439,24 +1439,24 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
-	
-	
-	
-	
-		
+
+
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900020"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Ms.",
@@ -1468,7 +1468,7 @@
 			"email"				: "mjumde@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/mjumde.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1477,25 +1477,25 @@
 
 			"summary"		: " Minal works with AOL which is a vibrant industry association with ambitions of representing the entire gamut of digital businesses in India. ",
 			"jobTitle"			: "Chairman",
-			"organization"	: "AOL",	
-			
+			"organization"	: "AOL",
+
 			"orgRef"			: ObjectId("A03234567892345678900005"),
 			"association"		: "customer",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/ssaydfyadud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=638879",
 						"network"		: "Moto Perks"
 					}
 				],
-				
-			"contactNo"			: 
+
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9768624223",
@@ -1504,19 +1504,19 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900024"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1525,10 +1525,10 @@
 					"last"		:  "Clark",
 					"suffix"		:  ""
 				},
-			"email"				: "mclark@vodafone.com",
+			"email"				: "mclark00991@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/mclark.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1537,25 +1537,25 @@
 
 			"summary"		: " Minal works with AOL which is a vibrant industry association with ambitions of representing the entire gamut of digital businesses in India. ",
 			"jobTitle"			: "Chairman",
-			"organization"	: "Vodafone",	
-			
+			"organization"	: "Vodafone",
+
 			"orgRef"			: ObjectId("A03234567892345678900004"),
 			"association"		: "customer",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/ssaydfyadud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=638879",
 						"network"		: "Vodo Perks"
 					}
 				],
-				
-			"contactNo"			: 
+
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9768624223",
@@ -1566,17 +1566,17 @@
 	},
 
 
-	
-	
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900025"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1585,10 +1585,10 @@
 					"last"		:  "Kennedy",
 					"suffix"		:  ""
 				},
-			"email"				: "vkennedy@vodafone.com",
+			"email"				: "vkennedy0099@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/vkennedy.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1597,25 +1597,25 @@
 
 			"summary"		: " Minal works with AOL which is a vibrant industry association with ambitions of representing the entire gamut of digital businesses in India. ",
 			"jobTitle"			: "Senior Executive",
-			"organization"	: "Vodafone",	
-			
+			"organization"	: "Vodafone",
+
 			"orgRef"			: ObjectId("A03234567892345678900004"),
 			"association"		: "customer",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/ssaydfyadud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=638879",
 						"network"		: "Vodo Perks"
 					}
 				],
-				
-			"contactNo"			: 
+
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9768624223",
@@ -1624,19 +1624,19 @@
 				],
 			"memberOf"			: ""
 	},
-	
-	
-	
-	
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900026"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1648,7 +1648,7 @@
 			"email"				: "dwarner@gmail.com",
 
 			"avatar"			:  "/public/uploads/profilePics/dwarner.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1658,44 +1658,44 @@
 			"summary"		: "David is a partner in CSC’s Big Data and Analytics practice. He is a results-oriented data scientist with 15 years as an analytics subject matter expert. He is experienced in the design and execution of data-driven business strategy using analytics to drive results.",
 			"jobTitle"			: "Sr. Principal",
 			"organization"	: "CSC",
-			
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=652752",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "864 643-0563",
 						"contactType"			: "mobile"
 					}
 				],
-				
+
 			"memberOf"			: ObjectId("A20484567892345678900002")
 	},
-	
-	
-	
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900027"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1707,7 +1707,7 @@
 			"email"				: "jmichael@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/jmichael.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1716,50 +1716,50 @@
 
 			"summary"		: " Proven ability in Building and leading teams, Engineering Program Management, Agile product development",
 			"jobTitle"			: "Chief Technical Officer",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sumangoud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
-					{ 
+
+					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=635979",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9167629823",
 						"contactType"			: "mobile"
 					}
 				],
-			
+
 			"memberOf"			: ObjectId("A20484567892345678900002")
 	},
 
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900028"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1771,7 +1771,7 @@
 			"email"				: "jkapoor@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/jkapoor.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1780,24 +1780,24 @@
 
 			"summary"		: " 8 years of work experience in Organizational Development, Training & Development and Executive Coaching, currently conducting need based training programs for Engineering, PG students & Employees",
 			"jobTitle"			: "Senior Executive Officer",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sumanperiri15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=667979",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9354629823",
@@ -1806,20 +1806,20 @@
 				],
 			"memberOf"			: ObjectId("A20484567892345678900002")
 	},
-	
-	
-	
-	
-	
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900029"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1831,7 +1831,7 @@
 			"email"				: "jwatson0099@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/jwatson.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1840,24 +1840,24 @@
 
 			"summary"		: " 10+ years of experience in the field of HR with exposure to Learning & Development, Induction/Orientation, Data Management, HRIS, Employee Engagement, Joining formalities and Campus Recruitment",
 			"jobTitle"			: "Chief  Executive Officer",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sumanperiri15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=667979",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9354629823",
@@ -1866,20 +1866,20 @@
 				],
 			"memberOf"			: ObjectId("A20484567892345678900003")
 	},
-	
-	
-	
-	
-	
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900030"),
-			
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-			
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1891,7 +1891,7 @@
 			"email"				: "mlawrie0099@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/mlawrie.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1900,24 +1900,24 @@
 
 			"summary"		: " 15+ year experience in Learning &Talent Management Function in the IT, ITES & CRO Multi-National Companies.",
 			"jobTitle"			: "Senior Executive",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/kbhgya115?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=635699",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "5783629823",
@@ -1926,21 +1926,21 @@
 				],
 			"memberOf"			: ObjectId("A20484567892345678900003")
 	},
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	{
 				"_id"				: ObjectId("A02234567892345678900031"),
-				
+
 			"token"		:
 			{
 				"token"				: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NjQyNDgyNzI1NDV9.pB1IYfThsxguiJTuV8si8I75mmQtuMtpNGMpNIWc36s",
 				"dateCreated"	: { "$date" : "2016-03-08T09:00:00.000Z"}
 			},
-		
+
 			"name":
 				{
 					"prefix"		:  "Mr.",
@@ -1952,7 +1952,7 @@
 			"email"				: "msmith00991@gmail.com",
 
 			"avatar"			: "/public/uploads/profilePics/msmith.jpg",
-			
+
 			"local"				:
 			{
 				"password"		: "$2a$08$hahH9uqzbcv3iCtKQYhoUOIBrfrQZyhKyo93jJoZ1HDlCt4WmAE9q",
@@ -1961,24 +1961,24 @@
 
 			"summary"		: " Possess excellent leadership and people management skills and subject matter expertise on Learning and Development function. Have been instrumental in setting up the L&D function in my curent assignment",
 			"jobTitle"			: "Junior Executive Officer",
-			"organization"	: "CSC",	
-			
+			"organization"	: "CSC",
+
 			"orgRef"			: "",
 			"association"		: "employee",
-			
-			"socialProfile"	:		 
+
+			"socialProfile"	:
 				[
 					{
 						"handle"		: "https://www.facebook.com/sgoud15?fref=ts",
 						"network"		: "facebook"
 					},
-					
+
 					{
 						"handle"		: "https://csc.myperks.in/myperks/aboutuser/view?user.id=636779",
 						"network"		: "CSC My Perks"
 					}
 				],
-			"contactNo"			: 
+			"contactNo"			:
 				[
 					{
 						"contactNumber"		: "9162849823",
@@ -1987,6 +1987,6 @@
 				],
 			"memberOf"			: ObjectId("A20484567892345678900003")
 	}
-	
-	
+
+
 ]
