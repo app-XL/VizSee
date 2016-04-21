@@ -98,18 +98,28 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
   $scope.tab=false;
   $scope.anchor='';
   $scope.secondaryVmanager='';
+  
+  $scope.visitGrid=false;
+
+  $scope.agendaTab=true;
+  $scope.visitorsTab=true;
+  $scope.finalizeTab=false;
+  $scope.notifyTab=false;
   // $scope.errMessage = '';
 
   var user= $rootScope.user._id; 
   var group = $rootScope.user.memberOf;
 
   if ($rootScope.user.groups.indexOf("vManager") > -1) {
-    $scope.tab= true;
+    $scope.visitGrid= true;
   }
-  else
-  {
-    $scope.tab= false ;
-  }
+
+    // show Notification tab
+    $scope.showNotific= function(){
+      console.log("im here notifications");
+      $scope.notify = true;
+      console.log($scope.notify);
+    }
 
   //visit manager group- HTTP get for drop-down
   $http.get('/api/v1/secure/admin/groups/vManager/users').success(function(response) {
@@ -166,6 +176,8 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
      $scope.visitors=[];
      $scope.keynotes=[];
 
+
+
      switch($scope.mode)    {
       case "add":
       $scope.visits = "";
@@ -174,16 +186,55 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
       case "edit":
       $scope.visits = $http.get('/api/v1/secure/visits/' + id).success(function(response){
         var visits = response;
+        if (visits.anchor!=undefined||visits.secondaryVmanager!=undefined) {
+          $scope.anchor = visits.anchor._id;
+          $scope.secondaryVmanager = visits.secondaryVmanager._id;
+        };
+        console.log(visits.status)
+        switch(visits.status){
+          case "confirm": 
+          $scope.agendaTab=true;
+          $scope.visitorsTab=true;
+          break;
 
-        $scope.anchor = visits.anchor._id;
-        $scope.secondaryVmanager = visits.secondaryVmanager._id;
-        
+          case "tentative": 
+          $scope.agendaTab=true;
+          $scope.visitorsTab=true;
+          break;
+
+          case "wip": 
+          if ($rootScope.user.groups.indexOf("vManager") > -1) {
+            $scope.finalizeTab= true;
+          }
+          $scope.agendaTab=true;
+          $scope.visitorsTab=true;
+          $scope.finalizeTab=true;
+          $scope.notifyTab=false;
+          break;
+
+          case "finalize": 
+          $scope.agendaTab=true;
+          $scope.visitorsTab=true;
+          $scope.finalizeTab=true;
+          $scope.notifyTab=true;
+          break;
+
+          case "close": 
+          $scope.agendaTab=true;
+          $scope.visitorsTab=true;
+          $scope.finalizeTab=true;
+          $scope.notifyTab=true;
+          break;
+
+        };
+
           $scope.schedules = visits.schedule;       //List of schedules
           $scope.keynotes = visits.keynote;
           $scope.visitors = visits.visitors;      //List of visitors
-          $scope.visits = visits;               //Whole form object
+          $scope.visits = visits;     //Whole form object
+
           $scope.arraydata=response.invitees;
-          
+
           $scope.agmUser = response.agm;
           $scope.agmEmail = response.agm.email;
           $scope.agmId = response.agm._id;
@@ -191,8 +242,6 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
           $scope.clientName= response.client.name;//auto fill with reff client db
           $scope.feedback= response.feedbackTmpl.title;//auto fill with reff feedback db
           $scope.session= response.sessionTmpl.title;//auto fill with reff feedback db
-          
-
           
           // $scope.anchorEmail = response.anchor.email;
           // $scope.anchorId = response.anchor._id;
@@ -209,12 +258,8 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
 
   $scope.save = function(){
     // Set agm based on the user picker value
-    console.log("title:  "+$scope.visits.title);
-    // console.log("anchor:  "+$scope.anchorman);
-    // console.log("vman: "+$scope.vman);
     $scope.visits.agm = $scope.agmId;
-    $scope.visits.anchor = $scope.anchorman;
-    $scope.visits.secondaryVmanager= $scope.vman;
+    $scope.visits.status =$scope.status;
     $scope.visits.createBy= $rootScope.user._id;
     $scope.visits.client = $scope.clientId;
     $scope.visits.invitees = $scope.arraydata;
@@ -308,6 +353,7 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
    $scope.AddVmanager=function(){
     $scope.visits.anchor = $scope.anchorman;
     $scope.visits.secondaryVmanager= $scope.vman;
+    $scope.visits.status =$scope.status;
     $scope.visits.agm = $scope.agmId;
     $scope.visits.anchor = $scope.anchorman;
     $scope.visits.secondaryVmanager= $scope.vman;
@@ -316,21 +362,28 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
     $scope.visits.invitees = $scope.arraydata;
 
     $http.put('/api/v1/secure/visits/' + $scope.visits._id, $scope.visits).success(function(response) {
-     growl.info(parse("visit [%s]<br/>Edited successfully"));
-   })
+      refresh();
+      growl.info(parse("Visit Manager Edited successfully"));
+    })
+
     
   };
 
-  $scope.sendAnchor= function(anchor){
+  $scope.sendAnchor= function(anchor,status){
     $scope.anchorman = anchor;
-    console.log($scope.anchorman);
-  }
-  $scope.sendSecVman= function(secondaryVmanager){
-    $scope.vman = secondaryVmanager;
-    console.log($scope.vman);
-  }
-  // Visit schedule table
 
+    $scope.status = status;
+    $scope.status="wip";
+    console.log($scope.status);
+  }
+  $scope.sendSecVman= function(secondaryVmanager,status){
+    $scope.vman = secondaryVmanager;
+    $scope.status = status;
+    $scope.status="wip";
+    console.log($scope.status);
+  }
+
+  // Visit schedule table
   $scope.addSchedule=function(schedule){
 
     $scope.schedules.push({

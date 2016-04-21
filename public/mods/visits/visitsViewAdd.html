@@ -28,11 +28,10 @@
     		</div>
     	</div>
     	<br>
-
     	<div class="row pull-right">
     		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     			Primary: &nbsp;&nbsp;
-    			<select ng-change="sendAnchor(anchor)" ng-model="anchor" ng-options="d._id as d.name.prefix+' '+d.name.first+' '+d.name.last for d in data">  
+    			<select ng-change="sendAnchor(anchor,visits.status)" ng-model="anchor" ng-options="d._id as d.name.prefix+' '+d.name.first+' '+d.name.last for d in data">  
     			</select>
     		</div>
     	</div>
@@ -40,7 +39,7 @@
 
     	<div class="row pull-right">
     		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> Secondary:&nbsp;&nbsp;
-    			<select ng-change="sendSecVman(secondaryVmanager)" ng-model="secondaryVmanager" ng-options="d._id as d.name.prefix+' '+d.name.first+' '+d.name.last for d in data">   
+    			<select ng-change="sendSecVman(secondaryVmanager,visits.status)" ng-model="secondaryVmanager" ng-options="d._id as d.name.prefix+' '+d.name.first+' '+d.name.last for d in data">   
     			</select>
     		</div>
     	</div>
