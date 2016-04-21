@@ -1,7 +1,6 @@
 <div ng-controller="visitsControllerMain">
-  <!-- {{visits.status}} -->
-  {{visits.status="wip";""}}
-
+  {{visits.status}}
+  
   <!--panel-three-->
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -101,8 +100,19 @@
     <button type="reset" class="btn btn-warning" ng-click="cancel()" confirm-dialog header-text="Cancel Form Submission" content="Are you sure you want to cancel the submission of this form ?"
     yes-text="Ok" no-text="Cancel">Cancel</button>
 
-    <a type="reset" class="btn btn-danger" ng-click="showNotific()">Finalize</a>
-
+  </div>
+</div><br><br><br>
+<!--panel-three-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"> <b>Finalize</b></h3>
+  </div>
+  <div class = "panel-subheader pull-right">
+  </div>
+  <div class="panel-body">
+   If you are done with the completion of all data required, please click <b>finalize</b> to initiate notifications. 
+    <button type="reset" class="btn btn-danger" ng-click="showNotifie(status)">Finalize</button>
   </div>
 </div>
+
 </div>

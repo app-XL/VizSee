@@ -23,7 +23,11 @@ angular.module('visits')
         templateUrl: '/public/mods/visits/visitsViewAdd.html',
         controller: 'visitsControllerMain'
       })
-
+    
+      .when('/visits/:id/finalize', {
+        templateUrl: '/public/mods/visits/visitsViewAdd.html',
+        controller: 'visitsControllerMain'
+      })
       .when('/visits/:id/show', {
         templateUrl: '/public/mods/visits/visitsViewShow.html',
         controller: 'visitsControllerMain'

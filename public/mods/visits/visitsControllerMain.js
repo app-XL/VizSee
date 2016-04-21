@@ -114,13 +114,6 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
     $scope.visitGrid= true;
   }
 
-    // show Notification tab
-    $scope.showNotific= function(){
-      console.log("im here notifications");
-      $scope.notify = true;
-      console.log($scope.notify);
-    }
-
   //visit manager group- HTTP get for drop-down
   $http.get('/api/v1/secure/admin/groups/vManager/users').success(function(response) {
     $scope.data=response;
@@ -203,6 +196,7 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
           break;
 
           case "wip": 
+          console.log("im in wip switch")
           if ($rootScope.user.groups.indexOf("vManager") > -1) {
             $scope.finalizeTab= true;
           }
@@ -258,6 +252,8 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
 
   $scope.save = function(){
     // Set agm based on the user picker value
+    $scope.visits.anchor = $scope.anchorman;
+    $scope.visits.secondaryVmanager= $scope.vman;
     $scope.visits.agm = $scope.agmId;
     $scope.visits.status =$scope.status;
     $scope.visits.createBy= $rootScope.user._id;
@@ -288,7 +284,7 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
           break;
       } // End of switch scope.mode ends
 
-      // $location.path("visits/list");
+      // $location.path("visits/list"); 
       window.history.back();
   } // End of save method
 
@@ -342,12 +338,7 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
     $http.get('/api/v1/secure/admin/users/' + inData.agm).success(function(response) {
       var user = response;
       $scope.visits.agm = parse("%s %s, <%s>", user.name.first, user.name.last, user.email); });
-
-    // $http.get('/api/v1/secure/admin/users/' + inData.anchor).success(function(response) {
-    //   var user = response;
-    //   $scope.visits.anchor = parse("%s %s, <%s>", user.name.first, user.name.last, user.email);  });
-
-}
+  }
 
    //add vmanager
    $scope.AddVmanager=function(){
@@ -362,12 +353,38 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
     $scope.visits.invitees = $scope.arraydata;
 
     $http.put('/api/v1/secure/visits/' + $scope.visits._id, $scope.visits).success(function(response) {
-      refresh();
-      growl.info(parse("Visit Manager Edited successfully"));
-    })
+       // refresh();
 
-    
+       growl.info(parse("Visit Manager Edited successfully"));
+
+       $location.path("/visits/"+$scope.visits._id+"/finalize"); 
+
+     })
   };
+
+  $scope.showNotifie= function(status){
+    
+    $scope.status = status;
+    $scope.status="finalize";
+
+    $scope.visits.anchor = $scope.anchorman;
+    $scope.visits.secondaryVmanager= $scope.vman;
+    $scope.visits.status =$scope.status;
+    $scope.visits.agm = $scope.agmId;
+    $scope.visits.anchor = $scope.anchorman;
+    $scope.visits.secondaryVmanager= $scope.vman;
+    $scope.visits.createBy= $rootScope.user._id;
+    $scope.visits.client = $scope.clientId;
+    $scope.visits.invitees = $scope.arraydata;
+    $scope.visits.feedbackTmpl = $scope.feedbackId;
+    $scope.visits.sessionTmpl = $scope.sessionId;
+
+    $http.put('/api/v1/secure/visits/' + $scope.visits._id, $scope.visits).success(function(response) {
+       growl.info(parse("Visit Manager Edited successfully"));
+       $location.path("/visits/"+$scope.visits._id+"/finalize"); 
+     })
+
+  }
 
   $scope.sendAnchor= function(anchor,status){
     $scope.anchorman = anchor;
