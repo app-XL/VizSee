@@ -242,7 +242,7 @@ module.exports = {
 			"/public/mods/visits/visitsModule.js",
 			"/public/mods/visits/visitsControllerMain.js",
 			"/public/mods/visits/sessions/sessionsControllerMain.js",
-			"/public/mods/visits/visitsRouter.js",
+			// "/public/mods/visits/visitsRouter.js",
 			"/public/assets/js/calendar.js",
 			"/public/mods/visits/calendarCtrl.js",
 			"/public/d/userProfile/script.js",

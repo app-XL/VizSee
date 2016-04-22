@@ -65,10 +65,10 @@ function getGroups(user){
 
 	var grps = [];
 	//if(user.memberOf.indexOf(groups["admin"]) > -1)
-		grps.push("Admin");
+		grps.push("admin");
 
 	//if(user.memberOf.indexOf(groups["vManager"]) > -1)
-		grps.push("Visit Manager");
+		grps.push("vManager");
 		// console.log(grps);
 	return grps.join(',');
 }

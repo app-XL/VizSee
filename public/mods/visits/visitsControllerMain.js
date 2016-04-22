@@ -96,30 +96,28 @@ visitsApp.controller('visitsControllerMain', ['$scope', '$http', '$routeParams',
   $scope.showAvatar = false;
   $scope.arraydata = [];
   $scope.tab=false;
+  $scope.anchor='';
+  $scope.secondaryVmanager='';
+  
+  $scope.visitGrid=false;
+
+  $scope.agendaTab=true;
+  $scope.visitorsTab=false;
+  $scope.finalizeTab=false;
+  $scope.notifyTab=false;
   // $scope.errMessage = '';
 
-var user= $rootScope.user._id; 
-var group = $rootScope.user.memberOf;
+  var user= $rootScope.user._id; 
+  var group = $rootScope.user.memberOf;
 
-$http.get('/api/v1/secure/admin/users/' + user).success(function(response){
-  if("employee" ==response.association)
-  {
-    $http.get('/api/v1/secure/admin/groups/' + group).success(function(response){
-      if ("Visit Manager Group"==response.name) {
-        console.log("true Visit Manager Group");
-        $scope.tab= true;
-      }
-      else
-      {
-        $scope.tab= false ;
-                // console.log($scope.showTab)
-              }
-            })
+  if ($rootScope.user.groups.indexOf("vManager") > -1) {
+    $scope.visitGrid= true;
   }
-        // console.log($scope.showTab);
 
-
-      })
+  //visit manager group- HTTP get for drop-down
+  $http.get('/api/v1/secure/admin/groups/vManager/users').success(function(response) {
+    $scope.data=response;
+  });
 
   //Location - Http get for drop-down
   $http.get('/api/v1/secure/lov/locations').success(function(response) {
@@ -138,10 +136,6 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
   $scope.agmId = "";
   $scope.agmEmail = "";
   $scope.agmUser =  "";
-
-  $scope.anchorId = "";
-  $scope.anchorEmail = "";
-  $scope.anchorUser =  "";
 
   var refresh = function() {
 
@@ -171,6 +165,8 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
      $scope.visitors=[];
      $scope.keynotes=[];
 
+
+
      switch($scope.mode)    {
       case "add":
       $scope.visits = "";
@@ -179,13 +175,76 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
       case "edit":
       $scope.visits = $http.get('/api/v1/secure/visits/' + id).success(function(response){
         var visits = response;
+        if (visits.anchor!=undefined||visits.secondaryVmanager!=undefined) {
+          $scope.anchor = visits.anchor._id;
+          $scope.secondaryVmanager = visits.secondaryVmanager._id;
+        };
+        
+        switch(visits.status){
+          case "confirm": 
+          $scope.agendaTab=true;
+          $scope.visitorsTab=true;
+          break;
+
+          case "tentative": 
+          $scope.agendaTab=true;
+          $scope.visitorsTab=true;
+          break;
+
+          case "wip":
+          if ($rootScope.user.groups.indexOf("vManager") > -1) {
+            $scope.finalizeTab= true;
+            $scope.agendaTab=true;
+            $scope.visitorsTab=true;
+            $scope.notifyTab=false;
+          }
+          else{
+           $scope.agendaTab= true;
+           $scope.visitorsTab= true;
+           $scope.finalizeTab= false;
+           $scope.notifyTab= false;
+         }
+         break;
+
+         case "finalize": 
+         if ($rootScope.user.groups.indexOf("vManager") > -1) {
+          $scope.finalizeTab= true;
+          $scope.agendaTab=true;
+          $scope.visitorsTab=true;
+          $scope.notifyTab=true;
+        }
+        else{
+         $scope.agendaTab= true;
+         $scope.visitorsTab= true;
+         $scope.finalizeTab= false;
+         $scope.notifyTab= false;
+       }
+       break;
+
+       case "close": 
+       if ($rootScope.user.groups.indexOf("vManager") > -1) {
+        $scope.finalizeTab= true;
+        $scope.agendaTab=true;
+        $scope.visitorsTab=true;
+        $scope.notifyTab=true;
+      }
+      else{
+       $scope.agendaTab= true;
+       $scope.visitorsTab= true;
+       $scope.finalizeTab= false;
+       $scope.notifyTab= false;
+     }
+     break;
+
+   };
+
           $scope.schedules = visits.schedule;       //List of schedules
           $scope.keynotes = visits.keynote;
           $scope.visitors = visits.visitors;      //List of visitors
-          $scope.visits = visits;               //Whole form object
-          // $scope.inviteesData =visits.invitees;
+          $scope.visits = visits;     //Whole form object
+
           $scope.arraydata=response.invitees;
-          
+
           $scope.agmUser = response.agm;
           $scope.agmEmail = response.agm.email;
           $scope.agmId = response.agm._id;
@@ -193,10 +252,9 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
           $scope.clientName= response.client.name;//auto fill with reff client db
           $scope.feedback= response.feedbackTmpl.title;//auto fill with reff feedback db
           $scope.session= response.sessionTmpl.title;//auto fill with reff feedback db
-
-          $scope.anchorUser = response.anchor;
-          $scope.anchorEmail = response.anchor.email;
-          $scope.anchorId = response.anchor._id;
+          
+          // $scope.anchorEmail = response.anchor.email;
+          // $scope.anchorId = response.anchor._id;
 
             // Reformat date fields to avoid type compability issues with <input type=date on ng-model
             $scope.visits.createdOn = new Date($scope.visits.createdOn);
@@ -210,11 +268,14 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
 
   $scope.save = function(){
     // Set agm based on the user picker value
+    $scope.visits.anchor = $scope.anchorman;
+    $scope.visits.secondaryVmanager= $scope.vman;
     $scope.visits.agm = $scope.agmId;
-    $scope.visits.anchor = $scope.anchorId;
+    $scope.visits.status =$scope.status;
     $scope.visits.createBy= $rootScope.user._id;
     $scope.visits.client = $scope.clientId;
     $scope.visits.invitees = $scope.arraydata;
+    console.log($scope.visits);
     
     if ($scope.checked == false){
       $scope.unbillable= "non-billable";
@@ -224,8 +285,6 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
         $scope.billable= "billable";
         if($scope.visits.chargeCode!=null){$scope.visits.chargeCode= null;}
         $scope.visits.billable=$scope.billable;}//WBS code
-
-        console.log($scope.visits.billable);
 
         $scope.visits.feedbackTmpl = $scope.feedbackId;
         $scope.visits.sessionTmpl = $scope.sessionId;
@@ -238,9 +297,8 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
           $scope.update();
           break;
       } // End of switch scope.mode ends
-
-      // $location.path("visits/list");
-      window.history.back();
+       $location.path("visits/list"); 
+     // window.history.back();
   } // End of save method
 
   $scope.create = function() {
@@ -252,7 +310,12 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
     inData.createBy =  $rootScope.user._id;
     
     $http.post('/api/v1/secure/visits', inData).success(function(response) {
+
+    $http.get('/api/v1/secure/email/'+ response._id+'/newvisit').success(function(response) {
+     console.log(response);
+   })
       refresh();
+
       growl.info(parse("visit [%s]<br/>Added successfully", inData.title));
     })
     .error(function(data, status){
@@ -285,23 +348,84 @@ $http.get('/api/v1/secure/admin/users/' + user).success(function(response){
   $scope.cancel = function() {
 
     $scope.visits="";
-    // $location.path("visits/list");
-    window.history.back();
+     $location.path("visits/list");
+   // window.history.back();
   }
 
   $scope.getUser = function(){
     $http.get('/api/v1/secure/admin/users/' + inData.agm).success(function(response) {
       var user = response;
       $scope.visits.agm = parse("%s %s, <%s>", user.name.first, user.name.last, user.email); });
-
-    $http.get('/api/v1/secure/admin/users/' + inData.anchor).success(function(response) {
-      var user = response;
-      $scope.visits.anchor = parse("%s %s, <%s>", user.name.first, user.name.last, user.email);  });
-
   }
 
-  // Visit schedule table
+   //add vmanager
+   $scope.AddVmanager=function(){
+    $scope.visits.anchor = $scope.anchorman;
+    $scope.visits.secondaryVmanager= $scope.vman;
+    $scope.visits.status =$scope.status;
+    $scope.visits.agm = $scope.agmId;
+    $scope.visits.anchor = $scope.anchorman;
+    $scope.visits.secondaryVmanager= $scope.vman;
+    $scope.visits.createBy= $rootScope.user._id;
+    $scope.visits.client = $scope.clientId;
+    $scope.visits.invitees = $scope.arraydata;
 
+    $http.put('/api/v1/secure/visits/' + $scope.visits._id, $scope.visits).success(function(response) {
+     growl.info(parse("Visit Manager Edited successfully"));
+     $location.path("/visits/"+$scope.visits._id+"/finalize"); 
+
+   })
+  };
+
+  $scope.showNotifie= function(status){
+
+    $scope.status = status;
+    $scope.status="finalize";
+
+    $scope.visits.anchor = $scope.anchorman;
+    $scope.visits.secondaryVmanager= $scope.vman;
+    $scope.visits.status =$scope.status;
+    $scope.visits.agm = $scope.agmId;
+    $scope.visits.anchor = $scope.anchorman;
+    $scope.visits.secondaryVmanager= $scope.vman;
+    $scope.visits.createBy= $rootScope.user._id;
+    $scope.visits.client = $scope.clientId;
+    $scope.visits.invitees = $scope.arraydata;
+    $scope.visits.feedbackTmpl = $scope.feedbackId;
+    $scope.visits.sessionTmpl = $scope.sessionId;
+
+    $http.put('/api/v1/secure/visits/' + $scope.visits._id, $scope.visits).success(function(response) {
+     growl.info(parse("Visit Manager Edited successfully"));
+     $location.path("/visits/"+$scope.visits._id+"/finalize"); 
+   })
+
+  }
+  $scope.next= function(){
+     $location.path("/visits/"+$scope.visits._id+"/finalize"); 
+    // $scope.visitorsTab=true;
+  }
+  $scope.sendAnchor= function(anchor,status){
+    $scope.anchorman = anchor;
+
+    $scope.status = status;
+    $scope.status="wip";
+  }
+  $scope.sendSecVman= function(secondaryVmanager,status){
+    $scope.vman = secondaryVmanager;
+    $scope.status = status;
+    $scope.status="wip";
+  }
+  $scope.clientEmail=function(){
+    $http.get('/api/v1/secure/email/'+ $scope.visits._id+'/welcomeclient').success(function(response) {
+     growl.info(parse("Visit Manager Edited successfully"));
+   })
+  }
+  $scope.inviteEmail=function(){
+    $http.get('/api/v1/secure/email/'+ $scope.visits._id+'/inviteeAttendees').success(function(response) {
+     growl.info(parse("Visit Manager Edited successfully"));
+   })
+  }
+  // Visit schedule table
   $scope.addSchedule=function(schedule){
 
     $scope.schedules.push({
@@ -347,9 +471,8 @@ $scope.removekeynote = function(index){
 };
 
 $scope.editkeynote = function(index,keynoteDef){
-  console.log(keynoteDef);
-  $scope.keynoteDef= keynoteDef;
-  $scope.keynotes.splice(index, 1);
+ $scope.keynoteDef= keynoteDef;
+ $scope.keynotes.splice(index, 1);
 };
 // Visit keynote table end
 
@@ -449,7 +572,6 @@ $scope.editkeynote = function(index,keynoteDef){
 
   //Feedback by Person
   $scope.feedbackbyPerson = function(visitid) {
-    console.log(visitid);
     $http.get('/api/v1/secure/feedbacks').success(function(response1)
     {
       $scope.feedbackDatalist = $filter('filter')(response1, { visitid: visitid });
@@ -458,28 +580,11 @@ $scope.editkeynote = function(index,keynoteDef){
 
   //Feedback By Question
   $scope.feedbackbyQuestion = function(visitid) {
-    console.log(visitid);
-    $http.get('/api/v1/secure/feedbacks').success(function(response1)
-    {
-      $scope.arrayQuery = [];
-      $scope.arrayItem = [];
-      $scope.feedbacks = $filter('filter')(response1, { visitid: visitid });
-      console.log($scope.feedbacks);
-      // $http.get('/api/v1/secure/feedbackDefs/id/' + $scope.feedbacks[0].template).success(function(response)
-      // {
-      //   $scope.data = response;
-      //   console.log(response.item.length);
-      //   var inData =$scope.data;
-      //   for(var i =0;i<response.item.length;i++)
-      //   {
-      //     $scope.arrayQuery.push(inData.item[i].query);
-
-      //   }
-      //   console.log($scope.arrayQuery);
-
-      // });
-
-
+   $http.get('/api/v1/secure/feedbacks').success(function(response1)
+   {
+    $scope.arrayQuery = [];
+    $scope.arrayItem = [];
+    $scope.feedbacks = $filter('filter')(response1, { visitid: visitid });
     var feedbackData = $scope.feedbacks;
 
     for(var i =0;i<feedbackData.length;i++)
@@ -489,25 +594,23 @@ $scope.editkeynote = function(index,keynoteDef){
         $scope.arrayItem.push(feedbackData[i].item[j]);
       }
     }
-     // console.log($scope.arrayQuery);
-     console.log($scope.arrayItem);
-   });
-  }
+  });
+ }
 
-  var indexedQuestions = [];
+ var indexedQuestions = [];
 
-  $scope.questionsToFilter = function() {
-    indexedQuestions = [];
-    return $scope.arrayItem;
-  }
+ $scope.questionsToFilter = function() {
+  indexedQuestions = [];
+  return $scope.arrayItem;
+}
 
-  $scope.filterQuestions = function(item) {
-    var questionIsNew = indexedQuestions.indexOf(item.query) == -1;
-    if (questionIsNew) {
-      indexedQuestions.push(item.query);
-    }
-    return questionIsNew;
+$scope.filterQuestions = function(item) {
+  var questionIsNew = indexedQuestions.indexOf(item.query) == -1;
+  if (questionIsNew) {
+    indexedQuestions.push(item.query);
   }
+  return questionIsNew;
+}
 
 // Show Profile Dialog for non-registered users
 $scope.showProfileButton = function(ev) {
@@ -528,42 +631,38 @@ $scope.showProfileButton = function(ev) {
 };
 
 $scope.addpicture = function (dataUrl) {
-    //$scope.userdata ='';
-    Upload.upload({
-      url: '/api/v1/upload/profilePics',
-      data: {
-        file: Upload.dataUrltoBlob(dataUrl),
-      },
-    }).then(function (response) {
-      $scope.userdata ='';
-      console.log('adding');
-      $scope.result = response.data;
-      var filepath = response.data.file.path;
-      var imagepath = '/'+ filepath.replace(/\\/g , "/");
-      console.log(imagepath);
-      $scope.avatar = imagepath;
-      console.log($scope.avatar);
-      $scope.showAvatar = true;
-      $mdDialog.hide();
-    });
-
-  };
-
-  $scope.hide = function() {
+  Upload.upload({
+    url: '/api/v1/upload/profilePics',
+    data: {
+      file: Upload.dataUrltoBlob(dataUrl),
+    },
+  }).then(function (response) {
+    $scope.userdata ='';
+    $scope.result = response.data;
+    var filepath = response.data.file.path;
+    var imagepath = '/'+ filepath.replace(/\\/g , "/");
+    $scope.avatar = imagepath;
+    $scope.showAvatar = true;
     $mdDialog.hide();
-  };
-  $scope.canceldialog = function() {
-    $mdDialog.cancel();
-  };
-  $scope.answer = function(answer) {
-    $mdDialog.hide(answer);
-  };
+  });
 
-  $scope.checkErr = function(startDate,endDate) {
-    var curDate = new Date();
-    $scope.errMessage ='';
-    if (startDate==null||endDate==null) {return true;}
-    if(new Date(startDate).getTime() > new Date(endDate).getTime()){
+};
+
+$scope.hide = function() {
+  $mdDialog.hide();
+};
+$scope.canceldialog = function() {
+  $mdDialog.cancel();
+};
+$scope.answer = function(answer) {
+  $mdDialog.hide(answer);
+};
+
+$scope.checkErr = function(startDate,endDate) {
+  var curDate = new Date();
+  $scope.errMessage ='';
+  if (startDate==null||endDate==null) {return true;}
+  if(new Date(startDate).getTime() > new Date(endDate).getTime()){
       // $scope.errMessage =  'End Date should be greater than start date';
           // var err=function() {
           // $window.alert('End Date should be greater than start date');};

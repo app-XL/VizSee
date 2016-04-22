@@ -8,7 +8,7 @@
         <th><span class="fa fa-calendar fa-lg"></span>&nbsp;&nbsp;Start Date</th>
         <th><span class="fa fa-calendar fa-lg"></span>&nbsp;&nbsp;End Date</th>
         <th><span class="fa fa-globe fa-lg"></span>&nbsp;&nbsp;Location</th>
-        <th ng-if="tab"><span class="fa fa-globe fa-lg"></span>&nbsp;&nbsp;Meeting Place</th>
+        <!-- <th ng-if="visitGrid"><span class="fa fa-map-marker fa-lg"></span>&nbsp;&nbsp;Meeting Place</th> -->
         <th></th>
       </tr>
     </thead>
@@ -23,7 +23,7 @@
          ng-options="data for data in location" class="form-control">
        </select>
      </td>
-     <td ng-if="tab"><input type="text" placeholder="Meeting Place" class="form-control" ng-model="schedule.meetingPlace"></td>
+     <!-- <td ng-if="visitGrid"><input type="text" placeholder="Meeting Place" class="form-control" ng-model="schedule.meetingPlace"></td> -->
      <td><a class="table-btn" ng-click="addSchedule(schedule)"><span class="fa fa-plus fa-lg" /></a></td>
 
    </tr>
@@ -31,7 +31,7 @@
     <td>{{schedule.startDate | date:"dd MMM yyyy"}}</td>
     <td>{{schedule.endDate | date:"dd MMM yyyy"}}</td>
     <td>{{schedule.location}}</td>
-    <td ng-if="tab">{{schedule.meetingPlace}}</td>
+    <!-- <td ng-if="visitGrid">{{schedule.meetingPlace}}</td> -->
     <td><a class="table-btn" ng-click="removeSchedule($index)"><span class="fa fa-trash fa-lg" /></a>
       <a ng-if="mode=='edit'" class="table-btn" ng-click="editSchedule($index,schedule)"><span class="fa fa-edit fa-lg" /></a>
     </td>

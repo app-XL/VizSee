@@ -1,4 +1,52 @@
 
-  <div ng-include src="'/public/mods/visits/headerVisit.html'"></div>
+<!-- page header/subheader -->
+<div ng-if="mode=='add'" class="page-header">
+	Visit Planner - Add New Visit
+	<div class="sub-header">Highlevel planning for the visit
+	</div>
+</div>
 
-  <div ng-include src="'/public/mods/visits/visitAdd.html'"></div>
+<div ng-if="mode=='edit'" class="page-header">
+	Visit Planner - Edit Visit
+	<div class="sub-header">Edit {{visits.title}}
+	</div>
+</div>
+
+
+<div class= "page-toolbar">
+	
+<!--<a href="mailto:"><i class="fa fa-envelope fa-lg"></i></a>&nbsp;email&nbsp;
+    <a href="#"> <i class="fa fa-thumbs-o-up fa-lg"></i></a>&nbsp;follow&nbsp;
+    <a href="#/session"><i class="fa fa-calendar fa-lg"></i></a>&nbsp;schedule&nbsp; -->
+    
+    <div ng-if="mode=='edit'">
+        <div ng-if="visitGrid"><!--checking if visit manager or not-->
+           <div class="row pull-right">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                 Visit Managers
+                 <a class="table-btn" ng-click="AddVmanager()"><span class="fa fa-check fa-lg" /></a>
+
+             </div>
+         </div>
+         <br>
+         <div class="row pull-right">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             Primary: &nbsp;&nbsp;
+             <select ng-change="sendAnchor(anchor,visits.status)" ng-model="anchor" ng-options="d._id as d.name.prefix+' '+d.name.first+' '+d.name.last for d in data">  
+             </select>
+         </div>
+     </div>
+     <br>
+
+     <div class="row pull-right">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> Secondary:&nbsp;&nbsp;
+         <select ng-change="sendSecVman(secondaryVmanager,visits.status)" ng-model="secondaryVmanager" ng-options="d._id as d.name.prefix+' '+d.name.first+' '+d.name.last for d in data">   
+         </select>
+     </div>
+ </div>
+</div>
+</div>
+</div>
+
+
+<div ng-include src="'/public/mods/visits/visitAdd.html'"></div>
