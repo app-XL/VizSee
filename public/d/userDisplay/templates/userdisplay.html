@@ -9,9 +9,15 @@
   </ANY>
 
   <ANY ng-switch-when="noUser">
-	  <div class="text-danger" style="width:180px;!important;">
-			User not found!!!
+	  <div class="text-warning" style="width:180px;!important;">
+			{{message}}
 		</div>
+  </ANY>
+
+  <ANY ng-switch-when="error">
+    <div class="text-danger" style="width:180px;!important;">
+      {{message}}
+    </div>
   </ANY>
 
   <ANY ng-switch-default>

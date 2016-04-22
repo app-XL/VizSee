@@ -1,0 +1,117 @@
+<div ng-controller="visitsControllerMain">
+
+  <!--panel-three-->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"> <b>Feedback default panel</b></h3>
+    </div>
+    <div class = "panel-subheader pull-right">
+    </div>
+    <div class="panel-body">
+
+      <!-- visits Feedback input-->
+      <md-input-container class="md-block">
+      <label>Feedback Template</label>
+      <input name="feedback" ng-model="feedback" feedback required>
+      <div ng-messages="visitsForm.feedback.$error" ng-show="visitsForm.feedback.$touched || !visitsForm.feedback.$pristine">
+        <div class="messagenotify">
+          <div ng-messages-include="/public/mods/partials/messages.html"></div>
+        </div>
+      </div>
+    </md-input-container>
+    
+    <!-- <div ng-include src="'/public/mods/visits/keynotesVisitAdd.html'"></div> -->
+    <b>Add - Keynotes</b><br>
+    <table class="table boldtable table-responsive table-bordered table-hover" width="100"> 
+      <thead class="data-grid-header">
+        <tr>
+          <th>Keynote</th>
+          <th>Context</th>
+          <th>Order</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="data-grid-data">
+        <tr>
+          <td><input type="text" placeholder="note" ng-model="keynoteDef.note" keynote class="form-control" required></td>
+          <td><!-- <input type="text" placeholder="context" ng-model="keynoteDef.context" > -->
+            <select name="type" ng-model="keynoteDef.context" ng-dropdown class="form-control" required>
+              <option ng-option value="welcome">Welcome</option>
+              <option ng-option value="thankyou">Thankyou</option>
+            </select>
+
+          </td>
+          <td>
+            <select name="type" ng-model="keynoteDef.order" ng-dropdown class="form-control" required>
+              <option ng-option value="1">1</option>
+              <option ng-option value="2">2</option>
+              <option ng-option value="3">3</option>
+              <option ng-option value="4">4</option>
+              <option ng-option value="5">5</option>
+            </select>
+          </td>
+          <td><button class="btn btn-primary" ng-click="addkeynote(keynoteDef)" ng-disabled="keynoteForm.$invalid">Add Keynote</button></td>
+        </tr>
+        <tr ng-repeat="keynoteDef in keynotes | filter: search |orderBy:orderByField:reverseSort">
+          <td>{{keynoteDef.note}}</td>
+          <td>{{keynoteDef.context}}</td>
+          <td>{{keynoteDef.order}}</td>
+          <td><a class="table-btn" ng-click="removekeynote($index)"><span class="fa fa-trash fa-lg" /></a>
+            <a ng-if="mode=='edit'" class="table-btn" ng-click="editkeynote($index,keynoteDef)"><span class="fa fa-edit fa-lg" /></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <invitees arraydata="arraydata" switch-mode="mode" user-type="employee"></invitees>
+
+  </div>
+</div>
+
+<!--panel-three-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"> <b>Session default panel</b></h3>
+  </div>
+  <div class = "panel-subheader pull-right">
+  </div>
+  <div class="panel-body">
+    <!-- visits session input-->
+    <md-input-container class="md-block">
+    <label>Session Template</label>
+    <input name="session" ng-model="session" session required>
+    <div ng-messages="visitsForm.session.$error" ng-show="visitsForm.session.$touched || !visitsForm.session.$pristine">
+      <div class="messagenotify">
+        <div ng-messages-include="/public/mods/partials/messages.html"></div>
+      </div>
+    </div>
+  </md-input-container>
+</div>
+</div>
+
+<div class="form-group">
+  <div class="pull-left">
+
+    <button type="submit" class="btn btn-success"
+    ng-click="save()" ng-disabled="visitsForm.$invalid">Submit</button>
+
+    <button type="reset" class="btn btn-warning" ng-click="cancel()" confirm-dialog header-text="Cancel Form Submission" content="Are you sure you want to cancel the submission of this form ?"
+    yes-text="Ok" no-text="Cancel">Cancel</button>
+
+  </div>
+</div><br><br><br>
+<!--panel-three -->
+<div class="panel panel-default" ng-if='!notifyTab'>
+  <div class="panel-heading">
+    <h3 class="panel-title"> <b>Finalize</b></h3>
+  </div>
+  <div class = "panel-subheader pull-right">
+  </div>
+  <div class="panel-body">
+   If you are done with the completion of all data required, please click <b>finalize</b> to initiate notifications. <br>
+   <div class="pull-right"> <button type="reset" class="btn btn-danger" ng-click="showNotifie(status)" pull-right>Finalize</button></div>
+  </div>
+</div>
+
+</div>

@@ -1,325 +1,45 @@
 <br><br>
 <div ng-controller="visitsControllerMain">
+
   <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
   <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;"></div>
 
-  <!--Basic Information TAB PAGE ONE-->
-  <md-tab label="Agenda">
-  <div class="panel-group">
-    <!-- <md-content class="md-padding"> -->
-    <div class="data-form">
+  <!--Basic Information TAB ONE-->
+  <md-tab label="Agenda" ng-if="agendaTab">
+  <md-content class="md-padding">
+  <div ng-include src="'/public/mods/visits/agendaTab.html'"></div>
+  </md-content>
+  </md-tab>
 
-      <form name="visitsForm" id="visitsForm" class="form-vertical" >
+  <!--Add Visitors TAB TWO-->
+  <md-tab label="Add Visitors" ng-if="visitorsTab">
+  <md-content class="md-padding">
+  <div ng-include src="'/public/mods/visits/visitorsTab.html'"></div>
+  </md-content>
+  </md-tab>
 
-        <!--panel-one-->
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"> <b>Info about the client's visit agenda...</b></h3>
-          </div>
-          <div class = "panel-subheader pull-right">
-          </div>
-          <div class="panel-body">
+  <!--Add Schedules TAB THREE
+  <md-tab label="Session">
+  <md-content class="md-padding">
+  <!-- <div ng-include src="'/lol.html'"></div> -->
+  <!-- <h3><i>Work in progress..</i></h3>
+  </md-content>
+  </md-tab> -->
 
-            <!-- visits title input-->
-            <md-input-container class="md-block">
-            <label>Title</label>
-            <input md-maxlength="30" minlength="5" required name="title" ng-model="visits.title">
-            <div ng-messages="visitsForm.title.$error" ng-show="visitsForm.title.$touched || !visitsForm.title.$pristine">
-             <div class="messagenotify">
-              <div ng-messages-include="/public/mods/partials/messages.html"></div>
-              <div ng-message="md-maxlength">The title  has to be less than 30 characters long.</div>
-              <div ng-message="minlength">The title should contain minimum 5 characters</div>
-            </div>
-          </div>
-        </md-input-container>
+  <!--Add Finalize TAB PAGE FOUR-->
+  <md-tab label="Finalize" ng-if="finalizeTab">
+  <md-content class="md-padding">
+  <div ng-include src="'/public/mods/visits/finalizeTab.html'"></div>
+  </md-content>
+  </md-tab>
 
-        <!-- visits client input-->
-        <md-input-container class="md-block">
-        <label>Client Name</label>
-        <input  required name="clientname" ng-model="clientName" autocomplete required>
-        <div ng-messages="visitsForm.clientname.$error" ng-show="visitsForm.clientname.$touched || !visitsForm.clientname.$pristine">
-          <div class="messagenotify">
-            <div ng-messages-include="/public/mods/partials/messages.html"></div>
-          </div>
-        </div>
-      </md-input-container>
+  <!--Add notifications TAB PAGE FIVE-->
+  <md-tab label="Notifications" ng-if="notifyTab" >
+  <md-content class="md-padding">
+  <div ng-include src="'/public/mods/visits/notificationsTab.html'"></div>
+  </md-content>
+  </md-tab>
 
-      <!-- visits agenda-->
-      <md-input-container class="md-block">
-      <label ng-show="visits.agenda" class="show-hide">Agenda</label>
-      <text-angular
-      ta-toolbar="[['bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],['p', 'quote'],
-      ['justifyLeft', 'justifyCenter', 'justifyRight', 'indent', 'outdent','insertLink']]"
-      ng-model="visits.agenda" name="agenda" placeholder="Agenda of visit." required /></text-angular>
-      <div ng-messages="visitsForm.agenda.$error" ng-show="visitsForm.agenda.$touched && !visitsForm.agenda.$pristine">
-        <div class="messagenotify">
-          <div ng-messages-include="/public/mods/partials/messages.html"></div>
-        </div>
-      </div>
-    </md-input-container>
-
-  </div>
-</div>
-
-
-<!--panel-two-->
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"> <b>Key personnel for the visit...</b></h3>
-  </div>
-  <div class = "panel-subheader pull-right">
-  </div>
-  <div class="panel-body">
-
-    <!-- visits AGM By input-->
-    <div class="row">
-      <div class="form-group col-xs-5">
-        <md-input-container class="md-block">
-        <label>Sponsor</label>
-        <div class="form-group" ng-class="{ 'has-error': clientsForm.anchorUser.$touched && clientsForm.agmUser.$invalid }">
-          <div user type="picker" user-model="agmUser" user-id="agmId" user-email="agmEmail" view-type="small" switch-mode="mode" user-type="employee"></div>
-        </div>
-      </md-input-container>
-    </div>
-
-
-    <!-- visits anchor By input-->
-
-    <div class="form-group col-xs-5">
-      <md-input-container class="md-block">
-      <label>Anchor</label>
-      <div class="form-group" ng-class="{ 'has-error': clientsForm.anchorUser.$touched && clientsForm.anchorUser.$invalid }">
-        <div user type="picker" user-model="anchorUser" user-id="anchorId" user-email="anchorEmail" view-type="small" switch-mode="mode" user-type="employee"></div>
-      </div>
-    </md-input-container>
-  </div>
-</div>
-</div>
-</div>
-
-<!--panel-three-->
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"> <b>Visit outline schedule with break-up...</b></h3>
-  </div>
-  <div class = "panel-subheader pull-right">
-  </div>
-  <div class="panel-body">
-
-    <!--including visit Schedule-->
-    <div ng-include src="'/public/mods/visits/scheduleViewAdd.html'"></div>
-    <br>
-  </div>
-</div>
-
-<!--panel-four-->
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"> <b>CSC's key take away from the visit...</b></h3>
-  </div>
-  <div class = "panel-subheader pull-right">
-  </div>
-  <div class="panel-body">
-
-    <!--billable-->
-    <div class="row">
-      <div class="col-xs-5">
-        <div class="form-group">
-          <label>Is billable?</label>&nbsp;
-          <input type="checkbox"  ng-click="checked=!checked" aria-label="Toggle ngHide">
-          &nbsp;You need an active WBS code...
-          <br/>
-
-          <div>
-            <div class="check-element animate-show"  ng-if="checked">
-              <!-- visits wbsCode input-->
-              <md-input-container class="md-block">
-              <label>WBS Code</label>
-              <input md-maxlength="30" minlength="5" name="wbsCode" ng-model="visits.wbsCode" required>
-              <div ng-messages="visitsForm.wbsCode.$error" ng-show="visitsForm.wbsCode.$touched || !visitsForm.wbsCode.$pristine">
-               <div class="messagenotify">
-                <div ng-messages-include="/public/mods/partials/messages.html"></div>
-                <div ng-message="md-maxlength">The wbsCode  has to be less than 30 characters long.</div>
-                <div ng-message="minlength">The wbsCode should contain minimum 5 characters</div></div></div>
-              </md-input-container>
-            </div>
-          </div>
-
-          <div>
-            <div class="check-element animate-show" ng-if="!checked">
-             <!-- visits chargeCode input-->
-             <md-input-container class="md-block">
-             <label>Charge Code</label>
-             <input md-maxlength="30" minlength="5" name="chargeCode" ng-model="visits.chargeCode" required>
-             <div ng-messages="visitsForm.chargeCode.$error" ng-show="visitsForm.chargeCode.$touched || !visitsForm.chargeCode.$pristine">
-               <div class="messagenotify">
-                <div ng-messages-include="/public/mods/partials/messages.html"></div>
-                <div ng-message="md-maxlength">The chargeCode  has to be less than 30 characters long.</div>
-                <div ng-message="minlength">The chargeCode should contain minimum 5 characters</div></div></div>
-              </md-input-container>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!--vist Interest interest. businessType visitType objective-->
-
-      <!-- visits businessType-->
-      <div class="col-xs-4">
-        <div class="form-group">
-          <label>Business Type</label>
-          <select name="type" ng-model="visits.interest.businessType" ng-dropdown>
-            <option ng-option value="new">New</option>
-            <option ng-option value="existing">Existing</option>
-          </select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-5"></div>
-
-        <!-- visits visitType-->
-        <div class="form-group col-xs-4">
-          <div id="new" ng-if="visits.interest.businessType == 'new'">
-            <label>Say more: </label>
-            <select name="type" ng-model="visits.interest.visitType" ng-dropdown>
-              <option ng-option value="dueDiligence">Due Diligence</option>
-              <option ng-option value="exploratory">Exploratory</option>
-              <option ng-option value="planning">Planning</option>
-            </select>
-          </div>
-          <div id="existing" ng-if="visits.interest.businessType == 'existing'">
-            <label>Visit Type-Existing</label>
-            <select name="type" ng-model="visits.interest.visitType" ng-dropdown>
-              <option ng-option value="operationsReview">Operations Review</option>
-              <option ng-option value="renewals">Renewals</option>
-              <option ng-option value="newBusiness">New Business</option>
-              <option ng-option value="strategic">Strategic</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- visits objective -->
-
-    <md-input-container class="md-block">
-    <label ng-show="visits.interest.objective" class="show-hide">Visits Objective</label>
-    <text-angular
-    ta-toolbar="[['bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],['p', 'quote'],
-    ['justifyLeft', 'justifyCenter', 'justifyRight', 'indent', 'outdent','insertLink']]"
-    ng-model="visits.interest.objective" name="objective" placeholder="CSC's takeaway from this..." required /></text-angular>
-    <div ng-messages="visitsForm.objective.$error" ng-show="visitsForm.objective.$touched && !visitsForm.objective.$pristine">
-      <div class="messagenotify">
-        <div ng-messages-include="/public/mods/partials/messages.html"></div>
-      </div>
-    </div>
-  </md-input-container>
-
-  <!-- visits status input-->
-  <label><h4><b>Status</b></h4></label>
-  <md-input-container class="md-block">
-  <md-radio-group name="status" id="status" ng-model="visits.status" required class="">
-  <div class="row">
-    <div class ="col-xs-4 col-sm-2 col-md-2 col-lg-2"><md-radio-button value="Confirm"> Confirm</md-radio-button></div>
-    <div class ="col-xs-4 col-sm-2 col-md-2 col-lg-2"><md-radio-button value="Tentative"> Tentative</md-radio-button></div>
-  </md-radio-group></div>
-  <div ng-messages="visitsForm.status.$error" ng-show="visitsForm.status.$touched || !visitsForm.status.$pristine">
-    <div class="messagenotify">
-      <div ng-messages-include="/public/mods/partials/messages.html"></div>
-    </div>
-  </div>
-</md-input-container>
-
-
-<!--buttons-->
-<div class="form-group">
-  <div class="pull-left">
-    <button type="submit" class="btn btn-success"
-    ng-click="save()" ng-disabled="visitsForm.$invalid">Submit
-  </button>
-  <button type="reset" class="btn btn-warning" ng-click="cancel()" confirm-dialog header-text="Cancel Form Submission" content="Are you sure you want to cancel the submission of this form ?"
-  yes-text="Ok" no-text="Cancel">Cancel</button>
-</div>
-</div>
-</form>
-
-</div>
-</div>
-<!-- </div> -->
-</md-content>
-</md-tab>
-
-<!--Add Visitors TAB PAGE TWO-->
-<md-tab label="Add Visitors">
-<md-content class="md-padding">
-<!-- includeing visitors Schedule-->
-<div ng-include src="'/public/mods/visits/visitorsViewAdd.html'"></div>
-</md-content>
-</md-tab>
-
-<!--Add Schedules TAB PAGE THREE
-<md-tab label="Session">
-<md-content class="md-padding">
-<!-- <div ng-include src="'/lol.html'"></div> -->
-<!-- <h3><i>Work in progress..</i></h3>
-</md-content>
-</md-tab> -->
-
-<!--Add Finalize TAB PAGE FOUR-->
-<md-tab label="Finalize" ng-if="tab">
-<md-content class="md-padding">
-
-<!--panel-three-->
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"> <b>Feedback default panel</b></h3>
-  </div>
-  <div class = "panel-subheader pull-right">
-  </div>
-  <div class="panel-body">
-    <!-- visits Feedback input-->
-    <md-input-container class="md-block">
-    <label>Feedback Template</label>
-    <input name="feedback" ng-model="feedback" feedback required>
-    <div ng-messages="visitsForm.feedback.$error" ng-show="visitsForm.feedback.$touched || !visitsForm.feedback.$pristine">
-      <div class="messagenotify">
-        <div ng-messages-include="/public/mods/partials/messages.html"></div>
-      </div>
-    </div>
-  </md-input-container>
-  <div ng-include src="'/public/mods/visits/keynotesVisitAdd.html'"></div>
-
-  <br>
-  <invitees arraydata="arraydata" switch-mode="mode" user-type="employee"></invitees>
-
-</div>
-</div>
-
-<!--panel-three-->
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"> <b>Session default panel</b></h3>
-  </div>
-  <div class = "panel-subheader pull-right">
-  </div>
-  <div class="panel-body">
-    <!-- visits session input-->
-    <md-input-container class="md-block">
-    <label>Session Template</label>
-    <input name="session" ng-model="session" session required>
-    <div ng-messages="visitsForm.session.$error" ng-show="visitsForm.session.$touched || !visitsForm.session.$pristine">
-      <div class="messagenotify">
-        <div ng-messages-include="/public/mods/partials/messages.html"></div>
-      </div>
-    </div>
-  </md-input-container>
-</div>
-</div>
-</md-content>
-</md-tab>
-
-<!-- </div> -->
 </md-tabs><!--end of tabs-->
 </md-content><!--end of content-->
 </div>
