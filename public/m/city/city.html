@@ -65,6 +65,13 @@
     <hr>
     <h4 class="factheader">Quick Facts</h4>
     <br>
+    <div ng-repeat="facts in quickFacts" class="quickfacts">
+        <li>{{facts}}</li>
+    </div>
+    <div>
+    <hr>
+    <h4 class="factheader">Quick Facts About Places</h4>
+    <br>
     <map default-style="true" zoom="12" center="17.451, 78.37699999999995">
         <!--content of information windows for the places-->
         <info-window id="InfoWindow" style="width: 50px;">
@@ -83,6 +90,7 @@
   position="{{c.pos}}" title="{{c.name}}" info="{{c.info}}" id="{{c.id}}" url="{{c.url}}" on-click="showCity(event, c)">
 </marker>
 </map>
+</div>
 
 
 
