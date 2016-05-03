@@ -10,7 +10,7 @@
 
 		"agm"					: ObjectId("A02234567892345678900006"),
 
-		"anchor"				: ObjectId("A02234567892345678900004"),
+		"anchor"				: ObjectId("A02234567892345678900029"),
 
 		"startDate"			: { "$date" : "2016-04-14T09:00:00.000Z"} ,
 		"endDate"				: { "$date" : "2016-04-14T19:00:00.000Z"} ,
@@ -72,7 +72,7 @@
 
 		"agm"					: ObjectId("A02234567892345678900005"),
 
-		"anchor"				: ObjectId("A02234567892345678900011"),
+		"anchor"				: ObjectId("A02234567892345678900030"),
 
 		"startDate"			: { "$date" : "2016-04-28T08:00:00.000Z"} ,
 		"endDate"				: { "$date" : "2016-04-28T19:00:00.000Z"} ,
@@ -136,7 +136,7 @@
 
 		"agm"					: ObjectId("A02234567892345678900004"),
 
-		"anchor"				: ObjectId("A02234567892345678900010"),
+		"anchor"				: ObjectId("A02234567892345678900031"),
 
 		"startDate"			: { "$date" : "2016-05-17T09:00:00.000Z"} ,
 		"endDate"				: { "$date" : "2016-05-17T20:00:00.000Z"} ,
@@ -199,7 +199,7 @@
 
 		"agm"					: ObjectId("A02234567892345678900003"),
 
-		"anchor"				: ObjectId("A02234567892345678900004"),
+		"anchor"				: ObjectId("A02234567892345678900029"),
 
 		"startDate"			: { "$date" : "2016-05-05T08:30:00.000Z"} ,
 		"endDate"				: { "$date" : "2016-05-06T20:30:00.000Z"} ,
@@ -242,7 +242,7 @@
 				"objective"				: "Partnership"
 			},
 
-		"status"					:  "confirm",
+		"status"					:  "wip",
 		"createBy"			: ObjectId("A02234567892345678900004"),
 
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900004"),
@@ -271,7 +271,7 @@
 
 		"agm"					: ObjectId("A02234567892345678900001"),
 
-		"anchor"				: ObjectId("A02234567892345678900007"),
+		"anchor"				: ObjectId("A02234567892345678900030"),
 
 		"startDate"			: { "$date" : "2016-05-02T08:00:00.000Z"} ,
 		"endDate"				: { "$date" : "2016-05-04T20:00:00.000Z"} ,
@@ -321,7 +321,7 @@
 				"objective"				: "To observe the different activities and techniques"
 			},
 
-		"status"					:  "confirm",
+		"status"					:  "wip",
 		"createBy"			: ObjectId("A02234567892345678900010"),
 
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900005"),
@@ -352,7 +352,7 @@
 
 		"agm"					: ObjectId("A02234567892345678900002"),
 
-		"anchor"				: ObjectId("A02234567892345678900008"),
+		"anchor"				: ObjectId("A02234567892345678900031"),
 
 
 		"startDate"			: { "$date" : "2016-05-09T08:00:00.000Z"} ,
@@ -408,7 +408,7 @@
 				"objective"				: "To observe the different activities and techniques"
 			},
 
-		"status"					:  "confirm",
+		"status"					:  "wip",
 		"createBy"			: ObjectId("A02234567892345678900011"),
 
 		"feedbackTmpl"				    : ObjectId("A10234567892345678900003"),
