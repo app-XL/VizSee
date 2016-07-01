@@ -1,13 +1,7 @@
 @media print{
-    page { size: auto;  margin: 10px 20px; }
+    page { size: auto; margin: 0px 20px;}
    
-   @page {
-      @top-left {
-        content: "";
-      }
-    }
-    
-    body  { margin: 50px 15px; }
+    body  { margin: 0px 15px; }
     a[href]:after {
       content: none !important;
     }
@@ -15,5 +9,13 @@
 
     table{
      page-break-after:always;
+    }
+    .page-header {
+        display: block !important;
+    }
+    .printHeaderImg{
+      margin:0px 20px !important;
+      width:67% !important;
+      height:48px !important;
     }
 }
