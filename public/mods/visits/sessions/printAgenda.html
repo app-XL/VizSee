@@ -1,12 +1,17 @@
-<div class="page-header">
-  <div class="row">
-    <img src="../../../../public/assets/g/imgs/csclogo-new.png" class="pull-left cscLogo" width="122" height="81"/>
-    <img src="{{clientId.logo}}" alt="" class="pull-right clientLogo" width="122" height="81"/>
-  </div>
-</div>
 <!--div ng-include src="'/public/mods/visits/sessions/visitPanel.html'"></div-->
 <div ng-repeat="(key, value) in scheduleList | groupBy:'scheduleDate'" ng-if="showAll">
-  <label class="dateHeader">Agenda: {{key | date:'EEEE, dd MMM yyyy'}} | CSC {{meetingLocations[$index]}}</label>
+  <div class="page-header header{{$index}}">
+    <div class="row">
+        <img src="../../../../public/assets/g/imgs/csclogo-new.png" class="pull-left cscLogo" width="84" height="48"/>
+        <img src="../../../../public/assets/g/imgs/printHeader.png" class="pull-left printHeaderImg"/>
+        <div ng-if="showPrintAvatar == true">
+           <img src="{{printAvatar}}" alt="" class="pull-right" width="84" height="48"/>
+        </div>
+        <div ng-if="showPrintAvatar == false"></div>
+      </div>
+  </div>
+
+<label class="dateHeader">Agenda: {{key | date:'EEEE, dd MMM yyyy'}} | CSC {{meetingLocations[$index]}}</label>
 
 <table class="table table-striped table-condensed table-responsive table-hover" cellpadding="0" cellspacing="0">
   <thead class="data-grid-header">
@@ -49,8 +54,20 @@
     </tr>
   </tbody>
 </table>
-</div>
+</div><!--end of repeat of group by -->
+
 <!--DAY WISE FILTER -->
+ <div class="page-header-filter" ng-if="showFiltered">
+  <div class="row">
+    <img src="../../../../public/assets/g/imgs/csclogo-new.png" class="pull-left cscLogo" width="84" height="48"/>
+    <img src="../../../../public/assets/g/imgs/printHeader.png" class="pull-left printHeaderImg"/>
+    <div ng-if="showPrintAvatar == true">
+       <img src="{{printAvatar}}" alt="" class="pull-right" width="84" height="48"/>
+    </div>
+    <div ng-if="showPrintAvatar == false"></div>
+  </div>
+</div>
+
 <label class="dateHeader" ng-if="showFiltered">Agenda: {{entryDate | DateFormat:"dddd, DD MMM YYYY" }} | CSC {{index}}</label>
 
 <div ng-repeat="schedule in scheduleList | filter:dayFilter as filtered">

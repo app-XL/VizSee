@@ -5,7 +5,7 @@
 .row{display:block;clear:both; margin: 0 5px 10px;}
 
 table{margin: 10px 0 0px;}
-table.table tr th{background-color: #0C396E !important; color: #FFF;}
+table.table tr th{background-color: #0C396E !important; color: #FFF !important;}
 table, th, tr, td{border: 1px solid #CCC !important;} 
 
 /*.data-grid-data ul{padding-left: 16px;}*/
@@ -51,4 +51,20 @@ li:last-child:after
 
 .data-grid-data .anchorbold a{
     font-weight: bold;
+}
+.page-header-filter{
+    margin: 0px 0px 3px !important;
+    border-bottom: 1px solid #EEE;
+}
+.page-header {
+      margin: 0px 0px 3px !important;
+      display: none;
+}
+.page-header.header0{
+      display: block !important;
+}
+.printHeaderImg{
+  margin:0px 10px;
+  width:676px;
+  height:48px;
 }
