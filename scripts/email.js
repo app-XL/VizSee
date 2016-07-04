@@ -218,6 +218,15 @@ function notifyVisitOwnerChange(visitId,oldvmanEmail)
 				receiversId.push(visit.createBy.email);
 				emailIds.push(oldvmanEmail);
 				emailIds.push(visit.anchor.email);
+				if(visit.secondaryVmanager != null || visit.secondaryVmanager != undefined)
+				{
+					emailIds.push(visit.secondaryVmanager.email);
+				}
+
+				if(visit.secondaryVmanager == null || visit.secondaryVmanager == undefined)
+				{
+					emailIds.push(null);
+				}
 
 				groupService.getUsersByGroup("admin")
 				.then(function(users){
@@ -455,12 +464,12 @@ function newvManagerAssigned(visitId)
 
 			if(visit.secondaryVmanager != null || visit.secondaryVmanager != undefined)
 			{
-				emailIds.push(visit.secondaryVmanager.email);
+				receiversEmailIds.push(visit.secondaryVmanager.email);
 			}
 
 			if(visit.secondaryVmanager == null || visit.secondaryVmanager == undefined)
 			{
-				emailIds.push(null);
+				receiversEmailIds.push(null);
 			}
 
 			if(visit.cscPersonnel.salesExec != null || visit.cscPersonnel.salesExec != undefined)
