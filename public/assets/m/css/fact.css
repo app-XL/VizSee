@@ -4,6 +4,8 @@
   background-color: #f7f9fb;
 }
 
+
+
 .divtop{
   padding-top: 70px;
 }
@@ -684,12 +686,19 @@ padding-bottom: 20px;
         font-family: workSansSemiBold;
         color: #fff;
     }
-
+.cschexagons{
+  height: 300px;
+  width: 200px;
+}
 
 
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+.cschexagons{
+  height: 300px;
+  width: 200px;
+}
 
   .img-factsheet {
     width: 75px;
@@ -885,6 +894,15 @@ padding-bottom: 20px;
     top: 45px;
     font-size: 11px;
   }
+.ftb-title-text {
+        position: absolute;
+        width: 52%;
+        top: 43%;
+        left: 19%;
+        font-size: 16px;
+        font-family: workSansSemiBold;
+        color: #fff;
+    }
 
   .startedText2 {
     top: 70px;
@@ -1042,6 +1060,15 @@ padding-bottom: 20px;
   #rewards-recognition .reward-set img {
     width: 100px;
   }
+.ftb-title-text {
+        position: absolute;
+        width: 52%;
+        top: 43%;
+        left: 19%;
+        font-size: 16px;
+        font-family: workSansSemiBold;
+        color: #fff;
+    }
 
   #industries .row div img {
     width: 75px;
