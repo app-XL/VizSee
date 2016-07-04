@@ -1,24 +1,17 @@
-Dear Admin,
+Hi, 
 
+<p>A new client visit has been initiated by <b>{{createBy.name.first}} {{createBy.name.last}}</b>.</p>
+
+Client name: {% if client.name != client.subName %} {{client.name}} {{client.subName}} {% endif %}
+{% if client.name == client.subName %} {{client.name}} {% endif %}				
+<br/>
+Visit date: {{startDate|date('d M Y')}} - {{endDate|date('d M Y')}}<br/>
+Visit locations: {{locations}}
+
+<p>Please acknowledge the visit by clicking <a href="{{loginPath}}" title="CSC Visit Portal">here</a>.</p>
 <p>
-New Visit Agenda submitted by {{createBy.name.first}} {{createBy.name.last}} on {{createOn|date('jS \o\f F, Y')}}<br/>
+Thanks.<br>
+CSC India Visit Management Team<br>
+Connect with us at: Link to C3 page
 </p>
-
-<h2>Agenda Summary:</h2>
-
-Title: {{title}}<br/>
-Client: {{client.name}}<br/>
-Start Date: {{startDate|date('jS \o\f F, Y')}}<br/>
-End Date: {{endDate|date('jS \o\f F, Y')}}<br/>
-Locations: {{locations}}<br/>
-Status: {{status}}<br/>
-
-<p>Please goto visit planner to validate the agenda and initiate visit planning workflow</p>
-
-<p>
-Best Regards,
-Visit Portal Team
-</p>
-
 <hr/>
-Note: This is an auto generated mail from Visit Portal. Please do not reply.
