@@ -25,7 +25,8 @@ var feedbacks				=	require(constants.paths.controllers + '/api/feedbacks');
 var emails					=	require(constants.paths.controllers + '/api/emails');
 var meetingPlaces 			= 	require(constants.paths.controllers + '/api/meetingPlaces');
 var comments 				= 	require(constants.paths.controllers + '/api/comments');
-
+var executives				= 	require(constants.paths.controllers + '/api/executives');
+var regions					= 	require(constants.paths.controllers + '/api/regions');
 /*
  * Routes that can be accessed by any one
  */
@@ -180,5 +181,21 @@ router.get('/api/v1/secure/comments/:id',comments.getOneById);
 router.post('/api/v1/secure/comments',comments.create);
 router.put('/api/v1/secure/comments/:id',comments.updateById);
 router.delete('/api/v1/secure/comments/:id',comments.deleteById);
+
+// List of services routes for executives
+router.get('/api/v1/secure/executives',executives.getAll);
+router.get('/api/v1/secure/executives/:id',executives.getOneById);
+router.post('/api/v1/secure/executives',executives.create);
+router.put('/api/v1/secure/executives/:id',executives.updateById);
+router.delete('/api/v1/secure/executives/:id',executives.deleteById);
+router.get('/api/v1/secure/executives/get/:name', executives.getOneByName);
+
+// List of services routes for regions
+router.get('/api/v1/secure/regions',regions.getAll);
+router.get('/api/v1/secure/regions/:id',regions.getOneById);
+router.post('/api/v1/secure/regions',regions.create);
+router.put('/api/v1/secure/regions/:id',regions.updateById);
+router.delete('/api/v1/secure/regions/:id',regions.deleteById);
+router.get('/api/v1/secure/regions/get/:name', regions.getOneByName);
 
 module.exports = router;
