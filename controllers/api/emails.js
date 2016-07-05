@@ -54,7 +54,7 @@ function sendMails(req, res){
 			break;	
 
 		case "agendafinalize":
-			emailService.agendaFinalize(req.params.id);	
+			emailService.agendaFinalize(req.params.id,basePath);	
 			break;		
 
 		case "sessiontimechange":

@@ -27,6 +27,7 @@ email.inviteAttendees 					= inviteAttendees;
 email.rejectVisitByAdmin 				= rejectVisitByAdmin;
 email.newvManagerAssigned				= newvManagerAssigned;
 email.newsecvManagerAssigned 			= newsecvManagerAssigned;
+email.agendaFinalize					= agendaFinalize;
 
 module.exports = email;
 
@@ -521,82 +522,6 @@ function newvManagerAssigned(visitId)
 			{
 				emailIds.push(null);
 			}
-			for(var i=0;i<visit.offerings.length;i++)
-			{
-				if(visit.offerings[i]=='Digital Insurance')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Digital Banking')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Digital Health')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Global Infrastructure Services')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}		
-				if(visit.offerings[i]=='Digital Applications Services')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Cloud')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Cybersecurity')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Big Data & Analytics')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Business Process Services')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Consulting')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Mobility & Social')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-			}
-
-			if(visit.client.regions == 'Americas')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'Nordics')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'UK & I')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'South & West Europe')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'Central and Eastern Europe')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'AMEA')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'Australia')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
 
 			groupService.getUsersByGroup("admin")
 			.then(function(users){
@@ -717,82 +642,6 @@ function newsecvManagerAssigned(visitId)
 			{
 				emailIds.push(null);
 			}
-			for(var i=0;i<visit.offerings.length;i++)
-			{
-				if(visit.offerings[i]=='Digital Insurance')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Digital Banking')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Digital Health')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Global Infrastructure Services')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}		
-				if(visit.offerings[i]=='Digital Applications Services')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Cloud')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Cybersecurity')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Big Data & Analytics')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Business Process Services')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Consulting')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.offerings[i]=='Mobility & Social')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-			}
-
-			if(visit.client.regions == 'Americas')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'Nordics')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'UK & I')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'South & West Europe')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'Central and Eastern Europe')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'AMEA')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
-			if(visit.client.regions == 'Australia')
-			{
-				emailIds.push('amankuma00991@gmail.com')
-			}
 
 			groupService.getUsersByGroup("admin")
 			.then(function(users){
@@ -877,83 +726,6 @@ function visitClosure(visitId) {
 
 				emailIds.push(visit.createBy.email);
 
-				for(var i=0;i<visit.offerings.length;i++)
-				{
-					if(visit.offerings[i]=='Digital Insurance')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Digital Banking')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Digital Health')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Global Infrastructure Services')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}		
-					if(visit.offerings[i]=='Digital Applications Services')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Cloud')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Cybersecurity')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Big Data & Analytics')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Business Process Services')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Consulting')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Mobility & Social')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-				}
-
-				if(visit.client.regions == 'Americas')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'Nordics')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'UK & I')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'South & West Europe')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'Central and Eastern Europe')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'AMEA')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'Australia')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-
 				console.log(emailIds);
 
 				mailTemplate.render(visit, function (err, results) {
@@ -968,7 +740,8 @@ function visitClosure(visitId) {
 										cc: receiversEmailIds,
 										subject: 'Save your day', // Subject line
 										text: results.text, // plaintext body
-										html: results.html // html body
+										html: results.html, // html body
+
 									};
 
 									console.log(mailOptions);
@@ -986,8 +759,8 @@ function visitClosure(visitId) {
 		}) // end of modelVisit
 }
 
-// Send Notification when visit is closed
-function agendaFinalize(visitId) {
+// Send Notification when visit is finalized
+function agendaFinalize(visitId,basePath) {
 
 	if(config.get('email.send-mails')!="true") return;
 
@@ -1025,87 +798,13 @@ function agendaFinalize(visitId) {
 					emailIds.push(p.email);
 				});
 
-				for(var i=0;i<visit.offerings.length;i++)
-				{
-					if(visit.offerings[i]=='Digital Insurance')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Digital Banking')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Digital Health')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Global Infrastructure Services')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}		
-					if(visit.offerings[i]=='Digital Applications Services')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Cloud')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Cybersecurity')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Big Data & Analytics')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Business Process Services')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Consulting')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Mobility & Social')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-				}
-
-				if(visit.client.regions == 'Americas')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'Nordics')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'UK & I')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'South & West Europe')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'Central and Eastern Europe')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'AMEA')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'Australia')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-
 				console.log(emailIds);
 
 				mailTemplate.render(visit, function (err, results) {
 
+					console.log(basePath)
+					var filePath = basePath + "/public/uploads/visits/wrkday.pdf";
+					console.log(filePath)
 					if(err){
 						return console.log(err);
 					}
@@ -1116,7 +815,11 @@ function agendaFinalize(visitId) {
 										cc: receiversEmailIds,
 										subject: 'Save your day', // Subject line
 										text: results.text, // plaintext body
-										html: results.html // html body
+										html: results.html, // html body
+										attachments: [{						
+											path: filePath,
+											contentType: 'application/pdf'
+										}]
 									};
 
 									console.log(mailOptions);
@@ -1127,6 +830,7 @@ function agendaFinalize(visitId) {
 									}
 									console.log("Send Mail:: inviteAttendees  -- Status: "+ info.response);
 									console.log('Notifications sent to ' + emailIds);
+									console.log('Notifications sent to ' + receiversEmailIds);
 								}); // end of transporter.sendMail
 							}); // end of register mail render
 						}); // end of visitService.getParticipantsById
@@ -1172,83 +876,6 @@ function sessionTimeChange(visitId) {
 				participants["employees"].forEach(function(p){
 					emailIds.push(p.email);
 				});
-
-				for(var i=0;i<visit.offerings.length;i++)
-				{
-					if(visit.offerings[i]=='Digital Insurance')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Digital Banking')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Digital Health')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Global Infrastructure Services')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}		
-					if(visit.offerings[i]=='Digital Applications Services')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Cloud')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Cybersecurity')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Big Data & Analytics')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Business Process Services')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Consulting')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-					if(visit.offerings[i]=='Mobility & Social')
-					{
-						emailIds.push('amankuma00991@gmail.com')
-					}
-				}
-
-				if(visit.client.regions == 'Americas')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'Nordics')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'UK & I')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'South & West Europe')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'Central and Eastern Europe')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'AMEA')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
-				if(visit.client.regions == 'Australia')
-				{
-					emailIds.push('amankuma00991@gmail.com')
-				}
 
 				console.log(emailIds);
 

@@ -1466,10 +1466,15 @@ $scope.ClientDraft=false;
     var inData       = $scope.visits;
     inData.keynote = $scope.keynotes;
     inData.comments = $scope.commentsData;
+
     $http.put('/api/v1/secure/visits/' + $scope.visits._id, inData).success(function(response) {
       growl.info(parse("Planning stage compleated successfully"));
       $scope.nextTab($scope.visits._id);
     })
+
+    $http.get('/api/v1/secure/email/'+ $scope.visits._id + '/agendafinalize').success(function(response) {
+      console.log(response);
+    }) 
 
   }
   $scope.reachedEnd=function(){
