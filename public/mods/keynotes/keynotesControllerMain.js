@@ -29,7 +29,7 @@ keynotesApp.controller('keynotesControllerMain', ['$scope', 'appUserService','$h
       $scope.medium= "medium";
       $scope.isSaving= false; 
       $scope.submitKeynotes = true;
-      $scope.keyTruedone=true;
+      // $scope.keyTruedone=true;
       $scope.signatory1Submit = true;
 
         $scope.groupMember = $scope.activeUser.groups;
@@ -195,9 +195,9 @@ $scope.removeImageItem = function(index){
   $scope.array.splice(index, 1);
   console.log($scope.array);
 };
-$scope.keyTrue=function(){
-  console.log("reached");
-  $scope.keyTruedone=false;
-}
+// $scope.keyTrue=function(){
+//   console.log("reached");
+//   $scope.keyTruedone=false;
+// }
 });
 }]);﻿ // controller ends

@@ -80,64 +80,51 @@
 </div>
 
 <!-- <div fileattachment folder-type="keynotes" file-size="25" file-allowed="1" array="array" file-type="singleFile"></div> -->
-        <div class="row">
+<div class="row">
 
-        <div ng-if="noteById==noteById1  && noteById != null && noteById1 != null">
-          {{$parent.submitKeynotes=true;""}}
-          {{errMessage="Signatory and Signatory1 Email should not be same.";""}}
-          <span class="text-danger">&nbsp;&nbsp;{{errMessage}}</span>
-        </div> 
+  <div ng-if="noteById==noteById1  && noteById != null && noteById1 != null">
+    {{$parent.submitKeynotes=true;""}}
+    {{errMessage="Signatory and Signatory1 Email should not be same.";""}}
+    <span class="text-danger">&nbsp;&nbsp;{{errMessage}}</span>
+  </div> 
 
-        <div ng-if="noteById==noteById2  && noteById != null && noteById2 != null">
-          {{$parent.submitKeynotes=true;""}}
-          {{errMessage="Signatory and Signatory2 Email should not be same.";""}}
-          <span class="text-danger">&nbsp;&nbsp;{{errMessage}}</span>
-        </div> 
+  <div ng-if="noteById==noteById2  && noteById != null && noteById2 != null">
+    {{$parent.submitKeynotes=true;""}}
+    {{errMessage="Signatory and Signatory2 Email should not be same.";""}}
+    <span class="text-danger">&nbsp;&nbsp;{{errMessage}}</span>
+  </div> 
 
-        <div ng-if="noteById1==noteById2  && noteById1 != null && noteById2 != null">
-          {{$parent.submitKeynotes=true;""}}
-          {{errMessage="Signatory1 and  Signatory2 Email should not be same.";""}}
-          <span class="text-danger">&nbsp;&nbsp;{{errMessage}}</span>
-        </div> 
-       </div> 
+  <div ng-if="noteById1==noteById2  && noteById1 != null && noteById2 != null">
+    {{$parent.submitKeynotes=true;""}}
+    {{errMessage="Signatory1 and  Signatory2 Email should not be same.";""}}
+    <span class="text-danger">&nbsp;&nbsp;{{errMessage}}</span>
+  </div> 
+</div> 
 
+<div ng-if="noteById!=noteById1 && noteById != null && noteById1 != null">
+  {{$parent.submitKeynotes=false;""}}
+</div>
 
-<!--         <div ng-if="(noteById1==noteById || noteById1==noteById2)  && noteById != null && noteById1 != null && noteById2 !=null">
-          {{$parent.submitKeynotes=true;""}}
-          {{errMessage="Owner Email Id and Supporter Email Id should not be same.";""}}
-          <span class="text-danger">&nbsp;&nbsp;{{errMessage}}</span>
-        </div> 
+<div ng-if="noteById!=noteById2 && noteById != null && noteById2 != null">
+  {{$parent.submitKeynotes=false;""}}
+</div>
 
-        <div ng-if="(noteById2==noteById || noteById2==noteById1)  && noteById != null && noteById1 != null && noteById2 !=null">
-          {{$parent.submitKeynotes=true;""}}
-          {{errMessage="Owner Email Id and Supporter Email Id should not be same.";""}}
-          <span class="text-danger">&nbsp;&nbsp;{{errMessage}}</span>
-        </div> 
- -->
-        <div ng-if="noteById!=noteById1 && noteById != null && noteById1 != null">
-          {{$parent.submitKeynotes=false;""}}
-        </div>
+<div ng-if="noteById1!=noteById2 && noteById1 != null && noteById2 != null">
+  {{$parent.submitKeynotes=false;""}}
+</div>
 
-        <div ng-if="noteById!=noteById2 && noteById != null && noteById2 != null">
-          {{$parent.submitKeynotes=false;""}}
-        </div>
+<div ng-if="noteById == null">
+  {{$parent.signatory1Submit=true;""}}
+</div> 
 
-        <div ng-if="noteById1!=noteById2 && noteById1 != null && noteById2 != null">
-          {{$parent.submitKeynotes=false;""}}
-        </div>
+<div ng-if="noteById != null">
+  {{$parent.signatory1Submit=false;""}}
+</div> 
 
-        <div ng-if="noteById == null">
-          {{$parent.signatory1Submit=true;""}}
-        </div> 
-
-        <div ng-if="noteById != null">
-          {{$parent.signatory1Submit=false;""}}
-        </div> 
-
-        <div ng-if="noteById1 == null || noteById2 == null">
-          {{$parent.submitKeynotes=false;""}}
-        </div> 
-      <!-- </div> -->
+<div ng-if="noteById1 == null || noteById2 == null">
+  {{$parent.submitKeynotes=false;""}}
+</div> 
+<!-- </div> -->
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"> <b>Attachments</b></h3>
@@ -146,32 +133,22 @@
   </div>
   <div class="panel-body">
    <i><h5>Please click Attach files to add images, videos or audio files.</h5></i><br>
-   <span class="error text-info"><b> Note: </b>This is a mandatory field.</span>
-   <fileattachment folder-type="keynotes" file-size="25" file-allowed="1" array="array" file-type="singleFile" ng-click="keyTrue()"/>
+   <!-- <span class="error text-info"><b> Note: </b>This is a mandatory field.</span>|| keyTruedone ng-click="keyTrue()"-->
+   <fileattachment folder-type="keynotes" file-size="25" file-allowed="1" array="array" file-type="singleFile" />
  </div>
 </div>
 
+<br>
 
-<!--md-chips 
-       name="tags"
-        ng-model="tags"
-        readonly="ctrl.readonly"
-        placeholder="Enter a tag"
-        delete-button-label="Remove Tag"
-        delete-hint="Press delete to remove tag"
-        secondary-placeholder="+Tag"></md-chips-->
-        <br>
-        <!-- {{noteById}} -->
-        <!-- {{signatory1Submit}} -->
-        <div class="form-group">
-          <div class="pull-left">
-            <button type="submit" class="btn btn-success" 
-            ng-click="save()" ng-disabled="keynotesForm.$invalid || keyTruedone || submitKeynotes || signatory1Submit">Submit
-          </button>
-          <button type="reset" class="btn btn-warning" ng-click="cancel()" confirm-dialog header-text="Cancel Form Submission" content="Are you sure you want to cancel the submission of this form ?"
-          yes-text="Ok" no-text="Cancel">Cancel</button>
-        </div>
-      </div>
-    </fieldset>
-  </form></div>
+<div class="form-group">
+  <div class="pull-left">
+    <button type="submit" class="btn btn-success" 
+    ng-click="save()" ng-disabled="keynotesForm.$invalid  || submitKeynotes || signatory1Submit">Submit
+  </button>
+  <button type="reset" class="btn btn-warning" ng-click="cancel()" confirm-dialog header-text="Cancel Form Submission" content="Are you sure you want to cancel the submission of this form ?"
+  yes-text="Ok" no-text="Cancel">Cancel</button>
+</div>
+</div>
+</fieldset>
+</form></div>
 </div>
