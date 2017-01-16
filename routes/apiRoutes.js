@@ -47,6 +47,7 @@ router.get('/api/v1/secure/admin/users/findAll/data', users.getAllUsers);
 router.get('/api/v1/secure/admin/users/find/find', users.getWithQuery);
 
 router.get('/api/v1/secure/admin/users/xyz/abc/pqr/usersCount', users.getCount);
+
 //Route for file upload
 //router.post('/api/v1/upload',fileupload.create);
 router.post('/api/v1/upload/:entity',fileupload.create);
@@ -68,6 +69,7 @@ router.put('/api/v1/secure/clients/id/:id', clients.updateById);
 router.delete('/api/v1/secure/clients/:id', clients.deleteById);
 router.get('/api/v1/secure/clients/find', clients.getWithQuery);
 router.get('/api/v1/secure/clients/find/name/:name', clients.getWithName);
+router.get('/api/v1/secure/clients/find/count', clients.getCount);
 
 
 

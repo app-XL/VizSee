@@ -2,10 +2,10 @@
 
 var clientsApp = angular.module('clients');
 
-clientsApp.controller('clientsControllerMain', ['$scope','appUserService', '$http', '$routeParams', '$location', 'growl','$mdDialog', '$mdMedia', '$timeout','Upload','$rootScope',
-  function($scope ,appUserService, $http, $routeParams, $location, growl,$mdDialog,$mdMedia,$timeout,Upload,$rootScope) {
-
-    appUserService.activeUser().then(function(user){
+clientsApp.controller('clientsControllerMain', ['$scope','appUserService', '$http', '$routeParams', '$location', 'growl','$mdDialog', '$mdMedia', '$timeout','Upload','$rootScope','appInfoService','PagerService',
+  function($scope ,appUserService, $http, $routeParams, $location, growl,$mdDialog,$mdMedia,$timeout,Upload,$rootScope, appInfoService, PagerService) {
+    appInfoService.appInfo().then(function(info){
+      appUserService.activeUser().then(function(user){
     //console.log("thsis"+user._id);
     $scope.activeUser = user;
 
@@ -44,9 +44,14 @@ clientsApp.controller('clientsControllerMain', ['$scope','appUserService', '$htt
   else if ($scope.activeUser.groups.includes("vManager") === true) {
     $scope.isSaving= true; 
   }
-  var refresh = function() {
 
-    $http.get('/api/v1/secure/clients').success(function(response) {
+
+
+  var refresh = function(start) {
+    var clientListUrl = '/api/v1/secure/clients';
+    clientListUrl += "?start=" + start + '&size='+info.UI.pagination.size;
+    
+    $http.get(clientListUrl).success(function(response) {
 
       $scope.clientsList = response;
       $scope.clients = "";
@@ -179,7 +184,67 @@ clientsApp.controller('clientsControllerMain', ['$scope','appUserService', '$htt
     }); // get client call back ends
   }; // refresh method ends
 
-  refresh();
+  refresh($scope.start);
+
+
+      $scope.listOfClientCount = function(page) 
+      {
+        $http.get('/api/v1/secure/clients/find/count').success(function(data) {
+          $scope.clientCount = data.totalCount;
+          if (data != null) {
+                // var $scope = this;
+
+                $scope.dummyItems = _.range(0, $scope.clientCount); // dummy array of items to be paged
+                $scope.pager = {};
+                $scope.setPage = setPage;
+
+                if (page == undefined) {
+                  initController();
+
+                  function initController() {
+                        // initialize to page 1
+                        $scope.setPage(1);
+                      }
+                    }
+
+                    if (page != undefined) {
+                      $scope.setPage(page);
+                    }
+
+                    function setPage(page) {
+                      if (page < 1 || page > $scope.pager.totalPages) {
+                        return;
+                      }
+
+                    // get pager object from service
+                    $scope.pager = PagerService.GetPager($scope.dummyItems.length, page,info.UI.pagination.size);
+                    $scope.vmPager = $scope.pager;
+
+                    $scope.start = ($scope.pager.currentPage - 1);
+                    $scope.startPage = $scope.start * info.UI.pagination.size;
+                    $scope.clientSize = $scope.startPage + info.UI.pagination.size;
+                    // get current page of items
+                    $scope.items = $scope.dummyItems.slice($scope.pager.startIndex, $scope.pager.endIndex + 1);
+                    $scope.$scopeItems = $scope.items;
+                    refresh($scope.start);
+                  }
+                }
+              }).error(function(error, status) {
+                console.log(error);
+                console.log(status);
+                if (status == 401) {
+                  growl.error('Your session has been expired. You need to Login again.');
+                //$('#AuthError').modal('show');
+                $cookies.put('isLoggedIn', false);
+                $location.path('/login');
+              }
+            });
+      }
+
+      $scope.listOfClientCount();
+
+
+
   $scope.closeNoteTipST=function(){
     $scope.closeNoteTipSch= false;
   }
@@ -307,7 +372,7 @@ clientsApp.controller('clientsControllerMain', ['$scope','appUserService', '$htt
       console.log(inData)
       var name = inData.name
       $http.post('/api/v1/secure/clients', inData).success(function(response) {
-        refresh();
+        refresh($scope.start);
         growl.info(parse("New client has been added – [%s]", htmlToPlaintext(name)));
       })
       .error(function(data, status){
@@ -322,7 +387,7 @@ clientsApp.controller('clientsControllerMain', ['$scope','appUserService', '$htt
   $scope.delete = function(clients) {
     var name = clients.name;
     $http.delete('/api/v1/secure/clients/' + clients._id).success(function(response) {
-      refresh();
+      refresh($scope.start);
       growl.info(parse("clients [%s]<br/>Deleted successfully", name));
     })
     .error(function(data, status){
@@ -433,7 +498,7 @@ clientsApp.controller('clientsControllerMain', ['$scope','appUserService', '$htt
     
     // console.log(inData.cscPersonnel);
     $http.put('/api/v1/secure/clients/id/' + $scope.clients._id, inData).success(function(response) {
-      refresh();
+      refresh($scope.start);
       console.log($scope.clients.name);
       console.log($scope.parentSelected);
       if ($scope.parentClientString==null) 
@@ -569,5 +634,18 @@ $scope.industryClientChanged = function(str) {
   //   }
   // } 
 });
-
+});
 }]);﻿ // controller ends
+
+
+//We already have a limitTo filter built-in to angular,
+//let's make a startFrom filter
+clientsApp.filter('startFrom', function() {
+    return function(input, start) {
+      if(input!=undefined)
+      {
+        start = +start; //parse to int
+        return input.slice(start);
+      }
+    }
+}); 

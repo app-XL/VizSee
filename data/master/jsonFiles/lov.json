@@ -9,7 +9,7 @@
 				"Nordics",
 				"UK & I",
 				"South & West Europe",
-				"Central and Eastern Europe",
+				"Central & Eastern Europe",
 				"AMEA",
 				"Australia"
 			]
@@ -29,7 +29,9 @@
 				"Consulting",
 				"Cybersecurity",
 				"Big Data & Analytics",
-				"Mobility & Social"
+				"Mobility & Social",
+				"Business Process Services",
+				"Others"
 			]
 	},
 
@@ -93,7 +95,8 @@
 				"Natural Resources",
 				"P&C Insurance",
 				"Travel & Transport",
-				"Utilities"
+				"Utilities",
+				"Others"
 			]
 	},
 	

@@ -128,7 +128,7 @@ function getMyVisits(thisUser, timeline, limit, page, perPage, sort, query, fiel
 
 		var today = moment().startOf('day');
 		var pastEnd = moment.utc(today).subtract(1, 'days');
-		var pastBegin = moment.utc(pastEnd).subtract(3,'years');
+		var pastBegin = moment.utc(pastEnd).subtract(7,'years');
 
 		if( secure.isInAnyGroups(thisUser, "customer"))	{
 				filter = {
@@ -320,7 +320,7 @@ var thisWeekEndsOn = moment.utc(today).endOf('isoweek').isoWeekday(6);
 var nextWeekBeginsOn = moment.utc(thisWeekEndsOn).add(1,'days');
 var nextWeekEndsOn = moment.utc(nextWeekBeginsOn).add(7,'days');
 var pastEnd = moment.utc(today).subtract(1, 'days');
-var pastBegin = moment.utc(pastEnd).subtract(3,'years');
+var pastBegin = moment.utc(pastEnd).subtract(7,'years');
 var furtherStart = moment.utc(today).add(1, 'days');
 var furtherEnd = moment.utc(furtherStart).add(1,'years');
 var thisWeek = today.range("week");
@@ -1061,7 +1061,7 @@ function getCount(){
     var deferred = Q.defer();
     var today = moment().startOf('day');
 	var pastEnd = moment.utc(today).subtract(1, 'days');
-	var pastBegin = moment.utc(pastEnd).subtract(3,'years');
+	var pastBegin = moment.utc(pastEnd).subtract(7,'years');
 
     model.count({ 'startDate': {$gte: pastBegin, $exists: true, $ne: null} }, function(err, count){
         if(err) {

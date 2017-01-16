@@ -59,4 +59,46 @@
     </tr>
   </tbody>
 </table>
+
+    <div class="row" style="margin-top: 0px;">
+      <div class="col-md-6">
+        <p class="showingPaginationLabel" ng-show="clientSize<clientCount">Showing Clients {{startPage + 1}} to {{clientSize}} of {{clientCount}}
+        </p>
+        <p class="showingPaginationLabel" ng-show="clientSize>=clientCount && clientCount!=0">Showing Clients {{startPage + 1}} to {{clientCount}} of {{clientCount}}
+        </p>
+      </div>
+      <div class="col-md-6">
+        <span class="pull-right">
+          <ul ng-if="vmPager.pages.length" class="pagination">
+            <li ng-show="vmPager.currentPage == 1" ng-class="{disabled:vmPager.currentPage === 1}">
+              <a>&lt;&lt; First</a>
+            </li>
+            <li ng-show="vmPager.currentPage > 1" ng-class="{disabled:vmPager.currentPage === 1}">
+              <a ng-click="listOfClientCount(1)">&lt;&lt; First</a>
+            </li>
+            <li ng-show="vmPager.currentPage == 1" ng-class="{disabled:vmPager.currentPage == 1}">
+              <a>&lt; Previous</a>
+            </li>
+            <li ng-show="vmPager.currentPage > 1" ng-class="{enabled:vmPager.currentPage > 1}">
+              <a ng-click="listOfClientCount(vmPager.currentPage - 1)">&lt; Previous</a>
+            </li>
+            <li ng-repeat="page in vmPager.pages" ng-class="{active:vmPager.currentPage === page}">
+              <a ng-click="listOfClientCount(page)">{{page}}</a>
+            </li>
+            <li ng-show="vmPager.currentPage < vmPager.totalPages" ng-class="{enabled:vmPager.currentPage > vmPager.totalPages}">
+              <a ng-click="listOfClientCount(vmPager.currentPage + 1)">Next &gt;</a>
+            </li>
+            <li ng-show="vmPager.currentPage == vmPager.totalPages" ng-class="{disabled:vmPager.currentPage == vmPager.totalPages}">
+              <a>Next &gt;</a>
+            </li>
+            <li ng-show="vmPager.currentPage < vmPager.totalPages" ng-class="{disabled:vmPager.currentPage === vmPager.totalPages}">
+              <a ng-click="listOfClientCount(vmPager.totalPages)">Last &gt;&gt;</a>
+            </li>
+            <li ng-show="vmPager.currentPage == vmPager.totalPages" ng-class="{disabled:vmPager.currentPage === vmPager.totalPages}">
+              <a>Last &gt;&gt;</a>
+            </li>
+          </ul>
+        </span>
+      </div>
+    </div>
 </div>
